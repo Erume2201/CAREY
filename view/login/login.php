@@ -55,6 +55,4 @@
 
     </div>
 </body>
-<!-- mandar a llamar js -->
-  <script src="././controller/javascript/helper.js" type="module"></script>
 </html>
