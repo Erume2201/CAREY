@@ -10,8 +10,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>.:LOGIN CAREY:.</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src='main.js'></script>
+  
+  
+ 
 
 </head>
 
@@ -25,13 +26,15 @@
       <div class="input-group-text bg-info">
         <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon" style="height: 2rem" />
       </div>
-      <input class="form-control bg-light" type="text" placeholder="Usuario" />
+      <input class="form-control bg-light" type="text" placeholder="Usuario" name="user" 
+      id="user"/>
     </div>
     <div class="input-group mt-1">
       <div class="input-group-text bg-info">
         <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
       </div>
-      <input class="form-control bg-light" type="password" placeholder="Contraseña" />
+      <input class="form-control bg-light" type="password" placeholder="Contraseña" name="password" 
+      id="password"/>
     </div>
     <div class="d-flex justify-content-around mt-1">
       <div class="d-flex align-items-center gap-1">
@@ -43,8 +46,8 @@
     </div>
     
     <div>
-      <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" >
-        Iniciar Sesión
+      <button  class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" >
+        <a href="index.php?module=menu"  >Iniciar Sesión</a>
       </button>
 
     </div>
@@ -52,4 +55,6 @@
 
     </div>
 </body>
+<!-- mandar a llamar js -->
+  <script src="././controller/javascript/helper.js" type="module"></script>
 </html>
