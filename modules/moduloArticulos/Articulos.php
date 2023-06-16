@@ -1,7 +1,8 @@
 <?php
-
+  
 ?>
-<div>
+
+<div class="container">
   <ul>
     <li>
       <h2>Título del artículo 1</h2>
