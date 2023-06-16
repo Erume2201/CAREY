@@ -40,8 +40,8 @@
       <div class="d-flex align-items-center gap-1">
       </div>
       <div class="pt-1">
-        <a href="#" class="text-decoration-none text-info fw-semibold fst-italic" style="font-size: 0.9rem">¿Olvidaste
-          tu contraseña?</a>
+        <a href="#" class="text-decoration-none text-info fw-semibold fst-italic" 
+        style="font-size: 0.9rem">¿Olvidaste tu contraseña?</a>
       </div>
     </div>
     
