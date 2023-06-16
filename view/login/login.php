@@ -19,7 +19,7 @@
 <body class="bg-dark d-flex justify-content-center align-items-center vh-100">
   <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
     <div class="d-flex justify-content-center">
-      <img src="" alt="login-icon" style="height: 7rem" />
+      <img src="./assets/image/logo_carey.png" alt="login-icon" style="height: 20rem" />
     </div>
     <div class="text-center fs-1 fw-bold">Login</div>
     <div class="input-group mt-4">
@@ -47,7 +47,7 @@
     
     <div>
       <button  class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" >
-        <a href="index.php?module=menu"  >Iniciar Sesión</a>
+        <a href="index.php?module=menu">Iniciar Sesión</a>
       </button>
 
     </div>
