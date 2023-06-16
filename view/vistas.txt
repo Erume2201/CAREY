@@ -1,0 +1,3 @@
+En este software irán las vistas ocupadas
+tomar encuenta lo siguiente cada modulo irá separado por carpetas
+para una mejor organización
