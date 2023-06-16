@@ -16,8 +16,8 @@
 
 </head>
 
-<body class="bg-dark d-flex justify-content-center align-items-center vh-100">
-  <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
+<body class="bg-white d-flex justify-content-center align-items-center vh-100">
+  <div class="bg-dark p-5 rounded-5 text-secondary shadow" style="width: 25rem">
     <div class="d-flex justify-content-center">
       <img src="./assets/image/logo_carey.png" alt="login-icon" style="height: 20rem" />
     </div>
