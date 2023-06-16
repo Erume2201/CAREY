@@ -52,9 +52,4 @@
 
     </div>
 </body>
-<script src="/controller/javascript/acces_menu.js" type="module">
-
-
-</script>
-
 </html>
