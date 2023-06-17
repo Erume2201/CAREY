@@ -46,7 +46,7 @@
     </div>
     
     <div>
-      <button  class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" >
+      <button onclick="hola()" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" >
         <a href="index.php?module=menu">Iniciar Sesión</a>
       </button>
 
