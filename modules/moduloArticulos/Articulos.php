@@ -30,7 +30,7 @@
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-primary">Seleccionar</button>
+                  <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                 </div>
                 <small class="text-body-secondary">9 mins</small>
@@ -45,3 +45,18 @@
     </div>
   </div>
 </div>
+<div class="modal" id="ventana" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Contenido de la ventana emergente -->
+      <div class="modal-header">
+        <h5 class="modal-title">Ventana emergente</h5>
+        <button onclick="CerrarEmergente()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
+      </div>
+      <div class="modal-body">
+        <p>Contenido de la ventana emergente...</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="controller/javascript/helper.js"></script>
