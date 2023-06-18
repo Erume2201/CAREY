@@ -1,5 +1,7 @@
 <?php
-function Consulta($conexion, $query) {
+include_once("conexion.php");
+function Consulta($query) {
+    $conexion = obtenerConexion();
     // Ejecutar el query
     $resultado = mysqli_query($conexion, $query);
 
@@ -14,6 +16,7 @@ function Consulta($conexion, $query) {
     }
 
     mysqli_free_result($resultado);
+    mysqli_close($conexion);
     
     // Retornar los resultados
     return $resultadosArray;
