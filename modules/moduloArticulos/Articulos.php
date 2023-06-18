@@ -22,7 +22,7 @@
       ?>
         <div class="col">
           <div class="card shadow-sm">
-            <img src="assets/image/documentos.png" height="100" width="100">
+            <img class="bd-placeholder-img rounded-circle" src="assets/image/documentos.png" height="100" width="100">
             <br>
             <h4> <?php echo $fila['codigo_barra'] . " " . $fila['nombre_producto'] ?></h4>
 
@@ -30,7 +30,7 @@
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Seleccionar</button>
+                  <button type="button" class="btn btn-primary">Seleccionar</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                 </div>
                 <small class="text-body-secondary">9 mins</small>
