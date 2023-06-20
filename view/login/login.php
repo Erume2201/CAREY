@@ -14,18 +14,17 @@
 </head>
 
 <body>
-
-
     <div class="container bg-white d-flex justify-content-center align-items-center vh-100">
         <!--Creamos un formulario de PHP Y HTML PARA MANDAR LOS PARAMETROS
       a traves del metodo GET-->
 
-        <!-- -->
+        <!--Aqui comienza el formulario-->
         <form action="index.php?module=menu" method="POST">
             <div class="bg-dark p-5 rounded-5 text-secondary shadow" style="width: 25rem">
                 <div class="d-flex justify-content-center">
                     <img src="./assets/image/logo_carey.png" alt="login-icon" style="height: 20rem" />
                 </div>
+                
                 <div class="text-center fs-1 fw-bold">Datos Usuario</div>
                 <div class="input-group mt-4">
                     <div class="input-group-text bg-info">
