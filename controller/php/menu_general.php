@@ -5,7 +5,7 @@
         $option = $_GET["module"];
         switch ($option) {
             case 'menu':
-                $user = "user";
+                $user = "root";
                 $password = "password23";
                 if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     // Verificar si se ha enviado una solicitud POST
