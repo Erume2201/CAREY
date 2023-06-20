@@ -15,11 +15,12 @@
 
                     if ($user == $user_login && $password== $password_login) {
                         include_once("view/menu/menu.php");
+                    }else{
+                        ?>
+                        <script>alert('¡Credenciales invalidas!')</script>";
+                        <?php
+                        include_once("view/login/login.php");
                     }
-                }else{
-                    ?>
-                    <script>alert('¡Credenciales invalidas!')</script>";
-                    <?php
                 }
                 break;   
             case 'articulo':
