@@ -3,7 +3,7 @@ function obtenerConexion() {
     $servidor = "localhost";
     $usuario = "root";
     $password = "";
-    $db = "carey";
+    $db = "CAREY";
     
     $conexion = mysqli_connect($servidor, $usuario, $password, $db);
     if (!$conexion) {

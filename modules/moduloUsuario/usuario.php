@@ -4,7 +4,7 @@
 <!--Creacion del formulario para Registrar Usuarios-->
 <div class="container col-6">
 	<h1>Registro de usuarios</h1>
-	<h5>Para completar el registro del usuario complete todos los campos</h5>
+	<h5>Para registrar un usuario complete todos los campos</h5>
 	<hr>
 	<form>
 	  <div class="mb-3">
