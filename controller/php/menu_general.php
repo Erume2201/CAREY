@@ -47,6 +47,7 @@
             case 'usuario':
                 include_once("view/menu/menu.php"); 
                 include_once("modules/moduloUsuario/usuario.php");
+                
                 break;
             case 'configuracion':
                 include_once("view/menu/menu.php");
