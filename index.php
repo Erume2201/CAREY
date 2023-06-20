@@ -24,7 +24,8 @@
      * Validar el inicio de sesion si es o no correcto
      * validamos la sesion que lleva por nombre msj
      */
-    
+    #agregamos el crud.php
+    require "controller/php/CRUD.php";
     include_once("controller/php/menu_general.php");
 
    // include_once("view/menu/menu.php");

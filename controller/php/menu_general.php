@@ -1,5 +1,4 @@
 <?php
-#require "controller/php/CRUD.php";
     if (isset($_GET["module"])) {  
         # code...
         $option = $_GET["module"];
@@ -13,20 +12,25 @@
                     // Capturar los valores de user y password del formulario
                     $user_login = $_POST["user"];
                     $password_login = $_POST["password"];
+                    //fuciones que muestra los errores de consulta en la pantalla
+                    ini_set('display_errors', 1);
+                    ini_set('display_startup_errors', 1);
+                    error_reporting(E_ALL);
+
+                    $SQL = "SELECT * FROM usuarios";
+                    $resultado= Consulta($SQL);
+                    $dato = $resultado[0]['idusuarios'];
 
                     if ($user == $user_login && $password== $password_login) {
 
                         include_once("view/menu/menu.php");
-                         #codigo incomcluido
                         
                     }else{
                         ?>
                         <script>alert('¡Credenciales invalidas!')</script>
                         <?php
-                        include_once("view/login/login.php");
-
-
-                       
+                         
+                        include_once("view/login/login.php");   
                     }
                 }
                 break;   
