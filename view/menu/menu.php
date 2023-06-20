@@ -104,7 +104,7 @@
 
             <button class="btn btn-warning" type="submit" 
             onclick="window.location.href = 'index.php?module=cerrarSesion'">Cerrar Sesión</button>
-
+           
 
         </div>
     </div>
