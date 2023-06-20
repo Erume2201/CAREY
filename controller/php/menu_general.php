@@ -17,14 +17,11 @@
                     if ($user == $user_login && $password== $password_login) {
 
                         include_once("view/menu/menu.php");
-                        #codigo incomcluido
-                        $query = "SELECT * FROM usuarios";
-                        $resultadoConsulta = Consulta($query);
-                        $primerResultado = $resultadoConsulta[0];
-
+                         #codigo incomcluido
+                        
                     }else{
                         ?>
-                        <script>alert('¡Credenciales invalidas!')</script>";
+                        <script>alert('¡Credenciales invalidas!')</script>
                         <?php
                         include_once("view/login/login.php");
 
