@@ -1,5 +1,5 @@
 <?php
-require "controller/php/CRUD.php";
+#require "controller/php/CRUD.php";
     if (isset($_GET["module"])) {  
         # code...
         $option = $_GET["module"];

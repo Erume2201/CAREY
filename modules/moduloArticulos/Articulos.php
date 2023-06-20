@@ -15,7 +15,7 @@
       // Ejecutar el query utilizando la conexión y capturar los resultados
       $query = "SELECT * FROM articulo_documetos";
       #$resultados los obtiene el CRUD aqui ya solo tenemos el resultado en un ARRAY
-      $resultados = Consulta($query);
+      $resultados =  Consulta($query);
 
       // Trabajar con los resultados
       foreach ($resultados as $fila) {
