@@ -1,5 +1,5 @@
 <?php
-include_once("conexion.php");
+require "conexion.php";
 function Consulta($query) {
     $conexion = obtenerConexion();
     // Ejecutar el query

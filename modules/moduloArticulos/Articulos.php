@@ -11,9 +11,9 @@
       ini_set('display_startup_errors', 1);
       error_reporting(E_ALL);
       // Incluir el archivo de CRUD.php para poder hacer las consultas
-      include_once("controller/php/CRUD.php");
+      require "controller/php/CRUD.php";
       // Ejecutar el query utilizando la conexión y capturar los resultados
-      $query = "SELECT * FROM Productos";
+      $query = "SELECT * FROM articulo_documetos";
       #$resultados los obtiene el CRUD aqui ya solo tenemos el resultado en un ARRAY
       $resultados = Consulta($query);
 
@@ -24,7 +24,7 @@
           <div class="card shadow-sm">
             <img class="bd-placeholder-img rounded-circle" src="assets/image/documentos.png" height="100" width="100">
             <br>
-            <h4> <?php echo $fila['codigo_barra'] . " " . $fila['nombre_producto'] ?></h4>
+            <h4> <?php echo $fila['nombre'] . " " . $fila['descripcion'] ?></h4>
 
             <div class="card-body">
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

@@ -14,12 +14,16 @@
                     $password_login = $_POST["password"];
 
                     if ($user == $user_login && $password== $password_login) {
+<<<<<<< HEAD
                         include_once("view/menu/menu.php");
                     }else{
                         ?>
                         <script>alert('¡Credenciales invalidas!')</script>";
                         <?php
                         include_once("view/login/login.php");
+=======
+                        include("view/menu/menu.php");
+>>>>>>> 2ec5f6d (cambio ala base de datos CAREY)
                     }
                 }
                 break;   
