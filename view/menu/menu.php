@@ -76,17 +76,10 @@
                     <li>
                     <li><a class="dropdown-item" href="#">lista de pagos</a></li>
             </li>
-            <!-- inicia el modulo de configuración-->
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Configuración</a>
-            </li>
-
-
             </li>
             </ul>
             </li>
             <!--Termina modulo de ventas-->
-
             <!-- modulo de graficas -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -105,6 +98,10 @@
             </ul>
             </li>
             <!--Termina modulo de ventas-->
+            <!-- inicia el modulo de configuración-->
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Configuración</a>
+            </li>
             </ul>
 
             <button class="btn btn-warning" type="submit">Cerrar Sesión</button>
