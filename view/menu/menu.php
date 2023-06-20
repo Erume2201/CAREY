@@ -17,11 +17,7 @@
         <!--Comienza el menú principal-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!-- inicia el modulo de configuración-->
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Configuración</a>
-                </li>
-
+                <!-- inicia el modulo de articulo-->
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?module=articulo">Articulo</a>
                 </li>
@@ -80,6 +76,10 @@
                     <li>
                     <li><a class="dropdown-item" href="#">lista de pagos</a></li>
             </li>
+            <!-- inicia el modulo de configuración-->
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Configuración</a>
+            </li>
 
 
             </li>
@@ -107,7 +107,7 @@
             <!--Termina modulo de ventas-->
             </ul>
 
-            <button class="btn btn-warning" type="submit">cerrar sesion</button>
+            <button class="btn btn-warning" type="submit">Cerrar Sesión</button>
 
         </div>
     </div>
