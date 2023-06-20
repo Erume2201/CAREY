@@ -34,9 +34,13 @@
                 include_once("view/menu/menu.php"); 
                 include_once("modules/moduloUsuario/usuario.php");
                 break;
-                case 'cerrarSesion':
-                    include_once("view/login/login.php");
-                    break;
+            case 'configuracion':
+                include_once("view/menu/menu.php");
+                include_once("modules/moduloConfiguracion/configuracion.php");
+                break;
+            case 'cerrarSesion':
+                include_once("view/login/login.php");
+                break;
             default:
                 # code...
                 break;

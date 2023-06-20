@@ -100,7 +100,7 @@
             <!--Termina modulo de ventas-->
             <!-- inicia el modulo de configuración-->
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Configuración</a>
+                <a class="nav-link active" aria-current="page" href="index.php?module=configuracion">Configuración</a>
             </li>
             </ul>
 
