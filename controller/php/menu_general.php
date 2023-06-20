@@ -58,8 +58,8 @@
                 case 'recuperarContrasena':
                     include_once("view/login/recuperarcontrasena.php");
                     break;
-                case 'recuperarContrasena':
-                        include_once("view/login/recuperarcontrasena.php");
+                case 'solicitudContrasena':
+                        
                         break;
             default:
                 # code...
