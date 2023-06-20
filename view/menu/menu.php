@@ -27,7 +27,7 @@
                         Usuario
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Registrar Usuario</a></li>
+                        <li><a class="dropdown-item" href="index.php?module=usuario">Registrar Usuario</a></li>
                         <li><a class="dropdown-item" href="#">Recuperar Contraseña</a></li>
                         <li>
                             <hr class="dropdown-divider">

@@ -29,6 +29,10 @@
                 include_once("view/menu/menu.php"); 
                 include_once("modules/moduloArticulos/Articulos.php");        
                 break;
+            case 'usuario':
+                include_once("view/menu/menu.php"); 
+                include_once("modules/moduloUsuario/usuario.php");
+                break;
             default:
                 # code...
                 break;
