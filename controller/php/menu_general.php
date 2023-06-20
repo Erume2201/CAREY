@@ -4,7 +4,23 @@
         $option = $_GET["module"];
         switch ($option) {
             case 'menu':
-                include_once("view/menu/menu.php");
+                $user = "root";
+                $password = "password23";
+                if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                    // Verificar si se ha enviado una solicitud POST
+                    
+                    // Capturar los valores de user y password del formulario
+                    $user_login = $_POST["user"];
+                    $password_login = $_POST["password"];
+
+                    if ($user == $user_login && $password== $password_login) {
+                        include_once("view/menu/menu.php");
+                    }
+                }else{
+                    ?>
+                    <script>alert('¡Credenciales invalidas!')</script>";
+                    <?php
+                }
                 break;   
             case 'articulo':
                 include_once("view/menu/menu.php"); 
