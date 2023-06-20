@@ -45,6 +45,9 @@
             case 'cerrarSesion':
                 include_once("view/login/login.php");
                 break;
+                case 'recuperarContrasena':
+                    include_once("view/login/recuperarcontrasena.php");
+                    break;
             default:
                 # code...
                 break;
