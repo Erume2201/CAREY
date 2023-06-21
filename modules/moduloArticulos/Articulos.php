@@ -67,7 +67,7 @@
   </div>
 </div>
 
-<!--div class="popup" id="popup">
+<div class="popup" id="popup">
   <div class="popup-content">
     <div class="modal-content">
        Contenido de la ventana emergente >
@@ -80,7 +80,7 @@
       </div>
     </div>
   </div>
-</div-->
+</div>
 <div class="modal" id="ventana">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
