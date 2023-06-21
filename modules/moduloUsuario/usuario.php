@@ -12,30 +12,34 @@
 		?>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Nombre</label>
-	    <input type="text" class="form-control" name="nombre" placeholder="Escribe el nombre">
+	    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre y apellidos del usuario">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+	    <input type="text" class="form-control" name="usuario" placeholder="Ingresa el nombre de usuario">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Numero de telefono</label>
-	    <input type="" class="form-control" name="numero" placeholder="Escribe el numero de telefono">
+	    <input type="tel" class="form-control" name="numero" placeholder="Ingresa el número de teléfono">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-	    <input type="email" class="form-control" name="correo" aria-describedby="emailHelp" placeholder="Escribe el correo Electronico">
+	    <input type="email" class="form-control" name="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo Electronico">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-	    <input type="password" class="form-control" name="password" placeholder="Escribe la Contraseña">
+	    <input type="password" class="form-control" name="password" placeholder="Ingresa la Contraseña">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputPassword1" class="form-label">Confirma la Contraseña</label>
-	    <input type="password" class="form-control" name="passConf" placeholder="Escribe la Contraseña">
+	    <input type="password" class="form-control" name="passConf" placeholder="Confirma la Contraseña">
 	  </div>
 	  <div class="form-group">
 	    <label style="color: black;">Selecciona el rol de usuario:</label>
 	    <select class="form-select" aria-label="Default select example" name="rol" id="rol">
-		  <option disabled selected hidden>Selecciona una opción del menu</option>
+		  <option disabled selected hidden>Elige una opción del menú</option>
 		  <option value="Admin">Administrador</option>
-		  <option value="Empleado">Empleado</option>
+		  <option value="User">Usuario</option>
 		</select>
 	  </div>
 	  <div class="form-group">
