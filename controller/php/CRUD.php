@@ -51,4 +51,24 @@ function Actualizar($query) {
         return false;
 }
 
+function Insertar($query) {
+    $conexion = obtenerConexion();
+    $resultado = mysqli_query($conexion, $query);
+    
+    if (!$resultado) {
+        die('Error de consulta: ' . mysqli_error($conexion));
+    }
+
+    $resultadoInsertar = mysqli_affected_rows($conexion);
+
+    mysqli_close($conexion);
+
+    // Resultado si se inserto el dato del documento
+    if  ($resultadoInsertar > 0)
+        return true;
+    else    
+        return false;
+}
+
+
 ?>
