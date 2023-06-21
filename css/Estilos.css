@@ -80,9 +80,6 @@
 .bt-3:hover::after{
  transform: rotate(150deg);
 }
-<<<<<<< HEAD
-
-=======
 .popup {
     display: none;
     position: fixed;
@@ -104,5 +101,5 @@
     border-radius: 5px;
     text-align: center;
 }
-  
->>>>>>> 01f0036 (formulario de agregar documento y imagenes)
+
+

@@ -2,7 +2,10 @@
 
 ?>
 <br>
-<div class="row">
+<br>
+<br>
+<br>
+<div class="contenido-do row">
   <div class="col-9">
     <div class="album py-5 bg-body-tertiary">
       <div class="container">
@@ -64,10 +67,10 @@
   </div>
 </div>
 
-<div class="popup" id="popup">
+<!--div class="popup" id="popup">
   <div class="popup-content">
     <div class="modal-content">
-      <!-- Contenido de la ventana emergente -->
+       Contenido de la ventana emergente >
       <div class="modal-header">
         <h5 class="modal-title">Ventana emergente</h5>
         <button onclick="CerrarEmergente()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
@@ -77,7 +80,7 @@
       </div>
     </div>
   </div>
-</div>
+</div-->
 <div class="modal" id="ventana">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
