@@ -1,25 +1,52 @@
-
 <?php
-	if(empty($_POST["r"])){
 
-		?>
-			<div class="alert alert-danger" role="alert">
-				Campos sin llenar!
+if (isset($_POST['enviar'])) {
+    if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]) || empty($_POST["password"]) || empty($_POST["passConf"]) || empty($_POST["rol"])) {
+    	?>
+    		<div class="alert alert-danger" role="alert">
+			  Algunos campos estan vacios!
 			</div>
-		<?php
+    	<?php
+        //echo 'no se envio vro';
+        // Additional code...
+    }else {
+    	//Variables que guardan los datos del usuario
+    	 $nombre = $_POST["nombre"];
+		 $numero = $_POST["numero"];
+		 $correo = $_POST["correo"];
+		 $password = $_POST["password"];
+		 $passConf = $_POST["passConf"];
+		 $rol = $_POST["rol"];
+		 $conexion = obtenerConexion();
 
-		if (empty($_POST["nombre"]) or empty($_POST["numero"]) or empty($_POST["correo"]) or empty($_POST["password"]) or empty($_POST["passConf"]) ) {
-			
-			?>
-			<div class="alert alert-danger" role="alert">
-				Campos sin llenar!
-			</div>
-			<?php
+		 //Validacion de las contraseñas
+		 if ($password==$passConf) {
+		 	//enviamos los datos a la bd
+		 	$sql=$conexion->query("insert into usuarios(nombre,numero,correo,contrasena,rol_usuario) 
+    		value('$nombre','$numero','$correo','$password','$rol')");
 
-
-		}else{
-			// code...
-			
-		}
-	}
+	    	//verificamos la respuesta de la bd
+	    	if($sql==1){
+	    		?>
+			    	<div class="alert alert-success" role="alert">
+					  El usuario se registro correctamente!
+					</div>
+			    <?php
+	    	}else{
+	    		?>
+			    	<div class="alert alert-danger" role="alert">
+					  Algo salio mal al momento de guardar los datos
+					</div>
+			    <?php
+	    		}
+	   		}else{
+	   			?>
+			    	<div class="alert alert-danger" role="alert">
+					  Contraseñas no coinciden!
+					</div>
+			    <?php
+	   		}
+		 }
+    	
+}
 ?>
