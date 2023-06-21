@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-static" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-static fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
         <!--etiqueta para separar-->
         <a></a>
