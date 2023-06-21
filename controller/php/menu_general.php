@@ -1,4 +1,5 @@
 <?php
+
     if (isset($_GET["module"])) {  
         # code...
         $option = $_GET["module"];
@@ -60,6 +61,46 @@
                     include_once("view/login/recuperarcontrasena.php");
                     break;
                 case 'solicitudContrasena':
+                    if ($_SERVER["REQUEST_METHOD"] === "POST") { 
+                        /**
+                         * Verificar si se ha enviado una solicitud POST
+                         * Capturar los valores de correo electronico
+                         * 
+                         */
+                        $gmail = $_POST["gmail"];
+                        
+                        
+                        /**
+                         * Consulta a la base de datos tomando en cuenta los parámetros
+                         * ingresados por el usuario (correoElectronico)
+                         */
+                        $SQL = "SELECT * FROM usuarios WHERE correo = '$gmail'";
+                        $resultado = Consulta($SQL);
+                        #verifica si la variable $resultado no está vacía.
+                        if (!empty($resultado)) {
+                            $SQL = "UPDATE usuarios SET estatus_usuario = 'pendiente' WHERE correo = '$gmail';";
+                            
+                            $resultadoUpdate = Actualizar($SQL);
+                            if($resultadoUpdate){
+                                ?>
+                                <script>alert('¡Solicitud enviada al administrador correctamente!')</script>
+                                <?php
+                                include_once("view/login/login.php");
+                            }else{
+                                ?>
+                                <script>alert('¡Este usuario tiene una solicitud pendiente!')</script>
+                                <?php
+                                include_once("view/login/login.php");
+                            }
+                        } else {
+                            
+                            echo "<script>alert('¡No se encontró el usuario: " . $gmail . "');</script>";
+
+                            
+                             include_once("view/login/recuperarcontrasena.php");
+                        }
+                        
+                    }
                         
                         break;
             default:

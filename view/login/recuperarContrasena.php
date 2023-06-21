@@ -16,7 +16,8 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon"
                             style="height: 2rem" />
                     </div>
-                    <input class="form-control bg-light" type="text" placeholder="Usuario" name="user" id="user"
+                    <input class="form-control bg-light" type="email" placeholder="correo electronico" 
+                    name="gmail" id="gmail"
                         required />
                 </div>
 

@@ -28,5 +28,28 @@ function Consulta($query) {
     //el array
     return $resultadosArray;
 }
+/**
+ * Este metodo sirve para actualizar el estatus del usuario
+ * recibe como parametro el correo electronico
+ * retorna un booleano
+ */
+function Actualizar($query) {
+    $conexion = obtenerConexion();
+    $resultado = mysqli_query($conexion, $query);
+
+    if (!$resultado) {
+        die('Error de consulta: ' . mysqli_error($conexion));
+    }
+
+    $filasAfectadas = mysqli_affected_rows($conexion);
+
+    mysqli_close($conexion);
+
+    // Si se afectaron más de 0 filas, se devuelve true; de lo contrario, se devuelve false.
+    if  ($filasAfectadas > 0)
+        return true;
+    else    
+        return false;
+}
 
 ?>
