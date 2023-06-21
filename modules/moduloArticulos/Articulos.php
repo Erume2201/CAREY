@@ -30,10 +30,9 @@
                   <p class="card-text"> <?php echo $fila['descripcion']; ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>          
+                      <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                     </div>
-                    <small class="text-body-secondary">9 mins</small>
                   </div>
                 </div>
               </div>
@@ -49,20 +48,24 @@
     <div class="">
       <!-- Contenido de la columna estática -->
       <div class="buttons">
-        <a href="" class="bt bt-1">Agregar</a>
+        <a href="#" class="bt bt-1" onclick="ventanaFormulario(event)">Agregar</a>
         <a href="" class="bt bt-1">Modificar</a>
         <a href="" class="bt bt-1">Eliminar</a>
       </div>
     </div>
   </div>
   <div class="col-1">
-    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px">
+    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" 
+    style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/editar.png" alt="" width="80px" height="80px" 
+    style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
+
   </div>
 </div>
 
-
-<div class="modal" id="ventana">
-  <div class="modal-dialog modal-lg">
+<div class="popup" id="popup">
+  <div class="popup-content">
     <div class="modal-content">
       <!-- Contenido de la ventana emergente -->
       <div class="modal-header">
@@ -75,22 +78,37 @@
     </div>
   </div>
 </div>
-<div class="modal">
-  <h2 class="form-title">Formulario</h2>
-  <form>
-    <div class="form-group">
-      <label class="form-label" for="name">Nombre:</label>
-      <input class="form-input" type="text" id="name" name="name" required>
+<div class="modal" id="ventana">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-11">
+          <h2 class="fw-bold ">Agregar documento</h2>
+        </div>
+        <div class="col-1">
+          <button onclick="CerrarFormulario()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
+        </div>
+      </div>
+      <div class="row">
+        <form>
+          <div class="form-control">
+            <label class="form-label" for="name">Nombre:</label>
+            <input class="form-control" type="text" id="name" name="name" required>
+            <label class="form-label" for="">Precio:</label>
+            <input class="form-control" type="number" id="" name="email" required>
+            <label class="form-label" for="name">Tipo:</label>
+            <input class="form-control" type="text" id="Tipo" name="Tipo" required>
+            <label class="form-label" for="">descripcion:</label>
+            <br>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+            <small id="charCount" class="form-text text-muted">0 / 45 caracteres</small>
+            <br>
+            <button class="btn btn-success" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label class="form-label" for="email">Email:</label>
-      <input class="form-input" type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="message">Mensaje:</label>
-      <textarea class="form-input" id="message" name="message" rows="4" required></textarea>
-    </div>
-    <button class="form-button" type="submit">Enviar</button>
-  </form>
+  </div>
 </div>
+
 <script src="controller/javascript/helper.js"></script>
