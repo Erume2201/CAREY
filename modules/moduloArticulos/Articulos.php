@@ -30,7 +30,7 @@
                   <p class="card-text"> <?php echo $fila['descripcion']; ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
+                      <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>          
                       <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                     </div>
                     <small class="text-body-secondary">9 mins</small>
@@ -45,13 +45,18 @@
       </div>
     </div>
   </div>
-  <div class="col-3">
-    <div class="card shadow-sm">
+  <div class="col-2">
+    <div class="">
       <!-- Contenido de la columna estática -->
-        <div class="btn-group">
-        <button type="button" class="btn btn-success">Agregar</button>
-        </div>
+      <div class="buttons">
+        <a href="" class="bt bt-1">Agregar</a>
+        <a href="" class="bt bt-1">Modificar</a>
+        <a href="" class="bt bt-1">Eliminar</a>
+      </div>
     </div>
+  </div>
+  <div class="col-1">
+    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px">
   </div>
 </div>
 
@@ -71,21 +76,21 @@
   </div>
 </div>
 <div class="modal">
-    <h2 class="form-title">Formulario</h2>
-    <form>
-      <div class="form-group">
-        <label class="form-label" for="name">Nombre:</label>
-        <input class="form-input" type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="email">Email:</label>
-        <input class="form-input" type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="message">Mensaje:</label>
-        <textarea class="form-input" id="message" name="message" rows="4" required></textarea>
-      </div>
-      <button class="form-button" type="submit">Enviar</button>
-    </form>
-  </div>
+  <h2 class="form-title">Formulario</h2>
+  <form>
+    <div class="form-group">
+      <label class="form-label" for="name">Nombre:</label>
+      <input class="form-input" type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">Email:</label>
+      <input class="form-input" type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="message">Mensaje:</label>
+      <textarea class="form-input" id="message" name="message" rows="4" required></textarea>
+    </div>
+    <button class="form-button" type="submit">Enviar</button>
+  </form>
+</div>
 <script src="controller/javascript/helper.js"></script>
