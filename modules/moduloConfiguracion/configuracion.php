@@ -2,10 +2,13 @@
 <!--Creación del módulo de Configuración-->
 <div class="container col-6">
 	<br>
-	<h1>Corte de fecha</h1>
+	<h1>Fechas de corte</h1>
 	<hr>
-	<h6>Seleccione las fechas:</h6>
-	<form method="POST" action="modules/moduloConfiguracion/procesar.php">
+	<h6>Seleccione las fechas en las que se hará el corte</h6>
+	<?php
+	include_once("modules/moduloConfiguracion/procesar.php");
+	?>
+	<form method="POST">
         <label for="fecha_inicio">Desde:</label>
         <input type="date" name="fecha_inicio" required>
         <br><br>
@@ -14,4 +17,6 @@
         <br><br>
         <input type="submit" value="Guardar cambios">
     </form>
+    <hr>
+    <h1>Alguna otra configuración...</h1>
 </div>
