@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-static" data-bs-theme="dark">
     <div class="container-fluid">
         <!--etiqueta para separar-->
         <a></a>
@@ -32,12 +32,12 @@
                     <a class="nav-link disabled">Disabled</a>
                 </li> -->
                 <!-- modulo de ventas -->
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Ventas
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu ">
                         <li><a class="dropdown-item" href="#">Vender Documentos</a></li>
                         <li>
                             <hr class="dropdown-divider">
