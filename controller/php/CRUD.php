@@ -36,7 +36,6 @@ function Consulta($query) {
 function Actualizar($query) {
     $conexion = obtenerConexion();
     $resultado = mysqli_query($conexion, $query);
-
     if (!$resultado) {
         die('Error de consulta: ' . mysqli_error($conexion));
     }

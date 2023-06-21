@@ -7,7 +7,7 @@ if (isset($_POST['enviar'])) {
 			  Algunos campos estan vacios!
 			</div>
     	<?php
-        // Additional code...
+        
     }else {
     	//Variables que guardan los datos del usuario
     	 $nombre = $_POST["nombre"];

@@ -16,15 +16,15 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon"
                             style="height: 2rem" />
                     </div>
-                    <input class="form-control bg-light" type="email" placeholder="correo electronico" 
-                    name="gmail" id="gmail"
+                    <input class="form-control bg-light" type="text" placeholder="usuario" 
+                    name="user" id="user"
                         required />
                 </div>
 
 
                 <div>
                     <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit">Solicitar
-                        cambio de contraseña</button>
+                        Cambio de Contraseña</button>
                 </div>
                 
                 <div>

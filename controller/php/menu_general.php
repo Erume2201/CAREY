@@ -26,7 +26,9 @@
                      * Consulta a la base de datos tomando en cuenta los parámetros
                      * ingresados por el usuario (nombre de usuario y contraseña)
                      */
-                    $SQL = "SELECT correo, contrasena FROM usuarios WHERE correo = '$user_login' AND contrasena = '$password_login'";
+                    $SQL = "SELECT usuario, contrasena FROM usuarios 
+                    WHERE usuario = '$user_login' 
+                    AND contrasena = '$password_login'";
                     $resultado = Consulta($SQL);
                     
                     if (!empty($resultado)) {
@@ -61,24 +63,22 @@
                     include_once("view/login/recuperarcontrasena.php");
                     break;
                 case 'solicitudContrasena':
-                    if ($_SERVER["REQUEST_METHOD"] === "POST") { 
-                        /**
+                    /**
                          * Verificar si se ha enviado una solicitud POST
                          * Capturar los valores de correo electronico
                          * 
                          */
-                        $gmail = $_POST["gmail"];
-                        
-                        
+                    if ($_SERVER["REQUEST_METHOD"] === "POST") { 
+                        $user = $_POST["user"];
                         /**
                          * Consulta a la base de datos tomando en cuenta los parámetros
-                         * ingresados por el usuario (correoElectronico)
+                         * ingresados por el usuario (user)
                          */
-                        $SQL = "SELECT * FROM usuarios WHERE correo = '$gmail'";
+                        $SQL = "SELECT * FROM usuarios WHERE correo = '$user'";
                         $resultado = Consulta($SQL);
                         #verifica si la variable $resultado no está vacía.
                         if (!empty($resultado)) {
-                            $SQL = "UPDATE usuarios SET estatus_usuario = 'pendiente' WHERE correo = '$gmail';";
+                            $SQL = "UPDATE usuarios SET estatus_usuario = 'pendiente' WHERE usuario = '$user';";
                             
                             $resultadoUpdate = Actualizar($SQL);
                             if($resultadoUpdate){
