@@ -7,7 +7,6 @@ if (isset($_POST['enviar'])) {
 			  Algunos campos estan vacios!
 			</div>
     	<?php
-        //echo 'no se envio vro';
         // Additional code...
     }else {
     	//Variables que guardan los datos del usuario
@@ -21,9 +20,11 @@ if (isset($_POST['enviar'])) {
 
 		 //Validacion de las contraseñas
 		 if ($password==$passConf) {
+		 	//cifrado de contraseña
+			$encryptedPassword = md5($password);
 		 	//enviamos los datos a la bd
 		 	$sql=$conexion->query("insert into usuarios(nombre,numero,correo,contrasena,rol_usuario) 
-    		value('$nombre','$numero','$correo','$password','$rol')");
+    		value('$nombre','$numero','$correo','$encryptedPassword','$rol')");
 
 	    	//verificamos la respuesta de la bd
 	    	if($sql==1){
@@ -46,7 +47,6 @@ if (isset($_POST['enviar'])) {
 					</div>
 			    <?php
 	   		}
-		 }
-    	
+		 }   	
 }
 ?>
