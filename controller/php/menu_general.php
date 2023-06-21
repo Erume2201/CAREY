@@ -25,7 +25,7 @@
                      * Consulta a la base de datos tomando en cuenta los parámetros
                      * ingresados por el usuario (nombre de usuario y contraseña)
                      */
-                    $SQL = "SELECT nombre, contrasena FROM usuarios WHERE nombre = '$user_login' AND contrasena = '$password_login'";
+                    $SQL = "SELECT correo, contrasena FROM usuarios WHERE correo = '$user_login' AND contrasena = '$password_login'";
                     $resultado = Consulta($SQL);
                     
                     if (!empty($resultado)) {

@@ -28,4 +28,5 @@ function Consulta($query) {
     //el array
     return $resultadosArray;
 }
+
 ?>

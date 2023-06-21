@@ -18,7 +18,7 @@
         <!--Creamos un formulario de PHP Y HTML PARA MANDAR LOS PARAMETROS
       a traves del metodo GET-->
 
-        <!--Aqui comienza el formulario-->
+        <!--Aqui comienza el formulario ?module=menu-->
         <form action="index.php?module=menu" method="POST">
             <div class="bg-dark p-5 rounded-5 text-secondary shadow" style="width: 25rem">
                 <div class="d-flex justify-content-center">
@@ -31,7 +31,7 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon"
                             style="height: 2rem" />
                     </div>
-                    <input class="form-control bg-light" type="text" placeholder="Usuario" name="user" id="user"
+                    <input class="form-control bg-light" type="email" placeholder="correo electronico" name="user" id="user"
                         required />
                 </div>
                 <div class="input-group mt-1">
