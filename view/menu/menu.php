@@ -19,19 +19,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?module=articulo">Documentos</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.php?module=usuario" aria-expanded="false">
                         Usuario
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="index.php?module=usuario">Registrar Usuario</a></li>
-                        <li><a class="dropdown-item" href="#">Recuperar Contraseña</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Clientes</a>

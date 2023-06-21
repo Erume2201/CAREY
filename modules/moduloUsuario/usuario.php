@@ -1,4 +1,3 @@
-
 <!--Creacion del formulario para Registrar Usuarios-->
 <div class="container col-6">
 	<h1>Registro de usuarios</h1>
@@ -17,7 +16,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Numero de telefono</label>
-	    <input type="number" class="form-control" name="numero" placeholder="Escribe el numero de telefono">
+	    <input type="" class="form-control" name="numero" placeholder="Escribe el numero de telefono">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
@@ -41,7 +40,9 @@
 	  </div>
 	  <div class="form-group">
 	  	<br>
+	  	<center>
 	  <input type="submit" name="enviar" value="Registrar" class="btn btn-success">
+	  </center>
 	  </div>
 	</form>
 	<br>

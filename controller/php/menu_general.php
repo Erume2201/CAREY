@@ -47,8 +47,15 @@
                 break;
             case 'usuario':
                 include_once("view/menu/menu.php"); 
-                include_once("modules/moduloUsuario/usuario.php");
+                include_once("view/menu/menuUsuarios.php");
+                include_once("modules/moduloUsuario/verUsuarios.php");
                 
+                break;
+            case 'registraUsuario':
+                include_once("view/menu/menu.php"); 
+                include_once("view/menu/menuUsuarios.php");
+                include_once("modules/moduloUsuario/usuario.php");
+
                 break;
             case 'configuracion':
                 include_once("view/menu/menu.php");
