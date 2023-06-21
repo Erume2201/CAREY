@@ -12,7 +12,7 @@
 		?>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Nombre</label>
-	    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre y apellidos del usuario">
+	    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del usuario">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Usuario</label>
@@ -20,7 +20,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Numero de telefono</label>
-	    <input type="tel" class="form-control" name="numero" placeholder="Ingresa el número de teléfono">
+	    <input type="" class="form-control" name="numero" placeholder="Ingresa el número de teléfono">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
@@ -39,7 +39,7 @@
 	    <select class="form-select" aria-label="Default select example" name="rol" id="rol">
 		  <option disabled selected hidden>Elige una opción del menú</option>
 		  <option value="Admin">Administrador</option>
-		  <option value="User">Usuario</option>
+		  <option value="Empleado">Empleado</option>
 		</select>
 	  </div>
 	  <div class="form-group">

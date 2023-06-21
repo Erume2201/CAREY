@@ -25,15 +25,14 @@ if (isset($_POST['enviar'])) {
 		 	//enviamos los datos a la bd
 			$SQL = "insert into usuarios(nombre,usuario,numero,correo,contrasena,rol_usuario,estatus_usuario) 
     		value('$nombre','$usuario','$numero','$correo','$encryptedPassword','$rol','Disponible')";
-                            
-             $resultadoUpdate = Actualizar($SQL);
-
+            
+             $resultadoInsert = Actualizar($SQL);
 
 		 	/*$sql=$conexion->query("insert into usuarios(nombre,numero,correo,contrasena,rol_usuario) 
     		value('$nombre','$numero','$correo','$encryptedPassword','$rol')"); */
 
 	    	//verificamos la respuesta de la bd
-	    	if($resultadoUpdate){
+	    	if($resultadoInsert){
 	    		?>
 			    	<div class="alert alert-success" role="alert">
 					  El usuario se registro correctamente!
@@ -46,13 +45,13 @@ if (isset($_POST['enviar'])) {
 					</div>
 			    <?php
 	    		}
-	   		}else{
+	   	}else{
 	   			?>
 			    	<div class="alert alert-danger" role="alert">
 					  Contraseñas no coinciden!
 					</div>
 			    <?php
-	   		}
-		 }   	
+	   	}
+	}   	
 }
 ?>
