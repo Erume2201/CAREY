@@ -44,6 +44,7 @@ passInput.addEventListener("input", function() {
   if (pass==passwordInput.value) {
     mensajeValidarPass.textContent = "";
   } else {
-    mensajeValidarPass.textContent = "Las contraseñas no coinciden";
+    mensajeValidarPass.textContent = "Las contraseñas no coinciden. "+
+                                    "Asegúrate de ingresar la misma contraseña en ambos campos.";
   }
 });
