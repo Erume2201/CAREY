@@ -47,7 +47,7 @@ if (isset($_GET["module"])) {
         # pregunta si existe una sesion de login 's1'
         session_start();
         if (isset($_SESSION['s1'])) {
-            echo "<script>alert('¡HASTA LA PROXIMA: " .  $_SESSION['s1'] . "');</script>";
+            #echo "<script>alert('¡HASTA LA PROXIMA: " .  $_SESSION['s1'] . "');</script>";
             $option = $_GET["module"];
             switch ($option) {
                 case 'articulo':
