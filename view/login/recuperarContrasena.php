@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <body>
     <div class="container bg-white d-flex justify-content-center align-items-center vh-100">
         <!--Creamos un formulario de PHP Y HTML PARA MANDAR LOS PARAMETROS
