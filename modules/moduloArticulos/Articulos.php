@@ -47,7 +47,7 @@
       </div>
     </div>
   </div>
-  <div class="col-2">
+  <div class="col-2" style="position: fixed; right: 0;">
     <div class="">
       <!-- Contenido de la columna estática -->
       <div class="buttons">
@@ -57,9 +57,11 @@
       </div>
     </div>
   </div>
-  <div class="col-1">
-    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
-    <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
+  <div class="col-1" style="position: fixed; right: 200px;" >
+    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" 
+    style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/editar.png" alt="" width="80px" height="80px" 
+    style="display: block; margin-bottom: 65px;">    
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
 
   </div>

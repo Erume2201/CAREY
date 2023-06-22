@@ -101,5 +101,10 @@
     border-radius: 5px;
     text-align: center;
 }
-
-
+.fixed-column {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
