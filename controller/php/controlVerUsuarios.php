@@ -19,40 +19,6 @@
 	            </tr>
 	        ';}
     } else {              
-    echo '
-	            <tr>
-	                <td>pech</td>
-	                <td>pech</td>
-	                <td>pech</td>
-	                <td>pech</td>
-	                <td>pech</td>
-	                <td>pech</td>
-	            </tr>
-	        ';
+    	echo 'erro al conectar a la base de datos';
     }
-                    
-
-
-/*
-	$SQL = "SELECT * FROM usuarios";
-
-	$resultadoSelect = Consulta($SQL);
-
-	if (!empty($resultadoSelect)) {
-	    foreach ($resultadoSelect as $fila) {
-	        echo '
-	            <tr>
-	                <td>'.$fila[1].'</td>
-	                <td>hoka</td>
-	                <td>hoka</td>
-	                <td>hoka</td>
-	                <td>hoka</td>
-	                <td>hoka</td>
-	            </tr>
-	        ';
-	    }
-	} else {
-	    echo 'No se encontraron resultados.';
-	}*/
-
 ?>
