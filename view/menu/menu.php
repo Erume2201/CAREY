@@ -92,7 +92,7 @@
                 <a class="nav-link active" aria-current="page" href="index.php?module=configuracion">Configuración</a>
             </li>
             </ul>
-
+<!-- boton de cierre de sesion -->
             <button class="btn btn-warning" type="submit" 
             onclick="window.location.href = 'index.php?module=cerrarSesion'">Cerrar Sesión</button>
            

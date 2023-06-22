@@ -2,6 +2,32 @@
 //obtenemos  el archivo conexion.php para poder obtener la conexion
 require "conexion.php";
 //esta funcion solo  hace consultas,  el cual recibe un query
+
+
+/**
+ * La siguiente función es la principal ya que es la que va a dar acceso
+ * al usuario y valida si existe una sesion activa
+ * recibe de parametro usuario y contraseña
+ * Efren rm
+ */
+/*
+ function validarUsuario($query){
+    $conexion = obtenerConexion();
+    $resultado = mysqli_query($conexion, $query);
+    if (!$resultado) {
+        die('Error de consulta: ' . mysqli_error($conexion));
+    }
+    mysqli_close($conexion);
+
+    if (mysqli_fetch_assoc($resultado)) {
+        return 1;
+    }
+    return 0;
+}
+*/
+
+
+
 function Consulta($query) {
     //obtenemos la funcion obtenerConexion que esta retorna la conexion del archivo conexion.php
     $conexion = obtenerConexion();

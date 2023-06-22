@@ -25,10 +25,14 @@
 <body>
     <!--Cargo el archivo de operacion para mandar a llamar LA VISTA LOGIN-->
     <?php
-    
     #agregamos el crud.php para que solo reciba los parametros
     require "controller/php/CRUD.php";
+    #iniciamos el menu general
     include_once("controller/php/menu_general.php");
+    #iniciamos el control de acceso al menu
+    include_once("controller/php/controlLogin.php");
+
+    
 
    // include_once("view/menu/menu.php");
     //incluir usuarios
