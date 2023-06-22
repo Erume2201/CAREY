@@ -124,7 +124,7 @@
       <div>
         <template id="my-template">
           <swal-title>
-            ¡Algo salió mal!?
+            ¡Algo salió mal!
           </swal-title>
           <swal-icon type="error" color="red"></swal-icon>
           <swal-button type="confirm">
