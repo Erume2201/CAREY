@@ -25,6 +25,11 @@
           ?>
             <div class="col">
               <div class="card shadow-sm">
+                <label>
+                  <input type="checkbox" class="btn-check" autocomplete="off">
+                  <span class="btn btn-check:checked ">Eliminar</span>
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </label>
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                 <br>
                 <h4> <?php echo $fila['nombre']; ?></h4>
@@ -57,11 +62,9 @@
       </div>
     </div>
   </div>
-  <div class="col-1" style="position: fixed; right: 200px;" >
-    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" 
-    style="display: block; margin-bottom: 65px;">
-    <img src="assets/image/editar.png" alt="" width="80px" height="80px" 
-    style="display: block; margin-bottom: 65px;">    
+  <div class="col-1" style="position: fixed; right: 200px;">
+    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
 
   </div>
