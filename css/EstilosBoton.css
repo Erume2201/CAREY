@@ -109,6 +109,11 @@
     overflow-y: auto;
 }
 
+.bt-5 {
+    background-color: green; /* Cambia el color de fondo cuando está marcado */
+    color: white; /* Cambia el color del texto cuando está marcado */
+    margin-left: 10px;
+}
 
   
   

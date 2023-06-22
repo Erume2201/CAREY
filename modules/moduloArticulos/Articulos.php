@@ -25,11 +25,16 @@
           ?>
             <div class="col">
               <div class="card shadow-sm">
+                 <!--mandamos el docuemto seleccioado-->
+                <form  id="FormularioEliminar" action="modules/moduloArticulos/InsertarDocumentos.php" 
+                method="POST">
                 <label>
-                  <input type="checkbox" class="btn-check" autocomplete="off">
-                  <span class="btn btn-check:checked ">Eliminar</span>
-                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  <input type="checkbox" class="bt-5" id="dato" 
+                   name="dato"
+                   value="<?php echo $fila['idarticulo_documetos'];?>" autocomplete="off" >
+                  <span class="btn btn-check:checked ">Eliminar &#128465;</span>
                 </label>
+                </form>
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                 <br>
                 <h4> <?php echo $fila['nombre']; ?></h4>
@@ -58,7 +63,7 @@
       <div class="buttons">
         <a href="#" class="bt bt-1" onclick="ventanaFormulario(event)">Agregar</a>
         <a href="" class="bt bt-1">Modificar</a>
-        <a href="" class="bt bt-1">Eliminar</a>
+        <a href="" class="bt bt-1" onclick="Eliminar(event)">Eliminar</a>
       </div>
     </div>
   </div>

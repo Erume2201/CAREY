@@ -25,5 +25,12 @@ if (isset( $_POST['name']) && isset( $_POST['Precio']) && isset( $_POST['mensaje
 
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $dato = $_POST["dato"];
+    // Procesar el dato específico según el form_id
+    echo "El dato enviado para el formulario con ID es: " . $dato;
+  }
+
+
 
 ?>
