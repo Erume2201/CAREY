@@ -81,6 +81,11 @@ if (isset($_GET["module"])) {
                     include_once("view/menu/menuUsuarios.php");
                     include_once("modules/moduloUsuario/verUsuarios.php");
                     break;
+                case 'clientes':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloClientes/subnavbarClientes.php");
+                    include_once("modules/moduloClientes/clientes.php");
+                    break;
                 case 'registraUsuario':
                     include_once("view/menu/menu.php"); 
                     include_once("view/menu/menuUsuarios.php");
