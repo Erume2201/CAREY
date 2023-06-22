@@ -20,7 +20,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Numero de telefono</label>
-	    <input type="" class="form-control" name="numero" placeholder="Ingresa el número de teléfono">
+	    <input type="text" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10" oninput="validarNumeros(this)">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
@@ -45,9 +45,11 @@
 	  <div class="form-group">
 	  	<br>
 	  	<center>
-	  <input type="submit" name="enviar" value="Registrar" class="btn btn-success">
+	  <input type="submit" name="enviar" value="Registrar" class="btn btn-success" style="width: 200px; height: 40px; font-size: 18.5px;">
 	  </center>
 	  </div>
 	</form>
 	<br>
 </div>
+
+<script src="controller/javascript/helpersUsuarios.js"></script>
