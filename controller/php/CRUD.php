@@ -61,10 +61,8 @@ function InsertarDato($query) {
     }
     // Ejecutar la consulta
     if ($conexion->query($query) === TRUE) {
-        echo "Los datos se han insertado correctamente.";
         return true;
     } else {
-        echo "Error al insertar los datos: " . $conexion->error;
         return false;
     }
 
