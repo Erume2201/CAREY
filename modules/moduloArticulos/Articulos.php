@@ -58,10 +58,8 @@
     </div>
   </div>
   <div class="col-1">
-    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" 
-    style="display: block; margin-bottom: 65px;">
-    <img src="assets/image/editar.png" alt="" width="80px" height="80px" 
-    style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
 
   </div>
@@ -70,7 +68,7 @@
 <div class="popup" id="popup">
   <div class="popup-content">
     <div class="modal-content">
-       Contenido de la ventana emergente >
+      Contenido de la ventana emergente >
       <div class="modal-header">
         <h5 class="modal-title">Ventana emergente</h5>
         <button onclick="CerrarEmergente()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
@@ -93,12 +91,12 @@
         </div>
       </div>
       <div class="row">
-        <form>
+        <form action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
           <div class="form-control">
             <label class="form-label" for="name">Nombre:</label>
             <input class="form-control" type="text" id="name" name="name" required>
             <label class="form-label" for="">Precio:</label>
-            <input class="form-control" type="number" id="" name="email" required>
+            <input class="form-control" type="number" id="Precio" name="Precio" required>
             <label class="form-label" for="name">Tipo:</label>
             <input class="form-control" type="text" id="Tipo" name="Tipo" required>
             <label class="form-label" for="">descripcion:</label>
@@ -112,6 +110,61 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div>
+  <?php
+  if (isset($_GET['status'])) {
+    $status = $_GET['status'];
+    if ($status == "NoInsertado") {
+  ?>
+      <div>
+        <template id="my-template">
+          <swal-title>
+            ¡Algo salió mal!?
+          </swal-title>
+          <swal-icon type="error" color="red"></swal-icon>
+          <swal-button type="confirm">
+            Regresar
+          </swal-button>
+          <swal-param name="allowEscapeKey" value="false" />
+          <swal-param name="customClass" value='{ "popup": "my-popup" }' />
+          <swal-function-param name="didOpen" value="popup => console.log(popup)" />
+        </template>
+        <script>
+          Swal.fire({
+            template: '#my-template'
+          });
+        </script>
+      </div>
+    <?php
+    } else {
+    ?>
+      <br>
+      <template id="my-template">
+        <swal-title>
+          ¡Documento insertado!?
+        </swal-title>
+        <swal-icon type="success" color="greed"></swal-icon>
+        <swal-button type="confirm">
+          Confirmar.
+        </swal-button>
+        <swal-param name="allowEscapeKey" value="false" />
+        <swal-param name="customClass" value='{ "popup": "my-popup" }' />
+        <swal-function-param name="didOpen" value="popup => console.log(popup)" />
+      </template>
+      <script>
+        Swal.fire({
+          template: '#my-template'
+        });
+      </script>
+</div>
+</div>
+<?php
+    }
+  }
+?>
 </div>
 
 <script src="controller/javascript/helper.js"></script>

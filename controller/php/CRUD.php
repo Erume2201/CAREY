@@ -51,23 +51,25 @@ function Actualizar($query) {
         return false;
 }
 
-function Insertar($query) {
-    $conexion = obtenerConexion();
-    $resultado = mysqli_query($conexion, $query);
+function InsertarDato($query) {
     
-    if (!$resultado) {
-        die('Error de consulta: ' . mysqli_error($conexion));
+    $conexion = obtenerConexion();
+
+    // Verificar la conexión
+    if ($conexion->connect_error) {
+        die("Error al conectar con la base de datos: " . $conexion->connect_error);
+    }
+    // Ejecutar la consulta
+    if ($conexion->query($query) === TRUE) {
+        echo "Los datos se han insertado correctamente.";
+        return true;
+    } else {
+        echo "Error al insertar los datos: " . $conexion->error;
+        return false;
     }
 
-    $resultadoInsertar = mysqli_affected_rows($conexion);
-
-    mysqli_close($conexion);
-
-    // Resultado si se inserto el dato del documento
-    if  ($resultadoInsertar > 0)
-        return true;
-    else    
-        return false;
+    // Cerrar la conexión
+    $conexion->close();
 }
 
 
