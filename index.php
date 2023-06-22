@@ -27,8 +27,7 @@
     require "controller/php/CRUD.php";
     #iniciamos el menu general
     include_once("controller/php/menu_general.php");
-    #iniciamos el control de acceso al menu
-    include_once("controller/php/controlLogin.php");
+    
 
     
 

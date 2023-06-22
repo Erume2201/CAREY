@@ -38,7 +38,7 @@ if (isset($_GET["module"])) {
             if (isset($_POST["user"])) {
                 $user = $_POST["user"];
                 // Consulta a la base de datos tomando en cuenta los parámetros ingresados por el usuario
-                $SQL = "SELECT * FROM usuarios WHERE correo = '$user'";
+                $SQL = "SELECT * FROM usuarios WHERE usuario = '$user'";
                 $resultado = Consulta($SQL);
                 
                 if (!empty($resultado)) {
