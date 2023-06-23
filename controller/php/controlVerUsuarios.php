@@ -13,7 +13,7 @@
 	                <td>'.$resultado[$i]['correo'].'</td>
 	                <td>'.$resultado[$i]['contrasena'].'</td>
 	                <td>'.$resultado[$i]['rol_usuario'].'</td>
-	                <td><button type="button" class="btn btn-secondary" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+	                <td><button type="button" name="delete" id="delete" class="btn btn-secondary" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
 	                	<img src="assets/image/delete_icon.png" width="35" height="35">
 	                </button</td>
 	            </tr>

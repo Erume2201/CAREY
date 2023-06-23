@@ -27,3 +27,5 @@
 
 	</div>
 </div>
+
+<script src="controller/javascript/helpersUsuarios.js"></script>

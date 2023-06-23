@@ -21,7 +21,5 @@ function generarPass(longitud = 8) {
     const indice = Math.floor(Math.random() * (maxCaracteres + 1));
     contrasena += caracteres.charAt(indice);
   }
-
   resultadoElemento.value = contrasena;
-
 }
