@@ -13,7 +13,7 @@
                 <img src="./assets/image/logo_carey.png" alt="login-icon" style="height: 20rem" />
             </div>
 
-            <div class="text-center fs-1 fw-bold">Datos Usuario</div>
+            <div class="text-center fs-1 fw-bold ">Datos Usuario</div>
             <div class="input-group mt-4">
                 <div class="input-group-text bg-info">
                     <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon"
