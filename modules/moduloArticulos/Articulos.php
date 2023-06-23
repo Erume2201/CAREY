@@ -69,8 +69,8 @@
     </div>
   </div>
   <div class="col-1" style="position: fixed; right: 200px; margin-top: 25px;">
-    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
-    <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 65px;">
+    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
+    <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
 
   </div>
