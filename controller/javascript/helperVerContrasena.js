@@ -100,7 +100,7 @@ const campoConfirmarContrasena = document.getElementById("confirPassword");
 const mensajeErrorPass = document.getElementById("mensajeErrorPass");
 const botonIniciarSesion = document.querySelector("button[name='validar']");
 
-campoContrasena.addEventListener("input", function() {
+campoContrasena.addEventListener("input", function() { 
   validarContrasena(this);
 });
 
@@ -145,4 +145,4 @@ function verificarCoincidenciaContrasena() {
     botonIniciarSesion.disabled = true;
   }
 }
-  
+
