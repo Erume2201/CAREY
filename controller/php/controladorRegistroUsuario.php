@@ -21,7 +21,7 @@ if (isset($_POST['enviar'])) {
 		$encryptedPassword = md5($password);
 		//enviamos los datos a la bd
 		$SQL = "insert into usuarios(nombre,usuario,numero,correo,contrasena,rol_usuario,estatus_usuario) 
-    		value('$nombre','$usuario','$numero','$correo','$encryptedPassword','$rol','Disponible')";
+    		value('$nombre','$usuario','$numero','$correo','$encryptedPassword','$rol','generica')";
             
          $resultadoInsert = Actualizar($SQL);
 
