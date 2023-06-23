@@ -91,15 +91,30 @@ if (isset($_GET["module"])) {
                     include_once("view/menu/menuUsuarios.php");
                     include_once("modules/moduloUsuario/verUsuarios.php");
                     break;
+                case 'registraUsuario':
+                    include_once("view/menu/menu.php"); 
+                    include_once("view/menu/menuUsuarios.php");
+                    include_once("modules/moduloUsuario/usuario.php");
+                    break;
                 case 'clientes':
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloClientes/subnavbarClientes.php");
                     include_once("modules/moduloClientes/clientes.php");
                     break;
-                case 'registraUsuario':
-                    include_once("view/menu/menu.php"); 
-                    include_once("view/menu/menuUsuarios.php");
-                    include_once("modules/moduloUsuario/usuario.php");
+                case 'nuevoCliente':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloClientes/subnavbarClientes.php");
+                    include_once("modules/moduloClientes/nuevoCliente.php");
+                    break;
+                case 'modificarCliente':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloClientes/subnavbarClientes.php");
+                    include_once("modules/moduloClientes/modificarCliente.php");
+                    break;
+                case 'eliminarCliente':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloClientes/subnavbarClientes.php");
+                    include_once("modules/moduloClientes/eliminarCliente.php");
                     break;
                 case 'configuracion':
                     include_once("view/menu/menu.php");
