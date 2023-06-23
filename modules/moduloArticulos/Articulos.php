@@ -25,8 +25,9 @@
           ?>
             <div class="col">
               <div class="card shadow-sm">
-                 <!--mandamos el docuemto seleccioado-->
-                <form  id="FormularioEliminar" action="modules/moduloArticulos/InsertarDocumentos.php" 
+                 <!--mandamos el docuemto seleccionado para el borrado o modificado-->
+                <form  id="<?php echo "FormularioEliminar".$fila['idarticulo_documetos'];?>" 
+                action="modules/moduloArticulos/InsertarDocumentos.php" 
                 method="POST">
                 <label>
                   <input type="checkbox" class="bt-5" id="dato" 

@@ -96,5 +96,22 @@ function InsertarDato($query) {
     $conexion->close();
 }
 
+function EliminarDato($query) {
+    $conexion = obtenerConexion();
+
+    // Verificar la conexión
+    if ($conexion->connect_error) {
+        die("Error al conectar con la base de datos: " . $conexion->connect_error);
+    }
+
+    // Ejecutar la consulta
+    if ($conexion->query($query) === TRUE) {
+        $conexion->close();
+        return true;
+    } else {
+        $conexion->close();
+        return false;
+    }
+}
 
 ?>

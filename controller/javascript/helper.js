@@ -1,3 +1,4 @@
+//operaciones para el formulario de agregar documento
 const text = document.querySelector("#mensaje");
 const charCount = document.getElementById('charCount');
 const maximoCaracteres = 45;
@@ -19,17 +20,17 @@ function VentanaEmergente() {
 function CerrarEmergente() {
     document.getElementById('popup').style.display = 'none';
 }
-
-
+//se despliega el formulario para agregar
 function ventanaFormulario(event) {
     event.preventDefault();
     document.getElementById('ventana').style.display = 'block';
 }
-
+//se cierra el formulario
 function CerrarFormulario() {
     document.getElementById('ventana').style.display = 'none';
 }
 //operaciones para la eliminacion de documento
+//metodo para hacer que solo se pueda selecionar un archivo
 const checkboxes = document.querySelectorAll('.bt-5');
 marcado = false;
 checkboxes.forEach(checkbox => {
@@ -54,12 +55,28 @@ checkboxes.forEach(checkbox => {
     });
 });
 
+//clave para eliminar un documento
 function Eliminar(event) {
     event.preventDefault();
-    const formulario = document.getElementById("FormularioEliminar");
+    const formulario = document.querySelector("#FormularioEliminar"+marcado.value);
+    
     if (marcado == false) {
         console.log(marcado);
     } else {
-        formulario.submit();
+        console.log(marcado);
+        Swal.fire({
+            title: 'Esta seguro de que quiere eliminar el documentos?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'borrar',
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire('borrrado!', '', 'success')
+              formulario.submit();
+            } else if (result.isDenied) {
+              Swal.fire('Changes are not saved', '', 'info')
+            }
+          })
     }
 }
