@@ -1,0 +1,15 @@
+.password-container {
+  position: relative;
+}
+
+.password-field {
+  width: 100%;
+  padding-right: 40px; /* Ajusta el espacio para el botón */
+}
+
+.password-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}

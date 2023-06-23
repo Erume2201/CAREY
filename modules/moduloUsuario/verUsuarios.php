@@ -26,9 +26,4 @@
 		</table>
 
 	</div>
-
-	<div class="container col-3 ">
-		<label style="display: block; text-align: center;">Aquí va lo de modificar y eliminar</label>
-		
-	</div>
 </div>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/EstilosBoton.css">
     <link rel='stylesheet' type='text/css'
         href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css'>
-
+    <link rel="stylesheet" type="text/css" href="css/CSSUsuarios.css">
     <!--icono en la pestaña-->
     <link rel="icon" href="assets/image/icono_carey.ico" type="image/x-icon">
     <!--Script para el alert-->
