@@ -16,8 +16,18 @@ if (isset($_GET["module"])) {
                 
                 if (!empty($resultado)) {
                     $_SESSION['s1'] = $user_login;
-                    include_once("view/menu/menu.php"); 
-                    include_once("modules/moduloArticulos/Articulos.php");
+                    $SQL = "SELECT usuario, estatus_usuario 
+                    FROM usuarios 
+                    WHERE usuario = '$user_login' AND estatus_usuario = 'generica'";
+                    $resultado = Consulta($SQL);
+                    if (!empty($resultado)) {
+                        include_once("view/login/cambioContrasena.php");
+                        exit();
+                    }else{
+                        include_once("view/menu/menu.php"); 
+                        include_once("modules/moduloArticulos/Articulos.php");
+                    }
+                        
                 } else {
                     ?>
                     <script>alert('¡Credenciales inválidas!')</script>
@@ -99,6 +109,35 @@ if (isset($_GET["module"])) {
                     session_destroy();
                     include_once("view/login/login.php");
                     break;
+                    case 'cambioPassword':
+                        if ($_SERVER["REQUEST_METHOD"] === "POST") { 
+                            // Verificar si se ha enviado una solicitud POST
+                            if (isset($_POST["passActual"]) && isset($_POST["newPass"])) {
+                                // Capturar los valores de usuario y contraseña del formulario
+                                
+                                $passActual = $_POST["passActual"];
+                                $newpassword = md5($_POST["newPass"]);
+                                $datoUsuario =$_SESSION['s1'];
+                                echo  $passActual;
+                                echo  $newpassword;
+                                echo  $datoUsuario;
+                                $SQL = "UPDATE usuarios 
+                                SET estatus_usuario = 'activo', contrasena='$newpassword' 
+                                WHERE usuario = '$datoUsuario';";
+                                $resultado = Actualizar($SQL);
+                                if($resultado){
+                                    include_once("view/menu/menu.php"); 
+                                    include_once("modules/moduloArticulos/Articulos.php");
+                                }else{
+                                    ?>
+                                    <script> alert('No se pudo actualizar contraseña');</script>
+                                    <?php
+                                    include_once("view/login/login.php");
+
+                                }
+                            }
+                        }
+                        break;  
                 default:
                     // Acción por defecto
                     break;

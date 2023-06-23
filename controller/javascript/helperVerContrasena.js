@@ -41,3 +41,38 @@ const verContrasena = () => {
 };
 
 
+const verPassWordActual = () => {
+  var tipo = document.getElementById("passActual");
+  if (tipo.type == "password") {
+      document.getElementById("icon-contrasena").src = "assets/image/icon/testigo.png";
+      tipo.type = "text";
+  } else {
+      tipo.type = "password";
+      document.getElementById("icon-contrasena").src = "assets/image/icon/oculto.png";
+  }
+};
+
+
+const newPassWord = () => {
+  var tipo = document.getElementById("newPass");
+  if (tipo.type == "password") {
+      document.getElementById("icon-contrasena").src = "assets/image/icon/testigo.png";
+      tipo.type = "text";
+  } else {
+      tipo.type = "password";
+      document.getElementById("icon-contrasena").src = "assets/image/icon/oculto.png";
+  }
+};
+
+const confirmarPassWord = () => {
+  var tipo = document.getElementById("confirPassword");
+  if (tipo.type == "password") {
+      document.getElementById("icon-contrasena").src = "assets/image/icon/testigo.png";
+      tipo.type = "text";
+  } else {
+      tipo.type = "password";
+      document.getElementById("icon-contrasena").src = "assets/image/icon/oculto.png";
+  }
+};
+
+
