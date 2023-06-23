@@ -38,10 +38,10 @@
                 </form>
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                 <br>
-                <h4> <?php echo $fila['nombre']; ?></h4>
+                <h4 style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
 
                 <div class="card-body">
-                  <p class="card-text"> <?php echo $fila['descripcion']; ?></p>
+                  <p class="card-text" style="margin-left: 8px;"> <?php echo $fila['descripcion']; ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
