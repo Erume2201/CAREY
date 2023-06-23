@@ -41,7 +41,10 @@ const verContrasena = () => {
 };
 
 
-
+/**
+ * la siguiente funcion verPassWordActual muestra la conytraseña y cambia el icono en confirPassword
+ * con el icono los cambia cada vez que uno da click icon-contrasena
+ */
 const verPassWordActual = () => {
   var tipo = document.getElementById("passActual");
   if (tipo.type == "password") {
@@ -53,7 +56,10 @@ const verPassWordActual = () => {
   }
 };
 
-
+/**
+ * la función newPassWord  muestra la conytraseña y cambia el icono en confirPassword
+ * con el icono los cambia cada vez que uno da click icon-contrasena1
+ */
 const newPassWord = () => {
   var tipo = document.getElementById("newPass");
   if (tipo.type == "password") {
@@ -64,7 +70,10 @@ const newPassWord = () => {
       document.getElementById("icon-contrasena1").src = "assets/image/icon/oculto.png";
   }
 };
-
+/**
+ * la funcion confirmarPassWord muestra la conytraseña y cambia el icono en confirPassword
+ * con el icono los cambia cada vez que uno da click icon-contrasena2
+ */
 const confirmarPassWord = () => {
   var tipo = document.getElementById("confirPassword");
   if (tipo.type == "password") {
@@ -120,6 +129,10 @@ function validarContrasena(input) {
   }
 }
 
+/**
+ * verificarCoincidenciaContrasena sirve para validar que ambas contraseñas coincidan
+ * compara y si ambas coninciden habilita el boton de iniciar sesion 
+ */
 function verificarCoincidenciaContrasena() {
   const contrasena = campoContrasena.value;
   const confirmarContrasena = campoConfirmarContrasena.value;
