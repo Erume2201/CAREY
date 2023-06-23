@@ -81,7 +81,7 @@ confirmar contraseña
 
     </form>
 </div>
-<script src="controller/javascript/helperVerContrasena.js"></script>
+<script src="controller/javascript/helperCambioPasswor.js"></script>
 
 
 
