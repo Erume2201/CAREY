@@ -33,7 +33,7 @@
 	  <br>
 	  <label for="exampleInputPassword1" class="form-label">Contraseña Generica</label>
 	  <div class="form-group password-container">
-		  <input type="password" class="password-field form-control" name="password" placeholder="Contraseña">
+		  <input type="password" class="password-field form-control" name="password" id="password" placeholder="Contraseña">
 		  <button type="button" class="password-button btn btn-primary">Generar</button>
 		</div>
 
