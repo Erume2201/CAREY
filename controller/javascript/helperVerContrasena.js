@@ -42,7 +42,6 @@ const verContrasena = () => {
 
 
 
-<<<<<<< Updated upstream
 const verPassWordActual = () => {
   var tipo = document.getElementById("passActual");
   if (tipo.type == "password") {
@@ -58,67 +57,79 @@ const verPassWordActual = () => {
 const newPassWord = () => {
   var tipo = document.getElementById("newPass");
   if (tipo.type == "password") {
-      document.getElementById("icon-contrasena").src = "assets/image/icon/testigo.png";
+      document.getElementById("icon-contrasena1").src = "assets/image/icon/testigo.png";
       tipo.type = "text";
   } else {
       tipo.type = "password";
-      document.getElementById("icon-contrasena").src = "assets/image/icon/oculto.png";
+      document.getElementById("icon-contrasena1").src = "assets/image/icon/oculto.png";
   }
 };
 
 const confirmarPassWord = () => {
   var tipo = document.getElementById("confirPassword");
   if (tipo.type == "password") {
-      document.getElementById("icon-contrasena").src = "assets/image/icon/testigo.png";
+      document.getElementById("icon-contrasena2").src = "assets/image/icon/testigo.png";
       tipo.type = "text";
   } else {
       tipo.type = "password";
-      document.getElementById("icon-contrasena").src = "assets/image/icon/oculto.png";
+      document.getElementById("icon-contrasena2").src = "assets/image/icon/oculto.png";
   }
 };
 
 
-=======
 
 //-----------Codigo de Validacion--------------//
 /**
  * La siguiente función toma el valor ingresado en el campo de entrada y evalúa los caracteres ingresados, mostrando 
  * un mensaje de error hasta que se cumplan las condiciones establecidas.
  **/
-  const passwordInput = document.querySelector("#password");
-  const mensajeError = document.getElementById('mensajeErrorPass');
 
-  passwordInput.addEventListener("input", function() {
-    const password = passwordInput.value;
-    const validar = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    
-    if (!validar.test(password)) {
-      mensajeError.textContent = "La contraseña debe cumplir con los siguientes requisitos: " +
-        "debe contener al menos una letra mayúscula, una letra minúscula, " +
-        "un carácter especial y un número. Además, la longitud mínima de la " +
-        "contraseña debe ser de 8 caracteres. " +
-        "Asegúrate de cumplir con estos requisitos al elegir tu " +
-        "contraseña para garantizar su seguridad.";
-    } else {
-      mensajeError.textContent = "";
-    }
-  });
 
-/**
- * La siguiente función toma el valor ingresado en el campo de entrada y evalúa que los caracteres ingresados sean 
- * los mismos que se ingresaron en el campo de password, mostrando un mensaje de error hasta que se cumplan 
- * las condiciones establecidas.
- **/
-const passInput = document.querySelector("#passConf");
-const mensajeValidarPass = document.getElementById('mensajeValidarPass');
 
-passInput.addEventListener("input", function() {
-  const pass = passInput.value;
-  if (pass === passwordInput.value) {
-    mensajeValidarPass.textContent = "";
-  } else {
-    mensajeValidarPass.textContent = "Las contraseñas no coinciden. " +
-      "Asegúrate de ingresar la misma contraseña en ambos campos.";
-  }
+const campoContrasena = document.getElementById("newPass");
+const campoConfirmarContrasena = document.getElementById("confirPassword");
+const mensajeErrorPass = document.getElementById("mensajeErrorPass");
+const botonIniciarSesion = document.querySelector("button[name='validar']");
+
+campoContrasena.addEventListener("input", function() {
+  validarContrasena(this);
 });
->>>>>>> Stashed changes
+
+campoConfirmarContrasena.addEventListener("input", function() {
+  verificarCoincidenciaContrasena();
+});
+
+function validarContrasena(input) {
+  const contrasena = input.value;
+
+  // Verificar la longitud de la contraseña
+  if (contrasena.length < 6 || contrasena.length > 8) {
+    mensajeErrorPass.textContent = "La contraseña debe tener entre 6 y 8 caracteres.";
+  } else {
+    // Verificar si contiene al menos 1 mayúscula, 1 minúscula y 1 carácter especial
+    const tieneMayuscula = /[A-Z]/.test(contrasena);
+    const tieneMinuscula = /[a-z]/.test(contrasena);
+    const tieneEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(contrasena);
+
+    if (!tieneMayuscula || !tieneMinuscula || !tieneEspecial) {
+      mensajeErrorPass.textContent = "La contraseña debe incluir al menos 1 mayúscula, 1 minúscula y 1 carácter especial.";
+    } else {
+      // La contraseña es válida
+      mensajeErrorPass.textContent = "La contraseña es válida";
+    }
+  }
+}
+
+function verificarCoincidenciaContrasena() {
+  const contrasena = campoContrasena.value;
+  const confirmarContrasena = campoConfirmarContrasena.value;
+
+  if (contrasena === confirmarContrasena) {
+    mensajeErrorPass.textContent = "Las contraseñas coinciden.";
+    botonIniciarSesion.disabled = false;
+  } else {
+    mensajeErrorPass.textContent = "Las contraseñas no coinciden.";
+    botonIniciarSesion.disabled = true;
+  }
+}
+  

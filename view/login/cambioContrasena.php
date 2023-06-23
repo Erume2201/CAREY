@@ -47,7 +47,7 @@ confirmar contraseña
                 <!-- Icono de mostrar contraseña -->
                 <div class="input-group-text">
                     <img onclick="newPassWord()" src="./assets/image/icon/oculto.png" alt="password-icon"
-                        style="height: 2rem" id="icon-contrasena" />
+                        style="height: 2rem" id="icon-contrasena1" />
                 </div>
             </div>
             <!-- Termina input de contraseña con icono -->
@@ -61,15 +61,18 @@ confirmar contraseña
                 <!-- Icono de mostrar contraseña -->
                 <div class="input-group-text">
                     <img onclick="confirmarPassWord()" src="./assets/image/icon/oculto.png" alt="password-icon"
-                        style="height: 2rem" id="icon-contrasena" />
+                        style="height: 2rem" id="icon-contrasena2" />
                 </div>
             </div>
             <!-- Termina input de contraseña con icono -->
+            <div>
+            <div id="mensajeErrorPass"></div>
+            </div>
             
             <!-- Boton de iniciar sesión -->
             <div>
                 <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit"
-                    name="validar">Iniciar Sesión</button>
+                    id="validar" name="validar" disabled>Iniciar Sesión</button>
             </div>
 
             <!-- Termina botón iniciar sesión -->
