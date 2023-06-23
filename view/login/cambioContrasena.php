@@ -22,7 +22,7 @@ confirmar contraseña
                 <img src="./assets/image/logo_carey.png" alt="login-icon" style="height: 20rem" />
             </div>
 
-            <div class="text-center fs-1 fw-bold ">Datos Usuario</div>
+            <div class="text-center fs-1 fw-bold ">NUEVA CONTRASEÑA</div>
             <!-- Input de contraseña con icono -->
             <div class="input-group mt-1">
                 <div class="input-group-text bg-info">
@@ -66,13 +66,13 @@ confirmar contraseña
             </div>
             <!-- Termina input de contraseña con icono -->
             <div>
-            <div id="mensajeErrorPass"></div>
+            <div class="text-danger" id="mensajeErrorPass"></div>
             </div>
             
-            <!-- Boton de iniciar sesión -->
+            <!-- Boton de iniciar sesión disabled-->
             <div>
-                <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit"
-                    id="validar" name="validar" disabled>Iniciar Sesión</button>
+            <button onclick="validarCamp()" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" 
+            type="submit" id="validar" name="validar">Iniciar Sesión</button>
             </div>
 
             <!-- Termina botón iniciar sesión -->
@@ -81,7 +81,7 @@ confirmar contraseña
 
     </form>
 </div>
-<script src="controller/javascript/helperCambioPasswor.js"></script>
+<script src="controller/javascript/herlperCambioPasswor.js"></script>
 
 
 

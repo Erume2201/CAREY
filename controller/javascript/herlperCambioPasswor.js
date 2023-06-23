@@ -58,17 +58,19 @@ const verPassWordActual = () => {
   const campoConfirmarContrasena = document.getElementById("confirPassword");
   const mensajeErrorPass = document.getElementById("mensajeErrorPass");
   const botonIniciarSesion = document.querySelector("button[name='validar']");
-  
+  /*
+  campoConfirmarContrasena.addEventListener("input", function() { 
+    var newpass = campoContrasena.value;
+    var conpass = campoConfirmarContrasena.value;
+    conIguales(newpass,conpass);
+  });
+  */
   campoContrasena.addEventListener("input", function() { 
-    validarContrasena(this);
+    validarContrasena(campoContrasena.value);
   });
-  
-  campoConfirmarContrasena.addEventListener("input", function() {
-    verificarCoincidenciaContrasena();
-  });
-  
-  function validarContrasena(input) {
-    const contrasena = input.value;
+   
+  function validarContrasena(passw) {
+    const contrasena = passw;
   
     // Verificar la longitud de la contraseña
     if (contrasena.length < 6 || contrasena.length > 8) {
@@ -83,24 +85,55 @@ const verPassWordActual = () => {
         mensajeErrorPass.textContent = "La contraseña debe incluir al menos 1 mayúscula, 1 minúscula y 1 carácter especial.";
       } else {
         // La contraseña es válida
-        mensajeErrorPass.textContent = "La contraseña es válida";
+        mensajeErrorPass.textContent = "La contraseña es válida"; 
+       /* campoConfirmarContrasena.addEventListener("input", function() {
+            verificarCoincidenciaContrasena(contrasena);
+          });  */
       }
     }
   }
+  function validarCamp() {
+    var newPassword = document.getElementById('newPass').value;
+    var confirmPassword = document.getElementById('confirPassword').value;
   
+    if (newPassword === confirmPassword) {
+      // Las contraseñas coinciden, enviar el formulario
+      document.getElementById('validar').parentNode.submit(); // Envía el formulario
+    } else {
+      // Las contraseñas no coinciden, recargar la página actual
+      location.reload();
+    }
+  }
+  
+/*
+  if( newpass != '' || conpass!=''){
+    if (newpass == conpass) {
+        mensajeErrorPass.textContent = "Las contraseñas coinciden.";
+        botonIniciarSesion.disabled = false; 
+    }else{
+        mensajeErrorPass.textContent = "Las contraseñas no coinciden.";
+        botonIniciarSesion.disabled = true;
+    }
+  }
+  */
   /**
    * verificarCoincidenciaContrasena sirve para validar que ambas contraseñas coincidan
    * compara y si ambas coninciden habilita el boton de iniciar sesion 
    */
-  function verificarCoincidenciaContrasena() {
-    const contrasena = campoContrasena.value;
+
+  /*
+  function verificarCoincidenciaContrasena(newpass) {
+    const contrasena = newpass;
     const confirmarContrasena = campoConfirmarContrasena.value;
   
     if (contrasena === confirmarContrasena) {
-      mensajeErrorPass.textContent = "Las contraseñas coinciden.";
-      botonIniciarSesion.disabled = false;
+        mensajeErrorPass.textContent = "Las contraseñas no coinciden.";
+        botonIniciarSesion.disabled = false;
+      
     } else {
-      mensajeErrorPass.textContent = "Las contraseñas no coinciden.";
-      botonIniciarSesion.disabled = true;
+        mensajeErrorPass.textContent = "Las contraseñas coinciden.";
+        botonIniciarSesion.disabled = true;
+      
     }
   }
+  */

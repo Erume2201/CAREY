@@ -38,6 +38,6 @@ const verContrasena = () => {
         tipo.type = "password";
         document.getElementById("icon-contrasena").src = "assets/image/icon/oculto.png";
     }
-};
+}
 
 

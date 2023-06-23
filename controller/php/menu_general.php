@@ -11,14 +11,14 @@ if (isset($_GET["module"])) {
                 $password_login = md5($_POST["password"]);
                 
                 // Consulta a la base de datos tomando en cuenta los parámetros ingresados por el usuario
-                $SQL = "SELECT usuario, contrasena FROM usuarios WHERE usuario = '$user_login' AND contrasena = '$password_login'";
+                $SQL = "SELECT nombre_usuario, contrasena FROM usuarios WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
                 $resultado = Consulta($SQL);
                 
                 if (!empty($resultado)) {
                     $_SESSION['s1'] = $user_login;
-                    $SQL = "SELECT usuario, estatus_usuario 
+                    $SQL = "SELECT nombre_usuario, estatus_usuarios 
                     FROM usuarios 
-                    WHERE usuario = '$user_login' AND estatus_usuario = 'generica'";
+                    WHERE nombre_usuario = '$user_login' AND estatus_usuarios = 'generica'";
                     $resultado = Consulta($SQL);
                     if (!empty($resultado)) {
                         include_once("view/login/cambioContrasena.php");
@@ -48,11 +48,11 @@ if (isset($_GET["module"])) {
             if (isset($_POST["user"])) {
                 $user = $_POST["user"];
                 // Consulta a la base de datos tomando en cuenta los parámetros ingresados por el usuario
-                $SQL = "SELECT * FROM usuarios WHERE usuario = '$user'";
+                $SQL = "SELECT * FROM usuarios WHERE nombre_usuario = '$user'";
                 $resultado = Consulta($SQL);
                 
                 if (!empty($resultado)) {
-                    $SQL = "UPDATE usuarios SET estatus_usuario = 'pendiente' WHERE usuario = '$user';";
+                    $SQL = "UPDATE usuarios SET estatus_usuarios = 'pendiente' WHERE nombre_usuario = '$user';";
                     $resultadoUpdate = Actualizar($SQL);
                     
                     if ($resultadoUpdate) {
@@ -137,8 +137,8 @@ if (isset($_GET["module"])) {
                                 echo  $newpassword;
                                 echo  $datoUsuario;
                                 $SQL = "UPDATE usuarios 
-                                SET estatus_usuario = 'activo', contrasena='$newpassword' 
-                                WHERE usuario = '$datoUsuario';";
+                                SET estatus_usuarios = 'activo', contrasena='$newpassword' 
+                                WHERE nombre_usuario = '$datoUsuario';";
                                 $resultado = Actualizar($SQL);
                                 if($resultado){
                                     include_once("view/menu/menu.php"); 
