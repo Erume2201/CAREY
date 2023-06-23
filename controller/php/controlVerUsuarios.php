@@ -19,6 +19,6 @@
 	            </tr>
 	        ';}
     } else {              
-    	echo 'erro al conectar a la base de datos';
+    	echo '<div style="color: red;">Error al conectar a la base de datos</div>';
     }
 ?>
