@@ -28,16 +28,24 @@
                 <!--mandamos el docuemto seleccionado para el borrado o modificado-->
                 <form id="<?php echo "FormularioEliminar" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
                   <label>
-                    <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
+                  <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
                     <span class="btn btn-check:checked ">Eliminar &#128465;</span>
                   </label>
-                </form>
+             
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                 <br>
-                <h4 style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
+                <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
+                   <!--datos que se deben mostrar cuando se haga click al ver-->
+                   <input type="hidden" class="PrecioModifica" 
+                value="<?php echo $fila['precio_costo']; ?>">
+                <input type="hidden" class="descripcionModifi"
+                value="<?php echo $fila['descripcion']; ?>">
+                <input type="hidden" class="TipoModifica"
+                value="<?php echo $fila['tipo']; ?>">
 
                 <div class="card-body">
-                  <p class="card-text" style="margin-left: 8px;">Precio:$: <?php echo $fila['precio_venta']; ?></p>
+                  <label   style="margin-left: 8px;" for="">Precio:</label>
+                  <p class="card-text PrecioVModificar" style="margin-left: 8px;">$<?php echo $fila['precio_venta']; ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
@@ -45,6 +53,7 @@
                     </div>
                   </div>
                 </div>
+               </form> 
               </div>
             </div>
           <?php
@@ -59,7 +68,7 @@
       <!-- Contenido de la columna estática -->
       <div class="buttons">
         <a href="#" class="bt bt-1" onclick="ventanaFormulario(event)">Agregar</a>
-        <a href="" class="bt bt-1">Modificar</a>
+        <a href="" class="bt bt-1"  onclick="Modificar(event)">Modificar</a>
         <a href="" class="bt bt-1" onclick="Eliminar(event)">Eliminar</a>
       </div>
     </div>
@@ -100,11 +109,11 @@
       <div class="row">
         <form action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
           <div class="form-control">
-            <label class="form-label" for="name">Nombre:</label>
+            <label class="" for="name">Nombre:</label>
             <input class="form-control" type="text" id="nombre" name="nombre" required>
             <label class="form-label" for="">Precio costo:</label>
             <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
-            <label class="form-label" for="">Precio Venta:</label>
+            <label class="" for="">Precio Venta:</label>
             <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
             <label class="form-label" for="name">Tipo:</label>
             <input class="form-control" type="text" id="Tipo" name="Tipo" required>

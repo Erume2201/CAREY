@@ -78,3 +78,27 @@ function Eliminar(event) {
           })
     }
 }
+//funciones para el boton modificar
+function Modificar(event) {
+    event.preventDefault();
+    if(marcado!=false){
+      formulario = document.querySelector("#FormularioEliminar"+marcado.value);
+      console.log(formulario);
+      h4= formulario.getElementsByClassName('NombreModifica');
+      precioVenta =formulario.getElementsByClassName('PrecioVModificar');
+      precioCosto= formulario.getElementsByClassName('PrecioModifica');
+;     Descripcion = formulario.getElementsByClassName('descripcionModifi');
+      tipo = formulario.getElementsByClassName('TipoModifica');
+      
+      nombre =  h4[0].textContent;
+      valorcosto  = precioCosto[0].value;
+      valorventa= precioVenta[0].textContent;
+      informacion = Descripcion[0].value;
+      ValorTipo = tipo[0].value;
+      ventanaFormulario(event)
+
+    }else{
+        Swal.fire('Es necesario marcar un documento para modificarlo')   
+    }
+    
+}
