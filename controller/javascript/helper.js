@@ -7,10 +7,10 @@ text.addEventListener("keyup", () => {
     charCount.textContent = caracteres + ' / ' + maximoCaracteres + ' caracteres';
     if (caracteres >= maximoCaracteres) {
         text.value = text.value.substring(0, maximoCaracteres); // Trunca el texto al límite máximo de caracteres
-        event.preventDefault(); // Evita que se agreguen más caracteres al textarea
         text.blur(); // Retira el enfoque del textarea para que no se pueda seguir escribiendo
     }
 })
+
 
 const titulo = document.querySelector("#TituloFormulario");
 var inputNombre = document.getElementById('nombre');
@@ -18,6 +18,8 @@ var inputValorcosto = document.getElementById('PrecioCosto');
 var inputValorventa = document.getElementById('PrecioVenta');
 var inputInformacion = document.getElementById('mensaje');
 var inputTipo = document.getElementById('Tipo');
+var direccionFormulario = document.getElementById('FormularioPrin');
+
 function VentanaEmergente() {
     document.getElementById('popup').style.display = 'block';
 }
@@ -39,6 +41,7 @@ function CerrarFormulario() {
     inputValorventa.value =   "";
     inputInformacion.value = "";
     inputTipo.value = "";
+    direccionFormulario.action= "modules/moduloArticulos/InsertarDocumentos.php"
 }
 //operaciones para la eliminacion de documento
 //metodo para hacer que solo se pueda selecionar un archivo
@@ -93,6 +96,7 @@ function Eliminar(event) {
 function Modificar(event) {
     event.preventDefault();
     if(marcado!=false){
+      idDocumento = document.querySelector("#idDocumento");  
       formulario = document.querySelector("#FormularioEliminar"+marcado.value);
       console.log(formulario);
       h4= formulario.getElementsByClassName('NombreModifica');
@@ -113,6 +117,8 @@ function Modificar(event) {
       inputValorventa.value =   parseFloat(valorventa);
       inputInformacion.value = informacion;
       inputTipo.value = ValorTipo;
+      direccionFormulario.action ="modules/moduloArticulos/ModificarDocumento.php"
+      idDocumento.value = marcado.value;
 
       ventanaFormulario(event)
 

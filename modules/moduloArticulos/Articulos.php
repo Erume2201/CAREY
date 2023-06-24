@@ -36,7 +36,7 @@
                 <br>
                 <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
                    <!--datos que se deben mostrar cuando se haga click al ver-->
-                   <input type="hidden" class="PrecioModifica" 
+                <input type="hidden" class="PrecioModifica" 
                 value="<?php echo $fila['precio_costo']; ?>">
                 <input type="hidden" class="descripcionModifi"
                 value="<?php echo $fila['descripcion']; ?>">
@@ -107,20 +107,21 @@
         </div>
       </div>
       <div class="row">
-        <form action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
+        <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
           <div class="form-control">
             <label class="" for="name">Nombre:</label>
-            <input class="form-control" type="text" id="nombre" name="nombre" required>
+            <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
             <label class="form-label" for="">Precio costo:</label>
             <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
             <label class="" for="">Precio Venta:</label>
             <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
             <label class="form-label" for="name">Tipo:</label>
-            <input class="form-control" type="text" id="Tipo" name="Tipo" required>
+            <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
             <label class="form-label" for="">descripcion:</label>
             <br>
-            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+            <textarea class="form-control" maxlength="100" id="mensaje" name="mensaje" rows="4" required></textarea>
             <small id="charCount" class="form-text text-muted">0 / 100 caracteres</small>
+            <input type="hidden" class="" id="idDocumento" name="idDocumento" value="">
             <br>
             <button class="btn btn-success" type="submit">Enviar</button>
           </div>
