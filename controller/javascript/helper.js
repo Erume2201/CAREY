@@ -70,7 +70,6 @@ function Eliminar(event) {
             showCancelButton: true,
             confirmButtonText: 'borrar',
           }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
               formulario.submit();
             } else if (result.isDenied) {
