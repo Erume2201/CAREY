@@ -12,7 +12,12 @@ text.addEventListener("keyup", () => {
     }
 })
 
-
+const titulo = document.querySelector("#TituloFormulario");
+var inputNombre = document.getElementById('nombre');
+var inputValorcosto = document.getElementById('PrecioCosto');
+var inputValorventa = document.getElementById('PrecioVenta');
+var inputInformacion = document.getElementById('mensaje');
+var inputTipo = document.getElementById('Tipo');
 function VentanaEmergente() {
     document.getElementById('popup').style.display = 'block';
 }
@@ -28,6 +33,12 @@ function ventanaFormulario(event) {
 //se cierra el formulario
 function CerrarFormulario() {
     document.getElementById('ventana').style.display = 'none';
+    titulo.textContent= "Agregar documento";
+    inputNombre.value = "";
+    inputValorcosto.value = "";
+    inputValorventa.value =   "";
+    inputInformacion.value = "";
+    inputTipo.value = "";
 }
 //operaciones para la eliminacion de documento
 //metodo para hacer que solo se pueda selecionar un archivo
@@ -95,6 +106,14 @@ function Modificar(event) {
       valorventa= precioVenta[0].textContent;
       informacion = Descripcion[0].value;
       ValorTipo = tipo[0].value;
+      titulo.textContent= "Modificar documento";
+
+      inputNombre.value = nombre;
+      inputValorcosto.value = valorcosto;
+      inputValorventa.value =   parseFloat(valorventa);
+      inputInformacion.value = informacion;
+      inputTipo.value = ValorTipo;
+
       ventanaFormulario(event)
 
     }else{

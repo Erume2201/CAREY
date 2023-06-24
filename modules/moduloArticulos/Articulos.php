@@ -45,7 +45,7 @@
 
                 <div class="card-body">
                   <label   style="margin-left: 8px;" for="">Precio:</label>
-                  <p class="card-text PrecioVModificar" style="margin-left: 8px;">$<?php echo $fila['precio_venta']; ?></p>
+                  <label for="">$</label><p class="card-text PrecioVModificar" style="margin-left: 8px;"><?php echo $fila['precio_venta']; ?> </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
@@ -100,7 +100,7 @@
     <div class="modal-content">
       <div class="row">
         <div class="col-11">
-          <h2 class="fw-bold ">Agregar documento</h2>
+          <h2 class="fw-bold" id="TituloFormulario">Agregar documento</h2>
         </div>
         <div class="col-1">
           <button onclick="CerrarFormulario()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
