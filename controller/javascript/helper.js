@@ -1,7 +1,7 @@
 //operaciones para el formulario de agregar documento
 const text = document.querySelector("#mensaje");
 const charCount = document.getElementById('charCount');
-const maximoCaracteres = 45;
+const maximoCaracteres = 100;
 text.addEventListener("keyup", () => {
     const caracteres = text.value.length;
     charCount.textContent = caracteres + ' / ' + maximoCaracteres + ' caracteres';
@@ -62,20 +62,19 @@ function Eliminar(event) {
     
     if (marcado == false) {
         console.log(marcado);
+        Swal.fire('Es necesario marcar un documento para borrar')
     } else {
-        console.log(marcado);
         Swal.fire({
+            icon: 'info',
             title: 'Esta seguro de que quiere eliminar el documentos?',
-            showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'borrar',
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire('borrrado!', '', 'success')
               formulario.submit();
             } else if (result.isDenied) {
-              Swal.fire('Changes are not saved', '', 'info')
+            
             }
           })
     }

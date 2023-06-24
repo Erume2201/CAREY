@@ -17,7 +17,7 @@
           error_reporting(E_ALL);
 
           // Ejecutar el query utilizando la conexión y capturar los resultados
-          $query = "SELECT * FROM articulo_documetos";
+          $query = "SELECT * FROM documentos";
           $resultados = Consulta($query);
           #$resultados los obtiene el CRUD aqui ya solo tenemos el resultado en un ARRAY
           // Trabajar con los resultados
@@ -25,23 +25,19 @@
           ?>
             <div class="col">
               <div class="card shadow-sm">
-                 <!--mandamos el docuemto seleccionado para el borrado o modificado-->
-                <form  id="<?php echo "FormularioEliminar".$fila['idarticulo_documetos'];?>" 
-                action="modules/moduloArticulos/InsertarDocumentos.php" 
-                method="POST">
-                <label>
-                  <input type="checkbox" class="bt-5" id="dato" 
-                   name="dato"
-                   value="<?php echo $fila['idarticulo_documetos'];?>" autocomplete="off" >
-                  <span class="btn btn-check:checked ">Eliminar &#128465;</span>
-                </label>
+                <!--mandamos el docuemto seleccionado para el borrado o modificado-->
+                <form id="<?php echo "FormularioEliminar" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
+                  <label>
+                    <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
+                    <span class="btn btn-check:checked ">Eliminar &#128465;</span>
+                  </label>
                 </form>
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                 <br>
                 <h4 style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
 
                 <div class="card-body">
-                  <p class="card-text" style="margin-left: 8px;"> <?php echo $fila['descripcion']; ?></p>
+                  <p class="card-text" style="margin-left: 8px;">Precio:$: <?php echo $fila['precio_venta']; ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
@@ -105,15 +101,17 @@
         <form action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
           <div class="form-control">
             <label class="form-label" for="name">Nombre:</label>
-            <input class="form-control" type="text" id="name" name="name" required>
-            <label class="form-label" for="">Precio:</label>
-            <input class="form-control" type="number" id="Precio" name="Precio" required>
+            <input class="form-control" type="text" id="nombre" name="nombre" required>
+            <label class="form-label" for="">Precio costo:</label>
+            <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
+            <label class="form-label" for="">Precio Venta:</label>
+            <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
             <label class="form-label" for="name">Tipo:</label>
             <input class="form-control" type="text" id="Tipo" name="Tipo" required>
             <label class="form-label" for="">descripcion:</label>
             <br>
             <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-            <small id="charCount" class="form-text text-muted">0 / 45 caracteres</small>
+            <small id="charCount" class="form-text text-muted">0 / 100 caracteres</small>
             <br>
             <button class="btn btn-success" type="submit">Enviar</button>
           </div>
@@ -170,12 +168,34 @@
           template: '#my-template'
         });
       </script>
-</div>
-</div>
-<?php
+  <?php
     }
   }
-?>
+  ?>
 </div>
 
+<div>
+  <?php
+  if (isset($_GET['Delete'])) {
+    $status = $_GET['Delete'];
+    if ($status == "NoBorrado") {
+     ?>
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo salio mal',
+          text: 'Asista a soporte tecnico!'
+        })
+      </script>
+    <?php
+    } else {
+    ?>
+      <script>
+        Swal.fire('borrrado!', '', 'success')
+      </script>
+  <?php
+    }
+  }
+  ?>
+</div>
 <script src="controller/javascript/helper.js"></script>

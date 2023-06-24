@@ -5,17 +5,19 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../controller/php/CRUD.php'; 
 
-if (isset( $_POST['name']) && isset( $_POST['Precio']) && isset( $_POST['mensaje'])&&
-   isset( $_POST['Tipo'])
+if (isset( $_POST['nombre']) && isset( $_POST['PrecioCosto'])&& isset($_POST['PrecioVenta']) && 
+    isset( $_POST['mensaje'])&& isset( $_POST['Tipo'])
    ) {
     
-    $nombre = $_POST['name'];
-    $precio = $_POST['Precio'];
+    $nombre = $_POST['nombre'];
+    $precio_costo = $_POST['PrecioCosto'];
+    $precio_venta = $_POST['PrecioVenta'];
     $descripcion = $_POST['mensaje'];
     $tipo = $_POST['Tipo'];
 
-    $SQL = "INSERT INTO articulo_documetos (nombre, precio_costo, descripcion, tipo) 
-        VALUES ('$nombre', $precio, '$descripcion', '$tipo')";   
+    $SQL = "INSERT INTO documentos (nombre, precio_costo, precio_venta, descripcion, tipo) 
+        VALUES ('$nombre', $precio_costo , $precio_venta, '$descripcion', '$tipo')";  
+
     $resultado=InsertarDato($SQL);
     if ($resultado) {
         echo "<script>window.location = '../../index.php?module=articulo&status=Insertado'</script>";
@@ -25,15 +27,15 @@ if (isset( $_POST['name']) && isset( $_POST['Precio']) && isset( $_POST['mensaje
 
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['dato'])) {
     $dato = $_POST["dato"];
     
-    $SQL  = "DELETE FROM articulo_documetos WHERE idarticulo_documetos = '$dato';";
+    $SQL  = "DELETE FROM documentos WHERE id_articulo_documetos = '$dato';";
     $resultado = EliminarDato($SQL);
     if ($resultado) {
-        echo "<script>window.location = '../../index.php?module=articulo'</script>";
+       echo "<script>window.location = '../../index.php?module=articulo&Delete=Borrado'</script>";
     }else{
-        echo "<script>window.location = '../../index.php?module=articulo'</script>";
+       echo "<script>window.location = '../../index.php?module=articulo&Delete=NoBorrado'</script>";
     }
   }
 
