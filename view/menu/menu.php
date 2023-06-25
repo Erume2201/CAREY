@@ -7,7 +7,7 @@
         <!--etiqueta para separar-->
         <a></a>
         <!--Agregamos el icono al navbar-->
-        <img src="./assets/image/logo_carey.png" alt="" width="6.5%"></img>
+        <img src="./assets/image/logo_carey.png" alt="" width="15%"></img>
         <ul></ul>
         <!--Comienza el menú principal-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -89,6 +89,7 @@
             </ul>
             </li>
             <!--Termina modulo de ventas-->
+            <ul></ul>
             <!-- inicia el modulo de configuración-->
             <li class="nav-item">
                 <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=configuracion">Configuración</a>
