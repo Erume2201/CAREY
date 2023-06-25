@@ -6,10 +6,4 @@
   <li class="nav-item">
     <a class="nav-link" href="index.php?module=nuevoCliente">Nuevo</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="index.php?module=modificarCliente">Modificar</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="index.php?module=eliminarCliente">Eliminar</a>
-  </li>
 </ul>

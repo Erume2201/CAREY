@@ -176,16 +176,6 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloClientes/subnavbarClientes.php");
                     include_once("modules/moduloClientes/nuevoCliente.php");
                     break;
-                case 'modificarCliente':
-                    include_once("view/menu/menu.php");
-                    include_once("modules/moduloClientes/subnavbarClientes.php");
-                    include_once("modules/moduloClientes/modificarCliente.php");
-                    break;
-                case 'eliminarCliente':
-                    include_once("view/menu/menu.php");
-                    include_once("modules/moduloClientes/subnavbarClientes.php");
-                    include_once("modules/moduloClientes/eliminarCliente.php");
-                    break;
                 case 'configuracion':
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloConfiguracion/configuracion.php");
