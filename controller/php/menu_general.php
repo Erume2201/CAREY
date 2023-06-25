@@ -216,9 +216,6 @@ if (isset($_GET["module"])) {
                                 $passwordActual =md5($_POST["passActual"]);
                                 $newpassword = md5($_POST["newPass"]);
                                 $datoUsuario =$_SESSION['s1'];
-                                echo $passwordActual;
-                                echo $newpassword;
-                                echo $datoUsuario;
                                 $SQL = "SELECT nombre_usuario, contrasena FROM usuarios 
                                 WHERE nombre_usuario = '$datoUsuario' AND contrasena = '$passwordActual'";
                                 $resultado = Consulta($SQL);
@@ -246,7 +243,18 @@ if (isset($_GET["module"])) {
                                     include_once("view/login/login.php");
 
                                 }
-                            }
+                                //termina si encuentra el usuario y actual contraseña
+                            }else{
+                                include_once("view/login/cambioContrasena.php");
+                                ?>
+                                <script>
+                                Swal.fire({
+                                icon: ''No se pudo actualizar la contraseña',
+                                title: 'Contraseña actual incorrecta'
+                                })
+                            </script>
+<?php
+                                                              }
                         }
                         }
                         break;  
