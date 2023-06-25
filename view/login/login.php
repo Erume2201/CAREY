@@ -10,7 +10,7 @@
     <form action="index.php?module=menu" method="POST">
         <div class="bg-dark p-5 rounded-5 text-secondary shadow" style="width: 25rem">
             <div class="d-flex justify-content-center">
-                <img src="./assets/image/logo_carey.png" alt="login-icon" style="height: 20rem" />
+                <img src="./assets/image/logo_carey.png" alt="login-icon" style="width: 140%; height: 15rem;" />
             </div>
 
             <div class="text-center fs-1 fw-bold ">Datos Usuario</div>

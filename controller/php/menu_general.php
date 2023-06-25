@@ -102,8 +102,9 @@ if (isset($_GET["module"])) {
                         ?>
                         <script>
                         Swal.fire(
+                            icon: 'info'
                             '¡Solicitud enviada correctamente!',
-                            'success'
+                            'Un administrador enviará su nueva contraseña'
                             )
                         </script>
 <?php
@@ -112,7 +113,7 @@ if (isset($_GET["module"])) {
                         ?>
                         <script>
                             Swal.fire({
-                            icon: 'error',
+                            icon: 'info',
                             title: 'Solicitud pendiente',
                             text: 'Este usuario ya hizo una solicitud!',
                             })
@@ -126,7 +127,7 @@ if (isset($_GET["module"])) {
                     Swal.fire({
                     icon: 'error',
                     title: 'No se encontró el usuario: <?php echo $user;?>.',
-                    text: 'Este usuario ya hizo una solicitud!',
+                    text: 'Ingrese un usuario correcto!',
                     })
                 </script>
                 <?php
@@ -249,8 +250,9 @@ if (isset($_GET["module"])) {
                                 ?>
                                 <script>
                                 Swal.fire({
-                                icon: ''No se pudo actualizar la contraseña',
-                                title: 'Contraseña actual incorrecta'
+                                icon: 'error',
+                                title: 'No se pudo actualizar la contraseña',
+                                text: 'Contraseña actual incorrecta'
                                 })
                             </script>
 <?php
