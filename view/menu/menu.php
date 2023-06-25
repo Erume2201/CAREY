@@ -8,10 +8,7 @@
         <a></a>
         <!--Agregamos el icono al navbar-->
         <img src="./assets/image/logo_carey.png" alt="" width="6.5%"></img>
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <ul></ul>
         <!--Comienza el menú principal-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -19,21 +16,21 @@
                 <li class="nav-item">
                     <a class="nav-link fw-bold" href="index.php?module=articulo" id="moduloDocumento">Documentos</a>
                 </li>
+                <ul></ul>
                 <li class="nav-item">
                     <a class="nav-link active fw-bold" href="index.php?module=usuario" aria-expanded="false" 
                     id="usuario">
                         Usuario
                     </a>
                 </li>
+                <ul></ul>
                 <!--Modulo de clientes-->
                 <li class="nav-item">
                     <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=clientes" 
                     id="cliente">Clientes</a>
                 </li>
 
-                <!--  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li> -->
+                <ul></ul>
                 <!-- modulo de ventas -->
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
@@ -54,6 +51,7 @@
             </ul>
             </li>
             <!--Termina modulo de ventas-->
+            <ul></ul>
             <!-- modulo de créditos -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
@@ -72,6 +70,7 @@
             </ul>
             </li>
             <!--Termina modulo de ventas-->
+            <ul></ul>
             <!-- modulo de graficas -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"

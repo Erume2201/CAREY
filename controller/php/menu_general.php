@@ -3,8 +3,12 @@ session_start();
 
 if (isset($_GET["module"])) {
     if ($_GET["module"] == 'menu') {
+        /**
+         * Aquí iniciamos con la validacion del metodo POST si existe o no
+         * si existe entrará al modulo principal
+         */
         if ($_SERVER["REQUEST_METHOD"] === "POST") { 
-            // Verificar si se ha enviado una solicitud POST
+            // Verificar los datos que se ha enviado una solicitud POST user y password se validen
             if (isset($_POST["user"]) && isset($_POST["password"])) {
                 // Capturar los valores de usuario y contraseña del formulario
                 $user_login = $_POST["user"];
@@ -13,35 +17,74 @@ if (isset($_GET["module"])) {
                 // Consulta a la base de datos tomando en cuenta los parámetros ingresados por el usuario
                 $SQL = "SELECT nombre_usuario, contrasena FROM usuarios WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
                 $resultado = Consulta($SQL);
-                
+                /**
+                 * Si el usuario y contraseña son correctos en la db
+                 * iniciamos sesion.
+                 */
                 if (!empty($resultado)) {
                     $_SESSION['s1'] = $user_login;
+                    /**
+                     * a continuacion realizamos una busqueda si el usuario que inicio sesion
+                     * tiene una contraseña generica o no, si es generica abre el cambio
+                     * de contraseña si no entra al menú
+                     */
                     $SQL = "SELECT nombre_usuario, estatus_usuarios 
                     FROM usuarios 
                     WHERE nombre_usuario = '$user_login' AND estatus_usuarios = 'generica'";
                     $resultado = Consulta($SQL);
                     if (!empty($resultado)) {
                         include_once("view/login/cambioContrasena.php");
+                        ?>
+                        <script>
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'info',
+                            title: 'Tienes un cambio de contraseña pendiente',
+                            showConfirmButton: false,
+                            timer: 2500
+                        })
+                        </script>
+
+<?php
                         exit();
                     }else{
+                        
                         include_once("view/menu/menu.php"); 
                         include_once("modules/moduloArticulos/Articulos.php");
-                    }
-                        
+                    } //termina la validacion de la contraseña generica
+                 //comienza el else de si las contraseña y usuario ingresados no estan el la db                           
                 } else {
                     ?>
-                    <script>alert('¡Credenciales inválidas!')</script>
-                    <?php
+                <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Credenciales invalidas!',
+                })
+                </script>
+<?php
                     include_once("view/login/login.php");
                 }
+                //termina el else de si las contraseña y usuario ingresados no estan el la db  
+                // y retorna al login para iniciar sesion 
             } else {
                 include_once("view/login/login.php");
-            }
+            }// termina la verificar los datos que se ha enviado una solicitud POST user y password se validen
+            
         } else {
             include_once("view/login/login.php");
-        }
+        } // termina la verificar los datos post si no existe nada
+        /**
+         * el siguiente elsi if abre la vista de recuperar contraseña
+         * en caso de ser llamada donde el usuario solo ingresa su nueva contraseña
+         * y confirma la misma.
+         */
     } else if ($_GET["module"] == 'recuperarContrasena') {
-        include_once("view/login/recuperarcontrasena.php");   
+        include_once("view/login/recuperarcontrasena.php");  
+        /**
+         * la siguiente condicion sirve para abrir la pagina solicitudContrasena
+         * donde se le pide al usuario ingresar su usuario solamente
+         */ 
     } else if ($_GET["module"] == 'solicitudContrasena') {
         if ($_SERVER["REQUEST_METHOD"] === "POST") { 
             // Verificar si se ha enviado una solicitud POST
@@ -57,17 +100,37 @@ if (isset($_GET["module"])) {
                     
                     if ($resultadoUpdate) {
                         ?>
-                        <script>alert('¡Solicitud enviada al administrador correctamente!')</script>
-                        <?php
+                        <script>
+                        Swal.fire(
+                            '¡Solicitud enviada correctamente!',
+                            'success'
+                            )
+                        </script>
+<?php
                         include_once("view/login/login.php");
                     } else {
                         ?>
-                        <script>alert('¡Este usuario tiene una solicitud pendiente!')</script>
-                        <?php
+                        <script>
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Solicitud pendiente',
+                            text: 'Este usuario ya hizo una solicitud!',
+                            })
+                        </script>
+<?php
                         include_once("view/login/login.php");
                     }
                 } else {
-                    echo "<script>alert('¡No se encontró el usuario: " . $user . "');</script>";
+                    ?>
+                    <script>
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'No se encontró el usuario: <?php echo $user;?>.',
+                    text: 'Este usuario ya hizo una solicitud!',
+                    })
+                </script>
+                <?php
+                    
                     include_once("view/login/recuperarcontrasena.php");
                 }
             } else {
@@ -76,6 +139,12 @@ if (isset($_GET["module"])) {
         } else {
             include_once("view/login/recuperarcontrasena.php");
         }
+    //termina solicitud contraseña
+    /**
+     * el siguiente else entra solo si existe una sesion activa
+     * es decir si el usuario se ha logeado es quien da acceso 
+     * a los modulos.
+     */
     } else {
         // Validamos que exista una sesión activa de parte del usuario
         if (isset($_SESSION['s1'])) {
@@ -124,18 +193,36 @@ if (isset($_GET["module"])) {
                     session_destroy();
                     include_once("view/login/login.php");
                     break;
-                    case 'cambioPassword':
+                case 'errorCambioPassword':
+                    include_once("view/login/cambioContrasena.php");
+                    ?>
+                    <script>
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Contraseñas',
+                        text: 'Verifica que tus contraseñas coincidan!'
+                        })
+                    </script>
+                    
+                    
+                    
+                    <?php
+                        break;
+                case 'cambioPassword':
                         if ($_SERVER["REQUEST_METHOD"] === "POST") { 
                             // Verificar si se ha enviado una solicitud POST
                             if (isset($_POST["passActual"]) && isset($_POST["newPass"])) {
                                 // Capturar los valores de usuario y contraseña del formulario
-                                
-                                $passActual = $_POST["passActual"];
                                 $newpassword = md5($_POST["newPass"]);
                                 $datoUsuario =$_SESSION['s1'];
-                                echo  $passActual;
-                                echo  $newpassword;
-                                echo  $datoUsuario;
+                                $SQL = "SELECT nombre_usuario, contrasena FROM usuarios 
+                                WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
+                                $resultado = Consulta($SQL);
+                                /**
+                                 * Si el usuario y contraseña son correctos en la db
+                                 * iniciamos sesion.
+                                 */
+                                if (!empty($resultado)) {
                                 $SQL = "UPDATE usuarios 
                                 SET estatus_usuarios = 'activo', contrasena='$newpassword' 
                                 WHERE nombre_usuario = '$datoUsuario';";
@@ -145,12 +232,18 @@ if (isset($_GET["module"])) {
                                     include_once("modules/moduloArticulos/Articulos.php");
                                 }else{
                                     ?>
-                                    <script> alert('No se pudo actualizar contraseña');</script>
-                                    <?php
+                                <script>
+                                Swal.fire({
+                                icon: 'error',
+                                title: 'No se pudo actualizar la contraseña'
+                                })
+                            </script>
+<?php
                                     include_once("view/login/login.php");
 
                                 }
                             }
+                        }
                         }
                         break;  
                 default:
@@ -159,8 +252,16 @@ if (isset($_GET["module"])) {
             }
         } else {
             ?>
-            <script> alert('No existe una sesión iniciada');</script>
-            <?php
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'No existe una sesion iniciada',
+                showConfirmButton: true,
+                timer: 2500
+            })
+        </script>
+<?php
             include_once("view/login/login.php");
         }
     }
@@ -168,4 +269,3 @@ if (isset($_GET["module"])) {
     include_once("view/login/login.php");
 }
 ?>
-
