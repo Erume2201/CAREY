@@ -23,7 +23,20 @@ confirmar contraseña
             </div>
 
             <div class="text-center fs-1 fw-bold ">NUEVA CONTRASEÑA</div>
-            
+            <!-- Input de contraseña con icono -->
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-info">
+                    <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
+                </div>
+                <input class="form-control bg-light" type="password" placeholder="Contraseña Actual" name="passActual"
+                    id="passActual" required />
+                <!-- Icono de mostrar contraseña -->
+                <div class="input-group-text">
+                    <img onclick="verPassWordActual()" src="./assets/image/icon/oculto.png" alt="password-icon"
+                        style="height: 2rem" id="icon-contrasena" />
+                </div>
+            </div>
+            <!-- Termina input de contraseña con icono -->
             <!-- Input de contraseña con icono -->
             <div class="input-group mt-1">
                 <div class="input-group-text bg-info">

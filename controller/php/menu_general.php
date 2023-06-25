@@ -213,10 +213,14 @@ if (isset($_GET["module"])) {
                             // Verificar si se ha enviado una solicitud POST
                             if (isset($_POST["passActual"]) && isset($_POST["newPass"])) {
                                 // Capturar los valores de usuario y contraseña del formulario
+                                $passwordActual =md5($_POST["passActual"]);
                                 $newpassword = md5($_POST["newPass"]);
                                 $datoUsuario =$_SESSION['s1'];
+                                echo $passwordActual;
+                                echo $newpassword;
+                                echo $datoUsuario;
                                 $SQL = "SELECT nombre_usuario, contrasena FROM usuarios 
-                                WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
+                                WHERE nombre_usuario = '$datoUsuario' AND contrasena = '$passwordActual'";
                                 $resultado = Consulta($SQL);
                                 /**
                                  * Si el usuario y contraseña son correctos en la db
