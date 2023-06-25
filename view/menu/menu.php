@@ -14,7 +14,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- inicia el modulo de articulo-->
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="index.php?module=articulo" id="moduloDocumento">Documentos</a>
+                    <a class="nav-link active fw-bold" href="index.php?module=articulo" id="moduloDocumento">Documentos</a>
                 </li>
                 <ul></ul>
                 <li class="nav-item">
@@ -33,11 +33,11 @@
                 <ul></ul>
                 <!-- modulo de ventas -->
                 <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+                    <a class="nav-link active dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false" id="venta">
                         Ventas
                     </a>
-                    <ul class="dropdown-menu ">
+                    <ul class="dropdown-menu">
                         <li><a class="dropdown-item fw-bold" href="#" id="venderDocumento">Vender Documentos</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -54,7 +54,7 @@
             <ul></ul>
             <!-- modulo de créditos -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link active dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false" id ="credito">
                     Créditos
                 </a>
@@ -73,7 +73,7 @@
             <ul></ul>
             <!-- modulo de graficas -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link active dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false" id="grafica">
                     Gráficas
                 </a>
