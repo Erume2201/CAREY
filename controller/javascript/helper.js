@@ -43,22 +43,24 @@ function CerrarFormulario() {
     inputTipo.value = "";
     direccionFormulario.action = "modules/moduloArticulos/InsertarDocumentos.php"
 }
-//ver detalles del documento probamos a que boton se le da el doble click
-var idform = false;
-var datodetalle = document.querySelectorAll(".btn-detalle");
+//ver detalles del documento probamos a que boton esta el mause para  colcar el
+//id del formulario que vamos a buscar
+let idform = false;
+let datodetalle = document.querySelectorAll(".btn-detalle");
 datodetalle.forEach(botondetalle => {
-    botondetalle.addEventListener("click", event => {
+    botondetalle.addEventListener("mouseenter", event => {
         event.preventDefault();
-        const botonpulsado = event.currentTarget;
-        var form = botonpulsado.closest('form');
+        let botonpulsado = event.currentTarget;
+        let form = botonpulsado.closest('form');
         idform = form.id;
     })
 })
+
 //se manda a llamar la funcion de detalle que nos desplegara los datos del documento
 function detalles() {
     if (idform != false) {
-        var detallesMostrar = document.querySelector("#detallesInformacion");
-        var formularioVer = document.querySelector("#" + idform);
+        let detallesMostrar = document.querySelector("#detallesInformacion");
+        let formularioVer = document.querySelector("#" + idform);
         h4 = formularioVer.getElementsByClassName('NombreModifica');
         precioVenta = formularioVer.getElementsByClassName('PrecioVModificar');
         precioCosto = formularioVer.getElementsByClassName('PrecioModifica');
@@ -71,7 +73,7 @@ function detalles() {
         Detalleinformacion = Descripcion[0].value;
         DetalleValorTipo = tipo[0].value;
 
-        var htmlNuevo = `
+        let htmlNuevo = `
                         <div class="col-8">
                         <div class="row">
                         <h3 class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3">${Detallenombre}</h3>
@@ -96,16 +98,13 @@ function detalles() {
 
         detallesMostrar.innerHTML += htmlNuevo;
         document.getElementById('detallesVentana').style.display = 'block';
-
     }
-
 }
 
 function CerrarDetalles() {
     document.getElementById('detallesVentana').style.display = 'none';
-    var detallesMostrarBorrar = document.querySelector("#detallesInformacion");
+    let detallesMostrarBorrar = document.querySelector("#detallesInformacion");
     detallesMostrarBorrar.innerHTML = "";
-    idform = false;
 }
 
 
