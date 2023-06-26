@@ -72,11 +72,10 @@
       </div>
     </div>
   </div>
-  <div class="col-1" style="position: fixed; right: 200px; margin-top: 25px;">
+  <div class="col-1 image-container" style="position: fixed; right: 200px; margin-top: 25px;">
     <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
-
   </div>
 </div>
 
@@ -110,13 +109,13 @@
       <div class="row">
         <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
           <div class="form-control">
-            <label class="" for="name">Nombre:</label>
+            <label class="" >Nombre:</label>
             <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
             <label class="form-label" for="">Precio costo:</label>
             <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
             <label class="" for="">Precio Venta:</label>
             <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
-            <label class="form-label" for="name">Tipo:</label>
+            <label class="form-label" for="">Tipo:</label>
             <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
             <label class="form-label" for="">descripcion:</label>
             <br>
