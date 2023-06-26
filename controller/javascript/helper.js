@@ -43,7 +43,7 @@ function CerrarFormulario() {
     inputTipo.value = "";
     direccionFormulario.action = "modules/moduloArticulos/InsertarDocumentos.php"
 }
-//ver detalles del documento
+//ver detalles del documento probamos a que boton se le da el doble click
 var idform = false;
 var datodetalle = document.querySelectorAll(".btn-detalle");
 datodetalle.forEach(botondetalle => {
@@ -54,6 +54,7 @@ datodetalle.forEach(botondetalle => {
         idform = form.id;
     })
 })
+//se manda a llamar la funcion de detalle que nos desplegara los datos del documento
 function detalles() {
     if (idform != false) {
         var detallesMostrar = document.querySelector("#detallesInformacion");
@@ -64,25 +65,36 @@ function detalles() {
         Descripcion = formularioVer.getElementsByClassName('descripcionModifi');
         tipo = formularioVer.getElementsByClassName('TipoModifica');
 
-        nombre = h4[0].textContent;
-        valorcosto = precioCosto[0].value;
-        valorventa = precioVenta[0].textContent;
-        informacion = Descripcion[0].value;
-        ValorTipo = tipo[0].value;
-       
+        Detallenombre = h4[0].textContent;
+        Detallevalorcosto = precioCosto[0].value;
+        Detallevalorventa = precioVenta[0].textContent;
+        Detalleinformacion = Descripcion[0].value;
+        DetalleValorTipo = tipo[0].value;
+
         var htmlNuevo = `
-                        <h3 class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3">${nombre}</h3>
-                        <p><Descripcion: ${informacion}</p>
+                        <div class="col-8">
+                        <div class="row">
+                        <h3 class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3">${Detallenombre}</h3>
+                         </div>
                         <div class="row">  
-                        <label>Precio costo: ${valorcosto}</label>
+                        <label>Precio costo: ${Detallevalorcosto}</label>
                         </div>
-                        <label>precio venta:${valorventa}</label>
-                        <label>Tipo de documeto:  ${ValorTipo}</label>
-                        <div>
+                        <div class="row" >
+                        <label>precio venta:${Detallevalorventa}</label>
+                        <label>Tipo de documeto:  ${DetalleValorTipo}</label>
+                        <label style="font-weight: bold;">Descripcion:</label>
+                        <p>${Detalleinformacion}</p>
+                        </div>
+                        <div class="row">
+                        </div>
+                        </div>
+                        <div class="col-4">
+                        <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; 
+                        margin-top: 30px; margin-left: 60px;">
                         </div>
                         <br>`;
 
-        detallesMostrar.innerHTML +=htmlNuevo;
+        detallesMostrar.innerHTML += htmlNuevo;
         document.getElementById('detallesVentana').style.display = 'block';
 
     }
@@ -91,9 +103,9 @@ function detalles() {
 
 function CerrarDetalles() {
     document.getElementById('detallesVentana').style.display = 'none';
-     var detallesMostrarBorrar = document.querySelector("#detallesInformacion");
-     detallesMostrarBorrar.innerHTML="";
-     idform=false;
+    var detallesMostrarBorrar = document.querySelector("#detallesInformacion");
+    detallesMostrarBorrar.innerHTML = "";
+    idform = false;
 }
 
 

@@ -28,7 +28,7 @@
                 <form id="<?php echo "FormularioEliminar" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
                   <label>
                   <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
-                    <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar</span>
+                    <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar&#x1F4DD;</span>
                   </label>
              
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
