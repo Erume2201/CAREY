@@ -56,8 +56,7 @@ datodetalle.forEach(botondetalle => {
 })
 function detalles() {
     if (idform != false) {
-        var detallesMostrar =document.getElementById('detallesVentana');
-
+        var detallesMostrar = document.querySelector("#detallesInformacion");
         var formularioVer = document.querySelector("#" + idform);
         h4 = formularioVer.getElementsByClassName('NombreModifica');
         precioVenta = formularioVer.getElementsByClassName('PrecioVModificar');
@@ -71,7 +70,18 @@ function detalles() {
         informacion = Descripcion[0].value;
         ValorTipo = tipo[0].value;
        
-        var htmlNuevo = '<p>¡Este es el HTML agregado con JavaScript utilizando innerHTML!</p>';
+        var htmlNuevo = `
+                        <h3 class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3">${nombre}</h3>
+                        <p><Descripcion: ${informacion}</p>
+                        <div class="row">  
+                        <label>Precio costo: ${valorcosto}</label>
+                        </div>
+                        <label>precio venta:${valorventa}</label>
+                        <label>Tipo de documeto:  ${ValorTipo}</label>
+                        <div>
+                        </div>
+                        <br>`;
+
         detallesMostrar.innerHTML +=htmlNuevo;
         document.getElementById('detallesVentana').style.display = 'block';
 
@@ -81,6 +91,9 @@ function detalles() {
 
 function CerrarDetalles() {
     document.getElementById('detallesVentana').style.display = 'none';
+     var detallesMostrarBorrar = document.querySelector("#detallesInformacion");
+     detallesMostrarBorrar.innerHTML="";
+     idform=false;
 }
 
 

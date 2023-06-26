@@ -139,14 +139,13 @@
      <div class="container">
      <div class="row">
         <div class="col-11">
-          <h2 class="fw-bold" id="" style="margin-left: 30px;">Detalles</h2>
+          <h2 class="fw-bold" id="" style="margin-left: 30px;">Detalles:</h2>
         </div>
         <div class="col-1">
           <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
         </div>
       </div>
-      <div class="row" id="detalles">
-
+      <div class="row" id="detallesInformacion">
 
       </div>
      </div>
