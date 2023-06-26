@@ -3,8 +3,6 @@
 ?>
 <br>
 <br>
-<br>
-<br>
 <div class="contenido-do row">
   <div class="col-9">
     <div class="album py-5 bg-body-tertiary">
@@ -98,13 +96,15 @@
 <div class="modal" id="ventana">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+     <div class="container">
       <div class="row">
         <div class="col-11">
-          <h2 class="fw-bold" id="TituloFormulario">Agregar documento</h2>
+          <h2 class="fw-bold" id="TituloFormulario" style="margin-left: 30px;">Agregar documento</h2>
         </div>
         <div class="col-1">
-          <button onclick="CerrarFormulario()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
+          <button onclick="CerrarFormulario()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
         </div>
+      </div>
       </div>
       <div class="row">
         <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
@@ -130,6 +130,7 @@
     </div>
   </div>
 </div>
+
 
 
 <div>
