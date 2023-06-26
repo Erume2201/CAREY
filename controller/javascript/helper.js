@@ -77,10 +77,10 @@ function detalles() {
                         <h3 class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3">${Detallenombre}</h3>
                          </div>
                         <div class="row">  
-                        <label>Precio costo: ${Detallevalorcosto}</label>
+                        <label>Precio costo:$ ${Detallevalorcosto}</label>
                         </div>
                         <div class="row" >
-                        <label>precio venta:${Detallevalorventa}</label>
+                        <label>precio venta:$ ${Detallevalorventa}</label>
                         <label>Tipo de documeto:  ${DetalleValorTipo}</label>
                         <label style="font-weight: bold;">Descripcion:</label>
                         <p>${Detalleinformacion}</p>
