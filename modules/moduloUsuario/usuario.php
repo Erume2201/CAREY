@@ -12,13 +12,13 @@
 		?>
 	  <div class="form-group">
 	  	<br>
-	    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+	    <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
 	    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del usuario">
 	  </div>
 	  <div class="form-group">
 	  	<br>
-	    <label for="exampleInputEmail1" class="form-label">Usuario</label>
-	    <input type="text" class="form-control" name="usuario" placeholder="Ingresa el nombre de usuario">
+	    <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+	    <input type="text" class="form-control" name="usuario" maxlength="10" placeholder="Ingresa el nombre de usuario">
 	  </div>
 	  <div class="form-group">
 	  	<br>
@@ -43,8 +43,8 @@
 	    <br>
 	    <select class="form-select" aria-label="Default select example" name="rol" id="rol">
 		  <option disabled selected hidden>Elige una opción del menú</option>
-		  <option value="Admin">Administrador</option>
-		  <option value="Empleado">Empleado</option>
+		  <option value="admin">Administrador</option>
+		  <option value="usuario">Empleado</option>
 		</select>
 	  </div>
 	  <div class="form-group">

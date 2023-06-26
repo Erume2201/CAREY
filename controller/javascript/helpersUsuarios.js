@@ -11,7 +11,7 @@ function validarNumeros(input) {
  * @param {number} longitud - La longitud deseada de la contraseña (por defecto: 8).
  * @returns {string} - La contraseña generada.
  */
-function generarPass(longitud = 8) {
+function generarPass(longitud = 10) {
   const resultadoElemento = document.getElementById('password');
   const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@$!%*?&';
   let contrasena = '';
