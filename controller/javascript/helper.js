@@ -43,6 +43,17 @@ function CerrarFormulario() {
     inputTipo.value = "";
     direccionFormulario.action= "modules/moduloArticulos/InsertarDocumentos.php"
 }
+//ver detalles del documento
+function detalles(){
+    document.getElementById('detallesVentana').style.display = 'block';
+}
+
+function CerrarDetalles(){
+    document.getElementById('detallesVentana').style.display = 'none';
+}
+
+
+
 //operaciones para la eliminacion de documento
 //metodo para hacer que solo se pueda selecionar un archivo
 const checkboxes = document.querySelectorAll('.bt-5');
@@ -102,7 +113,7 @@ function Modificar(event) {
       h4= formulario.getElementsByClassName('NombreModifica');
       precioVenta =formulario.getElementsByClassName('PrecioVModificar');
       precioCosto= formulario.getElementsByClassName('PrecioModifica');
-;     Descripcion = formulario.getElementsByClassName('descripcionModifi');
+      Descripcion = formulario.getElementsByClassName('descripcionModifi');
       tipo = formulario.getElementsByClassName('TipoModifica');
       
       nombre =  h4[0].textContent;

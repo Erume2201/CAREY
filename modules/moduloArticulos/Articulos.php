@@ -28,7 +28,7 @@
                 <form id="<?php echo "FormularioEliminar" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
                   <label>
                   <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
-                    <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar&#x1F4DD;</span>
+                    <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar</span>
                   </label>
              
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
@@ -48,7 +48,8 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary"
+                      onclick="detalles()">Ver</button>
                     </div>
                   </div>
                 </div>
@@ -72,10 +73,11 @@
       </div>
     </div>
   </div>
-  <div class="col-1 image-container" style="position: fixed; right: 200px; margin-top: 25px;">
+  <div class="col-1" style="position: fixed; right: 200px; margin-top: 25px;">
     <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
+
   </div>
 </div>
 
@@ -93,7 +95,7 @@
     </div>
   </div>
 </div>
-<div class="modal" id="ventana">
+<div class="modal popup" id="ventana">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
      <div class="container">
@@ -109,13 +111,13 @@
       <div class="row">
         <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
           <div class="form-control">
-            <label class="" >Nombre:</label>
+            <label class="" for="name">Nombre:</label>
             <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
             <label class="form-label" for="">Precio costo:</label>
             <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
             <label class="" for="">Precio Venta:</label>
             <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
-            <label class="form-label" for="">Tipo:</label>
+            <label class="form-label" for="name">Tipo:</label>
             <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
             <label class="form-label" for="">descripcion:</label>
             <br>
@@ -131,7 +133,22 @@
   </div>
 </div>
 
-
+<div class="modal popup" id="detallesVentana">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <div class="container">
+     <div class="row">
+        <div class="col-11">
+          <h2 class="fw-bold" id="" style="margin-left: 30px;">Detalles</h2>
+        </div>
+        <div class="col-1">
+          <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
 
 <div>
   <?php
@@ -232,4 +249,5 @@
   }
   ?>
 </div>
+
 <script src="controller/javascript/helper.js"></script>
