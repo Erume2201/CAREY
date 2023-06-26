@@ -35,20 +35,51 @@ function ventanaFormulario(event) {
 //se cierra el formulario
 function CerrarFormulario() {
     document.getElementById('ventana').style.display = 'none';
-    titulo.textContent= "Agregar documento";
+    titulo.textContent = "Agregar documento";
     inputNombre.value = "";
     inputValorcosto.value = "";
-    inputValorventa.value =   "";
+    inputValorventa.value = "";
     inputInformacion.value = "";
     inputTipo.value = "";
-    direccionFormulario.action= "modules/moduloArticulos/InsertarDocumentos.php"
+    direccionFormulario.action = "modules/moduloArticulos/InsertarDocumentos.php"
 }
 //ver detalles del documento
-function detalles(){
-    document.getElementById('detallesVentana').style.display = 'block';
+var idform = false;
+var datodetalle = document.querySelectorAll(".btn-detalle");
+datodetalle.forEach(botondetalle => {
+    botondetalle.addEventListener("click", event => {
+        event.preventDefault();
+        const botonpulsado = event.currentTarget;
+        var form = botonpulsado.closest('form');
+        idform = form.id;
+    })
+})
+function detalles() {
+    if (idform != false) {
+        var detallesMostrar =document.getElementById('detallesVentana');
+
+        var formularioVer = document.querySelector("#" + idform);
+        h4 = formularioVer.getElementsByClassName('NombreModifica');
+        precioVenta = formularioVer.getElementsByClassName('PrecioVModificar');
+        precioCosto = formularioVer.getElementsByClassName('PrecioModifica');
+        Descripcion = formularioVer.getElementsByClassName('descripcionModifi');
+        tipo = formularioVer.getElementsByClassName('TipoModifica');
+
+        nombre = h4[0].textContent;
+        valorcosto = precioCosto[0].value;
+        valorventa = precioVenta[0].textContent;
+        informacion = Descripcion[0].value;
+        ValorTipo = tipo[0].value;
+       
+        var htmlNuevo = '<p>¡Este es el HTML agregado con JavaScript utilizando innerHTML!</p>';
+        detallesMostrar.innerHTML +=htmlNuevo;
+        document.getElementById('detallesVentana').style.display = 'block';
+
+    }
+
 }
 
-function CerrarDetalles(){
+function CerrarDetalles() {
     document.getElementById('detallesVentana').style.display = 'none';
 }
 
@@ -83,8 +114,8 @@ checkboxes.forEach(checkbox => {
 //clave para eliminar un documento
 function Eliminar(event) {
     event.preventDefault();
-    const formulario = document.querySelector("#FormularioEliminar"+marcado.value);
-    
+    const formulario = document.querySelector("#FormularioEliminar" + marcado.value);
+
     if (marcado == false) {
         console.log(marcado);
         Swal.fire('Es necesario marcar un documento para borrar')
@@ -94,47 +125,46 @@ function Eliminar(event) {
             title: 'Esta seguro de que quiere eliminar el documentos?',
             showCancelButton: true,
             confirmButtonText: 'borrar',
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              formulario.submit();
+                formulario.submit();
             } else if (result.isDenied) {
-            
+
             }
-          })
+        })
     }
 }
 //funciones para el boton modificar
 function Modificar(event) {
     event.preventDefault();
-    if(marcado!=false){
-      idDocumento = document.querySelector("#idDocumento");  
-      formulario = document.querySelector("#FormularioEliminar"+marcado.value);
-      console.log(formulario);
-      h4= formulario.getElementsByClassName('NombreModifica');
-      precioVenta =formulario.getElementsByClassName('PrecioVModificar');
-      precioCosto= formulario.getElementsByClassName('PrecioModifica');
-      Descripcion = formulario.getElementsByClassName('descripcionModifi');
-      tipo = formulario.getElementsByClassName('TipoModifica');
-      
-      nombre =  h4[0].textContent;
-      valorcosto  = precioCosto[0].value;
-      valorventa= precioVenta[0].textContent;
-      informacion = Descripcion[0].value;
-      ValorTipo = tipo[0].value;
-      titulo.textContent= "Modificar documento";
+    if (marcado != false) {
+        idDocumento = document.querySelector("#idDocumento");
+        formulario = document.querySelector("#FormularioEliminar" + marcado.value);
+        h4 = formulario.getElementsByClassName('NombreModifica');
+        precioVenta = formulario.getElementsByClassName('PrecioVModificar');
+        precioCosto = formulario.getElementsByClassName('PrecioModifica');
+        Descripcion = formulario.getElementsByClassName('descripcionModifi');
+        tipo = formulario.getElementsByClassName('TipoModifica');
 
-      inputNombre.value = nombre;
-      inputValorcosto.value = valorcosto;
-      inputValorventa.value =   parseFloat(valorventa);
-      inputInformacion.value = informacion;
-      inputTipo.value = ValorTipo;
-      direccionFormulario.action ="modules/moduloArticulos/ModificarDocumento.php"
-      idDocumento.value = marcado.value;
+        nombre = h4[0].textContent;
+        valorcosto = precioCosto[0].value;
+        valorventa = precioVenta[0].textContent;
+        informacion = Descripcion[0].value;
+        ValorTipo = tipo[0].value;
+        titulo.textContent = "Modificar documento";
 
-      ventanaFormulario(event)
+        inputNombre.value = nombre;
+        inputValorcosto.value = valorcosto;
+        inputValorventa.value = parseFloat(valorventa);
+        inputInformacion.value = informacion;
+        inputTipo.value = ValorTipo;
+        direccionFormulario.action = "modules/moduloArticulos/ModificarDocumento.php"
+        idDocumento.value = marcado.value;
 
-    }else{
-        Swal.fire('Es necesario marcar un documento para modificarlo')   
+        ventanaFormulario(event)
+
+    } else {
+        Swal.fire('Es necesario marcar un documento para modificarlo')
     }
-    
+
 }

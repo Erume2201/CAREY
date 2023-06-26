@@ -48,7 +48,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary"
+                      <button type="button" class="btn btn-sm btn-outline-secondary btn-detalle"
                       onclick="detalles()">Ver</button>
                     </div>
                   </div>
@@ -144,6 +144,10 @@
         <div class="col-1">
           <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
         </div>
+      </div>
+      <div class="row" id="detalles">
+
+
       </div>
      </div>
     </div>
