@@ -3,6 +3,7 @@
 ?>
 <br>
 <br>
+<br>
 <div class="contenido-do row">
   <div class="col-9">
     <div class="album py-5 bg-body-tertiary">
@@ -27,7 +28,7 @@
                 <form id="<?php echo "FormularioEliminar" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
                   <label>
                   <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
-                    <span class="btn btn-check:checked ">Eliminar &#128465;</span>
+                    <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar&#x1F4DD;</span>
                   </label>
              
                 <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
@@ -184,7 +185,6 @@
   }
   ?>
 </div>
-
 <div>
   <?php
   if (isset($_GET['Delete'])) {
@@ -203,6 +203,30 @@
     ?>
       <script>
         Swal.fire('borrrado!', '', 'success')
+      </script>
+  <?php
+    }
+  }
+  ?>
+</div>
+<div>
+  <?php
+  if (isset($_GET['Update'])) {
+    $status = $_GET['Update'];
+    if ($status == "NoActualizado") {
+     ?>
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo salio mal',
+          text: 'Asista a soporte tecnico!'
+        })
+      </script>
+    <?php
+    } else {
+    ?>
+      <script>
+        Swal.fire('Actualizado!', '', 'success')
       </script>
   <?php
     }

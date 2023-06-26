@@ -18,9 +18,9 @@ if (
 
     $resultado = Actualizar($SQL);
     if ($resultado) {
-        echo "<script>window.location = '../../index.php?module=articulo'</script>";
+        echo "<script>window.location = '../../index.php?module=articulo&Update=Actualizado'</script>";
     } else {
-        echo "<script>window.location = '../../index.php?module=articulo'</script>";
+        echo "<script>window.location = '../../index.php?module=articulo&Update=NoActualizado'</script>";
     }
 }
 
