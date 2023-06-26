@@ -10,7 +10,6 @@
 	            <tr>
 	                <td>'.$resultado[$i]['id_cliente'].'</td>
 	                <td>'.$resultado[$i]['nombre_cliente'].'</td>
-	                <td>'.$resultado[$i]['telefono_cliente'].'</td>
 	                <td>'.$resultado[$i]['nombre_negocio'].'</td>
 	                <td>
 	                	<button type="button" name="view" id="view" class="btn" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
