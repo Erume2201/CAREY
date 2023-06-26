@@ -74,27 +74,37 @@ function detalles() {
         DetalleValorTipo = tipo[0].value;
 
         let htmlNuevo = `
-                        <div class="col-8">
-                        <div class="row">
-                        <h3 class="p-3 text-primary-emphasis bg-success-subtle border border-primary-subtle rounded-3">${Detallenombre}</h3>
-                         </div>
-                        <div class="row">  
-                        <label>Precio costo:$ ${Detallevalorcosto}</label>
-                        </div>
-                        <div class="row" >
-                        <label>precio venta:$ ${Detallevalorventa}</label>
-                        <label>Tipo de documeto:  ${DetalleValorTipo}</label>
-                        <label style="font-weight: bold;">Descripcion:</label>
+                    <div class="col-lg-8">
+                    <div class="form">
+                    <h4 class="p-3 text-primary-emphasis bg-success-subtle 
+                    border border-primary-subtle rounded-3">${Detallenombre}</h4>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <label>Precio costo: $ ${Detallevalorcosto}</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Precio venta: $ ${Detallevalorventa}</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <label>Tipo de documento: ${DetalleValorTipo}</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <label style="font-weight: bold;">Descripción:</label>
                         <p>${Detalleinformacion}</p>
-                        </div>
-                        <div class="row">
-                        </div>
-                        </div>
-                        <div class="col-4">
-                        <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; 
-                        margin-top: 30px; margin-left: 60px;">
-                        </div>
-                        <br>`;
+                    </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img" src="assets/image/documentos.png" height="100" width="100" style="display: 
+                    block; margin-top: 30px; margin-left: 60px;">
+                </div>`;
 
         detallesMostrar.innerHTML += htmlNuevo;
         document.getElementById('detallesVentana').style.display = 'block';

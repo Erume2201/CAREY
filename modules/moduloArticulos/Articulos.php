@@ -95,6 +95,8 @@
     </div>
   </div>
 </div>
+
+<div class="container">
 <div class="modal popup" id="ventana">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -103,7 +105,7 @@
         <div class="col-11">
           <h2 class="fw-bold" id="TituloFormulario" style="margin-left: 30px;">Agregar documento</h2>
         </div>
-        <div class="col-1">
+        <div class="col-lg-1">
           <button onclick="CerrarFormulario()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
         </div>
       </div>
@@ -132,23 +134,23 @@
     </div>
   </div>
 </div>
+</div>
 
-<div class="modal popup" id="detallesVentana">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <div class="container">
-     <div class="row">
-        <div class="col-11">
-          <h2 class="fw-bold" id="" style="margin-left: 30px;">Detalles:</h2>
+<div class="container">
+  <div class="modal popup" id="detallesVentana">
+    <div class="modal-dialog modal-lg modal-dialog-left">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col-8">
+            <h2 class="fw-bold" style="margin-left: 30px;">Detalles:</h2>
+          </div>
+          <div class="col-4 text-end">
+            <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
+          </div>
         </div>
-        <div class="col-1">
-          <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
+        <div class="row" id="detallesInformacion">
         </div>
       </div>
-      <div class="row" id="detallesInformacion">
-
-      </div>
-     </div>
     </div>
   </div>
 </div>
