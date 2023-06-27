@@ -6,7 +6,30 @@ function VentanaEmergente() {
 function CerrarEmergente() {
     document.getElementById('popup').style.display = 'none';
 }
-
+//operaciones para la selecio de clietes
+const checkboxes = document.querySelectorAll('.bt-5');
+marcado = false;
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            // Desactivar los demás checkboxes
+            marcado = checkbox;
+            checkboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.disabled = true;
+                }
+            });
+        } else {
+            // Habilitar los demás checkboxes
+            marcado = false;
+            checkboxes.forEach(otherCheckbox => {
+                if (otherCheckbox !== checkbox) {
+                    otherCheckbox.disabled = false;
+                }
+            });
+        }
+    });
+});
 //ver detalles del documento probamos a que boton esta el mause para  colcar el
 //id del formulario que vamos a buscar
 let idform = false;
@@ -19,7 +42,6 @@ datodetalle.forEach(botondetalle => {
         idform = form.id;
     })
 })
-
 //se manda a llamar la funcion de detalle que nos desplegara los datos del documento
 function detalles() {
     if (idform != false) {
