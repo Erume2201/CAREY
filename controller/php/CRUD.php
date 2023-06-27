@@ -114,4 +114,18 @@ function EliminarDato($query) {
     }
 }
 
+function insertarDatos($query1, $query2) {
+    $exito1 = insertarDato($query1); // Intentar insertar el dato1
+    if ($exito1) {
+        $exito2 = insertarDato($query2); // Intentar insertar el dato2 solo si el dato1 se insertó exitosamente
+        if ($exito2) {
+             return true;
+        } else {
+            return false;
+        }
+    } else {
+       return false;
+    }
+}
+
 ?>
