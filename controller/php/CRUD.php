@@ -114,18 +114,21 @@ function EliminarDato($query) {
     }
 }
 
-function insertarDatosDoble($query1, $query2) {
-    $exito1 = insertarDato($query1); // Intentar insertar el dato1
-    if ($exito1) {
-        $exito2 = insertarDato($query2); // Intentar insertar el dato2 solo si el dato1 se insertó exitosamente
-        if ($exito2) {
-             return true;
-        } else {
-            return false;
-        }
+function insertarDatosDoble($query1) {
+    $conexion = obtenerConexion();
+    if ($conexion->query($query1) === true) {
+        // Obtener la llave primaria generada automáticamente
+        $llavePrimaria = $conexion->insert_id;
+        // Cerrar la conexión con la base de datos
+        $conexion->close();
+        // Retornar la llave primaria del dato insertado
+        return $llavePrimaria;
     } else {
-       return false;
+        echo "Error al insertar el dato: " . $conexion->error;
     }
+    // Cerrar la conexión con la base de datos
+    $conexion->close();
+    return null; //
 }
 
 ?>
