@@ -184,6 +184,11 @@ if (isset($_GET["module"])) {
                     session_destroy();
                     include_once("view/login/login.php");
                     break;
+                case 'venderDocumento':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloVentas/ventas.php");
+                    break;    
+
                 case 'errorCambioPassword':
                     include_once("view/login/cambioContrasena.php");
                     ?>
