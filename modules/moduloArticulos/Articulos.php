@@ -30,7 +30,6 @@
                     <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
                     <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar&#x1F4DD;</span>
                   </label>
-
                   <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                   <br>
                   <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
@@ -40,8 +39,8 @@
                   <input type="hidden" class="TipoModifica" value="<?php echo $fila['tipo']; ?>">
 
                   <div class="card-body">
-                    <label style="margin-left: 8px;" for="">Precio:</label>
-                    <label for="">$</label>
+                    <label style="margin-left: 8px;">Precio:</label>
+                    <label>$</label>
                     <p class="card-text PrecioVModificar" style="margin-left: 8px;"><?php echo $fila['precio_venta']; ?> </p>
                   </div>
                 </form>
@@ -81,15 +80,15 @@
         <div class="row">
           <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
             <div class="form-control">
-              <label class="" for="name">Nombre:</label>
+              <label class="">Nombre:</label>
               <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
-              <label class="form-label" for="">Precio costo:</label>
+              <label class="form-label">Precio costo:</label>
               <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
-              <label class="" for="">Precio Venta:</label>
+              <label class="" >Precio Venta:</label>
               <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
-              <label class="form-label" for="name">Tipo:</label>
+              <label class="form-label" >Tipo:</label>
               <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
-              <label class="form-label" for="">descripcion:</label>
+              <label class="form-label">descripcion:</label>
               <br>
               <textarea class="form-control" maxlength="100" id="mensaje" name="mensaje" rows="4" required></textarea>
               <small id="charCount" class="form-text text-muted">0 / 100 caracteres</small>
