@@ -84,9 +84,9 @@
               <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
               <label class="form-label">Precio costo:</label>
               <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
-              <label class="" >Precio Venta:</label>
+              <label class="">Precio Venta:</label>
               <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
-              <label class="form-label" >Tipo:</label>
+              <label class="form-label">Tipo:</label>
               <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
               <label class="form-label">descripcion:</label>
               <br>
@@ -102,41 +102,19 @@
     </div>
   </div>
 </div>
-  <?php
-  if (isset($_GET['status'])) {
-    $status = $_GET['status'];
-    if ($status == "NoInsertado") {
-  ?>
-      <div>
-        <template id="my-template">
-          <swal-title>
-            ¡Algo salió mal!
-          </swal-title>
-          <swal-icon type="error" color="red"></swal-icon>
-          <swal-button type="confirm">
-            Regresar
-          </swal-button>
-          <swal-param name="allowEscapeKey" value="false" />
-          <swal-param name="customClass" value='{ "popup": "my-popup" }' />
-          <swal-function-param name="didOpen" value="popup => console.log(popup)" />
-        </template>
-        <script>
-          Swal.fire({
-            template: '#my-template'
-          });
-        </script>
-      </div>
-    <?php
-    } else {
-    ?>
-      <br>
+<?php
+if (isset($_GET['status'])) {
+  $status = $_GET['status'];
+  if ($status == "NoInsertado") {
+?>
+    <div>
       <template id="my-template">
         <swal-title>
-          ¡Documento insertado!?
+          ¡Algo salió mal!
         </swal-title>
-        <swal-icon type="success" color="greed"></swal-icon>
+        <swal-icon type="error" color="red"></swal-icon>
         <swal-button type="confirm">
-          Confirmar.
+          Regresar
         </swal-button>
         <swal-param name="allowEscapeKey" value="false" />
         <swal-param name="customClass" value='{ "popup": "my-popup" }' />
@@ -147,10 +125,32 @@
           template: '#my-template'
         });
       </script>
+    </div>
   <?php
-    }
-  }
+  } else {
   ?>
+    <br>
+    <template id="my-template">
+      <swal-title>
+        ¡Documento insertado!?
+      </swal-title>
+      <swal-icon type="success" color="greed"></swal-icon>
+      <swal-button type="confirm">
+        Confirmar.
+      </swal-button>
+      <swal-param name="allowEscapeKey" value="false" />
+      <swal-param name="customClass" value='{ "popup": "my-popup" }' />
+      <swal-function-param name="didOpen" value="popup => console.log(popup)" />
+    </template>
+    <script>
+      Swal.fire({
+        template: '#my-template'
+      });
+    </script>
+<?php
+  }
+}
+?>
 </div>
 <div>
   <?php

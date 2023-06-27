@@ -2,9 +2,8 @@
 function VentanaEmergente() {
     document.getElementById('popup').style.display = 'block';
 }
-
-function CerrarEmergente() {
-    document.getElementById('popup').style.display = 'none';
+function regresarBoton(){
+    window.location.href = "index.php?module=articulo";
 }
 //operaciones para la selecio de clietes
 const checkboxes = document.querySelectorAll('.bt-5');
@@ -30,6 +29,31 @@ checkboxes.forEach(checkbox => {
         }
     });
 });
+
+function CerrarEmergente() {
+    if(marcado){
+    document.getElementById('popup').style.display = 'none';
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Cliente seleccionnado',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }else{
+        Swal.fire({
+            title: 'Es necesario selecionar un cliente',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+    }
+}
+
+
 //ver detalles del documento probamos a que boton esta el mause para  colcar el
 //id del formulario que vamos a buscar
 let idform = false;
@@ -42,6 +66,7 @@ datodetalle.forEach(botondetalle => {
         idform = form.id;
     })
 })
+
 //se manda a llamar la funcion de detalle que nos desplegara los datos del documento
 function detalles() {
     if (idform != false) {
