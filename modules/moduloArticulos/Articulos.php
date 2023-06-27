@@ -27,33 +27,30 @@
                 <!--mandamos el docuemto seleccionado para el borrado o modificado-->
                 <form id="<?php echo "FormularioEliminar" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
                   <label>
-                  <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
+                    <input type="checkbox" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_articulo_documetos']; ?>" autocomplete="off">
                     <span class="btn btn-check:checked ">Eliminar&#128465;/Modificar&#x1F4DD;</span>
                   </label>
-             
-                <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
-                <br>
-                <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
-                   <!--datos que se deben mostrar cuando se haga click al ver-->
-                <input type="hidden" class="PrecioModifica" 
-                value="<?php echo $fila['precio_costo']; ?>">
-                <input type="hidden" class="descripcionModifi"
-                value="<?php echo $fila['descripcion']; ?>">
-                <input type="hidden" class="TipoModifica"
-                value="<?php echo $fila['tipo']; ?>">
 
-                <div class="card-body">
-                  <label   style="margin-left: 8px;" for="">Precio:</label>
-                  <label for="">$</label><p class="card-text PrecioVModificar" style="margin-left: 8px;"><?php echo $fila['precio_venta']; ?> </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary btn-detalle"
-                      onclick="detalles()">Ver</button>
+                  <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
+                  <br>
+                  <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
+                  <!--datos que se deben mostrar cuando se haga click al ver-->
+                  <input type="hidden" class="PrecioModifica" value="<?php echo $fila['precio_costo']; ?>">
+                  <input type="hidden" class="descripcionModifi" value="<?php echo $fila['descripcion']; ?>">
+                  <input type="hidden" class="TipoModifica" value="<?php echo $fila['tipo']; ?>">
+
+                  <div class="card-body">
+                    <label style="margin-left: 8px;" for="">Precio:</label>
+                    <label for="">$</label>
+                    <p class="card-text PrecioVModificar" style="margin-left: 8px;"><?php echo $fila['precio_venta']; ?> </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button onclick="VentanaEmergente()" type="button" class="btn btn-primary">Seleccionar</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary btn-detalle" onclick="detalles()">Ver</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-               </form> 
+                </form>
               </div>
             </div>
           <?php
@@ -68,7 +65,7 @@
       <!-- Contenido de la columna estática -->
       <div class="buttons">
         <a href="#" class="bt bt-1" onclick="ventanaFormulario(event)">Agregar</a>
-        <a href="" class="bt bt-1"  onclick="Modificar(event)">Modificar</a>
+        <a href="" class="bt bt-1" onclick="Modificar(event)">Modificar</a>
         <a href="" class="bt bt-1" onclick="Eliminar(event)">Eliminar</a>
       </div>
     </div>
@@ -77,76 +74,111 @@
     <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
     <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
-
   </div>
 </div>
 
-<div class="popup" id="popup">
-  <div class="popup-content">
+<div class="modal popup" id="popup" role="dialog" aria-labelledby="popupLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
-      Contenido de la ventana emergente >
       <div class="modal-header">
-        <h5 class="modal-title">Ventana emergente</h5>
-        <button onclick="CerrarEmergente()" type="button" class="btn btn-outline-danger" data-dismiss="modal">x</button>
+        <h5 class="modal-title" id="popupLabel">Selecciona un cliente</h5>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close" onclick="CerrarEmergente()">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <p>Contenido de la ventana emergente...</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-<div class="modal popup" id="ventana">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-     <div class="container">
-      <div class="row">
-        <div class="col-11">
-          <h2 class="fw-bold" id="TituloFormulario" style="margin-left: 30px;">Agregar documento</h2>
-        </div>
-        <div class="col-lg-1">
-          <button onclick="CerrarFormulario()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
-        </div>
-      </div>
-      </div>
-      <div class="row">
-        <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
-          <div class="form-control">
-            <label class="" for="name">Nombre:</label>
-            <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
-            <label class="form-label" for="">Precio costo:</label>
-            <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
-            <label class="" for="">Precio Venta:</label>
-            <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
-            <label class="form-label" for="name">Tipo:</label>
-            <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
-            <label class="form-label" for="">descripcion:</label>
-            <br>
-            <textarea class="form-control" maxlength="100" id="mensaje" name="mensaje" rows="4" required></textarea>
-            <small id="charCount" class="form-text text-muted">0 / 100 caracteres</small>
-            <input type="hidden" class="" id="idDocumento" name="idDocumento" value="">
-            <br>
-            <button class="btn btn-success" type="submit">Enviar</button>
+        <!-- Contenido del modal aquí -->
+        <!--class="form-inline"-->
+        <form id="">
+          <div class="form-group">
+            <input type="text" id="search-input" placeholder="Buscar...">
+            <button type="" class="btn btn-primary">Buscar</button>
           </div>
         </form>
+        <br>
+        <?php
+        $SQL = "SELECT * FROM cliente";
+        $resultado = Consulta($SQL);
+        ?>
+        <div class="row">
+          <div class="col-md-3">
+            <h5>id cliente:</h5>
+          </div>
+          <div class="col-md-3">
+            <h5>Nombre negocio:</h5>
+          </div>
+          <div class="col-md-3">
+            <h5>Nombre cliente:</h5>
+          </div>
+        </div>
+        <?php foreach ($resultado as $fila) { ?>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3">
+                <?php echo $fila['id_cliente']; ?>
+              </div>
+              <div class="col-md-3">
+                <?php echo $fila['nombre_negocio']; ?>
+              </div>
+              <div class="col-md-3">
+                <?php echo $fila['nombre_cliente']; ?>
+              </div>
+              <div class="col-md-3">
+                <input type="checkbox" class="form-check-input bt-5" id="Cliente" name="dato" value="" autocomplete="off">
+                <label class="form-check-label" for="Cliente">selecciona</label>
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+        ?>
+        <br>
+        <button type="button" class="btn btn-success">Siguiente</button>
       </div>
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="modal popup" id="ventana">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="TituloFormulario" style="margin-left: 30px;">Agregar documento</h2>
+          <button onclick="CerrarFormulario()" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">x</button>
+        </div>
+        <div class="row">
+          <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
+            <div class="form-control">
+              <label class="" for="name">Nombre:</label>
+              <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
+              <label class="form-label" for="">Precio costo:</label>
+              <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
+              <label class="" for="">Precio Venta:</label>
+              <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
+              <label class="form-label" for="name">Tipo:</label>
+              <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
+              <label class="form-label" for="">descripcion:</label>
+              <br>
+              <textarea class="form-control" maxlength="100" id="mensaje" name="mensaje" rows="4" required></textarea>
+              <small id="charCount" class="form-text text-muted">0 / 100 caracteres</small>
+              <input type="hidden" class="" id="idDocumento" name="idDocumento" value="">
+              <br>
+              <button class="btn btn-success" type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
 <div class="container">
   <div class="modal popup" id="detallesVentana">
     <div class="modal-dialog modal-lg modal-dialog-left">
       <div class="modal-content">
-        <div class="row">
-          <div class="col-8">
-            <h2 class="fw-bold" style="margin-left: 30px;">Detalles:</h2>
-          </div>
-          <div class="col-4 text-end">
-            <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
-          </div>
+        <div class="modal-header">
+              <h2 class="fw-bold" style="margin-left: 30px;">Detalles:</h2>
+              <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
         </div>
         <div class="row" id="detallesInformacion">
         </div>
@@ -154,7 +186,6 @@
     </div>
   </div>
 </div>
-
 <div>
   <?php
   if (isset($_GET['status'])) {
@@ -211,7 +242,7 @@
   if (isset($_GET['Delete'])) {
     $status = $_GET['Delete'];
     if ($status == "NoBorrado") {
-     ?>
+  ?>
       <script>
         Swal.fire({
           icon: 'error',
@@ -235,7 +266,7 @@
   if (isset($_GET['Update'])) {
     $status = $_GET['Update'];
     if ($status == "NoActualizado") {
-     ?>
+  ?>
       <script>
         Swal.fire({
           icon: 'error',
