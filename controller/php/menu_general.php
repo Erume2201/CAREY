@@ -176,6 +176,16 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloClientes/subnavbarClientes.php");
                     include_once("modules/moduloClientes/nuevoCliente.php");
                     break;
+                case 'creditos':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloCreditos/subnavbarCreditos.php");
+                    include_once("modules/moduloCreditos/creditos.php");
+                    break;
+                case 'historialCreditos':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloCreditos/subnavbarCreditos.php");
+                    include_once("modules/moduloCreditos/historial.php");
+                    break;
                 case 'configuracion':
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloConfiguracion/configuracion.php");

@@ -20,7 +20,10 @@
 			$pais = $_POST["pais"];
 			// Ahora insertaremos los datos en la BD.
 			$SQL = "INSERT INTO cliente (nombre_cliente, telefono_cliente, nombre_negocio, municipio, estado, pais) VALUES ('$nombre', '$numero', '$negocio', '$municipio', '$estado', '$pais')";
-			$resultado = Actualizar($SQL);
+			$llaveCliente = insertarDatosDoble($SQL);
+			// Aquí mismo le crearemos su crédito inicial al cliente.
+			$SQL2 = "INSERT INTO creditos (estatus, fecha, total, cliente_id) VALUES ('Inicial', 'x', '0.0', '$llaveCliente')";
+			$resultado = InsertarDato($SQL2);
 			// Ahora agregamos una condicional para verificar la respuesta de la BD.
 			if ($resultado) {
 				?>

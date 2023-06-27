@@ -31,14 +31,14 @@
                     </a>
                 </li>
                 <ul></ul>
-                <!--Modulo de clientes-->
+                <!--Inicia módulo de clientes-->
                 <li class="nav-item">
                     <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=clientes" 
                     id="cliente">Clientes</a>
                 </li>
-
+                <!--Termina módulo de clientes-->
                 <ul></ul>
-                <!-- modulo de ventas -->
+                <!-- Inicia modulo de ventas -->
                 <li class="nav-item dropdown ">
                     <a class="nav-link active dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false" id="venta">
@@ -59,24 +59,11 @@
             </li>
             <!--Termina modulo de ventas-->
             <ul></ul>
-            <!-- modulo de créditos -->
-            <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id ="credito">
-                    Créditos
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item fw-bold" href="#" id="consultaCrredito">consultar créditos</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                    <li><a class="dropdown-item fw-bold" href="#" id="listaPago">lista de pagos</a></li>
+            <!-- Inicia módulo de créditos -->
+            <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=creditos" id="creditos">Créditos</a>
             </li>
-            </li>
-            </ul>
-            </li>
-            <!--Termina modulo de ventas-->
+            <!--Termina módulo de créditos-->
             <ul></ul>
             <!-- modulo de graficas -->
             <li class="nav-item dropdown">
