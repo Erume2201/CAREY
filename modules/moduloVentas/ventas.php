@@ -43,8 +43,7 @@
                     <p class="card-text PrecioVModificar" style="margin-left: 8px;"><?php echo $fila['precio_venta']; ?> </p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button onclick="" type="button" class="btn btn-primary">Seleccionar</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary btn-detalle" onclick="detalles()">Ver</button>
+                        <button onclick="detalles()" type="button" class="btn btn-primary btn-detalle">Seleccionar</button>
                       </div>
                     </div>
                   </div>
@@ -125,7 +124,9 @@
           <h2 class="fw-bold" style="margin-left: 30px;">Detalles:</h2>
           <button onclick="CerrarDetalles()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
         </div>
+        <div class="modal-body">
         <div class="row" id="detallesInformacion">
+        </div>
         </div>
       </div>
     </div>

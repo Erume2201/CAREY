@@ -85,37 +85,44 @@ function detalles() {
         DetalleValorTipo = tipo[0].value;
 
         let htmlNuevo = `
-                    <div class="col-lg-8">
-                    <div class="form">
-                    <h4 class="p-3 text-primary-emphasis bg-success-subtle 
-                    border border-primary-subtle rounded-3">${Detallenombre}</h4>
+                    <div class="col-lg-12">
+                       <div class="form">
+                           <h4 class="p-3 text-primary-emphasis bg-success-subtle 
+                            border border-primary-subtle rounded-3">${Detallenombre}</h4>
+                       </div>
                     </div>
                     <div class="row">
-                    <div class="col-lg-6">
-                        <label>Precio costo: $ ${Detallevalorcosto}</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label>Precio venta: $ ${Detallevalorventa}</label>
-                    </div>
+                        <div class="col-lg-6">
+                            <label>Precio costo: $ ${Detallevalorcosto}</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Precio venta: $ ${Detallevalorventa}</label>
+                        </div>
                     </div>
                     <div class="row">
-                    <div class="col-md-12">
+                        <div class="col-md-12">
                         <label>Tipo de documento: ${DetalleValorTipo}</label>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-12">
-                        <label style="font-weight: bold;">Descripción:</label>
-                        <p>${Detalleinformacion}</p>
-                    </div>
+                        </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-12">
+                          <label style="font-weight: bold;">Descripción:</label>
+                          <p>${Detalleinformacion}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <img class="bd-placeholder-img" src="assets/image/documentos.png" height="100" width="100" style="display: 
-                    block; margin-top: 30px; margin-left: 60px;">
-                </div>`;
+                   <div class="col-lg-4">
+                     <img class="bd-placeholder-img" src="assets/image/documentos.png" height="100" width="100" style="display: 
+                      block; margin-top: 30px; margin-left: 60px;">
+                    </div>
+                   <br>
+                   <div class="row">
+                   <br>
+                   <div class="col-lg-4">
+                      <button type="button" onclick="RealizarVenta()" class="btn btn-success">Siguiente</button>
+                   </div>
+                   </div>
+                
+                `;
 
         detallesMostrar.innerHTML += htmlNuevo;
         document.getElementById('detallesVentana').style.display = 'block';
@@ -126,4 +133,8 @@ function CerrarDetalles() {
     document.getElementById('detallesVentana').style.display = 'none';
     let detallesMostrarBorrar = document.querySelector("#detallesInformacion");
     detallesMostrarBorrar.innerHTML = "";
+}
+
+function RealizarVenta(){
+    window.location.href = "index.php?module=Realizar";
 }

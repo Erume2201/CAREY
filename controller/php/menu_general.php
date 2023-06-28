@@ -59,7 +59,7 @@ if (isset($_GET["module"])) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Credenciales invalidas!',
+                    text: 'Credenciales invalidas!'
                 })
                 </script>
 <?php
@@ -102,7 +102,7 @@ if (isset($_GET["module"])) {
                         ?>
                         <script>
                         Swal.fire(
-                            icon: 'info'
+                            icon: 'info',
                             '¡Solicitud enviada correctamente!',
                             'Un administrador enviará su nueva contraseña'
                             )
@@ -202,7 +202,11 @@ if (isset($_GET["module"])) {
                 case 'venderDocumento':
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloVentas/ventas.php");
-                    break;    
+                    break;
+                case 'Realizar':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloVentas/RealizarVenta.php");
+                    break;        
 
                 case 'errorCambioPassword':
                     include_once("view/login/cambioContrasena.php");
