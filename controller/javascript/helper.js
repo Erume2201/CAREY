@@ -34,7 +34,7 @@ function CerrarFormulario() {
     inputValorventa.value = "";
     inputInformacion.value = "";
     inputTipo.value = "";
-    direccionFormulario.action = "modules/moduloArticulos/InsertarDocumentos.php"
+    direccionFormulario.action = "modules/moduloArticulos/InsertarDocumentos.php";
 }
 
 //operaciones para la eliminacion de documento
@@ -69,7 +69,7 @@ function Eliminar(event) {
     const formulario = document.querySelector("#FormularioEliminar" + marcado.value);
 
     if (marcado == false) {
-        Swal.fire('Es necesario marcar un documento para borrar')
+        Swal.fire('Es necesario marcar un documento para borrar');
     } else {
         Swal.fire({
             icon: 'info',
@@ -109,7 +109,7 @@ function Modificar(event) {
         inputValorventa.value = parseFloat(valorventa);
         inputInformacion.value = informacion;
         inputTipo.value = ValorTipo;
-        direccionFormulario.action = "modules/moduloArticulos/ModificarDocumento.php"
+        direccionFormulario.action = "modules/moduloArticulos/ModificarDocumento.php";
         idDocumento.value = marcado.value;
 
         ventanaFormulario(event)
