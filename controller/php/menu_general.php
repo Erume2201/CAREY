@@ -166,6 +166,11 @@ if (isset($_GET["module"])) {
                     include_once("view/menu/menuUsuarios.php");
                     include_once("modules/moduloUsuario/usuario.php");
                     break;
+                case 'recuperarUserPass':
+                    include_once("view/menu/menu.php"); 
+                    include_once("view/menu/menuUsuarios.php");
+                    include_once("modules/moduloUsuario/recuperarPassU.php");
+                    break;
                 case 'clientes':
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloClientes/subnavbarClientes.php");

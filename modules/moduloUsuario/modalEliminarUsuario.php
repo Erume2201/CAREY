@@ -7,8 +7,7 @@
       </div>
       <form action="controller/php/controlVerUsuarios.php" method="POST" >
       <div class="modal-body">
-        <h5>Desea eliminar el usuario: <?php echo $fila['nombre_completo']; ?></h5>
-        <h5>Con No. de identificador: <?php echo $fila['id_usuarios']; ?></h5>
+        <h5>Desea eliminar el usuario: <strong><?php echo $fila['nombre_completo']; ?></strong></h5>
         <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
       </div>
       <div class="modal-footer">
