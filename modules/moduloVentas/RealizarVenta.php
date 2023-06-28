@@ -44,3 +44,4 @@
         </div>
     </div>
 </div>
+<script src="controller/javascript/Finalventa.js"></script>

@@ -2,7 +2,7 @@
 function VentanaEmergente() {
     document.getElementById('popup').style.display = 'block';
 }
-function regresarBoton(){
+function regresarBoton() {
     window.location.href = "index.php?module=articulo";
 }
 //operaciones para la selecio de clietes
@@ -31,29 +31,28 @@ checkboxes.forEach(checkbox => {
 });
 
 function CerrarEmergente() {
-    if(marcado){
-    document.getElementById('popup').style.display = 'none';
-    console.log(marcado);
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Cliente seleccionnado',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }else{
+    if (marcado) {
+        document.getElementById('popup').style.display = 'none';
+        // archivo1.js
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Cliente seleccionnado',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    } else {
         Swal.fire({
             title: 'Es necesario selecionar un cliente',
             showClass: {
-              popup: 'animate__animated animate__fadeInDown'
+                popup: 'animate__animated animate__fadeInDown'
             },
             hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
+                popup: 'animate__animated animate__fadeOutUp'
             }
-          })
+        })
     }
 }
-
 
 //ver detalles del documento probamos a que boton esta el mause para  colcar el
 //id del formulario que vamos a buscar
@@ -136,9 +135,9 @@ function CerrarDetalles() {
     detallesMostrarBorrar.innerHTML = "";
 }
 
-function RealizarVenta(){
+function RealizarVenta() {
     window.location.href = "index.php?module=Realizar";
-    clienteV = document.querySelector("#ClienteVentaNombre");
-
-
 }
+
+
+
