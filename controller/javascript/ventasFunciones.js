@@ -33,6 +33,7 @@ checkboxes.forEach(checkbox => {
 function CerrarEmergente() {
     if(marcado){
     document.getElementById('popup').style.display = 'none';
+    console.log(marcado);
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -137,4 +138,7 @@ function CerrarDetalles() {
 
 function RealizarVenta(){
     window.location.href = "index.php?module=Realizar";
+    clienteV = document.querySelector("#ClienteVentaNombre");
+
+
 }

@@ -79,31 +79,44 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-2">
             <h5>id cliente:</h5>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <h5>Nombre negocio:</h5>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <h5>Nombre cliente:</h5>
+          </div>
+          <div class="col-md-2">
+            <h5>Municipio:</h5>
           </div>
         </div>
         <?php foreach ($resultado as $fila) { ?>
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <?php echo $fila['id_cliente']; ?>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <?php echo $fila['nombre_negocio']; ?>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <?php echo $fila['nombre_cliente']; ?>
               </div>
+              <div class="col-md-2">
+                <?php echo $fila['municipio']; ?>
+              </div>
               <div class="col-md-3">
-                <input type="checkbox" class="form-check-input bt-5" id=" <?php echo "Cliente" . $fila['id_cliente']; ?>" name="<?php echo "Cliente" . $fila['id_cliente']; ?>" value="<?php echo "Cliente" . $fila['id_cliente']; ?>" autocomplete="off">
+                <input type="checkbox" class="form-check-input bt-5" id=" <?php echo "Cliente" . $fila['id_cliente']; ?>" name="<?php echo "Cliente". $fila['id_cliente']; ?>" 
+                value="<?php echo $fila['id_cliente']; ?>" autocomplete="off">
                 <label class="form-check-label">selecciona</label>
+                <input type="hidden" class="nombreNegocio" id="<?php echo "nombreNegocio".$fila['id_cliente'];?>"
+                value="<?php echo $fila['nombre_negocio']; ?>">
+                <input type="hidden" class="nombreCliente"  id="<?php echo "nombreCliente".$fila['id_cliente'];?>"
+                value=" <?php echo $fila['nombre_cliente']; ?>">
+                <input type="hidden" class="clienteMunicipio" id="<?php echo "clienteMunicipio".$fila['id_cliente'];?>"
+                value="<?php echo $fila['municipio']; ?>">
               </div>
             </div>
           </div>

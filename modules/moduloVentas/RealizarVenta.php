@@ -9,22 +9,26 @@
 <br>
 <div class="container">
     <div class="row">
+        <div class="col-6">
+             <h3 id="ClienteVentaNombre">
+             </h3>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
         <div class="col-8">
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="InformacionVenta">
                     <thead>
                         <tr>
-                            <th>Encabezado 1</th>
-                            <th>Encabezado 2</th>
-                            <th>Encabezado 3</th>
+                            <th>Nombre documento:</th>
+                            <th>Precio venta documento:</th>
+                            <th>cantidad Documento:</th>
+                            <th>Total:</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Dato 1</td>
-                            <td>Dato 2</td>
-                            <td>Dato 3</td>
-                        </tr>
                         <tr>
                             <td>Dato 4</td>
                             <td>Dato 5</td>
