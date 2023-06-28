@@ -54,25 +54,25 @@ if (isset($_POST['enviar'])) {
     	if ($verdadNombre) {
     		?>
 		    	<div class="alert alert-danger" role="alert">
-				  El nombre ya se ha registrado!
+				  El nombre ya se ha registrado!!!
 				</div>
 		    <?php
     	}elseif ($verdadUsuario) {
     		?>
 		    	<div class="alert alert-danger" role="alert">
-				  El nombre de usuario ya se ha registrado!
+				  El nombre de usuario ya se ha registrado!!!
 				</div>
 		    <?php
     	}elseif ($verdadTel) {
     		?>
 		    	<div class="alert alert-danger" role="alert">
-				  El Numero de telefono ya se ha registrado!
+				  El Numero de telefono ya se ha registrado!!!
 				</div>
 		    <?php
     	}elseif ($verdadCorreo) {
     		?>
 		    	<div class="alert alert-danger" role="alert">
-				  El Correo Electronico ya se ha registrado!
+				  El Correo Electronico ya se ha registrado!!!
 				</div>
 		    <?php
     	}else {
@@ -92,13 +92,13 @@ if (isset($_POST['enviar'])) {
 			    if($resultadoInsert){
 			    	?>
 				    	<div class="alert alert-success" role="alert">
-						  El usuario se registro correctamente!
+						  El usuario se registro correctamente!!!
 						</div>
 				    <?php
 			    }else{
 			    	?>
 				    	<div class="alert alert-danger" role="alert">
-						  Algo salio mal al momento de guardar los datos
+						  Algo salio mal al momento de guardar los datos!!!
 						</div>
 				    <?php
     		}//cierre del else de la resuesta de la bd

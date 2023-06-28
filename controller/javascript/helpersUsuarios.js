@@ -13,7 +13,7 @@ function validarNumeros(input) {
  */
 function generarPass(longitud = 10) {
   const resultadoElemento = document.getElementById('password');
-  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@$!%*?&';
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@$!%*?&';
   let contrasena = '';
   const maxCaracteres = caracteres.length - 1;
 
@@ -22,4 +22,4 @@ function generarPass(longitud = 10) {
     contrasena += caracteres.charAt(indice);
   }
   resultadoElemento.value = contrasena;
-}
+ }

@@ -12,22 +12,10 @@ require '../../controller/php/CRUD.php';
 		$resultado = EliminarDato($SQL);
 		
 		if ($resultado) {
-			?>
-			   	<div class="alert alert-success" role="alert">
-					  El usuario se elimino correctamente!
-				</div>
-			<?php
-			echo "<script>window.location = '../../index.php?module=usuario&Delete=Borrado'</script>";
-			
+			echo "<script>window.location = '../../index.php?module=usuario&Delete=Borrado'</script>";		
 		} else{
 			echo "<script>window.location = '../../index.php?module=usuario&Delete=NoBorrado'</script>";
-			?>
-			   	<div class="alert alert-danger" role="alert">
-				  Algo salio mal al momento de eliminar el usuario!
-				</div>
-			<?php
 		}
 	}
-
 
 ?>
