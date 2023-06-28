@@ -17,24 +17,20 @@ if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]
      $correo = $_POST["correo"];
      $password = $_POST["password"];
      $rol = $_POST["rol"];
+     $id = $_POST['dato'];
 
-     echo "<script>window.location = '../../index.php?module=usuario&Update=Actualizado'</script>";
+     $encryptedPassword = md5($password);
+
+     $SQL = "UPDATE usuarios SET  nombre_completo ='$nombre', nombre_usuario = '$usuario',
+        telefono_usuario = '$numero', correo = '$correo', contrasena = '$encryptedPassword', 
+        rol_usuario = '$rol', estatus_usuarios = 'generica' WHERE id_usuarios = $id;";
+
+     $resultado = Actualizar($SQL);
+     if ($resultado) {
+         echo "<script>window.location = '../../index.php?module=usuario&Update=Actualizado'</script>";
+     } else {
+         echo "<script>window.location = '../../index.php?module=usuario&Update=NoActualizado'</script>";
+     }
 }
 
 ?>
-
-
-<!--
-    $encryptedPassword = md5($pass);
-
-    $SQL = "UPDATE usuarios SET  nombre_completo ='$nombre', nombre_usuario = '$usuario',
-        telefono_usuario = '$tel', correo = '$email', contrasena = '$encryptedPassword', rol_usuario = '$rol', estatus_usuarios = 'generica' WHERE id_usuarios = $id;";
-
-    $resultado = Actualizar($SQL);
-    if ($resultado) {
-        echo "<script>window.location = '../../index.php?module=usuario&Update=Actualizado'</script>";
-    } else {
-        echo "<script>window.location = '../../index.php?module=usuario&Update=NoActualizado'</script>";
-    }
-
---> 

@@ -3,8 +3,8 @@
 ?>
 <div class="contenido-do row">
   <br><br>
-  <div class="container col-9 text-center ">
-    <label>Aquí va la lista</label>
+  <div class="container col-9 ">
+    <h4 class="text-center">Usuarios Registrados</h4>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -22,7 +22,7 @@
         $resultado = Consulta($SQL);
         foreach ($resultado as $fila) {
         ?>
-          <form class="formulario" id="<?php echo "FormularioEliminar" . $fila['id_usuarios']; ?>" action="controller/php/controlVerUsuarios.php" method="POST">
+          <form action="controller/php/controlVerUsuarios.php" method="POST">
             <tr>
               <td><?php echo $fila['nombre_completo']; ?></td>
               <td><?php echo $fila['nombre_usuario']; ?></td>
@@ -30,12 +30,11 @@
               <td><?php echo $fila['correo']; ?></td>
               <td><?php echo $fila['contrasena']; ?></td>
               <td><?php echo $fila['rol_usuario']; ?></td>
-              <!-- Datos -->
-              <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
               <!-- Fin de los Datos -->
               <!-- Inicio de los botones -->
               <td>
-                <button type="submit" name="delete" id="delete" class="btn" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+                <button type="button" class="btn" data-bs-toggle="modal" 
+                data-bs-target="#ModalEliminar<?php echo $fila['id_usuarios']; ?>" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
                   <img src="assets/image/eliminar.png" width="35" height="35">
                 </button>
               </td>
@@ -48,11 +47,10 @@
           </tr>
           </form>
       	  <?php
-      	  include("modules/moduloUsuario/modalEditarU.php")
-      	  ?>
-          
-		   <!-- Fin Modal -->
-        <?php
+      	  //modal Editar Datos
+      	  include("modules/moduloUsuario/modalEditarU.php");
+      	  //Abrir modal de Alerta para eliminar
+      	  include("modules/moduloUsuario/modalEliminarUsuario.php");
         }
         ?>
       </tbody>

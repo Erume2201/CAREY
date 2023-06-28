@@ -12,26 +12,26 @@
 		?>
 	  <div class="form-group">
 	  	<br>
-	    <label for="exampleInputEmail1" class="form-label">Nombre Completo</label>
+	    <label for="exampleInputEmail1" class="form-label fw-bold">Nombre Completo</label>
 	    <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del usuario">
 	  </div>
 	  <div class="form-group">
 	  	<br>
-	    <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+	    <label for="exampleInputEmail1" class="form-label fw-bold">Nombre de Usuario</label>
 	    <input type="text" class="form-control" name="usuario" maxlength="10" placeholder="Ingresa el nombre de usuario">
 	  </div>
 	  <div class="form-group">
 	  	<br>
-	    <label for="exampleInputEmail1" class="form-label">Numero de telefono</label>
+	    <label for="exampleInputEmail1" class="form-label fw-bold">Numero de telefono</label>
 	    <input type="text" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10" oninput="validarNumeros(this)">
 	  </div>
 	  <div class="form-group">
 	  	<br>
-	    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+	    <label for="exampleInputEmail1" class="form-label fw-bold">Correo Electronico</label>
 	    <input type="email" class="form-control" name="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo Electronico">
 	  </div>
 	  <br>
-	  <label for="exampleInputPassword1" class="form-label">Contraseña Generica</label>
+	  <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña Generica</label>
 	  <div class="form-group password-container">
 		  <input type="text" class="password-field form-control" name="password" id="password" placeholder="Contraseña">
 		  <button type="button" class="password-button btn btn-primary" onclick="generarPass()">Generar</button>
@@ -39,7 +39,7 @@
 
 	  <div class="form-group">
 	  	<br>
-	    <label style="color: black;">Selecciona el rol de usuario:</label>
+	    <label style="color: black;" class="form-label fw-bold">Selecciona el rol de usuario:</label>
 	    <br>
 	    <select class="form-select" aria-label="Default select example" name="rol" id="rol">
 		  <option disabled selected hidden>Elige una opción del menú</option>
