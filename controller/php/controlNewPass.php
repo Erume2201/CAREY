@@ -21,9 +21,9 @@ if (empty($_POST["dato"]) || empty($_POST["pass"])) {
 
      $resultado = Actualizar($SQL);
      if ($resultado) {
-         echo "<script>window.location = '../../index.php?module=usuario&Update=Actualizado'</script>";
+         echo "<script>window.location = '../../index.php?module=recuperarUserPass&Update=Actualizado'</script>";
      } else {
-         echo "<script>window.location = '../../index.php?module=usuario&Update=NoActualizado'</script>";
+         echo "<script>window.location = '../../index.php?module=recuperarUserPass&Update=NoActualizado'</script>";
      }
 }
 
