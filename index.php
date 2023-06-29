@@ -31,9 +31,7 @@
     #iniciamos el menu general
     include_once("controller/php/menu_general.php");
     include_once("modules/moduloConfiguracion/guardarFecha.php");
-    //modal verDocumentos
-    include("controller/php/controlCreditos/modalCredito.php");
-                                
+    
     
     
 
