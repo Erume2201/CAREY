@@ -15,7 +15,8 @@ if (isset($_GET["module"])) {
                 $password_login = md5($_POST["password"]);
                 
                 // Consulta a la base de datos tomando en cuenta los parámetros ingresados por el usuario
-                $SQL = "SELECT nombre_usuario, contrasena FROM usuarios WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
+                $SQL = "SELECT id_usuarios, nombre_usuario, contrasena 
+                FROM usuarios WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
                 $resultado = Consulta($SQL);
                 /**
                  * Si el usuario y contraseña son correctos en la db
@@ -23,6 +24,7 @@ if (isset($_GET["module"])) {
                  */
                 if (!empty($resultado)) {
                     $_SESSION['s1'] = $user_login;
+                    $_SESSION['id_user'] = $resultado[0]['id_usuarios'];
                     /**
                      * a continuacion realizamos una busqueda si el usuario que inicio sesion
                      * tiene una contraseña generica o no, si es generica abre el cambio
@@ -97,15 +99,14 @@ if (isset($_GET["module"])) {
                 if (!empty($resultado)) {
                     $SQL = "UPDATE usuarios SET estatus_usuarios = 'pendiente' WHERE nombre_usuario = '$user';";
                     $resultadoUpdate = Actualizar($SQL);
-                    
                     if ($resultadoUpdate) {
                         ?>
                         <script>
-                        Swal.fire(
+                            Swal.fire({
                             icon: 'info',
-                            '¡Solicitud enviada correctamente!',
-                            'Un administrador enviará su nueva contraseña'
-                            )
+                            title: '¡Solicitud enviada correctamente!',
+                            text: 'Un administrador enviará su nueva contraseña'
+                            })
                         </script>
 <?php
                         include_once("view/login/login.php");
