@@ -30,6 +30,7 @@
     require "controller/php/CRUD.php";
     #iniciamos el menu general
     include_once("controller/php/menu_general.php");
+    include_once("modules/moduloConfiguracion/guardarFecha.php");
     
 
     

@@ -2,7 +2,7 @@
 <!--Creación del módulo de Configuración-->
 <div class="container col-6">
 	<br><br><br><br><br>
-	<h1>Fechas de corte</h1>
+	<h1>Asignación de días</h1>
 	<hr>
 	<h6>Seleccione las fechas en las que se hará el corte</h6>
 	<?php
