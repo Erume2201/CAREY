@@ -1,7 +1,9 @@
 // en esta parte de codigo utilizamos todos los datos que cargamos al navegador
+dia = document.querySelector("#Diaventa");
 clientetitulo = document.querySelector("#ClienteVentaNombre");
 tabla = document.querySelector("#TablaCuerpo");
-
+hoy = new Date();
+dia.textContent = "Fecha: "+ hoy.toISOString().split('T')[0];
 clientetitulo.innerHTML = `<h3>Cliente: ${localStorage.getItem("NombreCliente")}.</h3>
 <h4>Nombre Negocio: ${localStorage.getItem("NombreNegocio")} </h4>`;
 

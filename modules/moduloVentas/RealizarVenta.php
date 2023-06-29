@@ -9,8 +9,11 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-8">
              <div id="ClienteVentaNombre"> </div>
+        </div>
+        <div class="col-4">
+            <h3 id="Diaventa"></h3>
         </div>
 
     </div>
@@ -34,10 +37,11 @@
                 <p>$344</p>
             </div>
         </div>
-        <div class="col-2">
-         <div class="row">
+        <div class="col-3">
          <button type="button" class="btn btn-primary bt">Agregar Mas.</button>
-         </div>
+        </div>
+        <div class="col-1">
+        <img src="assets/image/salario.png" alt="" width="90px" height="90px" style="display: block; ">
         </div>
     </div>
     <div class="row">
