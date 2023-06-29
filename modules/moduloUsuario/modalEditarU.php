@@ -30,8 +30,8 @@
             <br>
             <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña Generica</label>
             <div class="form-group password-container">
-              <input type="text" class="password-field form-control" name="password" id="password" placeholder="Contraseña" >
-              <button type="button" class="password-button btn btn-primary" onclick="generarPass()">Generar</button>
+              <input type="text" class="password-field form-control" name="password" id="password<?php echo $fila['id_usuarios'];?>" placeholder="Contraseña" >
+              <button type="button" class="password-button btn btn-primary" value="<?php echo $fila['id_usuarios'];?>" onclick="generarPassEdi(event)">Generar</button>
             </div>
 
             <div class="form-group">

@@ -7,12 +7,14 @@
       </div>
       <form action="controller/php/controlNewPass.php" method="POST" >
       <div class="modal-body">
-        <h5>Cambio de contraseña para el usuario: <strong><?php echo $fila['nombre_usuario']; ?></strong></h5>
-        <br>
-        <h5 id="h5">Contraseña nueva: </h5>
+        <label>Cambio de contraseña para el usuario: <strong><?php echo $fila['nombre_usuario']; ?></strong></label>
+        <br><br>
+        <h5>Contraseña nueva: <h5 id="h5<?php echo $fila['id_usuarios']; ?>"> </h5></h5>
+        
         <h7>(Asegurate de guardar la contraseña nueva!!!)</h7>
+        <br>
         <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
-        <input type="hidden" class="password-field form-control" name="pass" id="pass">
+        <input type="hidden" class="password-field form-control" name="pass" id="pass<?php echo $fila['id_usuarios']; ?>">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
