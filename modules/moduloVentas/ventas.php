@@ -151,7 +151,7 @@
   <?php
   if (isset($_GET['cliente'])) {
     $status = $_GET['cliente'];
-    if ($status == "cliente") {
+    if ($status == "Nocliente") {
   ?>
       <script>
         window.onload = function() {
@@ -161,7 +161,7 @@
     <?php
     } else {
     ?>
-
+   
   <?php
     }
   }

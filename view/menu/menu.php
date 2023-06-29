@@ -45,7 +45,7 @@
                         Ventas
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item fw-bold" href="index.php?module=venderDocumento&cliente=cliente" 
+                        <li><a class="dropdown-item fw-bold" href="index.php?module=venderDocumento&cliente=Nocliente" 
                         id="venderDocumento">Vender Documentos</a></li>
                         <li>
                             <hr class="dropdown-divider">

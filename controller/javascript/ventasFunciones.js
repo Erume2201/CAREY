@@ -93,7 +93,7 @@ function detalles() {
         Detalleinformacion = Descripcion[0].value;
         DetalleValorTipo = tipo[0].value;
         //cargamos otras variables al navegador
-        localStorage.setItem("idDocumen", id[0].value);
+        localStorage.setItem("idDocumen",id[0].value);
         localStorage.setItem("nombreDocumen", Detallenombre);
         localStorage.setItem("PrecioVentaDocument", Detallevalorventa);
 

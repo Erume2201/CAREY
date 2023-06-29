@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-3">
-         <button type="button" class="btn btn-primary bt">Agregar Mas.</button>
+         <button type="button" onclick="AgregarMas()" class="btn btn-primary bt">Agregar Mas.</button>
         </div>
         <div class="col-1">
         <img src="assets/image/salario.png" alt="" width="90px" height="90px" style="display: block; ">
@@ -46,10 +46,10 @@
     </div>
     <div class="row">
         <div class="col-3">
-        <button type="button" class="btn btn-success bt">Finalizar</button>
+        <button type="button" onclick="vender()" class="btn btn-success bt">Finalizar</button>
         </div>
         <div class="col-3">
-        <button type="button" class="btn btn-danger bt">Cancelar</button>
+        <button type="button" onclick="cancelarVenta()" class="btn btn-danger bt">Cancelar</button>
         </div>
       </div>
 </div>
