@@ -26,7 +26,13 @@
 				            <td><?php echo $fila['nombre_negocio'];?></td>
 				            <td>
 				            	<button type="button" class="btn" data-bs-toggle="modal" 
-				                data-bs-target="#deleteModal<?php echo $fila['id_cliente'];?>" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
+				                data-bs-target="#editModal<?php echo $fila['id_cliente'];?>" style="width: 25px; height: 25px; display: flex; justify-content: center; align-items: center;">
+				                	<img src="assets/image/edit.png" width="35" height="35">
+				                </button>
+				            </td>
+				            <td>
+				            	<button type="button" class="btn" data-bs-toggle="modal" 
+				                data-bs-target="#deleteModal<?php echo $fila['id_cliente'];?>" style="width: 30px; height: 30px; display: flex; justify-content: center; align-items: center;">
 				                	<img src="assets/image/trash.png" width="35" height="35">
 				                </button>
 				            </td>

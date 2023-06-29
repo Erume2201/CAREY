@@ -17,6 +17,9 @@
         <br><br>
         <input type="submit" value="Guardar cambios">
     </form>
+    <?php
+	include_once("modules/moduloConfiguracion/guardarFecha.php");
+	?>
     <hr>
     <h1>Alguna otra configuración...</h1>
 </div>
