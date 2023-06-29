@@ -9,9 +9,8 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-6">
-             <h3 id="ClienteVentaNombre">
-             </h3>
+        <div class="col-12">
+             <div id="ClienteVentaNombre"> </div>
         </div>
 
     </div>
@@ -28,20 +27,26 @@
                             <th>Total:</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dato 4</td>
-                            <td>Dato 5</td>
-                            <td>Dato 6</td>
-                        </tr>
+                    <tbody id="TablaCuerpo">
+                       
                     </tbody>
                 </table>
+                <p>$344</p>
             </div>
         </div>
-        <div class="col-4">
-        <button type="button" class="btn btn-warning">Agregar mas</button>
-
+        <div class="col-2">
+         <div class="row">
+         <button type="button" class="btn btn-primary bt">Agregar Mas.</button>
+         </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-3">
+        <button type="button" class="btn btn-success bt">Finalizar</button>
+        </div>
+        <div class="col-3">
+        <button type="button" class="btn btn-danger bt">Cancelar</button>
+        </div>
+      </div>
 </div>
 <script src="controller/javascript/Finalventa.js"></script>

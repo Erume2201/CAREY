@@ -28,7 +28,7 @@
             <div class="col">
               <div class="card shadow-sm">
                 <!--mandamos el docuemto seleccionado para el borrado o modificado-->
-                <form id="<?php echo "FormularioVetas" . $fila['id_articulo_documetos']; ?>" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
+                <form id="<?php echo "FormularioVentas" . $fila['id_articulo_documetos']; ?>" action="" method="">
                   <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                   <br>
                   <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
@@ -36,6 +36,7 @@
                   <input type="hidden" class="PrecioModifica" value="<?php echo $fila['precio_costo']; ?>">
                   <input type="hidden" class="descripcionModifi" value="<?php echo $fila['descripcion']; ?>">
                   <input type="hidden" class="TipoModifica" value="<?php echo $fila['tipo']; ?>">
+                  <input type="hidden" class="idDocumentoElegido" value="<?php echo $fila['id_articulo_documetos']; ?>">
 
                   <div class="card-body">
                     <label style="margin-left: 8px;">Precio:</label>

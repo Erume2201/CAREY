@@ -33,7 +33,15 @@ checkboxes.forEach(checkbox => {
 function CerrarEmergente() {
     if (marcado) {
         document.getElementById('popup').style.display = 'none';
-        // archivo1.js
+        nombreC = document.querySelector("#nombreCliente" + marcado.value);
+        nombreN = document.querySelector("#nombreNegocio" + marcado.value);
+        MunicipioC = document.querySelector("#clienteMunicipio" + marcado.value);
+        //cargamos la informacion al navegador 
+        localStorage.setItem("idCliente", marcado.value);
+        localStorage.setItem("NombreCliente", nombreC.value);
+        localStorage.setItem("NombreNegocio", nombreN.value);
+        localStorage.setItem("MunicipioCliente", MunicipioC.value);
+
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -77,12 +85,18 @@ function detalles() {
         precioCosto = formularioVer.getElementsByClassName('PrecioModifica');
         Descripcion = formularioVer.getElementsByClassName('descripcionModifi');
         tipo = formularioVer.getElementsByClassName('TipoModifica');
+        id = formularioVer.getElementsByClassName('idDocumentoElegido');
 
         Detallenombre = h4[0].textContent;
         Detallevalorcosto = precioCosto[0].value;
         Detallevalorventa = precioVenta[0].textContent;
         Detalleinformacion = Descripcion[0].value;
         DetalleValorTipo = tipo[0].value;
+        //cargamos otras variables al navegador
+        localStorage.setItem("idDocumen", id[0].value);
+        localStorage.setItem("nombreDocumen", Detallenombre);
+        localStorage.setItem("PrecioVentaDocument", Detallevalorventa);
+
 
         let htmlNuevo = `
                     <div class="col-lg-12">
