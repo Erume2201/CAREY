@@ -16,7 +16,7 @@
             <div class="col-4">
                 <h3 id="Diaventa"></h3>
                 <input type="hidden" class="" id="DiaVentaValor" name="DiaVentaValor" value="">
-                <input type="hidden" class="" id="HoraValor" name="HoraValor" value="">
+                <input type="hidden" class="" id="horaValor" name="horaValor" value="">
             </div>
 
         </div>

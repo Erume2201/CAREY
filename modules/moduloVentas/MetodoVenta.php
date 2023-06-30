@@ -12,10 +12,22 @@ if ($tipoVenta=='Decontado') {
         $total =$_POST['TotalFinal'];
         $Fecha =$_POST['DiaVentaValor'];
         $SQLCredito = "INSERT INTO creditos (estatus, fecha, total, cliente_id) 
-        VALUES ('Inicial', '$Fecha', $total, '$cliente');";
+        VALUES ('Inicial', '$Fecha', 0, '$cliente');";
         $resultado = insertarDatosDoble($SQLCredito);
 
-        echo $resultado;
+        if(isset($_SESSION['id_user'])&&isset($_POST['horaValor'])){
+            $idusuario = $_SESSION['id_user'];
+            echo $idusuario;
+            $hora = $_POST['horaValor'];
+            $SQLventaPadre = "INSERT INTO ventas ( total_venta, hora, fecha, credito_id, usuarios_id) 
+            VALUES ($total, '$hora', '$hora', '$resultado', '$idusuario');";
+            
+            $FinalVenta = InsertarDato($SQLventaPadre);
+            if ($FinalVenta) {
+                echo "Realizado";
+            }
+        }
+        echo "datos faltan";
     }
     
    }else{

@@ -1,14 +1,23 @@
+hoy = new Date();
+// Configura la zona horaria a México
+var opcionesFecha = { timeZone: 'America/Mexico_City' };
+
+// Obtiene la hora actual en México
+var horaActualMexico = hoy.toLocaleString('es-MX', opcionesFecha);
+
+var diaActual = hoy.toLocaleDateString('es-MX', opcionesFecha);
+var partesFecha = diaActual.split('/');
+var fechaFormateada = partesFecha.reverse().join('-');
+
 // en esta parte de codigo utilizamos todos los datos que cargamos al navegador
 dia = document.querySelector("#Diaventa");
 idDiaventa = document.querySelector("#DiaVentaValor");
 
-hoy = new Date();
-dia.textContent = "Fecha: " + hoy.toISOString().split('T')[0];
-idDiaventa.value = hoy.toISOString().split('T')[0];
+Hora= document.querySelector("#horaValor");
 
-//Hora = document.querySelector("#HoraValor");
-//var hora = fechaActual.getHours();
-//var minutos = fechaActual.getMinutes();
+dia.textContent = "Fecha: " + fechaFormateada;
+idDiaventa.value = fechaFormateada;
+Hora.value = horaActualMexico;
 
 /**
  * // Obtener todas las claves almacenadas en localStorage
@@ -68,9 +77,10 @@ DocumentoCan.forEach(DatoP => {
         precio = DocumenPrecioElegido.querySelector('.PrecioV').innerText;
         TextTotal = document.querySelector("#TotalValor" + idPrecio);
         input = document.querySelector("#Cantidad" + idPrecio);
-
+         
         input.addEventListener("keyup", () => {
             Subtotal = precio * input.value
+            TextTotal.textContent = ""; 
             TextTotal.textContent = Subtotal;
             Total=Total+Subtotal;
             ColocarValor = document.querySelector("#TotalFinal");
