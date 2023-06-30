@@ -32,6 +32,7 @@ checkboxes.forEach(checkbox => {
 
 function CerrarEmergente() {
     if (marcado) {
+        localStorage.clear();
         document.getElementById('popup').style.display = 'none';
         nombreC = document.querySelector("#nombreCliente" + marcado.value);
         nombreN = document.querySelector("#nombreNegocio" + marcado.value);
