@@ -15,6 +15,7 @@
 </div>
 
 <?php
+
 	include_once("controller/php/controlCreditos/controllerViewCreditos.php");
 	?>
 

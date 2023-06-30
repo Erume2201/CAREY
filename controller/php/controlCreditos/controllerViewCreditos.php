@@ -1,4 +1,6 @@
 <?php
+
+ require "controller/php/controlCreditos/modalCredito.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	// Obtención de las fechas de corte "DESDE" y "HASTA"
 	$fecha_seleccionada = $_POST['fecha_credito'];
@@ -35,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="contenido-do row">
             <br><br>
             <div class="container col-8">
-                <table class="table table-hover table-sm table-bordered" id="tabla_principal">
+                <table class="table table-hover table-sm table-bordered" id="tabla_principal" id="table">
                    <thead class="table-dark text-center">
                     <tr>
                       <th scope="col">Id Cliente</th>
@@ -65,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <td>
                 <center>
                 <button type="button" class="btn" 
-                    data-bs-toggle="modal" data-bs-target="#verDocumentos<?php echo $fila['id_cliente'];?>"
+                    data-bs-toggle="modal" data-bs-target="#verDocumentos"
                     style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
                     <img src="assets/image/view.png" width="35" height="35">
                 </button>
@@ -75,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <?php
         //modal verDocumentos
-        include("controller/php/controlCreditos/modalCredito.php");
+      # 
     } 
     ?>      
 </tbody>
@@ -92,3 +94,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 }
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="controller/javascript/modalCredito/modalCredito.js"></script>

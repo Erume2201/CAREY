@@ -1,37 +1,57 @@
 
 <?php
+# include "controller/php/CRUD.php";
+// Recuperar el valor de idCliente enviado por la solicitud AJAX
 /*
+$idCliente = $_POST['idCliente'];
 #consulta numero 2 para agregar datos al modal
-$nuevoidCliente = $fila['id_cliente'];;
-$SQLConsulta2 = "SELECT cli.id_cliente, cli.nombre_cliente, cli.telefono_cliente, cli.nombre_negocio, cre.estatus, cre.fecha, cre.total
-FROM ventas ven 
-JOIN creditos cre ON ven.credito_id=cre.id_creditos 
+$nuevoidCliente = $idCliente;
+echo  $nuevoidCliente;
+/*
+$SQL = "SELECT cli.id_cliente, cli.nombre_cliente, cli.telefono_cliente, cli.nombre_negocio, cre.estatus, cre.fecha, cre.total
+FROM creditos cre
 JOIN cliente cli ON cli.id_cliente=cre.cliente_id
-Where cli.id_cliente =$nuevoidCliente;";
-$consultarDatos1 =Consulta($SQLConsulta2);
+Where cli.id_cliente = $nuevoidCliente;";
+$consultarDatos = Consulta($SQL);
 */
+// Resto del código del modal...
 ?>
 
+
 <!-- Modal -->
-<div class="modal fade" id="verDocumentos<?php echo $fila['id_cliente'];?>" tabindex="-1" aria-labelledby="verDocumentosLabel" aria-hidden="true">
+<div class="modal fade modal-lg" id="verDocumentos" 
+tabindex="-1" aria-labelledby="verDocumentosLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="verDocumentosLabel">Documentos comprados de: <?php echo $fila['nombre_cliente'];?></h1>
+        <h1 class="modal-title fs-5" id="verDocumentosLabel">Documentos comprados de:</h1>
       </div>
       <!-- Cuerpo del modal-->
       <div class="modal-body">
-        <?php 
-        #consulta numero 2 para agregar datos al modal
-            $nuevoidCliente = $fila['id_cliente'];;
-            $SQLConsulta2 = "SELECT cli.nombre_cliente, cli.telefono_cliente, cli.nombre_negocio, cre.estatus, cre.fecha, cre.total
-            FROM creditos cre  
-            JOIN cliente cli ON cli.id_cliente=cre.cliente_id
-            WHERE cli.id_cliente=$nuevoidCliente;";
-            $consultarDatos1 =Consulta($SQLConsulta2);
-
-        ?>
+        <?php $idCliente = $_POST['idCliente'];
+          #consulta numero 2 para agregar datos al modal
+          $nuevoidCliente = $idCliente;
+          echo  $nuevoidCliente;?>
+        
         <!--Contenido modal  encabezados-->
+        
+            <div class="container col-12">
+                <table class="table table-hover table-sm table-bordered">
+                   <thead class="table-striped text-center">
+                    <tr>
+                      <th scope="col">Id Cliente</th>
+                      <th scope="col">Nombre cliente</th>
+                      <th scope="col">Telefono cliente</th>
+                      <th scope="col">Nombre negocio</th>
+                      <th scope="col">fecha</th>
+                      <th scope="col">N° Documentos</th>
+                      <th scope="col">Costo Total</th>
+                      <th scope="col">Información</th>
+
+                    </tr>
+                  </thead>
+                </table>
+            </div>  
        
       </div> 
       <!--Termina cuerpo de modal-->
