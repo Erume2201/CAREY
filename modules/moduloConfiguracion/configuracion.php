@@ -4,22 +4,35 @@
 	<br><br><br><br><br>
 	<h1>Asignación de días</h1>
 	<hr>
-	<h6>Seleccione las fechas en las que se hará el corte</h6>
+	<h6>Seleccione los días en los que se hará el corte</h6>
 	<?php
 	include_once("modules/moduloConfiguracion/procesar.php");
 	?>
 	<form method="POST">
-        <label for="fecha_inicio">Desde:</label>
-        <input type="date" name="fecha_inicio" required>
+        <label for="desde">Desde:</label>
+        <select name="desde" required>
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miercoles">Miércoles</option>
+            <option value="jueves">Jueves</option>
+            <option value="viernes">Viernes</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+        </select>
         <br><br>
-        <label for="fecha_fin">Hasta:</label>
-        <input type="date" name="fecha_fin" required>
+        <label for="hasta">Hasta:</label>
+        <select name="hasta" required>
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miercoles">Miércoles</option>
+            <option value="jueves">Jueves</option>
+            <option value="viernes">Viernes</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+        </select>
         <br><br>
         <input type="submit" value="Guardar cambios">
     </form>
-    <?php
-	include_once("modules/moduloConfiguracion/guardarFecha.php");
-	?>
     <hr>
     <h1>Alguna otra configuración...</h1>
 </div>
