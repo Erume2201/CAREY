@@ -2,9 +2,6 @@ hoy = new Date();
 // Configura la zona horaria a México
 var opcionesFecha = { timeZone: 'America/Mexico_City' };
 
-// Obtiene la hora actual en México
-var horaActualMexico = hoy.toLocaleString('es-MX', opcionesFecha);
-
 var diaActual = hoy.toLocaleDateString('es-MX', opcionesFecha);
 var partesFecha = diaActual.split('/');
 var fechaFormateada = partesFecha.reverse().join('-');
@@ -17,8 +14,19 @@ Hora= document.querySelector("#horaValor");
 
 dia.textContent = "Fecha: " + fechaFormateada;
 idDiaventa.value = fechaFormateada;
-Hora.value = horaActualMexico;
 
+// Obtiene la hora actual en México
+var horas = hoy.getHours();
+var minutos = hoy.getMinutes();
+var segundos = hoy.getSeconds();
+
+// Formatear las horas, minutos y segundos con ceros a la izquierda si son menores a 10
+horas = horas < 10 ? "0" + horas : horas;
+minutos = minutos < 10 ? "0" + minutos : minutos;
+segundos = segundos < 10 ? "0" + segundos : segundos;
+
+var horaActual = fechaFormateada+" "+horas + ":" + minutos + ":" + segundos;
+Hora.value = horaActual;
 /**
  * // Obtener todas las claves almacenadas en localStorage
 var claves = Object.keys(localStorage);
@@ -48,6 +56,9 @@ if (fila == null) {
                         <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa cantidad" required></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
+                        <input type="hidden" class="" id="ValorIdDocumen" name="ValorIdDocumen" value="${localStorage.getItem("idDocumen")}">
+                        <input type="hidden" class="" id="ValorCantidad" name="ValorCantidad" value="">
+                        <input type="hidden" class="" id="subTotal" name="subTotal" value="">
                     </tr>`;
 
     tabla.innerHTML = fila;
@@ -58,10 +69,12 @@ if (fila == null) {
                         <td>${localStorage.getItem("nombreDocumen")}</td>
                         <td id="PrecioV${localStorage.getItem("idDocumen")}" 
                         class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
-
                         <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa un valor" required></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
+                        <input type="hidden" class="" id="ValorIdDocumen" name="ValorIdDocumen" value="${localStorage.getItem("idDocumen")}">
+                        <input type="hidden" class="" id="ValorCantidad" name="ValorCantidad" value="">
+                        <input type="hidden" class="" id="subTotal" name="subTotal" value="">
                     </tr>`;
 
     tabla.innerHTML = fila;
@@ -74,12 +87,19 @@ DocumentoCan.forEach(DatoP => {
         event.preventDefault();
         let DocumenPrecioElegido = event.currentTarget;
         idPrecio = DocumenPrecioElegido.id;
+        //obtenemos valores de los campos
         precio = DocumenPrecioElegido.querySelector('.PrecioV').innerText;
         TextTotal = document.querySelector("#TotalValor" + idPrecio);
         input = document.querySelector("#Cantidad" + idPrecio);
-         
+        //Colocar valores
+        CantidaDocumento = document.querySelector("#ValorCantidad"); 
+        SubTotalDocumentio = document.querySelector("#subTotal");
+
         input.addEventListener("keyup", () => {
-            Subtotal = precio * input.value
+            Subtotal = precio * input.value;
+            CantidaDocumento.value= input.value;
+            SubTotalDocumentio.value = Subtotal;
+
             TextTotal.textContent = ""; 
             TextTotal.textContent = Subtotal;
             Total=Total+Subtotal;
