@@ -14,18 +14,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Cálculo de las fechas de inicio y fin en función de los días seleccionados
     $fecha_inicio = date('Y-m-d', strtotime("last $desdeDia", strtotime($fechaActual)));
-    $fecha_fin = date('Y-m-d', strtotime('last ' . $hastaDia, strtotime($fechaActual)));
+    $fecha_fin = date('Y-m-d', strtotime("next $hastaDia", strtotime($fechaActual)));
 
     echo "Fecha DESDE: " . $fecha_inicio . "<br>";
     echo "Fecha HASTA: " . $fecha_fin . "<br>";
 
-    // Validación de las fechas
-    if ($fecha_inicio > $fecha_fin) {
+    // Obtención de los timestamps de las fechas DESDE y HASTA
+    $timestamp_desde = strtotime($fecha_inicio);
+    $timestamp_hasta = strtotime($fecha_fin);
+
+    // Calculamos la diferencia en días
+    $diferencia_dias = ($timestamp_hasta - $timestamp_desde) / (60 * 60 * 24);
+
+    // Verificamos que la diferencia entre DESDE y HASTA sea de 7 dias calendarios
+    if ($diferencia_dias != 6) {
         echo '<div class="alert alert-danger" role="alert">
-                La fecha inicio (DESDE) no puede ser posterior a la fecha fin (HASTA).
+                La diferencia de días entre DESDE y HASTA debe ser de 7 días calendario.
               </div>';
     } else {
-        // Resto del código para guardar las fechas de corte
+        // Almacenamos las fechas en las variables $desde y $hasta
         $desde = $fecha_inicio;
         $hasta = $fecha_fin;
         echo '<div class="alert alert-success" role="alert">Las fechas de corte se guardaron correctamente.</div>';

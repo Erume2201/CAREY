@@ -11,24 +11,24 @@
 	<form method="POST">
         <label for="desde">Desde:</label>
         <select name="desde" required>
-            <option value="lunes">Lunes</option>
-            <option value="martes">Martes</option>
-            <option value="miercoles">Miércoles</option>
-            <option value="jueves">Jueves</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
-            <option value="domingo">Domingo</option>
+            <option value="Monday">Lunes</option>
+            <option value="Tuesday">Martes</option>
+            <option value="Wednesday">Miércoles</option>
+            <option value="Thursday">Jueves</option>
+            <option value="Friday">Viernes</option>
+            <option value="Saturday">Sábado</option>
+            <option value="Sunday">Domingo</option>
         </select>
         <br><br>
         <label for="hasta">Hasta:</label>
         <select name="hasta" required>
-            <option value="lunes">Lunes</option>
-            <option value="martes">Martes</option>
-            <option value="miercoles">Miércoles</option>
-            <option value="jueves">Jueves</option>
-            <option value="viernes">Viernes</option>
-            <option value="sabado">Sábado</option>
-            <option value="domingo">Domingo</option>
+            <option value="Monday">Lunes</option>
+            <option value="Tuesday">Martes</option>
+            <option value="Wednesday">Miércoles</option>
+            <option value="Thursday">Jueves</option>
+            <option value="Friday">Viernes</option>
+            <option value="Saturday">Sábado</option>
+            <option value="Sunday">Domingo</option>
         </select>
         <br><br>
         <input type="submit" value="Guardar cambios">
