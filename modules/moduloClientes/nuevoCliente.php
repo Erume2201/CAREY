@@ -13,22 +13,22 @@
 				?>
 				<div class="form-group">
 					<label for="exampleInputEmail1" class="form-label">Nombre:</label>
-			    	<input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del cliente">
+			    	<input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del cliente" autocomplete="off">
 				</div>
 				<br>
 				<div class="form-group">
 					<label for="exampleInputEmail1" class="form-label">Teléfono:</label>
-			    	<input type="text" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10">
+			    	<input type="text" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10" oninput="validarNumeros(this)" autocomplete="false">
 				</div>
 				<br>
 				<div class="form-group">
 					<label for="exampleInputEmail1" class="form-label">Nombre del negocio:</label>
-					<input type="text" class="form-control" name="negocio" id="negocio" placeholder="Ingresa el nombre del negocio">
+					<input type="text" class="form-control" name="negocio" id="negocio" placeholder="Ingresa el nombre del negocio" autocomplete="off">
 				</div>
 				<br>
 				<div class="form-group">
 					<label for="exampleInputEmail1" class="form-label">Municipio:</label>
-					<input type="text" class="form-control" name="municipio" id="municipio" placeholder="Ingresa el nombre del Municipio">
+					<input type="text" class="form-control" name="municipio" id="municipio" placeholder="Ingresa el nombre del Municipio" autocomplete="off">
 				</div>
 				<br>
 				<div class="form-group">
