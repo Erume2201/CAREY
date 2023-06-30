@@ -3,8 +3,8 @@
 }
 
 .password-field {
-  width: 100%;
-  padding-right: 40px; /* Ajusta el espacio para el botón */
+  width: 350px;
+  height: 50px;
 }
 
 .password-button {

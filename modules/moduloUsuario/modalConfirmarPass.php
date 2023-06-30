@@ -9,12 +9,15 @@
       <div class="modal-body">
         <label>Cambio de contraseña para el usuario: <strong><?php echo $fila['nombre_usuario']; ?></strong></label>
         <br><br>
+
         <h5>Contraseña nueva: <h5 id="h5<?php echo $fila['id_usuarios']; ?>"> </h5></h5>
-        
-        <h7>(Asegurate de guardar la contraseña nueva!!!)</h7>
+        <div id="copiar<?php echo $fila['id_usuarios']; ?>"></div>
+        <br>
+        <h7>Asegurate de guardar la contraseña nueva!!! <button type="button" class="btn btn-dark" value="<?php echo $fila['id_usuarios']; ?>"  onclick="ChecandoModal(event)">
+          Copiar</button></h7>
         <br>
         <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
-        <input type="hidden" class="password-field form-control" name="pass" id="pass<?php echo $fila['id_usuarios']; ?>">
+        <input type="hidden" class="password-field form-control" name="pass" id="pass<?php echo $fila['id_usuarios']; ?>" readonly>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -24,3 +27,4 @@
     </div>
   </div>
 </div>
+<script src="controller/javascript/helpersCopiar.js"></script>

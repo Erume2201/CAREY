@@ -1,7 +1,7 @@
 <?php
 	//echo "hola soy tu contraseña perdidad"
 ?>
-<div class="container col-9 ">
+<div class="container col-9 table-responsive">
     <h4 class="text-center">Usuarios con cambio de contraseña pendiente</h4>
     <table class="table table-hover">
       <thead>

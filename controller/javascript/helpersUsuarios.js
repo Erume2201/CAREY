@@ -71,3 +71,4 @@ function generarPassNew(event, longitud = 10) {
   resultadoh5.textContent = contrasena;
   resultadoHiden.value = contrasena;
 }
+
