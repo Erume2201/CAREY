@@ -56,9 +56,10 @@ if (fila == null) {
                         <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa cantidad" required></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
-                        <input type="hidden" class="" id="ValorIdDocumen" name="ValorIdDocumen" value="${localStorage.getItem("idDocumen")}">
-                        <input type="hidden" class="" id="ValorCantidad" name="ValorCantidad" value="">
-                        <input type="hidden" class="" id="subTotal" name="subTotal" value="">
+                        <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
+                        value="${localStorage.getItem("idDocumen")}">
+                        <input type="hidden" class="" id="ValorCantidad${localStorage.getItem("idDocumen")}" name="ValorCantidad[]" value="">
+                        <input type="hidden" class="" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="">
                     </tr>`;
 
     tabla.innerHTML = fila;
@@ -72,9 +73,10 @@ if (fila == null) {
                         <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa un valor" required></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
-                        <input type="hidden" class="" id="ValorIdDocumen" name="ValorIdDocumen" value="${localStorage.getItem("idDocumen")}">
-                        <input type="hidden" class="" id="ValorCantidad" name="ValorCantidad" value="">
-                        <input type="hidden" class="" id="subTotal" name="subTotal" value="">
+                      <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
+                        value="${localStorage.getItem("idDocumen")}">
+                        <input type="hidden" class="" id="ValorCantidad${localStorage.getItem("idDocumen")}" name="ValorCantidad[]" value="">
+                        <input type="hidden" class="" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="">
                     </tr>`;
 
     tabla.innerHTML = fila;
@@ -92,8 +94,8 @@ DocumentoCan.forEach(DatoP => {
         TextTotal = document.querySelector("#TotalValor" + idPrecio);
         input = document.querySelector("#Cantidad" + idPrecio);
         //Colocar valores
-        CantidaDocumento = document.querySelector("#ValorCantidad"); 
-        SubTotalDocumentio = document.querySelector("#subTotal");
+        CantidaDocumento = document.querySelector("#ValorCantidad"+idPrecio); 
+        SubTotalDocumentio = document.querySelector("#subTotal"+idPrecio);
 
         input.addEventListener("keyup", () => {
             Subtotal = precio * input.value;

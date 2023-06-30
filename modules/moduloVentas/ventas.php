@@ -167,4 +167,28 @@
   }
   ?>
 </div>
+<div>
+  <?php
+  if (isset($_GET['venta'])) {
+    $status = $_GET['venta'];
+    if ($status == "Realizada") {
+  ?>
+     <script>
+        Swal.fire('Venta realizada!', '', 'success')
+      </script>
+    <?php
+    } else {
+    ?>
+     <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'No se pudo realizar la venta',
+          text: 'Asista a soporte tecnico!'
+        })
+      </script>
+  <?php
+    }
+  }
+  ?>
+</div>
 <script src="controller/javascript/ventasFunciones.js"></script>

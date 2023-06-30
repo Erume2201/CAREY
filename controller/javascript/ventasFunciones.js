@@ -46,7 +46,7 @@ function CerrarEmergente() {
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Cliente seleccionnado',
+            title: 'Cliente seleccionado',
             showConfirmButton: false,
             timer: 1500
         })
