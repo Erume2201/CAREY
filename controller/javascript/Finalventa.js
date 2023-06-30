@@ -79,14 +79,13 @@ function AgregarMas() {
 localStorage.removeItem("idDocumen");
 localStorage.removeItem("nombreDocumen");
 localStorage.removeItem("PrecioVentaDocument");
-localStorage.removeItem("FilaHTML");
 
 function vender(){
-    localStorage.removeItem("FilaHTML");
+    localStorage.clear();
 }
 
 function cancelarVenta(){
-    localStorage.removeItem("FilaHTML");
+    localStorage.clear();
     window.location.href = "index.php?module=venderDocumento&cliente=Nocliente";
 
 }
