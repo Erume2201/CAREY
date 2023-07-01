@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+
+<!--Creación del módulo de Configuración-->
+
 <html>
 <head>
     <title>Asignación de días</title>
 </head>
 <body>
-    <!--Creación del módulo de Configuración-->
     <div class="container col-6">
         <br><br><br><br><br>
         <h1>Asignación de días</h1>

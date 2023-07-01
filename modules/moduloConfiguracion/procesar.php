@@ -1,6 +1,6 @@
 <?php
 function obtenerFechasCorte($desdeDia, $hastaDia) {
-    // Obtención de la fecha actual
+    // Cambiamos la zona por default y obtemos el día de la fecha actual
     date_default_timezone_set('America/Mexico_City');
     $fechaActual = date('Y-m-d');
     $timestamp = strtotime($fechaActual);
