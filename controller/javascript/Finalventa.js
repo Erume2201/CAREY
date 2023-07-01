@@ -10,7 +10,7 @@ var fechaFormateada = partesFecha.reverse().join('-');
 dia = document.querySelector("#Diaventa");
 idDiaventa = document.querySelector("#DiaVentaValor");
 
-Hora= document.querySelector("#horaValor");
+Hora = document.querySelector("#horaValor");
 
 dia.textContent = "Fecha: " + fechaFormateada;
 idDiaventa.value = fechaFormateada;
@@ -25,10 +25,10 @@ horas = horas < 10 ? "0" + horas : horas;
 minutos = minutos < 10 ? "0" + minutos : minutos;
 segundos = segundos < 10 ? "0" + segundos : segundos;
 
-var horaActual = fechaFormateada+" "+horas + ":" + minutos + ":" + segundos;
+var horaActual = fechaFormateada + " " + horas + ":" + minutos + ":" + segundos;
 Hora.value = horaActual;
-/**
- * // Obtener todas las claves almacenadas en localStorage
+
+// Obtener todas las claves almacenadas en localStorage
 var claves = Object.keys(localStorage);
 
 // Recorrer todas las claves y obtener los valores asociados
@@ -36,7 +36,7 @@ claves.forEach(function (clave) {
     var valor = localStorage.getItem(clave);
     console.log(clave + " " + valor);
 });
- */
+
 
 
 clientetitulo = document.querySelector("#ClienteVentaNombre");
@@ -59,7 +59,7 @@ if (fila == null) {
                         <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
                         value="${localStorage.getItem("idDocumen")}">
                         <input type="hidden" class="" id="ValorCantidad${localStorage.getItem("idDocumen")}" name="ValorCantidad[]" value="">
-                        <input type="hidden" class="" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="">
+                        <input type="hidden" class="SubValor" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="0">
                     </tr>`;
 
     tabla.innerHTML = fila;
@@ -76,13 +76,13 @@ if (fila == null) {
                       <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
                         value="${localStorage.getItem("idDocumen")}">
                         <input type="hidden" class="" id="ValorCantidad${localStorage.getItem("idDocumen")}" name="ValorCantidad[]" value="">
-                        <input type="hidden" class="" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="">
+                        <input type="hidden" class="SubValor" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="0">
                     </tr>`;
 
     tabla.innerHTML = fila;
     localStorage.setItem("FilaHTML", fila);
 }
-let Total=0;
+
 DocumentoCan = document.querySelectorAll(".fila");
 DocumentoCan.forEach(DatoP => {
     DatoP.addEventListener("click", event => {
@@ -94,25 +94,33 @@ DocumentoCan.forEach(DatoP => {
         TextTotal = document.querySelector("#TotalValor" + idPrecio);
         input = document.querySelector("#Cantidad" + idPrecio);
         //Colocar valores
-        CantidaDocumento = document.querySelector("#ValorCantidad"+idPrecio); 
-        SubTotalDocumentio = document.querySelector("#subTotal"+idPrecio);
+        CantidaDocumento = document.querySelector("#ValorCantidad" + idPrecio);
+        SubTotalDocumentio = document.querySelector("#subTotal" + idPrecio);
 
         input.addEventListener("keyup", () => {
             Subtotal = precio * input.value;
-            CantidaDocumento.value= input.value;
+            CantidaDocumento.value = input.value;
             SubTotalDocumentio.value = Subtotal;
-
-            TextTotal.textContent = ""; 
+            TextTotal.textContent = "";
             TextTotal.textContent = Subtotal;
-            Total=Total+Subtotal;
-            ColocarValor = document.querySelector("#TotalFinal");
-            ColocarPago = document.querySelector("#TotalPago");
-            ColocarPago.textContent = "Pago total:"+Total;
-            ColocarValor.value = Total;
+            SumaTotal();
         })
 
     });
 });
+pagos = document.querySelectorAll('.SubValor');
+ColocarValor = document.querySelector("#TotalFinal");
+ColocarPago = document.querySelector("#TotalPago");
+function SumaTotal() {
+    let Total = 0;
+    pagos.forEach(function(pago) {
+        valor = parseFloat(pago.value); 
+        Total =Total + valor;   
+    
+      });
+      ColocarPago.textContent = "Pago total:" + Total;
+      ColocarValor.value = Total;
+}
 
 
 function AgregarMas() {
@@ -128,7 +136,7 @@ localStorage.removeItem("PrecioVentaDocument");
 FormularioVender = document.querySelector("#FormularioVenta");
 function vender() {
     localStorage.clear();
-    FormularioVender    .submit();
+    FormularioVender.submit();
 }
 
 function cancelarVenta() {
@@ -137,6 +145,13 @@ function cancelarVenta() {
 
 }
 
+window.addEventListener('unload', function (event) {
+    event.preventDefault();
+    event.returnValue = '';
+});
 
+window.addEventListener('beforeunload', function () {
+    return '¿Seguro que quieres abandonar esta página?';
+});
 
 

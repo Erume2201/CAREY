@@ -32,7 +32,6 @@ checkboxes.forEach(checkbox => {
 
 function CerrarEmergente() {
     if (marcado) {
-        localStorage.clear();
         document.getElementById('popup').style.display = 'none';
         nombreC = document.querySelector("#nombreCliente" + marcado.value);
         nombreN = document.querySelector("#nombreNegocio" + marcado.value);
@@ -49,7 +48,7 @@ function CerrarEmergente() {
             title: 'Cliente seleccionado',
             showConfirmButton: false,
             timer: 1500
-        })
+        })   
     } else {
         Swal.fire({
             title: 'Es necesario selecionar un cliente',
@@ -70,7 +69,7 @@ let datodetalle = document.querySelectorAll(".btn-detalle");
 datodetalle.forEach(botondetalle => {
     botondetalle.addEventListener("mouseenter", event => {
         event.preventDefault();
-        let botonpulsado = event.currentTarget;
+        botonpulsado = event.currentTarget;
         let form = botonpulsado.closest('form');
         idform = form.id;
     })
@@ -94,7 +93,7 @@ function detalles() {
         Detalleinformacion = Descripcion[0].value;
         DetalleValorTipo = tipo[0].value;
         //cargamos otras variables al navegador
-        localStorage.setItem("idDocumen",id[0].value);
+        localStorage.setItem("idDocumen", id[0].value);
         localStorage.setItem("nombreDocumen", Detallenombre);
         localStorage.setItem("PrecioVentaDocument", Detallevalorventa);
 
@@ -152,7 +151,23 @@ function CerrarDetalles() {
 
 function RealizarVenta() {
     window.location.href = "index.php?module=Realizar";
+    // Obtener el ID del botón y almacenar el estado de bloqueo en el almacenamiento local
+    let buttonId = botonpulsado.id;
+    localStorage.setItem(buttonId, true);
 }
+
+// Verificar si los botones están bloqueados y deshabilitarlos si es necesario
+window.addEventListener('load', function () {
+    var buttons = document.querySelectorAll(".btn-detalle");
+    for (var i = 0; i < buttons.length; i++) {
+        var buttonId = buttons[i].id;
+        var isButtonBlocked = localStorage.getItem(buttonId);
+        if (isButtonBlocked !== null) {
+            buttons[i].disabled = true;
+        }
+    }
+});
+
 
 
 
