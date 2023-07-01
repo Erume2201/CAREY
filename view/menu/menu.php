@@ -51,7 +51,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                        <li><a class="dropdown-item fw-bold" href="#" id="ventaDiaria">Ventas diarias</a></li>
+                        <li><a class="dropdown-item fw-bold" href="index.php?module=ventasDiarias" id="ventasDiarias">Ventas diarias</a></li>
                 </li>
                 <li><a class="dropdown-item fw-bold" href="#" id="ventaSemanal">Ventas Semanales</a>
 

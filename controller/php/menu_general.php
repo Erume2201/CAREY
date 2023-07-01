@@ -179,7 +179,7 @@ if (isset($_GET["module"])) {
                     break;
                 case 'nuevoCliente':
                     include_once("view/menu/menu.php");
-                    include_once("modules/moduloClientes/subnavbarClientes.php");
+                    include_once("modules/moduloClientes/subnavbarClientes2.php");
                     include_once("modules/moduloClientes/nuevoCliente.php");
                     break;
                 case 'creditos':
@@ -208,7 +208,10 @@ if (isset($_GET["module"])) {
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloVentas/RealizarVenta.php");
                     break;        
-
+                case 'ventasDiarias':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/moduloVentas/ventasDiarias.php");
+                    break;
                 case 'errorCambioPassword':
                     include_once("view/login/cambioContrasena.php");
                     ?>
