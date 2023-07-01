@@ -1,4 +1,5 @@
 hoy = new Date();
+let enviar = false;
 // Configura la zona horaria a México
 var opcionesFecha = { timeZone: 'America/Mexico_City' };
 
@@ -54,7 +55,7 @@ if (fila == null) {
                         <td>${localStorage.getItem("nombreDocumen")}</td>
                         <td id="PrecioV" class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
                         <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
-                         placeholder="Ingresa cantidad" required></td>
+                         placeholder="Ingresa cantidad" required ></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
                         <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
                         value="${localStorage.getItem("idDocumen")}">
@@ -71,7 +72,7 @@ if (fila == null) {
                         <td id="PrecioV${localStorage.getItem("idDocumen")}" 
                         class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
                         <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
-                         placeholder="Ingresa un valor" required></td>
+                         placeholder="Ingresa un valor" required ></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
                       <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
                         value="${localStorage.getItem("idDocumen")}">
@@ -104,8 +105,8 @@ DocumentoCan.forEach(DatoP => {
             TextTotal.textContent = "";
             TextTotal.textContent = Subtotal;
             SumaTotal();
+            validar();
         })
-
     });
 });
 pagos = document.querySelectorAll('.SubValor');
@@ -113,15 +114,25 @@ ColocarValor = document.querySelector("#TotalFinal");
 ColocarPago = document.querySelector("#TotalPago");
 function SumaTotal() {
     let Total = 0;
-    pagos.forEach(function(pago) {
-        valor = parseFloat(pago.value); 
-        Total =Total + valor;   
-    
-      });
-      ColocarPago.textContent = "Pago total:" + Total;
-      ColocarValor.value = Total;
+    pagos.forEach(function (pago) {
+        valor = parseFloat(pago.value);
+        Total = Total + valor;
+
+    });
+    ColocarPago.textContent = "Pago total: $" + Total;
+    ColocarValor.value = Total;
 }
 
+CamposLlenos = document.querySelectorAll('.cantidadDoc');
+function validar() {
+    CamposLlenos.forEach(function (campo) {
+        if (campo.value == 0) {
+            enviar = false;
+        } else {
+            enviar = true;
+        }
+    });
+}
 
 function AgregarMas() {
     window.location.href = "index.php?module=venderDocumento&cliente=cliente";
@@ -136,22 +147,16 @@ localStorage.removeItem("PrecioVentaDocument");
 FormularioVender = document.querySelector("#FormularioVenta");
 function vender() {
     localStorage.clear();
-    FormularioVender.submit();
+    if (enviar) {
+        FormularioVender.submit();
+    }
+
 }
 
 function cancelarVenta() {
     localStorage.clear();
     window.location.href = "index.php?module=venderDocumento&cliente=Nocliente";
-
 }
 
-window.addEventListener('unload', function (event) {
-    event.preventDefault();
-    event.returnValue = '';
-});
-
-window.addEventListener('beforeunload', function () {
-    return '¿Seguro que quieres abandonar esta página?';
-});
 
 

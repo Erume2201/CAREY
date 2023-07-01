@@ -41,7 +41,7 @@
                   <div class="card-body">
                     <label style="margin-left: 8px;">Precio:</label>
                     <label>$</label>
-                    <p class="card-text PrecioVModificar" style="margin-left: 8px;"><?php echo $fila['precio_venta']; ?> </p>
+                    <label class="card-text PrecioVModificar" style="margin-left: 0px;"><?php echo $fila['precio_venta']; ?> </label>
                   </div>
                 </form>
               </div>

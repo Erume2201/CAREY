@@ -156,7 +156,7 @@ function RealizarVenta() {
     localStorage.setItem(buttonId, true);
 }
 
-// Verificar si los botones están bloqueados y deshabilitarlos si es necesario
+// Verificar si los botones están guardados y deshabilitarlos si es necesario
 window.addEventListener('load', function () {
     var buttons = document.querySelectorAll(".btn-detalle");
     for (var i = 0; i < buttons.length; i++) {
