@@ -32,7 +32,6 @@ function obtenerFechasCorte($desdeDia, $hastaDia) {
     }
 }
 
-// Ejemplo de uso:
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $desdeDia = $_POST['desde'];
     $hastaDia = $_POST['hasta'];
