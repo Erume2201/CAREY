@@ -3,8 +3,7 @@
 <br>
 <!--Creación del módulo de Configuración-->
 <div class="container col-6">
-	<h3>Seleccione una fecha para consultar los créditos de un día en especifico</h3>
-	 
+	<h3>Seleccione una fecha, para consultar los créditos de un día en especifico</h3>
 	<form method="POST">
 		<div>
 			<input type="date" name="fecha_credito" required>
@@ -15,7 +14,6 @@
 </div>
 
 <?php
-
 	include_once("controller/php/controlCreditos/controllerViewCreditos.php");
 	?>
 

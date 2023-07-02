@@ -1,10 +1,33 @@
-// Obtener el ID del cliente al hacer clic en el botón
-$(document).on('click', '.btn', function() {
-    var idCliente = $(this).closest('tr').find('td:first').text();
-  
-    // Aquí puedes hacer lo que desees con el ID del cliente
-    // Puedes realizar una solicitud AJAX para obtener más información del cliente, por ejemplo
-    
-    // Imprime el ID del cliente en la consola (puedes cambiar esto por tu lógica personalizada)
-    console.log('ID del cliente:', idCliente);
+/**
+ * Lo siguiente sirve para pasar datos de una tabla al modal
+ */
+
+const table = document.getElementById("table");
+const modal = document.getElementById("exampleModal");
+
+//obtenermos el id del cliente
+table.addEventListener('click', (e)=>{
+  e.stopImmediatePropagation();
+  var idCliente = e.target.parentElement.parentElement.children[0];
+  var idnombre = e.target.parentElement.parentElement.children[1];
+  pasarId(idCliente, idnombre);
 });
+
+  function pasarId(id, nombre) {
+    alert(id + ' ' + nombre);
+    $.post('controller/php/controlCreditos/controllerViewCreditos.php',{idCli:id,nomCli:nombre},function(data){
+      if (data!=null) {
+        alert('datos enviados');
+        
+      }else{
+        alert('datos no enviados');
+      }
+
+    })
+  console.log(id);
+  const idclienteSelec = document.getElementById("idclienteSelec");
+  idclienteSelec.innerHTML = parseInt(id);
+  const idnombre = document.getElementById("idnombre");
+  idnombre.textContent = nombre;
+  
+}

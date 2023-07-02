@@ -150,6 +150,7 @@ if (isset($_GET["module"])) {
     } else {
         // Validamos que exista una sesión activa de parte del usuario
         if (isset($_SESSION['s1'])) {
+            
             $option = $_GET["module"];
             
             switch ($option) {
