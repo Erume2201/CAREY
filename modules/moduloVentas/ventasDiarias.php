@@ -1,10 +1,21 @@
+<?php 
+  date_default_timezone_set('America/Mexico_City');
+  $fechaActual = date('Y-m-d');
+
+  if(isset($_POST['fecha'])) {
+    $fechaSeleccionada = $_POST['fecha'];
+
+    // Convierte la fecha seleccionada a un formato compatible con DATETIME
+    $fechaSeleccionada = date('Y-m-d', strtotime($fechaSeleccionada));
+  }
+?>
 
 <!-- Este módulo mostrará las ventas que se hayan hecho a lo largo del día-->
-<br><br><br><br><br><br>
 <div class="contenido-do row">
   <br><br>
   <div class="container col-8 text-center">
-    <h4 class="text-center"><strong>Historial de ventas del día: </strong></h4>
+    <br>
+    <h4 class="text-center"><strong>HISTORIAL DE VENTAS DIARIAS</strong></h4>
     <br>
     <table class="table table-hover" id="tablaVentasDiarias">
       <thead>

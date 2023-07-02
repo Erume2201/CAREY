@@ -4,7 +4,7 @@
 <div class="contenido-do row">
   <br><br>
   <div class="container col-10 text-center">
-    <h4 class="text-center"><strong>Lista de clientes</strong></h4>
+    <h4 class="text-center"><strong>LISTA DE CLIENTES</strong></h4>
     <br>
     <table class="table table-hover" id="tablaClientes">
       <thead>

@@ -210,6 +210,7 @@ if (isset($_GET["module"])) {
                     break;        
                 case 'ventasDiarias':
                     include_once("view/menu/menu.php");
+                    include_once("modules/moduloVentas/subnavbarDiarias.php");
                     include_once("modules/moduloVentas/ventasDiarias.php");
                     break;
                 case 'ventaSemanal':
