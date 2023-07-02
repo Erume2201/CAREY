@@ -21,6 +21,7 @@
             foreach ($resultado as $cliente) {
             ?>
                 <div class="accordion-item">
+                    <h4>Cliente:</h4>
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#<?php echo $cliente['cliente_id']; ?>" aria-expanded="false" 
