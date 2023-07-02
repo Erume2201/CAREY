@@ -1,15 +1,17 @@
 <?php 
  if (isset($_POST['id_cliente'])) {
     $idCliente = $_POST['id_cliente'];
+    $fechaDia= $_POST['fechaDiaBusqueda'];
+    
      $SQL2 = "SELECT cli.id_cliente, cli.nombre_cliente, cli.telefono_cliente, 
      cli.nombre_negocio, cre.estatus, cre.fecha, cre.total
      FROM creditos cre
      JOIN cliente cli ON cli.id_cliente=cre.cliente_id
-     Where cli.id_cliente =$idCliente;";
+     Where cli.id_cliente =$idCliente  AND cre.fecha='$fechaDia';";
      $consultarDatos2 = Consulta($SQL2);
      ?>
      <hr>
-     <h3>Documentos comprados por: <?php echo $consultarDatos2[0]['nombre_cliente']; ?></h3>
+     <h3>Documentos comprados por: <?php echo $consultarDatos2[0]['nombre_cliente'];?> el dia <?php echo $fechaDia;?></h3>
       <div class="container-do row">
                     <div class="container col-8">
                         <table class="table table-hover table-sm table-bordered" id="table">

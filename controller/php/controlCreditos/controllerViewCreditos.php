@@ -71,6 +71,8 @@ Swal.fire({
                                 <div>
                                     <input class="form-control" type="hidden" name="fecha_credito"
                                         value="<?php echo $fecha_seleccionada; ?>">
+                                        <input class="form-control" type="hidden" name="fechaDiaBusqueda"
+                                        value="<?php echo $fecha_seleccionada; ?>">
                                     <input class="form-control" type="hidden" name="id_cliente"
                                         value="<?php echo $fila['id_cliente']; ?>">
                                     <center><input class="btn btn-warning" type="submit" value="Ver"  style="height: 4rem; width: 6rem;"></center>
