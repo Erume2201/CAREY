@@ -28,3 +28,6 @@ function ChecandoModal(event,longitud = 10) {
       console.error("Error al copiar al portapapeles:", error);
     });
  }
+
+
+ 

@@ -5,6 +5,7 @@
   <br><br>
   <div class="container col-9 ">
     <h4 class="text-center">Usuarios Registrados</h4>
+    <hr>
     <table class="table table-hover">
       <thead>
         <tr>

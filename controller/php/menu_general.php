@@ -187,6 +187,16 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloCreditos/subnavbarCreditos.php");
                     include_once("modules/moduloCreditos/creditos.php");
                     break;
+                case 'reporteSemanal':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/modulosGraficas/subMenuGraficas.php");
+                    include_once("modules/modulosGraficas/reporteSemanal.php");
+                    break;
+                case 'informeGeneral':
+                    include_once("view/menu/menu.php");
+                    include_once("modules/modulosGraficas/subMenuGraficas.php");
+                    include_once("modules/modulosGraficas/informeGeneral.php");
+                    break;
                 case 'historialCreditos':
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloCreditos/subnavbarCreditos.php");

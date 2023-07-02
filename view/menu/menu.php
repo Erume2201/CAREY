@@ -66,23 +66,11 @@
             </li>
             <!--Termina módulo de créditos-->
             <ul></ul>
-            <!-- modulo de graficas -->
-            <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="grafica">
-                    Gráficas
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item fw-bold" href="#" id="reporteSemanal">Reporte semanal</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                    <li><a class="dropdown-item fw-bold" href="#" id="informeGeneral">Informe general</a></li>
+            <!-- Inicia módulo de Graficas -->
+            <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=reporteSemanal" id="grafica">Graficas</a>
             </li>
-            </li>
-            </ul>
-            </li>
+            <!--Termina módulo de Graficas-->
             <!--Termina modulo de ventas-->
             <ul></ul>
             <!-- inicia el modulo de configuración-->

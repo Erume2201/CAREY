@@ -15,6 +15,8 @@
     <link rel="icon" href="assets/image/icono_carey.ico" type="image/x-icon">
     <!--Script para el alert-->
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <!--Script para las graficas-->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
    <!-- Responsive -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
