@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 #EAAVGT4WoqeIBAFBctWYj9EqjqU54YeR0xqcJNd8AsjP9pp2P6g5jY5TxUI43977m4UsjRxZCNns3IZABemehGzkrjjLaoKE5wn4DZC0mm6KjYWA8XxeIwoat8ZAdusP7XiKBZCKHOmNJWLL1E1Bj3Upc5TyBrWzDMvfTPn2BvcA7GBGYXcoqZA
 $token = "EAAVGT4WoqeIBAFBctWYj9EqjqU54YeR0xqcJNd8AsjP9pp2P6g5jY5TxUI43977m4UsjRxZCNns3IZABemehGzkrjjLaoKE5wn4DZC0mm6KjYWA8XxeIwoat8ZAdusP7XiKBZCKHOmNJWLL1E1Bj3Upc5TyBrWzDMvfTPn2BvcA7GBGYXcoqZA";
-$telefono = '529331342789';
+$telefono = '52331342789';
 
 $url = 'https://graph.facebook.com/v17.0/102187289605465/messages';
 
