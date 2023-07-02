@@ -10,6 +10,8 @@
      Where cli.id_cliente =$idCliente  AND cre.fecha='$fechaDia';";
      $consultarDatos2 = Consulta($SQL2);
      ?>
+     
+     <!-- Termina el modal -->
      <hr>
      <h3>Documentos comprados por: <?php echo $consultarDatos2[0]['nombre_cliente'];?> el dia <?php echo $fechaDia;?></h3>
       <div class="container-do row">

@@ -1,4 +1,7 @@
 <?php 
+ 
+ include_once("controller/php/controlCreditos/subDatosTabla.php");
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtención de las fechas de corte "DESDE" y "HASTA"
     $fecha_seleccionada = $_POST['fecha_credito'];
@@ -91,7 +94,5 @@ Swal.fire({
     }
 }
 ?>
-    <?php
-    include_once("controller/php/controlCreditos/subDatosTabla.php");
-?>
+   
 <script src="controller/javascript/buscador.js"></script>
