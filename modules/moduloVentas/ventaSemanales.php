@@ -101,6 +101,34 @@
             }
             ?>
         </div>
-
+       <div>
+        <form action="modules/moduloVentas/EnvioWhatsApp.php" method="POST">
+        <button class="btn btn-success" type="submit">Enviar</button>
+        </form>
+       </div>
     </div>
+</div>
+<div>
+  <?php
+  if (isset($_GET['EnvioWhatsApp'])) {
+    $status = $_GET['EnvioWhatsApp'];
+    if ($status == "Realizado") {
+  ?>
+      <script>
+        Swal.fire('Mensaje enviado!', '', 'success')
+      </script>
+    <?php
+    } else {
+    ?>
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'No se pudo enviar el mensaje',
+          text: 'Asista a soporte tecnico!'
+        })
+      </script>
+  <?php
+    }
+  }
+  ?>
 </div>
