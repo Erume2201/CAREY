@@ -1,0 +1,82 @@
+<!-- Este módulo mostrará las ventas que se hayan hecho a lo largo del día-->
+<br><br><br><br><br><br>
+<div class="contenido-do row">
+    <br><br>
+    <h4 class="text-center"><strong>Historial de ventas de la semana: </strong></h4>
+    <br>
+    <div class="col-10">
+        <div class="accordion" id="">
+            <?php
+            $SQL = "SELECT id_cliente, nombre_cliente, nombre_negocio, telefono_cliente FROM cliente;";
+            $resultado = Consulta($SQL);
+            foreach ($resultado as $cliente) {
+            ?>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $cliente['id_cliente']; ?>" aria-expanded="false" aria-controls="<?php echo $cliente['id_cliente']; ?>">
+                            <?php echo $cliente['nombre_cliente']; ?>
+                        </button>
+                    </h2>
+                    <div id="<?php echo $cliente['id_cliente']; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="tablaSemanales" style="margin-left: 20px; margin-right: 20px;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID Venta</th>
+                                            <th scope="col">Cliente</th>
+                                            <th scope="col">Municipio</th>
+                                            <th scope="col">Documentos</th>
+                                            <th scope="col">Cantidad del documento</th>
+                                            <th scope="col">total del documento</th>
+                                            <th scope="col">total de la venta</th>
+                                            <th scope="col">Credito total</th>
+                                            <th scope="col">Estatus del credito</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $SQL2 = "SELECT ventas.id_ventas,  cliente.nombre_cliente,
+                                   cliente.municipio, documentos.nombre, 
+                                   informacion_venta.cantidad, informacion_venta.sub_total, 
+                                   ventas.total_venta,  creditos.total,  creditos.estatus 
+                                FROM documentos
+                                JOIN informacion_venta ON documentos.id_articulo_documetos=informacion_venta.documentos_id
+                                JOIN ventas ON ventas.id_ventas = informacion_venta.ventas_id
+                                JOIN creditos ON creditos.id_creditos=ventas.credito_id
+                                JOIN cliente ON  cliente.id_cliente= creditos.cliente_id
+                                WHERE cliente.nombre_cliente = '". $cliente['nombre_cliente']."';";
+                                        $resultado = Consulta($SQL2);
+                                        foreach ($resultado as $fila) {
+                                        ?>
+                                            <form action="#" method="POST">
+                                                <tr>
+                                                    <td><?php echo $fila['id_ventas']; ?></td>
+                                                    <td><?php echo $fila['nombre_cliente']; ?></td>
+                                                    <td><?php echo $fila['municipio']; ?></td>
+                                                    <td><?php echo $fila['nombre']; ?></td>
+                                                    <td><?php echo $fila['cantidad']; ?></td>
+                                                    <td><?php echo $fila['sub_total']; ?></td>
+                                                    <td><?php echo $fila['total_venta']; ?></td>
+                                                    <td><?php echo $fila['total']; ?></td>
+                                                    <td><?php echo $fila['estatus']; ?></td>
+                                                </tr>
+                                            </form>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            <?php
+            }
+            ?>
+        </div>
+
+    </div>
+</div>

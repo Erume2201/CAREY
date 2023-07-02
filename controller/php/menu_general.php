@@ -212,6 +212,10 @@ if (isset($_GET["module"])) {
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloVentas/ventasDiarias.php");
                     break;
+                case 'ventaSemanal':
+                     include_once("view/menu/menu.php");
+                     include_once("modules/moduloVentas/ventaSemanales.php");
+                     break;
                 case 'errorCambioPassword':
                     include_once("view/login/cambioContrasena.php");
                     ?>

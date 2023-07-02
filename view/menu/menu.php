@@ -53,7 +53,7 @@
                         <li>
                         <li><a class="dropdown-item fw-bold" href="index.php?module=ventasDiarias" id="ventasDiarias">Ventas diarias</a></li>
                 </li>
-                <li><a class="dropdown-item fw-bold" href="#" id="ventaSemanal">Ventas Semanales</a>
+                <li><a class="dropdown-item fw-bold" href="index.php?module=ventaSemanal" id="ventaSemanal">Ventas Semanales</a>
 
                 </li>
             </ul>
