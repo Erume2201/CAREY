@@ -3,9 +3,10 @@
   <div class="container-fluid">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link disabled" aria-current="page" href="index.php?module=clientes"><strong>Del día:</strong></a>
-        <form action="modules/moduloVentas/ventasDiarias.php" method="POST">
-          <input type="date" name="fecha" id="fecha">
+        <a class="nav-link disabled" aria-current="page" href="#"><strong>Del día:</strong></a>
+        <?php include("modules/moduloVentas/fechaDiaria.php"); ?>
+        <form method="POST">
+          <input type="date" name="fecha" id="fecha" required>
           <input type="submit" value="Mostrar ventas">
         </form>
       </li>
@@ -18,7 +19,7 @@
             <a class="nav-link disabled" aria-current="page" href="#"><strong>Buscar:</strong></a>
           </li>
         </ul>
-        <input class="form-control me-2" type="search" id ="buscarNombre" placeholder="Clientes, Informes, etc" aria-label="Search" autocomplete="off">
+        <input class="form-control me-2" type="search" id ="buscarVentaDiaria" placeholder="Clientes, Fechas, etc" aria-label="Search" autocomplete="off">
       </form>
     </div>
   </div>
