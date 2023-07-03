@@ -30,10 +30,10 @@ if (isset($_POST['dato'])) {
     $buscar = "SELECT documentos_id FROM informacion_venta 
     WHERE documentos_id='$dato';";
     $Buscador = Consulta($buscar);
-    if (empty($variable)) {
+    if (empty($buscar)) {
         // El código a ejecutar si la variable está vacía
-        $SQL  = "DELETE FROM documentos WHERE id_articulo_documetos = '$dato';";
-        $resultado = EliminarDato($SQL);
+          $SQL  = "DELETE FROM documentos WHERE id_articulo_documetos = '$dato';";
+          $resultado = EliminarDato($SQL);
         if ($resultado) {
         echo "<script>window.location = '../../index.php?module=articulo&Delete=Borrado'</script>";
         }else{
