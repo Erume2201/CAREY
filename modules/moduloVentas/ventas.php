@@ -75,51 +75,38 @@
         $resultado = Consulta($SQL);
         ?>
         <div class="form-group">
-          <input type="text" id="search-input" placeholder="Buscar...">
-          <button type="" class="btn btn-primary">Buscar</button>
+          <input class="form-control me-2 light-table-filter" data-table="ClienteTabla" type="text" placeholder="Ingresa el nombre del cliente" style="text-align: center" id="buscadorBloque">
         </div>
         <br>
-        <div class="row">
-          <div class="col-md-2">
-            <h5>id cliente:</h5>
-          </div>
-          <div class="col-md-2">
-            <h5>Nombre negocio:</h5>
-          </div>
-          <div class="col-md-2">
-            <h5>Nombre cliente:</h5>
-          </div>
-          <div class="col-md-2">
-            <h5>Municipio:</h5>
-          </div>
-        </div>
-        <?php foreach ($resultado as $fila) { ?>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-2">
-                <?php echo $fila['id_cliente']; ?>
-              </div>
-              <div class="col-md-2">
-                <?php echo $fila['nombre_negocio']; ?>
-              </div>
-              <div class="col-md-2">
-                <?php echo $fila['nombre_cliente']; ?>
-              </div>
-              <div class="col-md-2">
-                <?php echo $fila['municipio']; ?>
-              </div>
-              <div class="col-md-3">
-                <input type="checkbox" class="form-check-input bt-5" id=" <?php echo "Cliente" . $fila['id_cliente']; ?>" name="<?php echo "Cliente" . $fila['id_cliente']; ?>" value="<?php echo $fila['id_cliente']; ?>" autocomplete="off">
-                <label class="form-check-label">selecciona</label>
+        <div class="table-responsive">
+          <table class="table table-bordered ClienteTabla" id="ClienteTabla" style="margin-left: 20px; margin-right: 20px;">
+            <thead>
+              <tr>
+                <th scope="col">id cliente:</th>
+                <th scope="col">Nombre negocio:</th>
+                <th scope="col">Nombre cliente:</th>
+                <th scope="col">Municipio:</th>
+                <th scope="col">Seleciona</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($resultado as $fila) { ?>
+                <tr>
+                  <td> <?php echo $fila['id_cliente']; ?></td>
+                  <td> <?php echo $fila['nombre_negocio']; ?></td>
+                  <td> <?php echo $fila['nombre_cliente']; ?></td>
+                  <td> <?php echo $fila['municipio']; ?></td>
+                  <td> <input type="checkbox" class="form-check-input bt-5" id=" <?php echo "Cliente" . $fila['id_cliente']; ?>" name="<?php echo "Cliente" . $fila['id_cliente']; ?>" value="<?php echo $fila['id_cliente']; ?>" autocomplete="off"></td>
+                </tr>
                 <input type="hidden" class="nombreNegocio" id="<?php echo "nombreNegocio" . $fila['id_cliente']; ?>" value="<?php echo $fila['nombre_negocio']; ?>">
                 <input type="hidden" class="nombreCliente" id="<?php echo "nombreCliente" . $fila['id_cliente']; ?>" value=" <?php echo $fila['nombre_cliente']; ?>">
                 <input type="hidden" class="clienteMunicipio" id="<?php echo "clienteMunicipio" . $fila['id_cliente']; ?>" value="<?php echo $fila['municipio']; ?>">
-              </div>
-            </div>
-          </div>
-        <?php
-        }
-        ?>
+              <?php
+              }
+              ?>
+            </tbody>
+          </table>
+        </div>
         <br>
         <button type="button" onclick="CerrarEmergente()" class="btn btn-success">Siguiente</button>
       </div>
@@ -189,3 +176,4 @@
   ?>
 </div>
 <script src="controller/javascript/ventasFunciones.js"></script>
+<script src="controller/javascript/buscador.js"></script>
