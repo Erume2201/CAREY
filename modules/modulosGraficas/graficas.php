@@ -36,16 +36,17 @@
             var data<?php echo $numeroSemana; ?>_2 = google.visualization.arrayToDataTable([
                 ['Documentos', 'Total vendidos'],
                 <?php
-                    #$fechaInicio = "2023-07-01"; // Inicializar las variables con una fecha estatica
+                    #$fechaInicio = "2023-07-01"; // Inicializar las variables con una fecha estática
                     #$fechaFin = '2023-07-02';
-                    $SQL = "SELECT c.nombre_cliente, COUNT(cr.id_creditos) AS cantidad_creditos 
-                            FROM creditos cr
-                            JOIN cliente c ON cr.cliente_id = c.id_cliente
-                            WHERE cr.fecha BETWEEN '$fechaInicio' AND '$fechaFin'
-                            GROUP BY cr.cliente_id";
+                    $SQL = "SELECT d.nombre, SUM(iv.cantidad) AS total_cantidad
+                        FROM informacion_venta iv
+                        JOIN ventas v ON iv.ventas_id = v.id_ventas
+                        JOIN documentos d ON iv.documentos_id = d.id_articulo_documetos
+                        WHERE v.fecha BETWEEN '$fechaInicio' AND '$fechaFin'
+                        GROUP BY d.nombre";
                     $resultado = Consulta($SQL);
                     foreach ($resultado as $fila) {
-                        echo "['".$fila['nombre_cliente']."',".$fila['cantidad_creditos']."],";
+                        echo "['".$fila['nombre']."',".$fila['total_cantidad']."],";
                     }
                 ?>
             ]);
