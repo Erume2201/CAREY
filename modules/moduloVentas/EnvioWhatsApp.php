@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 #EAAVGT4WoqeIBAFBctWYj9EqjqU54YeR0xqcJNd8AsjP9pp2P6g5jY5TxUI43977m4UsjRxZCNns3IZABemehGzkrjjLaoKE5wn4DZC0mm6KjYWA8XxeIwoat8ZAdusP7XiKBZCKHOmNJWLL1E1Bj3Upc5TyBrWzDMvfTPn2BvcA7GBGYXcoqZA
 if (isset($_POST['NumeroRecivido'])) {
     $telefonoRecivido = $_POST['NumeroRecivido'];
-    $telefono='523'.$telefonoRecivido;
+    $telefono='52'.$telefonoRecivido;
 }
 $token = "EAAVGT4WoqeIBAFBctWYj9EqjqU54YeR0xqcJNd8AsjP9pp2P6g5jY5TxUI43977m4UsjRxZCNns3IZABemehGzkrjjLaoKE5wn4DZC0mm6KjYWA8XxeIwoat8ZAdusP7XiKBZCKHOmNJWLL1E1Bj3Upc5TyBrWzDMvfTPn2BvcA7GBGYXcoqZA";
 
