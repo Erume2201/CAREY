@@ -11,7 +11,7 @@
         <tr>
           <th scope="col">ID Cliente</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Teléfono</th>
+          <th scope="col">Teléfono (+52)</th>
           <th scope="col">Negocio</th>
           <th scope="col">Municipio</th>
           <th scope="col">Estado</th>
