@@ -12,18 +12,29 @@ $token = "EAAVGT4WoqeIBAFBctWYj9EqjqU54YeR0xqcJNd8AsjP9pp2P6g5jY5TxUI43977m4UsjR
 
 $url = 'https://graph.facebook.com/v17.0/102187289605465/messages';
 
-$tipo_mensaje = 'text'; // Puedes cambiar 'text' por otro tipo de mensaje si deseas enviar otro tipo de contenido
-$contenido_mensaje = 'Hola, este es un mensaje de texto sin formato.'; // Reemplaza este contenido con el mensaje que deseas enviar
 
-// Construir el cuerpo de la solicitud
+/**
+ * $contenido_mensaje = 'Hola, este es un mensaje de texto sin formato.'; // Reemplaza este contenido con el mensaje que deseas enviar
+ *  Construir el cuerpo de la solicitud
+ *    $mensaje = json_encode([
+ *   "messaging_product" => "whatsapp",
+ *   "recipient_type" => "individual",
+ *   "to" => $telefono,
+ *   "type" => 'text',
+ *   "text" => [
+ *       "preview_url" => false,
+ *       "body" => $contenido_mensaje
+ *   ]
+ * ]);
+ */
+
 $mensaje = json_encode([
     "messaging_product" => "whatsapp",
-    "recipient_type" => "individual",
     "to" => $telefono,
-    "type" => $tipo_mensaje,
-    "text" => [
-        "preview_url" => false,
-        "body" => $contenido_mensaje
+    "type" => "template",
+    "template" => [
+        "name" => "hello_world",
+        "language" => ["code" => "en_US"]
     ]
 ]);
 
@@ -43,10 +54,10 @@ $response = json_decode(curl_exec($curl), true);
 $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 print_r($response);
 if ($status_code !== 200) {
-    #echo "<script>window.location = '../../index.php?module=ventaSemanal&EnvioWhatsApp=NoRealizado'</script>";
+    echo "<script>window.location = '../../index.php?module=ventaSemanal&EnvioWhatsApp=NoRealizado'</script>";
 
 }else{
-    #echo "<script>window.location = '../../index.php?module=ventaSemanal&EnvioWhatsApp=Realizado'</script>";
+    echo "<script>window.location = '../../index.php?module=ventaSemanal&EnvioWhatsApp=Realizado'</script>";
 }
 
 curl_close($curl);
