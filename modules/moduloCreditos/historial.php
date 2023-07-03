@@ -1,7 +1,7 @@
 <?php 
  
     $fechaInicio = '2023-06-27';
-    $fechaFin= '2023-07-02';
+    $fechaFin= '2023-07-03';
     $SQL = "SELECT cli.id_cliente, cli.nombre_cliente,cre.estatus, 
     cli.telefono_cliente, cli.nombre_negocio, cre.fecha ,COUNT(cre.id_creditos) 
     AS total_creditos, SUM(cre.total) AS total_ventas
