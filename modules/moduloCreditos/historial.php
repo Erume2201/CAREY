@@ -12,11 +12,15 @@
     $consultarDatos2 = Consulta($SQL);
      ?>
 
+ <!--Buscador-->
+ <input class="form-control me-2 light-table-filter" data-table="table_id" type="text"
+  placeholder="Ingresa el nombre del cliente" style="text-align: center" id="buscadorBloque">
+<!-- Buscador-->
 <!-- Tabla -->
 <h3>Lista de creditos de los clientes que compraron documentos en la semana actual</h3>
 <div class="container-do row">
     <div class="container col-8">
-        <table class="table table-hover table-sm table-bordered" id="table">
+        <table class="table table-hover table-sm table-bordered table_id" id="table">
             <thead class="table-dark text-center">
                 <tr>
                     <th>Id Cliente</th>
@@ -91,3 +95,4 @@
     }
 }
     ?>
+<script src="controller/javascript/buscador.js"></script>
