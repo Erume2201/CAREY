@@ -26,8 +26,8 @@
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $cliente['cliente_id']; ?>" aria-expanded="false" aria-controls="<?php echo $cliente['cliente_id']; ?>">
                             <?php echo $cliente['nombre_cliente']; ?> Telefono: <?php echo $cliente['telefono_cliente']; ?>
                         </button>
-                        <input type="hidden" class="nombrewhat" id="<?php echo $cliente['cliente_id'];?>" value="<?php echo $cliente['nombre_cliente']; ?>">
-                        <input type="hidden" class="celWhat" id="<?php echo "cel".$cliente['cliente_id'];?>" value="<?php echo $cliente['telefono_cliente']; ?>">
+                        <input type="hidden" class="nombrewhat" id="<?php echo $cliente['cliente_id']; ?>" value="<?php echo $cliente['nombre_cliente']; ?>">
+                        <input type="hidden" class="celWhat" id="<?php echo "cel" . $cliente['cliente_id']; ?>" value="<?php echo $cliente['telefono_cliente']; ?>">
                     </h2>
                     <div id="<?php echo $cliente['cliente_id']; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
@@ -103,7 +103,7 @@
         </div>
     </div>
     <div class="col-2">
-        <button class="btn btn-success" onclick="DatosWhatsApp()" type="submit">Enviar por whatsApp</button>
+        <button class="btn btn-success" onclick="DatosWhatsApp()" type="buttonn">Enviar por whatsApp</button>
     </div>
 </div>
 
@@ -116,18 +116,24 @@
                     <button onclick="CerrarWhatsApp()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
                 </div>
                 <div class="modal-body">
+                    <form action="modules/moduloVentas/EnvioWhatsApp.php" method="POST">
                     <div class="row" id="">
                         <div class="alert alert-warning" role="alert">
                             Seleciona el cliente para enviar el whatsApp!
                         </div>
                         <h5>Nombre cliente:</h5>
                         <select id="ClienteWha" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                       
+
                         </select>
                         <br>
                         <h5>Numero de telefono:</h5>
-                        <p  id="NumeroCliente"></p>
+                        <p id="NumeroCliente">Numero: </p>
+                        <input type="hidden" class="" id="NumeroRecivido" name="NumeroRecivido" value="">
                     </div>
+                    <div class="col-6">
+                        <button class="btn btn-success" type="submit">Enviar:</button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -14,16 +14,18 @@ function CerrarWhatsApp(){
 function llenarCamposEnvio() {
     let opcionesHTML = '<option value=""> Seleciona un cliente</option>';;
     clientes.forEach(function (cliente) {
-        console.log(cliente.value);
         opcionesHTML += '<option  value="' + cliente.id + '">' + cliente.value + '</option>';
-
-       
     });
     seleccion.innerHTML = opcionesHTML; 
 }
 
 seleccion.addEventListener('change', function() {
     var selectedValue = seleccion.value;
-    console.log('El usuario seleccionó: ' + selectedValue);
     // Aquí puedes ejecutar acciones adicionales según la selección del usuario
+    cel = document.querySelector("#cel"+selectedValue);
+    Numero = document.querySelector("#NumeroCliente");
+    Enviar = document.querySelector("#NumeroRecivido");
+    Numero.textContent =cel.value;
+    Enviar.value = cel.value;
+    console.log(cel.value)
 });
