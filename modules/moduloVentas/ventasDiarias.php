@@ -9,8 +9,8 @@
     <table class="table table-hover" id="tablaVentasDiarias">
       <thead>
         <tr>
-          <th scope="col">ID Venta</th>
-          <th scope="col">Hora</th>
+          <th scope="col">ID Detalle de Venta</th>
+          <th scope="col">Documento</th>
           <th scope="col">Cliente</th>
            <th scope="col">Tipo de pago:</th>
           <th scope="col">Ver</th>
@@ -19,14 +19,14 @@
       <tbody>
         <?php
           include("modules/moduloVentas/fechaDiaria.php");
-          $SQL = "SELECT v.id_ventas, v.hora, v.fecha, v.total_venta, c.nombre_cliente, u.nombre_completo, iv.id_informacion_venta, iv.cantidad, iv.sub_total, d.nombre, d.tipo FROM VENTAS v JOIN CREDITOS cr ON v.credito_id = cr.id_creditos JOIN CLIENTE c ON cr.cliente_id = c.id_cliente JOIN USUARIOS u ON v.usuarios_id = u.id_usuarios JOIN INFORMACION_VENTA iv ON v.id_ventas = iv.ventas_id JOIN DOCUMENTOS d ON iv.documentos_id = d.id_articulo_documetos WHERE v.fecha = '$fecha'";
+          $SQL = "SELECT v.id_ventas, v.hora, v.fecha, v.total_venta, c.nombre_cliente, u.nombre_completo, iv.id_informacion_venta, iv.cantidad, iv.sub_total, d.nombre, d.tipo FROM VENTAS v JOIN CREDITOS cr ON v.credito_id = cr.id_creditos JOIN CLIENTE c ON cr.cliente_id = c.id_cliente JOIN USUARIOS u ON v.usuarios_id = u.id_usuarios JOIN INFORMACION_VENTA iv ON v.id_ventas = iv.ventas_id JOIN DOCUMENTOS d ON iv.documentos_id = d.id_articulo_documetos WHERE DATE(v.fecha) = '$fecha'";
           $resultado = Consulta($SQL);
           foreach ($resultado as $fila) {               
         ?>
         <form action="#" method="POST">
           <tr>
             <td><?php echo $fila['id_informacion_venta'];?></td>
-            <td><?php echo $fila['hora'];?></td>
+            <td><?php echo $fila['nombre'];?></td>
             <td><?php echo $fila['nombre_cliente'];?></td>
             <td><?php echo ("Al contado");?></td>
             <td>

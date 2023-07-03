@@ -11,7 +11,7 @@
         <div class="modal-body">
           <h6><strong>Vendedor: </strong><?php echo $fila['nombre_completo'];?></h6>
           <h6><strong>Cliente: </strong><?php echo $fila['nombre_cliente'];?></h6>
-          <h6><strong><?php echo $fila['fecha'] . " " . $fila['hora'];?></strong></h6>
+          <h6><strong><?php echo $fila['fecha'];?></strong></h6>
           <hr>
           <h6><strong>Cantidad: </strong><?php echo $fila['cantidad'];?></h6>
           <h6><strong>Documento: </strong><?php echo $fila['nombre'];?></h6>
