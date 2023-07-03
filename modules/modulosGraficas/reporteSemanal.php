@@ -1,5 +1,5 @@
 <body>
-  <div class="container col-9">
+  <div class="container col-10">
     <?php
     date_default_timezone_set('America/Mexico_City');
     $dia = date('l Y-m-d');
@@ -69,8 +69,9 @@
                 $fechaFin = $fechas[1];
                 echo "<h3>Fecha de la semana: $fechaInicio hasta $fechaFin </h3>";
                 ?>
-                <div id="piechart<?php echo $numeroSemana; ?>_1" style="width: 1000px; height: 900px;"></div>
-                <div id="piechart<?php echo $numeroSemana; ?>_2" style="width: 1000px; height: 900px;"></div>
+                <div id="piechart<?php echo $numeroSemana; ?>_2" style="width: 1000px; height: 600px;"></div>
+                <div id="piechart<?php echo $numeroSemana; ?>_1" style="width: 1000px; height: 600px;"></div>
+                <?php include("modules/modulosGraficas/graficas.php"); ?>
             </div>
         <?php } ?>
     </div>
@@ -88,49 +89,4 @@
         window.onload = function() {
             mostrarContenido('semana1');
         };
-    </script>
-
-    <script>
-        google.charts.load('current', {'packages':['corechart']});
-        <?php foreach ($fechasSemanas as $numeroSemana => $fechas) { ?>
-        google.charts.setOnLoadCallback(drawChart<?php echo $numeroSemana; ?>);
-
-        function drawChart<?php echo $numeroSemana; ?>() {
-            var data<?php echo $numeroSemana; ?>_1 = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work', 11],
-                ['Eat', 2],
-                ['Commute', 2],
-                ['Watch TV', 2],
-                ['Sleep', 7]
-            ]);
-
-            var options<?php echo $numeroSemana; ?>_1 = {
-                title: 'Documentos más vendidos en la semana <?php echo $numeroSemana; ?>',
-                width: 1000,
-                height: 800
-            };
-
-            var chart<?php echo $numeroSemana; ?>_1 = new google.visualization.PieChart(document.getElementById('piechart<?php echo $numeroSemana; ?>_1'));
-            chart<?php echo $numeroSemana; ?>_1.draw(data<?php echo $numeroSemana; ?>_1, options<?php echo $numeroSemana; ?>_1);
-
-            var data<?php echo $numeroSemana; ?>_2 = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Work', 8],
-                ['Eat', 3],
-                ['Commute', 2],
-                ['Watch TV', 4],
-                ['Sleep', 7]
-            ]);
-
-            var options<?php echo $numeroSemana; ?>_2 = {
-                title: ' Clientes que han realizado más compras dentro de la semana <?php echo $numeroSemana; ?>',
-                width: 1000,
-                height: 800
-            };
-
-            var chart<?php echo $numeroSemana; ?>_2 = new google.visualization.PieChart(document.getElementById('piechart<?php echo $numeroSemana; ?>_2'));
-            chart<?php echo $numeroSemana; ?>_2.draw(data<?php echo $numeroSemana; ?>_2, options<?php echo $numeroSemana; ?>_2);
-        }
-        <?php } ?>
     </script>
