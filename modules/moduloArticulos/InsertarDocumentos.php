@@ -1,8 +1,6 @@
 <?php
 // Obtener los valores enviados por el formulario
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 require '../../controller/php/CRUD.php'; 
 
 if (isset( $_POST['nombre']) && isset( $_POST['PrecioCosto'])&& isset($_POST['PrecioVenta']) && 
