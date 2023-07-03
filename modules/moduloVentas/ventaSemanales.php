@@ -12,7 +12,7 @@
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
             $SQL = "SELECT creditos.cliente_id, cliente.nombre_cliente, ventas.credito_id ,
-            SUM(ventas.total_venta)AS Total_compra
+            SUM(ventas.total_venta)AS Total_compra, cliente.telefono_cliente
             FROM creditos
             JOIN ventas ON creditos.id_creditos= ventas.credito_id
             JOIN cliente ON cliente.id_cliente= creditos.cliente_id
@@ -21,19 +21,19 @@
             foreach ($resultado as $cliente) {
             ?>
                 <div class="accordion-item">
-                    <h4>Cliente:</h4>
+                    <h4 style="margin-left:20px;">Cliente:</h4>
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#<?php echo $cliente['cliente_id']; ?>" aria-expanded="false" 
-                        aria-controls="<?php echo $cliente['cliente_id']; ?>">
-                            <?php echo $cliente['nombre_cliente']; ?>
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $cliente['cliente_id']; ?>" aria-expanded="false" aria-controls="<?php echo $cliente['cliente_id']; ?>">
+                            <?php echo $cliente['nombre_cliente']; ?> Telefono: <?php echo $cliente['telefono_cliente']; ?>
                         </button>
+                        <input type="hidden" class="nombrewhat" id="<?php echo $cliente['cliente_id'];?>" value="<?php echo $cliente['nombre_cliente']; ?>">
+                        <input type="hidden" class="celWhat" id="<?php echo "cel".$cliente['cliente_id'];?>" value="<?php echo $cliente['telefono_cliente']; ?>">
                     </h2>
                     <div id="<?php echo $cliente['cliente_id']; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="tablaSemanales" style="margin-left: 20px; margin-right: 20px;">
-                                    <thead>
+                                    <thead class="table-dark">
                                         <tr>
                                             <th scope="col">ID Venta</th>
                                             <th scope="col">Cliente</th>
@@ -58,7 +58,7 @@
                                      JOIN ventas ON ventas.id_ventas = informacion_venta.ventas_id
                                      JOIN creditos ON creditos.id_creditos=ventas.credito_id
                                      JOIN cliente ON  cliente.id_cliente= creditos.cliente_id
-                                     WHERE cliente.id_cliente = '".$cliente['cliente_id']."'";
+                                     WHERE cliente.id_cliente = '" . $cliente['cliente_id'] . "'";
                                         $resultado = Consulta($SQL2);
                                         foreach ($resultado as $fila) {
                                         ?>
@@ -83,13 +83,13 @@
                                     $documentos = "SELECT SUM(informacion_venta.cantidad) AS cantidadDoc  FROM informacion_venta
                                     JOIN ventas ON ventas.id_ventas=informacion_venta.ventas_id
                                     JOIN creditos ON creditos.id_creditos= ventas.credito_id
-                                    WHERE creditos.cliente_id = '".$cliente['cliente_id']."';";
+                                    WHERE creditos.cliente_id = '" . $cliente['cliente_id'] . "';";
                                     $respuesta = Consulta($documentos);
                                     $respuesta[0]['cantidadDoc'];
                                     ?>
                                     <tr>
-                                        <td> Total de la semana: $<?php echo $cliente['Total_compra']; ?></td>
-                                        <td id="CantidaTabla">Cantidad de documentos: <?php echo $respuesta[0]['cantidadDoc'];?></td>
+                                        <td id="TotalPago"> Total de la semana: $<?php echo $cliente['Total_compra']; ?></td>
+                                        <td id="CantidadTabla">Cantidad de documentos: <?php echo $respuesta[0]['cantidadDoc']; ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -101,34 +101,61 @@
             }
             ?>
         </div>
-       <div>
-        <form action="modules/moduloVentas/EnvioWhatsApp.php" method="POST">
-        <button class="btn btn-success" type="submit">Enviar</button>
-        </form>
-       </div>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-success" onclick="DatosWhatsApp()" type="submit">Enviar por whatsApp</button>
     </div>
 </div>
-<div>
-  <?php
-  if (isset($_GET['EnvioWhatsApp'])) {
-    $status = $_GET['EnvioWhatsApp'];
-    if ($status == "Realizado") {
-  ?>
-      <script>
-        Swal.fire('Mensaje enviado!', '', 'success')
-      </script>
-    <?php
-    } else {
-    ?>
-      <script>
-        Swal.fire({
-          icon: 'error',
-          title: 'No se pudo enviar el mensaje',
-          text: 'Asista a soporte tecnico!'
-        })
-      </script>
-  <?php
-    }
-  }
-  ?>
+
+<div class="container">
+    <div class="modal popup" id="datosWhatsApp">
+        <div class="modal-dialog modal-lg modal-dialog-left">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="fw-bold" style="margin-left: 30px;">Detalles:</h2>
+                    <button onclick="CerrarWhatsApp()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="">
+                        <div class="alert alert-warning" role="alert">
+                            Seleciona el cliente para enviar el whatsApp!
+                        </div>
+                        <h5>Nombre cliente:</h5>
+                        <select id="ClienteWha" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                       
+                        </select>
+                        <br>
+                        <h5>Numero de telefono:</h5>
+                        <p  id="NumeroCliente"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div>
+    <?php
+    if (isset($_GET['EnvioWhatsApp'])) {
+        $status = $_GET['EnvioWhatsApp'];
+        if ($status == "Realizado") {
+    ?>
+            <script>
+                Swal.fire('Mensaje enviado!', '', 'success')
+            </script>
+        <?php
+        } else {
+        ?>
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'No se pudo enviar el mensaje',
+                    text: 'Asista a soporte tecnico!'
+                })
+            </script>
+    <?php
+        }
+    }
+    ?>
+</div>
+<script src="controller/javascript/ventaSemanal/Semanal.js"></script>

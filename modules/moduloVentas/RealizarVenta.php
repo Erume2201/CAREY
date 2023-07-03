@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <button type="button" onclick="AgregarMas()" class="btn btn-primary bt">Agregar Mas.</button>
+                <button type="button" onclick="AgregarMas()" class="btn btn-primary bt">Agregar más.</button>
                 <br>
                 <label class="form-label">Tipo de Venta:</label>
                 <select class="form-control" id="TipoVenta" name="TipoVenta">

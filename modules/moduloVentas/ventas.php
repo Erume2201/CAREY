@@ -80,7 +80,7 @@
         <br>
         <div class="table-responsive">
           <table class="table table-bordered ClienteTabla" id="ClienteTabla" style="margin-left: 20px; margin-right: 20px;">
-            <thead>
+            <thead class="table-dark">
               <tr>
                 <th scope="col">id cliente:</th>
                 <th scope="col">Nombre negocio:</th>
