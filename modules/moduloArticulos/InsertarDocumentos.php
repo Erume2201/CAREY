@@ -27,14 +27,22 @@ if (isset( $_POST['nombre']) && isset( $_POST['PrecioCosto'])&& isset($_POST['Pr
 
 if (isset($_POST['dato'])) {
     $dato = $_POST["dato"];
-    
-    $SQL  = "DELETE FROM documentos WHERE id_articulo_documetos = '$dato';";
-    $resultado = EliminarDato($SQL);
-    if ($resultado) {
-       echo "<script>window.location = '../../index.php?module=articulo&Delete=Borrado'</script>";
+    $buscar = "SELECT documentos_id FROM informacion_venta 
+    WHERE documentos_id='$dato';";
+    $Buscador = Consulta($buscar);
+    if (empty($variable)) {
+        // El código a ejecutar si la variable está vacía
+        $SQL  = "DELETE FROM documentos WHERE id_articulo_documetos = '$dato';";
+        $resultado = EliminarDato($SQL);
+        if ($resultado) {
+        echo "<script>window.location = '../../index.php?module=articulo&Delete=Borrado'</script>";
+        }else{
+        echo "<script>window.location = '../../index.php?module=articulo&Delete=NoBorrado'</script>";
+        }
     }else{
-       echo "<script>window.location = '../../index.php?module=articulo&Delete=NoBorrado'</script>";
+      echo "<script>window.location = '../../index.php?module=articulo&Delete=NoBorrado'</script>";
     }
+
   }
 
 
