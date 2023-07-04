@@ -1,85 +1,46 @@
 /*no borrar archvo  utilizado  */
-.buttons{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.bt{
-    text-decoration: none;
-    padding: 20px 50px;
-    font-size: 1.0rem;
-    position: relative;
-    margin: 32px;
-}
-
-/*botones de la modulo articulos*/
-.bt-1{
-    background: #0b8fd1;
-    color: #ffff;
-    border-radius: 50px;
-    transition: transform 0.3s ease;
-}
-
-.bt-1::after, .bt-1::before{
-  content: "";
-  position: absolute;
-  opacity: 0.3;
-  background: #0b8fd1;
-  border-radius: inherit;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  transition: 0.3s ease;
-}
-
-.bt-1:hover{
- transform: translate(-12px, -12px);
-}
-
-.bt-1:hover::after{
-    transform: translate(6px, 6px); 
-}
-
-.bt-1:hover::before{
-    transform: translate(12px, 12px); 
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30px;
+    width: auto;
 }
 
 /*Estilos para los botones de ver cada documento */
-.bt-3{
-  color: #000000;
-  border-radius: 40px;
-  box-shadow: 0 0 0 0 rgba(145, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
-  transition: transform 0.3s ease, box shadow 0.3s ease;
-  overflow: hidden;
+.bt-3 {
+    color: #000000;
+    border-radius: 40px;
+    box-shadow: 0 0 0 0 rgba(145, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.3s ease, box shadow 0.3s ease;
+    overflow: hidden;
 
 }
 
-.bt-3::after{
+.bt-3::after {
     content: "";
     width: 400px;
     height: 400px;
     position: absolute;
     top: -50px;
     left: -100px;
-    background:#13ff13;
+    background: #13ff13;
     background-image: linear-gradient(-255deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
     z-index: -1;
     transition: 0.5s ease;
 
 }
 
-.bt-3:hover{
+.bt-3:hover {
     transform: translate(0, -6px);
-    box-shadow: 10px -10px 25px 0 rgba(16, 226, 253, 0.5), -10px 10px  25px 0 rgba(183, 0, 255, 0.7);
+    box-shadow: 10px -10px 25px 0 rgba(16, 226, 253, 0.5), -10px 10px 25px 0 rgba(183, 0, 255, 0.7);
 
 }
 
-.bt-3:hover::after{
- transform: rotate(150deg);
+.bt-3:hover::after {
+    transform: rotate(150deg);
 }
+
 .popup {
     display: none;
     position: fixed;
@@ -90,7 +51,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
-  
+
 .popup-content {
     position: absolute;
     top: 50%;
@@ -101,6 +62,7 @@
     border-radius: 5px;
     text-align: center;
 }
+
 .fixed-column {
     position: fixed;
     top: 0;
@@ -110,15 +72,17 @@
 }
 
 .bt-5 {
-    background-color: green; /* Cambia el color de fondo cuando está marcado */
-    color: white; /* Cambia el color del texto cuando está marcado */
+    background-color: green;
+    /* Cambia el color de fondo cuando está marcado */
+    color: white;
+    /* Cambia el color del texto cuando está marcado */
     margin-left: 10px;
 }
 
 .container {
     width: 100%;
 }
-  
+
 .image-container {
     max-width: 100%;
     height: auto;
@@ -128,4 +92,3 @@
     max-width: 100%;
     height: auto;
 }
-

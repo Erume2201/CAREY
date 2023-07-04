@@ -53,20 +53,26 @@
       </div>
     </div>
   </div>
-  <div class="col-2" style="position: fixed; right: 0;">
+  <style>
+    .buttons a:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+  <div class="col-3" style="position: fixed; right: 0;">
     <div class="">
       <!-- Contenido de la columna estática -->
       <div class="buttons">
-        <a href="#" class="bt bt-1" onclick="ventanaFormulario(event)">Agregar</a>
-        <a href="" class="bt bt-1" onclick="Modificar(event)">Modificar</a>
-        <a href="" class="bt bt-1" onclick="Eliminar(event)">Eliminar</a>
+        <a href="#" class="" onclick="ventanaFormulario(event)" style=" margin-bottom: 40px; margin-top: 50px;">
+          <img class="" src="assets/image/botonAgregar.png" alt="" width="220px" height="80px" style="display: block;">
+        </a>
+        <a href="" class="" onclick="Modificar(event)" style="margin-bottom: 60px;">
+          <img src="assets/image/botonModificar.png" alt="" width="220px" height="80px" style="display: block;">
+        </a>
+        <a href="" class="" onclick="Eliminar(event)">
+          <img src="assets/image/botonEliminar.png" alt="" width="220px" height="80px">
+        </a>
       </div>
     </div>
-  </div>
-  <div class="col-1" style="position: fixed; right: 200px; margin-top: 25px;">
-    <img src="assets/image/nuevo-documento.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
-    <img src="assets/image/editar.png" alt="" width="80px" height="80px" style="display: block; margin-bottom: 50px;">
-    <img src="assets/image/eliminar.png" alt="" width="70px" height="80px">
   </div>
 </div>
 <div class="container">
