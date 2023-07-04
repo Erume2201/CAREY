@@ -16,31 +16,31 @@
         date_default_timezone_set('America/Mexico_City');
         $Years = date('Y');
         $mes = date('n');
-
+        //Funcion para divider el mes en semanas, inicio de semana Lunes y fin de la semana Domingo.
         function obtenerFechasSemanasEnMes($Years, $mes) {
-            $fechasSemanas = array();
-            $numeroSemana = 1;
-            $fecha = new DateTime();
-            $fecha->setDate($Years, $mes, 1);
-            $primerDiaMes = $fecha->format('N'); // Obtener el número del primer día del mes (1: lunes, 7: domingo)
+            $fechasSemanas = array(); //arreglo que contendra las fechas.
+            $numeroSemana = 1; //asignacion de un número de semana a cada conjunto de fechas.
+            $fecha = new DateTime(); //se crea la instancia sin niguna Fecha.
+            $fecha->setDate($Years, $mes, 1); //se establece la fecha del primer dia de mes.
+            $primerDiaMes = $fecha->format('N'); // obtener el número del primer día del mes (1: lunes, 7: domingo).
 
             // Obtener la fecha del primer día de la primera semana
-            $fechaInicio = $fecha->format('Y-m-d');
-            $fechaFin = $fecha->modify('next Sunday')->format('Y-m-d');
-            $fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin];
-            $numeroSemana++;
+            $fechaInicio = $fecha->format('Y-m-d'); //obtiene la fecha formateada como 'Y-m-d'.
+			$fechaFin = $fecha->modify('next Sunday')->format('Y-m-d'); //modifica la fecha para que sea el próximo domingo y la asigna a $fechaFin.
+			$fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin]; //almacena las fechas de inicio y fin en el arreglo $fechasSemanas, utilizando $numeroSemana como índice.
+			$numeroSemana++; //incrementa el valor de $numeroSemana para la siguiente semana.
 
             // Avanzar al próximo lunes después del primer día del mes
             $fecha->modify('next Monday');
 
             // Obtener las fechas de las semanas restantes
-            while ($fecha->format('n') == $mes) {
-                $fechaInicio = $fecha->format('Y-m-d');
-                $fechaFin = $fecha->modify('next Sunday')->format('Y-m-d');
-                $fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin];
-                $numeroSemana++;
-                $fecha->modify('next Monday');
-            }
+			while ($fecha->format('n') == $mes) {
+			    $fechaInicio = $fecha->format('Y-m-d'); //obtiene la fecha actual y la asigna a $fechaInicio.
+			    $fechaFin = $fecha->modify('next Sunday')->format('Y-m-d'); //modifica la fecha para que sea el próximo domingo y la asigna a $fechaFin.
+			    $fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin]; //almacena las fechas de inicio y fin en el arreglo $fechasSemanas, utilizando $numeroSemana como índice.
+			    $numeroSemana++; //incrementa el valor de $numeroSemana para la siguiente semana.
+			    $fecha->modify('next Monday'); //modifica la fecha para que sea el próximo lunes.
+			}
 
             return $fechasSemanas;
         }
@@ -63,11 +63,11 @@
         </ul>
 
         <?php foreach ($fechasSemanas as $numeroSemana => $fechas) { ?>
-            <div id="semana<?php echo $numeroSemana; ?>" class="contenido-semana text-center" style="display: none;">
+            <div id="semana<?php echo $numeroSemana; ?>" class="contenido-semana" style="display: none;">
                 <?php
                 $fechaInicio = $fechas[0];
                 $fechaFin = $fechas[1];
-                echo "<h3>Fecha de la semana: $fechaInicio hasta $fechaFin </h3>";
+                echo "<h3>Fecha de la semana: de $fechaInicio hasta $fechaFin </h3>";
                 ?>
                 <div id="piechart<?php echo $numeroSemana; ?>_2" style="width: 1000px; height: 600px;"></div>
                 <div id="piechart<?php echo $numeroSemana; ?>_1" style="width: 1000px; height: 600px;"></div>
