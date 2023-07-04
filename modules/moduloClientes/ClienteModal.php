@@ -33,27 +33,27 @@
       <!--Inicio del formulario para modificar al cliente-->
       <form action="modules/moduloClientes/ctrlEditCliente.php" method="POST" >
         <div class="modal-body">
-          <div class="form-group">
+          <div class="form-group text-start">
             <label for="exampleInputEmail1" class="form-label fw-bold">Nombre:</label>
             <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del cliente" value="<?php echo $fila['nombre_cliente']; ?>">
           </div>
           <br>
-          <div class="form-group">
+          <div class="form-group text-start">
             <label for="exampleInputEmail1" class="form-label fw-bold">Teléfono:</label>
             <input type="text" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10" value="<?php echo $fila['telefono_cliente']; ?>">
           </div>
           <br>
-          <div class="form-group">
+          <div class="form-group text-start">
             <label for="exampleInputEmail1" class="form-label fw-bold">Nombre del negocio:</label>
             <input type="text" class="form-control" name="negocio" id="negocio" placeholder="Ingresa el nombre del negocio" value="<?php echo $fila['nombre_negocio']; ?>">
           </div>
           <br>
-          <div class="form-group"> 
+          <div class="form-group text-start"> 
             <label for="exampleInputEmail1" class="form-label fw-bold">Municipio:</label>
             <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Ingresa el nombre del Municipio" value="<?php echo $fila['municipio']; ?>">
           </div>
           <br>
-          <div class="form-group">
+          <div class="form-group text-start">
               <label class="form-label fw-bold">Estado:</label>
               <br>
               <select class="form-select" aria-label="Default select example" name="estado" id="estado">
@@ -93,7 +93,7 @@
               </select>
             </div>
             <br>
-            <div class="form-group">
+            <div class="form-group text-start">
               <label class="form-label fw-bold">País:</label>
               <br>
                 <select class="form-select" aria-label="Default select example" name="pais" id="pais">

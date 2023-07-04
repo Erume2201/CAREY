@@ -26,7 +26,7 @@
           $resultado = Consulta($SQL);
           foreach ($resultado as $fila) {               
         ?>
-        <form action="modules/moduloClientes/ctrlDeleteCliente.php" method="POST">
+        <form action="#" method="POST">
           <tr>
             <td><?php echo $fila['id_cliente'];?></td>
             <td><?php echo $fila['nombre_cliente'];?></td>
