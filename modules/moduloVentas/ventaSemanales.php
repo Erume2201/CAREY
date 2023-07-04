@@ -116,7 +116,7 @@
                     <button onclick="CerrarWhatsApp()" type="button" class="btn btn-danger" data-dismiss="modal">x</button>
                 </div>
                 <div class="modal-body">
-                    <form action="modules/moduloVentas/EnvioWhatsApp.php" method="POST">
+                    <form id="DatosWhatsApp" action="modules/moduloVentas/EnvioWhatsApp.php" method="POST">
                     <div class="row" id="">
                         <div class="alert alert-warning" role="alert">
                             Seleciona el cliente para enviar el whatsApp!
@@ -128,12 +128,13 @@
                         <br>
                         <h5>Numero de telefono:</h5>
                         <p id="NumeroCliente">Numero: </p>
-                        <input type="hidden" class="" id="NumeroRecivido" name="NumeroRecivido" value="">
-                    </div>
-                    <div class="col-6">
-                        <button class="btn btn-success" type="submit">Enviar:</button>
+                        <input type="hidden" class="" id="NumeroRecivido" name="NumeroRecivido" value="0">
                     </div>
                     </form>
+                    <p id="Alerta"></p>
+                    <div class="col-6">
+                        <button class="btn btn-success" onclick="EjecutarWhat()" id="">Enviar:</button>
+                    </div>
                 </div>
             </div>
         </div>

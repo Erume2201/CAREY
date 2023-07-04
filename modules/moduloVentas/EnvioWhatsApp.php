@@ -52,7 +52,6 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $response = json_decode(curl_exec($curl), true);
 $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-print_r($response);
 if ($status_code !== 200) {
     echo "<script>window.location = '../../index.php?module=ventaSemanal&EnvioWhatsApp=NoRealizado'</script>";
 
