@@ -14,7 +14,7 @@ if ($tipoVenta == 'Decontado') {
         $Fecha = $_POST['DiaVentaValor'];
 
             $SQLCredito = "INSERT INTO creditos (estatus, fecha, total, cliente_id) 
-            VALUES ('Inicial', '$Fecha', 0, '$cliente');";
+            VALUES ('pagado', '$Fecha', 0, '$cliente');";
             $resultado = insertarDatosDoble($SQLCredito);
 
     }
