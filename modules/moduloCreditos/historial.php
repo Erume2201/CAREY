@@ -8,7 +8,6 @@
     $consultaFecha = Consulta($SQLFechaActual);
     $fechaInicio = $consultaFecha[0]['desde'];
     $fechaFin = $consultaFecha[0]['hasta'];
-
    
 /**
  * El siguiente método consulta los datos de la semana actual
@@ -27,6 +26,16 @@
   * Consulta datos vencidos de la db
   * creada el 04-07-2023
   */
+  $SQLVencidos = "SELECT cli.id_cliente, cli.nombre_cliente,cre.estatus, 
+  cli.telefono_cliente, cli.nombre_negocio ,COUNT(cre.id_creditos) 
+  AS total_creditos, SUM(cre.total) AS total_ventas
+  FROM cliente cli
+  LEFT JOIN creditos cre ON cli.id_cliente = cre.cliente_id
+  WHERE cre.fecha NOT BETWEEN '$fechaInicio' AND '$fechaFin' AND cre.estatus='pendiente'
+  GROUP BY cli.id_cliente, cli.nombre_cliente, cli.telefono_cliente, cli.nombre_negocio;";
+  $consultarDatosVencidos = Consulta($SQLVencidos);
+
+/*
     $SQLVencidos = "SELECT cli.id_cliente, cli.nombre_cliente, cre.estatus, cli.telefono_cliente, 
     cli.nombre_negocio, COUNT(cre.id_creditos) AS total_creditos, 
     DATE(informes.fecha_inicio)  AS fecha_ini, DATE(informes.fecha_final) AS fecha_fin, SUM(cre.total) AS deuda
@@ -39,7 +48,7 @@
     JOIN informes ON informes.id_informes = informes_detalles.informe_id
     WHERE cre.fecha NOT BETWEEN '$fechaInicio' AND '$fechaFin' AND cre.estatus='pendiente'
     GROUP BY cli.id_cliente, cli.nombre_cliente, cre.estatus, cli.telefono_cliente, cli.nombre_negocio, DATE(informes.fecha_inicio), DATE(informes.fecha_final);";
-    $consultarDatosVencidos = Consulta($SQLVencidos);
+    $consultarDatosVencidos = Consulta($SQLVencidos);*/
 
  /**
   * Consultar datos pagados de cada cliente durante la semana
@@ -50,7 +59,7 @@
  AS total_creditos, SUM(cre.total) AS total_ventas
  FROM cliente cli
  LEFT JOIN creditos cre ON cli.id_cliente = cre.cliente_id
- Where (cre.fecha >='2023-06-28'  AND cre.fecha <= '2023-07-05') AND cre.estatus='pagado'
+ Where (cre.fecha >='$fechaInicio'  AND cre.fecha <= '$fechaFin') AND cre.estatus='pagado'
  GROUP BY cli.id_cliente, cli.nombre_cliente, cli.telefono_cliente, cli.nombre_negocio;";
  $consultarDatosPagados = Consulta($SQLpagados);
   ?>
@@ -172,33 +181,39 @@
                     <div class="container col-8">
                         <table class="table table-hover table-sm table-bordered table_vencidos" id="table">
                             <thead class="table-dark text-center">
+                                <!-- creditos vencidos
+                                $SQLVencidos = "SELECT cli.id_cliente, cli.nombre_cliente,cre.estatus, 
+                                    cli.telefono_cliente, cli.nombre_negocio ,COUNT(cre.id_creditos) 
+                                    AS total_creditos, SUM(cre.total) AS total_ventas
+
+        -->
                                 <tr>
                                     <th>Id Cliente</th>
                                     <th>Nombre Cliente</th>
                                     <th>Telefono</th>
                                     <th>Empresa</th>
                                     <th>Estatus</th>
-                                    <th>Fecha inicio</th>
-                                    <th>Fecha fin</th>
-                                    <th>N° Documentos</th>
+                                    <th>Inicio Actual</th>
+                                    <th>Fin Actual</th>
+                                    <th>N° Créditos</th>
                                     <th>Total</th>
                                     <th>Pagar</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($consultarDatosVencidos as $fila2) { ?>
+                                <?php foreach ($consultarDatosVencidos as $fila3) { ?>
                                 <tr>
-                                    <td><?php echo $fila2['id_cliente']; ?></td>
-                                    <td><?php echo $fila2['nombre_cliente']; ?></td>
-                                    <td><?php echo $fila2['telefono_cliente']; ?></td>
-                                    <td><?php echo $fila2['nombre_negocio']; ?></td>
-                                    <td><?php echo $fila2['estatus']; ?></td>
-                                    <td><?php echo $fila2['fecha_ini']; ?></td>
-                                    <td><?php echo $fila2['fecha_fin']; ?></td>
-                                    <td><?php echo $fila2['total_creditos']; ?></td>
-                                    <td><?php echo $fila2['deuda']; ?></td>
+                                    <td><?php echo $fila3['id_cliente']; ?></td>
+                                    <td><?php echo $fila3['nombre_cliente']; ?></td>
+                                    <td><?php echo $fila3['telefono_cliente']; ?></td>
+                                    <td><?php echo $fila3['nombre_negocio']; ?></td>
+                                    <td><?php echo $fila3['estatus']; ?></td>
+                                    <td><?php echo $fechaInicio; ?></td>
+                                    <td><?php echo $fechaFin; ?></td>
+                                    <td><?php echo $fila3['total_creditos']; ?></td>
+                                    <td><?php echo $fila3['total_ventas']; ?></td>
                                     <td> <button type="button" class="btn" data-bs-toggle="modal"
-                                            data-bs-target="#CreditosVencidos<?php echo $fila2['id_cliente']; ?>"
+                                            data-bs-target="#CreditosVencidos<?php echo $fila3['id_cliente']; ?>"
                                             style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
                                             <img src="assets/image/pagar-credito.png" width="35" height="35">
                                         </button></td>
