@@ -36,7 +36,7 @@
               </td>
               <td>
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmar<?php echo $fila['id_usuarios']; ?>" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
-                  <img src="assets/image/editar.png" width="35" height="35">
+                  <img src="assets/image/edit.png" width="35" height="35">
                 </button>
               </td>
           <!-- Fin de los botones -->

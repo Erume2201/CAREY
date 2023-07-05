@@ -18,7 +18,7 @@ if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]
      $password = $_POST["password"];
      $rol = $_POST["rol"];
      $id = $_POST['dato'];
-
+     //Encriptamos la contraseña
      $encryptedPassword = md5($password);
 
      $SQL = "UPDATE usuarios SET  nombre_completo ='$nombre', nombre_usuario = '$usuario',
@@ -26,6 +26,7 @@ if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]
         rol_usuario = '$rol', estatus_usuarios = 'generica' WHERE id_usuarios = $id;";
 
      $resultado = Actualizar($SQL);
+     //verificamos la respuesta a de la bd
      if ($resultado) {
          echo "<script>window.location = '../../index.php?module=usuario&Update=Actualizado'</script>";
      } else {

@@ -4,7 +4,7 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	require '../../controller/php/CRUD.php'; 
-
+	//Eliminar un usuario de la bd
 	$dato = $_POST['dato'];
 	//echo $dato;
 	$SQL = "DELETE FROM usuarios WHERE id_usuarios = '$dato'";

@@ -6,6 +6,10 @@
         $fechaInicio = $fechas[0];
         $fechaFin = $fechas[1];
         ?>
+        /**
+         * Genera dos gráficas del reporte semanal.
+         * @returns {draw} - Gráficas generadas.
+        */
         function drawChart<?php echo $numeroSemana; ?>() {
             var data<?php echo $numeroSemana; ?>_1 = google.visualization.arrayToDataTable([
                 ['Usuarios', 'Ventas Realizadas'],

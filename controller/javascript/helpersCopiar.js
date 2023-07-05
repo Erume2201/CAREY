@@ -1,5 +1,8 @@
-
-
+/**
+ * Genera una accion de copiado al portapapeles
+ * @param {number} longitud - La longitud deseada a copiar.
+ * @returns {string} - mensaje de copiado.
+ */
 function Checando(longitud = 10) {
   const resultadoElemento = document.getElementById('password');
   const msj = document.getElementById('copiar');
@@ -12,6 +15,11 @@ function Checando(longitud = 10) {
   setTimeout(()=> msj.innerHTML = "" , 1000);
  }
 
+/**
+ * Genera una accion de copiado al portapapeles para el modal de recuperar contraseña.
+ * @param {number} longitud - La longitud deseada a copiar.
+ * @returns {string} - mensaje de copiado.
+ */
 function ChecandoModal(event,longitud = 10) {
   const button = event.target;
   const resultadoHiden = document.getElementById('pass'+button.value);
@@ -28,6 +36,6 @@ function ChecandoModal(event,longitud = 10) {
       console.error("Error al copiar al portapapeles:", error);
     });
  }
-
+ 
 
  

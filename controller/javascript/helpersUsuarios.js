@@ -11,7 +11,7 @@ function validarNumeros(input) {
  * @param {number} longitud - La longitud deseada de la contraseña (por defecto: 8).
  * @returns {string} - La contraseña generada.
  */
-function generarPass(longitud = 10) {
+function generarPass(longitud = 8) {
   const resultadoElemento = document.getElementById('password');
   const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@$!%*?&';
   let contrasena = '';
@@ -29,7 +29,7 @@ function generarPass(longitud = 10) {
  * @param {number} longitud - La longitud deseada de la contraseña (por defecto: 8).
  * @returns {string} - La contraseña generada.
  */
-function generarPassEdi(event, longitud = 10) {
+function generarPassEdi(event, longitud = 8) {
   const button = event.target;
   const resultadoElemento = document.getElementById('password'+button.value);
   const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@$!%*?&';
@@ -42,16 +42,16 @@ function generarPassEdi(event, longitud = 10) {
   }
   resultadoElemento.value = contrasena;
  }
+ 
 
 
-
-/////////////obtner boton de generar//////////////
+/**------------------obtner boton de generar-----------**/
 /**
  * Genera una contraseña automática con la longitud especificada para el modulo de recuperar contraseña.
  * @param {number} longitud - La longitud deseada de la contraseña (por defecto: 8).
  * @returns {string} - La contraseña generada.
  */
-function generarPassNew(event, longitud = 10) {
+function generarPassNew(event, longitud = 8) {
   const button = event.target;
   console.log("Botón clickeado:", button.value);
   const resultadoElemento = document.getElementById(button.value);
