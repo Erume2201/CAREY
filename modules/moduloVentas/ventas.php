@@ -65,7 +65,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="popupLabel">Selecciona un cliente</h5>
-        <button onclick="regresarBoton()" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">regresar</button>
+        <button onclick="regresarBoton()" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Regresar</button>
       </div>
       <div class="modal-body">
         <!-- Contenido del modal aquí -->
