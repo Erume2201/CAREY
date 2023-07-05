@@ -10,9 +10,9 @@
       </li>
     </ul>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex ms-auto" role="search"> 
+      <div class="d-flex ms-auto" role="#"> 
         <input class="form-control me-2" type="search" id ="buscarNombre" placeholder="Buscar cliente" aria-label="Search" autocomplete="off">
-      </form>
+      </div>
     </div>
   </div>
 </nav>

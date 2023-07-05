@@ -12,6 +12,32 @@
         <hr>
         <h4>Seleccione los días en los que se hará el corte.</h4>
         <h6><strong>Aviso.</strong> La fecha DESDE no puede ser posterior a la fecha actual.</h6>
+        <?php 
+        // Consulta para obtener las últimas fechas de corte registradas
+        $SQL3 = "SELECT desde, hasta
+         FROM corte
+         ORDER BY desde DESC
+         LIMIT 1";
+
+        // Ejecutamos la consulta
+        $resultado3 = Consulta($SQL3);
+
+        // Verificar si se encontraron resultados
+        if (count($resultado3) > 0) {
+            echo '<div class="alert alert-success" role="alert">';
+            echo '<p>Última fecha de corte registrada:</p>';
+            echo '<ul>';
+            foreach ($resultado3 as $fila) {
+                $desde = $fila['desde'];
+                $hasta = $fila['hasta'];
+                echo "<li>Desde: $desde - Hasta: $hasta</li>";
+            }
+            echo '</ul>';
+            echo '</div>';
+        } else {
+            echo '<div class="alert alert-danger" role="alert">No hay fechas de corte activas.</div>';
+        } 
+        ?>
         <form method="POST">
             <?php include("modules/moduloConfiguracion/procesar.php"); ?>
             <div class="form-group">
