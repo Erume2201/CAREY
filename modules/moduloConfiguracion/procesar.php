@@ -54,7 +54,8 @@
                 $SQL = "INSERT INTO corte (desde, hasta, usuarios_id) VALUES ('$desde', '$hasta', 1)";
                 $resultado = InsertarDato($SQL);
                 if (count($resultado2) > 0) {
-                    echo '<div class="alert alert-danger" role="alert">No puede seleccionar fechas que estén dentro de un rango de fechas corte.</div>';
+                    echo '<div class="alert alert-danger" role="alert">No puede seleccionar fechas mientras hay un corte activo.</div>';
+                    exit;
                 } elseif ($resultado == TRUE) {
                     echo '<div class="alert alert-success" role="alert">Las fechas de corte DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') se guardaron correctamente.</div>';
                 } 
