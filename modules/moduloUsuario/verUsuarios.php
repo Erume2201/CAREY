@@ -15,6 +15,8 @@
           <th scope="col">Correo Electrónico</th>
           <th scope="col">Contraseña</th>
           <th scope="col">Rol de Usuario</th>
+          <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
