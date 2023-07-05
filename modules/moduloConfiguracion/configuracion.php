@@ -10,7 +10,8 @@
         <br><br><br><br><br>
         <h1>Asignación de días</h1>
         <hr>
-        <h6>Seleccione los días en los que se hará el corte</h6>
+        <h4>Seleccione los días en los que se hará el corte.</h4>
+        <h6><strong>Aviso.</strong> La fecha DESDE no puede ser posterior a la fecha actual.</h6>
         <form method="POST">
             <?php include("modules/moduloConfiguracion/procesar.php"); ?>
             <div class="form-group">
@@ -44,7 +45,6 @@
             </div>
         </form>
         <hr>
-        <h1>Alguna otra configuración...</h1>
     </div>
 </body>
 </html>

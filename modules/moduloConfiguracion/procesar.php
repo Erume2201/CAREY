@@ -28,6 +28,14 @@
             }
             $fecha_fin = date('Y-m-d', strtotime("next $hastaDia", strtotime($fechaActual)));
 
+            // Hacemos una para verificar la superposición de fechas
+            $SQL2 = "SELECT *
+             FROM corte
+             WHERE ('$fecha_inicio' <= hasta) AND ('$fecha_fin' >= desde)";
+
+             // Ejecutar la consulta
+            $resultado2 = Consulta($SQL2);
+
             // Obtención de los timestamps de las fechas DESDE y HASTA
             $timestamp_desde = strtotime($fecha_inicio);
             $timestamp_hasta = strtotime($fecha_fin);
@@ -45,9 +53,12 @@
                 // Ahora insertaremos los datos en la BD.
                 $SQL = "INSERT INTO corte (desde, hasta, usuarios_id) VALUES ('$desde', '$hasta', 1)";
                 $resultado = InsertarDato($SQL);
-                if ($resultado) {
+                if (count($resultado2) > 0) {
+                    echo '<div class="alert alert-danger" role="alert">No puede seleccionar fechas que estén dentro de un rango de fechas corte.</div>';
+                } elseif ($resultado == TRUE) {
                     echo '<div class="alert alert-success" role="alert">Las fechas de corte DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') se guardaron correctamente.</div>';
-                } else {
+                } 
+                else {
                     ?>
                         <div class="alert alert-danger" role="alert">Algo salió mal, por favor intentelo de nuevo.</div>
                     <?php
