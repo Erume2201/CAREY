@@ -15,7 +15,7 @@ if (isset($_GET["module"])) {
                 $password_login = md5($_POST["password"]);
                 
                 // Consulta a la base de datos tomando en cuenta los parámetros ingresados por el usuario
-                $SQL = "SELECT id_usuarios, nombre_usuario, contrasena 
+                $SQL = "SELECT id_usuarios, nombre_usuario, contrasena, rol_usuario 
                 FROM usuarios WHERE nombre_usuario = '$user_login' AND contrasena = '$password_login'";
                 $resultado = Consulta($SQL);
                 /**
@@ -25,6 +25,8 @@ if (isset($_GET["module"])) {
                 if (!empty($resultado)) {
                     $_SESSION['s1'] = $user_login;
                     $_SESSION['id_user'] = $resultado[0]['id_usuarios'];
+                    $_SESSION['rol_usuario'] = $resultado[0]['rol_usuario'];
+                   
                     /**
                      * a continuacion realizamos una busqueda si el usuario que inicio sesion
                      * tiene una contraseña generica o no, si es generica abre el cambio
@@ -50,9 +52,14 @@ if (isset($_GET["module"])) {
 <?php
                         exit();
                     }else{
+                      #  $idusuarionuevo = $_SESSION['id_user'];
+                     #   $rolusuarionuevo = $_SESSION['rol_usuario'];
+                     #   echo "<script>alert('hola " . $idusuarionuevo . $rolusuarionuevo . "');</script>";
+                        
+
                         
                         include_once("view/menu/menu.php"); 
-                        include_once("modules/moduloArticulos/Articulos.php");
+                        include_once("modules/moduloConfiguracion/configuracion.php");
                     } //termina la validacion de la contraseña generica
                  //comienza el else de si las contraseña y usuario ingresados no estan el la db                           
                 } else {
@@ -159,9 +166,23 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloArticulos/Articulos.php");        
                     break;
                 case 'usuario':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso denegado',
+                            text: '¡Usted no es administrador!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php"); 
+                include_once("modules/moduloArticulos/Articulos.php");
+                    }else{
                     include_once("view/menu/menu.php"); 
                     include_once("view/menu/menuUsuarios.php");
                     include_once("modules/moduloUsuario/verUsuarios.php");
+                }
                     break;
                 case 'registraUsuario':
                     include_once("view/menu/menu.php"); 
@@ -174,9 +195,23 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloUsuario/recuperarPassU.php");
                     break;
                 case 'clientes':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso limitado',
+                            text: '¡Usted solo tiene acceso a registrar usuarios!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php"); 
+                include_once("modules/moduloClientes/subnavbarClientes.php");
+                    }else{
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloClientes/subnavbarClientes.php");
                     include_once("modules/moduloClientes/clientes.php");
+                    }
                     break;
                 case 'nuevoCliente':
                     include_once("view/menu/menu.php");
@@ -189,14 +224,42 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloCreditos/creditos.php");
                     break;
                 case 'reporteSemanal':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso denegado',
+                            text: '¡Usted no es administrador!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php"); 
+                include_once("modules/moduloArticulos/Articulos.php");
+                    }else{
                     include_once("view/menu/menu.php");
                     include_once("modules/modulosGraficas/subMenuGraficas.php");
                     include_once("modules/modulosGraficas/reporteSemanal.php");
+                    }
                     break;
                 case 'informeGeneral':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso denegado',
+                            text: '¡Usted no es administrador!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php"); 
+                include_once("modules/moduloArticulos/Articulos.php");
+                    }else{
                     include_once("view/menu/menu.php");
                     include_once("modules/modulosGraficas/subMenuGraficas.php");
                     include_once("modules/modulosGraficas/informeGeneral.php");
+                    }
                     break;
                 case 'historialCreditos':
                     include_once("view/menu/menu.php");
@@ -204,8 +267,22 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloCreditos/historial.php");
                     break;
                 case 'configuracion':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso denegado',
+                            text: '¡Usted no es administrador!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php");
+                include_once("modules/moduloArticulos/Articulos.php"); 
+                    }else{
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloConfiguracion/configuracion.php");
+                }
                     break;
                 case 'cerrarSesion':
                     session_destroy();
@@ -220,13 +297,41 @@ if (isset($_GET["module"])) {
                     include_once("modules/moduloVentas/RealizarVenta.php");
                     break;        
                 case 'ventasDiarias':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso denegado',
+                            text: '¡Usted no es administrador!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php");
+                include_once("modules/moduloArticulos/Articulos.php"); 
+                    }else{
                     include_once("view/menu/menu.php");
                     include_once("modules/moduloVentas/subnavbarDiarias.php");
                     include_once("modules/moduloVentas/ventasDiarias.php");
+                    }
                     break;
                 case 'ventaSemanal':
+                    if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        ?>
+                            <script>
+                            Swal.fire({
+                            icon: 'info',
+                            title: 'Acceso denegado',
+                            text: '¡Usted no es administrador!',
+                            })
+                        </script>   
+                <?php
+                include_once("view/menu/menu.php"); 
+                include_once("modules/moduloArticulos/Articulos.php");
+                    }else{
                      include_once("view/menu/menu.php");
                      include_once("modules/moduloVentas/ventaSemanales.php");
+                    }
                      break;
                 case 'errorCambioPassword':
                     include_once("view/login/cambioContrasena.php");
@@ -238,9 +343,7 @@ if (isset($_GET["module"])) {
                         text: 'Verifica que tus contraseñas coincidan!'
                         })
                     </script>
-                    
-                    
-                    
+
                     <?php
                         break;
                 case 'cambioPassword':

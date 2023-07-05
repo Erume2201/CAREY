@@ -9,8 +9,6 @@
     $fechaInicio = $consultaFecha[0]['desde'];
     $fechaFin = $consultaFecha[0]['hasta'];
 
-    echo $fechaInicio .'<br>';
-    echo $fechaFin;
    
 /**
  * El siguiente método consulta los datos de la semana actual
