@@ -57,9 +57,9 @@ if (isset($_GET["module"])) {
                      #   echo "<script>alert('hola " . $idusuarionuevo . $rolusuarionuevo . "');</script>";
                         
 
-                        
-                        include_once("view/menu/menu.php"); 
-                        include_once("modules/moduloConfiguracion/configuracion.php");
+                     echo "<script>window.location = 'index.php?module=configuracion'</script>";
+                     #   include_once("view/menu/menu.php"); 
+                      #  include_once("modules/moduloConfiguracion/configuracion.php");
                     } //termina la validacion de la contraseña generica
                  //comienza el else de si las contraseña y usuario ingresados no estan el la db                           
                 } else {
