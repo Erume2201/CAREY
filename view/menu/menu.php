@@ -68,7 +68,7 @@
             <ul></ul>
             <!-- Inicia módulo de Graficas -->
             <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=reporteSemanal" id="grafica">Graficas</a>
+                <a class="nav-link active fw-bold" aria-current="page" href="index.php?module=reporteSemanal" id="grafica">Gráficas</a>
             </li>
             <!--Termina módulo de Graficas-->
             <!--Termina modulo de ventas-->
