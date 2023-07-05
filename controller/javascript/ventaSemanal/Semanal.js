@@ -48,3 +48,8 @@ function EjecutarWhat() {
         MandarMensaje.submit();
     }
 }
+
+function EnviarInforme(){
+    formularioInforme= document.querySelector("#informesEnviar");
+    formularioInforme.submit();
+}
