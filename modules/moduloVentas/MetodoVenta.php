@@ -1,5 +1,9 @@
 <?php
+<<<<<<< Updated upstream
 session_start();
+=======
+#session_start();
+>>>>>>> Stashed changes
 // Obtener los valores enviados por el formulario
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -22,7 +26,13 @@ if ($tipoVenta == 'Decontado') {
     if (empty($resultado)) {
         echo "<script>window.location = '../../index.php?module=venderDocumento&cliente=Nocliente&venta=NoRealizada'</script>";
     }else{
+<<<<<<< Updated upstream
         $idusuario = $_SESSION['id_user'];
+=======
+      #  $idsesionactivo = $_SESSION['id_user'];
+      #  echo "<script>alert('hola " . $idsesionactivo  ."');</script>";
+        $idusuario = 1;
+>>>>>>> Stashed changes
         $hora = $_POST['horaValor'];
         $SQLventaPadre = "INSERT INTO ventas (total_venta, hora, fecha, credito_id, usuarios_id) 
                         VALUES ($total, '$hora', '$hora', '$resultado', '$idusuario');";
