@@ -41,7 +41,7 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="submit" name="enviar" value="Guardar cambios">
+                <input type="submit" name="enviarCorte" value="Guardar cambios">
             </div>
         </form>
         <hr>

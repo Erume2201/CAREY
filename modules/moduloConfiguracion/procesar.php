@@ -3,7 +3,7 @@
 
 <?php
     // Nuestro IF principal verifica si se ha enviado el formulario y se ha hecho clic en "enviar".
-    if (isset($_POST['enviar'])) {
+    if (isset($_POST['enviarCorte'])) {
         // Colocaremos otro if para que en caso de que algún campo está vacío se envíe una alerta.
         if (empty($_POST["desde"]) || empty($_POST["hasta"])) {
             ?>
@@ -44,26 +44,26 @@
             $diferencia_dias = ($timestamp_hasta - $timestamp_desde) / (60 * 60 * 24);
 
             // Verificamos que la diferencia entre DESDE y HASTA sea de 7 dias calendarios
-            if ($diferencia_dias != 6) {
-                echo '<div class="alert alert-danger" role="alert">La diferencia de dias entre las fechas DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') deben ser de 7 dias calendario.</div>';
+            if (count($resultado2) > 0) {
+                echo '<div class="alert alert-danger" role="alert">No puede seleccionar fechas mientras hay un corte activo.</div>';
             } else {
-                // Almacenamos las fechas en las variables $desde y $hasta
-                $desde = $fecha_inicio;
-                $hasta = $fecha_fin;
-                // Ahora insertaremos los datos en la BD.
-                $SQL = "INSERT INTO corte (desde, hasta, usuarios_id) VALUES ('$desde', '$hasta', 1)";
-                $resultado = InsertarDato($SQL);
-                if (count($resultado2) > 0) {
-                    echo '<div class="alert alert-danger" role="alert">No puede seleccionar fechas mientras hay un corte activo.</div>';
-                    exit;
-                } elseif ($resultado == TRUE) {
-                    echo '<div class="alert alert-success" role="alert">Las fechas de corte DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') se guardaron correctamente.</div>';
-                } 
-                else {
-                    ?>
+                // Verificamos que la diferencia entre DESDE y HASTA sea de 7 dias calendarios
+                if ($diferencia_dias != 6) {
+                    echo '<div class="alert alert-danger" role="alert">La diferencia de dias entre las fechas DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') deben ser de 7 dias calendario.</div>';
+                } else {
+                    // Almacenamos las fechas en las variables $desde y $hasta
+                    $desde = $fecha_inicio;
+                    $hasta = $fecha_fin;
+                    // Ahora insertaremos los datos en la BD.
+                    $SQL = "INSERT INTO corte (desde, hasta, usuarios_id) VALUES ('$desde', '$hasta', 1)";
+                    $resultado = InsertarDato($SQL);
+                    if ($resultado) {
+                        echo '<div class="alert alert-success" role="alert">Las fechas de corte DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') se guardaron correctamente.</div>';
+                    } else {
+                        ?>
                         <div class="alert alert-danger" role="alert">Algo salió mal, por favor intentelo de nuevo.</div>
-                    <?php
-
+                        <?php
+                    }
                 }
             }
         }
