@@ -11,11 +11,15 @@
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
-            $SQL = "SELECT creditos.cliente_id, cliente.nombre_cliente, ventas.credito_id ,
-            SUM(ventas.total_venta)AS Total_compra, cliente.telefono_cliente
+            $queryFecha = "SELECT desde, hasta FROM corte ORDER BY id_corte DESC LIMIT 1;";
+            $fechas =Consulta($queryFecha);
+
+            $SQL = "SELECT creditos.cliente_id, cliente.nombre_cliente, ventas.credito_id,
+            SUM(ventas.total_venta) AS Total_compra, cliente.telefono_cliente
             FROM creditos
-            JOIN ventas ON creditos.id_creditos= ventas.credito_id
-            JOIN cliente ON cliente.id_cliente= creditos.cliente_id
+            JOIN ventas ON creditos.id_creditos = ventas.credito_id
+            JOIN cliente ON cliente.id_cliente = creditos.cliente_id
+            WHERE ventas.fecha >= '".$fechas[0]['desde']."' AND ventas.fecha <= '".$fechas[0]['hasta']."'
             GROUP BY creditos.cliente_id;";
             $resultado = Consulta($SQL);
             foreach ($resultado as $cliente) {
@@ -58,7 +62,8 @@
                                      JOIN ventas ON ventas.id_ventas = informacion_venta.ventas_id
                                      JOIN creditos ON creditos.id_creditos=ventas.credito_id
                                      JOIN cliente ON  cliente.id_cliente= creditos.cliente_id
-                                     WHERE cliente.id_cliente = '" . $cliente['cliente_id'] . "'";
+                                     WHERE cliente.id_cliente = '" . $cliente['cliente_id'] . "' AND 
+                                      ventas.fecha >= '".$fechas[0]['desde']."' AND ventas.fecha <= '".$fechas[0]['hasta']."'";
                                         $resultado = Consulta($SQL2);
                                         foreach ($resultado as $fila) {
                                         ?>
@@ -83,7 +88,8 @@
                                     $documentos = "SELECT SUM(informacion_venta.cantidad) AS cantidadDoc  FROM informacion_venta
                                     JOIN ventas ON ventas.id_ventas=informacion_venta.ventas_id
                                     JOIN creditos ON creditos.id_creditos= ventas.credito_id
-                                    WHERE creditos.cliente_id = '" . $cliente['cliente_id'] . "';";
+                                    WHERE creditos.cliente_id = '" . $cliente['cliente_id'] . "' AND 
+                                    ventas.fecha >= '".$fechas[0]['desde']."' AND ventas.fecha <= '".$fechas[0]['hasta']."'";
                                     $respuesta = Consulta($documentos);
                                     $respuesta[0]['cantidadDoc'];
                                     ?>
