@@ -25,9 +25,9 @@
                     <table class="table table-bordered" id="InformacionVenta">
                         <thead>
                             <tr>
-                                <th>Nombre documento:</th>
-                                <th>Precio venta documento:</th>
-                                <th>cantidad Documento:</th>
+                                <th>Nombre del documento:</th>
+                                <th>Precio venta:</th>
+                                <th>Cantidad:</th>
                                 <th>Total:</th>
                             </tr>
                         </thead>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <button type="button" onclick="AgregarMas()" class="btn btn-primary bt">Agregar más.</button>
+                <button type="button" onclick="AgregarMas()" class="btn btn-primary bt">Agregar más</button>
                 <br>
                 <label class="form-label">Tipo de Venta:</label>
                 <select class="form-control" id="TipoVenta" name="TipoVenta">
