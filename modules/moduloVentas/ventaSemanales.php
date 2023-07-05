@@ -141,7 +141,7 @@
                                         SUM(informacion_venta.cantidad)AS cantidades, SUM(informacion_venta.sub_total)AS Total FROM informacion_venta
                                         JOIN documentos ON documentos.id_articulo_documetos=informacion_venta.documentos_id
                                         JOIN ventas ON ventas.id_ventas=informacion_venta.ventas_id
-                                        WHERE ventas.fecha >= '2023-07-03' AND ventas.fecha <= '2023-07-05'
+                                        WHERE ventas.fecha >= '".$fechas[0]['desde']."' AND ventas.fecha <= '".$fechas[0]['hasta']."'
                                         GROUP BY documentos.id_articulo_documetos;";
                                         $resultadoDoc = Consulta($SQLdocumentos);
                                         foreach ($resultadoDoc as $documento) {
@@ -152,14 +152,15 @@
                                             value="<?php echo $documento['id_articulo_documetos']; ?>">
 
                                             <td><?php echo $documento['cantidades']; ?></td>
-                                            <input type="hidden" class="" id="cantidadDocumento" name="cantidadDocumento[]" 
+                                            <input type="hidden" class="cantidadDocumento" id="cantidadDocumento" name="cantidadDocumento[]" 
                                             value="<?php echo $documento['cantidades']; ?>">
 
                                             <td><?php echo $documento['Total']; ?></td>
                                             <input type="hidden" class="" id="TotalDocumento" name="TotalDocumento[]" 
                                             value="<?php echo $documento['Total']; ?>">
+
                                             <td><?php echo $documento['precio_costo']; ?></td>
-                                            <input type="hidden" class="" id="TotalDocumento" name="TotalDocumento[]" 
+                                            <input type="hidden" class="precioCostoDoc" id="precioCostoDoc" 
                                             value="<?php echo $documento['precio_costo']; ?>">
                                         </tr>
                                         <?php
@@ -168,7 +169,7 @@
                                     </tbody>
                                 </table>
                                 <input type="hidden" class="" id="precioFinal" name="precioFinal" value="<?php echo $respuestaMaxima[0]['maximo'] ?>">
-                                <input type="hidden" class="" id="gananciaSemanal" name="gananciaSemanal" value="2000">
+                                <input type="hidden" class="" id="gananciaSemanal" name="gananciaSemanal" value="0">
                             </div>
                         </div>
                     </div>

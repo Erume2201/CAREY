@@ -53,3 +53,18 @@ function EnviarInforme(){
     formularioInforme= document.querySelector("#informesEnviar");
     formularioInforme.submit();
 }
+
+resultadoCosto = document.querySelectorAll(".cantidadDocumento");
+precioCosto = document.querySelectorAll(".precioCostoDoc");
+precioFinal = document.querySelector("#floatingInputInvalid");
+ColocarGanancia = document.querySelector("#gananciaSemanal");
+let sumaCosto=0;
+resultadoCosto.forEach(function(cantidadDoc, index) {
+    var precio = precioCosto[index];
+    sumaCosto=sumaCosto+(precio.value*cantidadDoc.value)
+
+});
+
+let ganancia = precioFinal.value-sumaCosto;
+ColocarGanancia.value=ganancia;
+
