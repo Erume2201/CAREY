@@ -19,7 +19,7 @@
             $fechaActual = date('Y-m-d');
             $timestamp = strtotime($fechaActual);
             $diaActual = date('l', $timestamp);
-
+    
             // Cálculo de las fechas de inicio y fin en función de los días seleccionados
             if ($desdeDia == $diaActual) {
                 $fecha_inicio = $fechaActual; 
