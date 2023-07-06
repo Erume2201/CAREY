@@ -2,12 +2,12 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-#EAAJSSgThKpABAEaBO1ASECIErbtgdeq5siI5nL3qhX4KBKI3EI0sLyrZAZBw3Cs5YaP5lCPGTFjNLZB10htJH9A40ZCBCOTKOX8X5qucE8NjZA2NLleSTyMZCZB7ZB36DPjhUWYhKett2VbZAFNFNESXapH09li8TDgYjlvBCd6zAO9Q7J92aoXZCN
+
 if (isset($_POST['NumeroRecivido'])) {
     $telefonoRecivido = $_POST['NumeroRecivido'];
     $telefono='52'.$telefonoRecivido;
 }
-$token = "EAAJSSgThKpABAEaBO1ASECIErbtgdeq5siI5nL3qhX4KBKI3EI0sLyrZAZBw3Cs5YaP5lCPGTFjNLZB10htJH9A40ZCBCOTKOX8X5qucE8NjZA2NLleSTyMZCZB7ZB36DPjhUWYhKett2VbZAFNFNESXapH09li8TDgYjlvBCd6zAO9Q7J92aoXZCN";
+$token="";
 
 
 $url = 'https://graph.facebook.com/v17.0/102187289605465/messages';
