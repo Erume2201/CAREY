@@ -24,7 +24,7 @@ seleccion.addEventListener('change', function () {
     // Aquí puedes ejecutar acciones adicionales según la selección del usuario
     cel = document.querySelector("#cel" + selectedValue);
     Numero = document.querySelector("#NumeroCliente");
-    Enviar = document.querySelector("#NumeroRecivido");
+    Enviar = document.querySelector("#NumeroRecibido");
     if (selectedValue == 0) {
         console.log(selectedValue);
         Numero.textContent = "";
@@ -37,7 +37,7 @@ seleccion.addEventListener('change', function () {
 });
 
 function EjecutarWhat() {
-    Enviar = document.querySelector("#NumeroRecivido");
+    Enviar = document.querySelector("#NumeroRecibido");
     if (Enviar.value == 0) {
         Alerta = document.querySelector("#Alerta");
         Alerta.innerHTML = `<div class="alert alert-danger" role="alert">

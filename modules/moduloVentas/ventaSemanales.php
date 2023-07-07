@@ -212,7 +212,7 @@
                             <br>
                             <h5>Numero de telefono:</h5>
                             <p id="NumeroCliente">Numero: </p>
-                            <input type="hidden" class="" id="NumeroRecivido" name="NumeroRecivido" value="0">
+                            <input type="hidden" class="" id="NumeroRecibido" name="NumeroRecibido" value="0">
                         </div>
                     </form>
                     <p id="Alerta"></p>
