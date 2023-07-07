@@ -59,7 +59,7 @@
 </div>
 
 <!--Mandamos a llamar nuestra función para buscar clientes-->
-<script src="modules/moduloClientes/buscarCliente.js"></script>
+<script src="controller/javascript/buscarCliente.js"></script>
   
 
 <!-- ALERTAS DE SWEETALERT2 -->
