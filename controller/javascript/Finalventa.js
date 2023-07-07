@@ -148,6 +148,7 @@ localStorage.removeItem("PrecioVentaDocument");
 
 FormularioVender = document.querySelector("#FormularioVenta");
 function vender() {
+    event.preventDefault();
     localStorage.clear();
     if (enviar) {
         FormularioVender.submit();

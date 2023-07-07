@@ -6,7 +6,7 @@
 <br>
 <br>
 <div class="container">
-    <form id="FormularioVenta" action="modules/moduloVentas/MetodoVenta.php"  method="POST">
+    <form id="FormularioVenta" action="modules/moduloVentas/MetodoVenta.php" method="POST">
         <div class="row">
             <div class="col-8">
                 <div id="ClienteVentaNombre"> </div>
@@ -52,9 +52,14 @@
                 <img src="assets/image/salario.png" alt="" width="90px" height="90px" style="display: block; ">
             </div>
         </div>
+        <style>
+            img:hover {
+                transform: scale(1.1);
+            }
+        </style>
         <div class="row">
             <div class="col-3">
-                <button type="button" onclick="vender()" class="btn btn-success bt">Finalizar</button>
+                <img src="assets/image/botonPagar.png" alt="" width="130px" height="45px" onclick="vender(event)">
             </div>
 
             <div class="col-3">
