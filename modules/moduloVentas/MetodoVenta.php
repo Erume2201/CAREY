@@ -31,7 +31,9 @@ if ($tipoVenta == 'Decontado') {
        echo "<script>window.location = '../../index.php?module=venderDocumento&cliente=Nocliente&venta=NoRealizada'</script>";
     }else{
         $idDocument = $_POST['ValorIdDocumen'];
+
         $CantidadDocumento= $_POST['ValorCantidad'];
+        
         $SubtotalDocumento= $_POST['subTotal'];
         for ($i = 0; $i < count($idDocument); $i++) {
              $id = $idDocument[$i];

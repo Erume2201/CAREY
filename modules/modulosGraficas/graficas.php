@@ -1,4 +1,5 @@
   <script>
+      // Carga la biblioteca de visualización de Google Charts y especifica el paquete "corechart".
         google.charts.load('current', {'packages':['corechart']});
         <?php foreach ($fechasSemanas as $numeroSemana => $fechas) { ?>
         google.charts.setOnLoadCallback(drawChart<?php echo $numeroSemana; ?>);
@@ -6,14 +7,17 @@
         $fechaInicio = $fechas[0];
         $fechaFin = $fechas[1];
         ?>
+
         /**
          * Genera dos gráficas del reporte semanal.
          * @returns {draw} - Gráficas generadas.
         */
+
         function drawChart<?php echo $numeroSemana; ?>() {
             var data<?php echo $numeroSemana; ?>_1 = google.visualization.arrayToDataTable([
                 ['Usuarios', 'Ventas Realizadas'],
                 <?php
+
                     #$fechaInicio = "2023-07-01"; // Inicializar las variables con una fecha estatica
                     #$fechaFin = '2023-07-02';
                     $SQL = "SELECT c.nombre_cliente, COUNT(cr.id_creditos) AS cantidad_creditos 
@@ -40,6 +44,7 @@
             var data<?php echo $numeroSemana; ?>_2 = google.visualization.arrayToDataTable([
                 ['Documentos', 'Total vendidos'],
                 <?php
+
                     #$fechaInicio = "2023-07-01"; // Inicializar las variables con una fecha estática
                     #$fechaFin = '2023-07-02';
                     $SQL = "SELECT d.nombre, SUM(iv.cantidad) AS total_cantidad

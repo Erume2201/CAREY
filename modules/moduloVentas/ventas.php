@@ -13,26 +13,35 @@
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <?php
+
           //para mostrar errore de la consulta al servidor
+
           ini_set('display_errors', 1);
           ini_set('display_startup_errors', 1);
           error_reporting(E_ALL);
 
           // Ejecutar el query utilizando la conexión y capturar los resultados
+
           $query = "SELECT * FROM documentos";
           $resultados = Consulta($query);
+
           #$resultados los obtiene el CRUD aqui ya solo tenemos el resultado en un ARRAY
           // Trabajar con los resultados
+
           foreach ($resultados as $fila) {
           ?>
             <div class="col">
               <div class="card shadow-sm">
+
                 <!--mandamos el docuemto seleccionado para el borrado o modificado-->
+
                 <form id="<?php echo "FormularioVentas" . $fila['id_articulo_documetos']; ?>" action="" method="">
                   <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                   <br>
                   <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
+                  
                   <!--datos que se deben mostrar cuando se haga click al ver-->
+                  
                   <input type="hidden" class="PrecioModifica" value="<?php echo $fila['precio_costo']; ?>">
                   <input type="hidden" class="descripcionModifi" value="<?php echo $fila['descripcion']; ?>">
                   <input type="hidden" class="TipoModifica" value="<?php echo $fila['tipo']; ?>">
@@ -68,8 +77,10 @@
         <button onclick="regresarBoton()" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Regresar</button>
       </div>
       <div class="modal-body">
+
         <!-- Contenido del modal aquí -->
         <!--class="form-inline"-->
+        
         <?php
         $SQL = "SELECT * FROM cliente";
         $resultado = Consulta($SQL);

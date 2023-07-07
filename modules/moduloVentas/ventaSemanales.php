@@ -7,7 +7,9 @@
     <div class="col-10">
         <div class="accordion" id="">
             <?php
+
             // Obtener los valores enviados por el formulario
+
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
@@ -106,6 +108,7 @@
             <?php
             }
             ?>
+            
             <!--Nuevo datos-->
             <?php
             $maximoTotal="SELECT SUM(ventas.total_venta)AS maximo FROM ventas
