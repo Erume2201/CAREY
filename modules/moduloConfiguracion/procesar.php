@@ -1,5 +1,5 @@
 
-<!--Este es el controlador para agregar un nuevo cliente a la BD-->
+<!--Este es el controlador para agregar una nueva fecha al modulo de configuracion en la base de datos-->
 
 <?php
     // Nuestro IF principal verifica si se ha enviado el formulario y se ha hecho clic en "enviar".

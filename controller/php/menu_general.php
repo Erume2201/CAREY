@@ -88,7 +88,7 @@ if (isset($_GET["module"])) {
          * y confirma la misma.
          */
     } else if ($_GET["module"] == 'recuperarContrasena') {
-        include_once("view/login/recuperarcontrasena.php");  
+        include_once("view/login/recuperarContrasena.php");  
         /**
          * la siguiente condicion sirve para abrir la pagina solicitudContrasena
          * donde se le pide al usuario ingresar su usuario solamente

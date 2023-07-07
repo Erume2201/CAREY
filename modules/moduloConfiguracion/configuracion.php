@@ -38,6 +38,8 @@
             echo '<div class="alert alert-danger" role="alert">No hay fechas de corte activas.</div>';
         } 
         ?>
+
+        <!-- Este formulario enviará la entrada del usuario al script "procesar.php" para su procesamiento -->
         <form method="POST">
             <?php include("modules/moduloConfiguracion/procesar.php"); ?>
             <div class="form-group">

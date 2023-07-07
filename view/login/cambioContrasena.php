@@ -26,6 +26,7 @@ pide 3 parametros contraseña generica, nueva contrasena confirmar contrasena
                 </div>
                 <input class="form-control bg-light" type="password" placeholder="Contraseña Actual" name="passActual"
                     id="passActual" required />
+                    
                 <!-- Icono de mostrar contrasena -->
                 <div class="input-group-text">
                     <img onclick="verPassWordActual()" src="./assets/image/icon/oculto.png" alt="password-icon"

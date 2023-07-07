@@ -3,8 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (isset($_POST['NumeroRecivido'])) {
-    $telefonoRecivido = $_POST['NumeroRecivido'];
+if (isset($_POST['NumeroRecibido'])) {
+    $telefonoRecivido = $_POST['NumeroRecibido'];
     $telefono='52'.$telefonoRecivido;
 }
 $token="";
