@@ -31,7 +31,7 @@
                             <?php echo $cliente['nombre_cliente']; ?> Telefono: <?php echo $cliente['telefono_cliente']; ?>
                         </button>
                         <input type="hidden" class="nombrewhat" id="<?php echo $cliente['cliente_id']; ?>" value="<?php echo $cliente['nombre_cliente']; ?>">
-                        <input type="hidden" class="celWhat" id="<?php echo "cel" . $cliente['cliente_id']; ?>" value="<?php echo $cliente['telefono_cliente']; ?>">
+                        <input type="hidden" class="celWhat" id="<?php echo "cel". $cliente['cliente_id']; ?>" value="<?php echo $cliente['telefono_cliente']; ?>">
                     </h2>
                     <div id="<?php echo $cliente['cliente_id']; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
