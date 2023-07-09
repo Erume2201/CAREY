@@ -4,9 +4,11 @@
   <hr>
   <h5>Para registrar un usuario complete todos los campos</h5>
   <hr>
+
   <!-- action="controller/php/controladorRegistroUsuario.php" -->
   <form method="POST">
     <?php
+    
     // include("controller/php/conexion.php");
     include("controller/php/controladorRegistroUsuario.php");
     ?>

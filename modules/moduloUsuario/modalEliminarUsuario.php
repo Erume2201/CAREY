@@ -1,4 +1,7 @@
-<!-- Modal -->
+<!-- Modal de eliminación
+El modal muestra un mensaje de confirmación para eliminar un usuario 
+Incluye un formulario para enviar la confirmación de eliminación -->
+
 <div class="modal fade" id="ModalEliminar<?php echo $fila['id_usuarios']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

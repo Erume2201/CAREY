@@ -1,6 +1,7 @@
 <?php
 	//echo "hola soy tu contraseña perdidad"
 ?>
+
 <div class="container col-9 table-responsive">
     <h4 class="text-center">Usuarios con cambio de contraseña pendiente</h4>
     <hr>
@@ -28,6 +29,7 @@
               <td><?php echo $fila['contrasena']; ?></td>
               <td id="<?php echo $fila['id_usuarios'];?>"></td>
               <input type="hidden" id="<?php echo $fila['id_usuarios'];?>" name="<?php echo $fila['id_usuarios'];?>" value="<?php echo $fila['id_usuarios'];?>" autocomplete="off">
+              
               <!-- Inicio de los botones -->
               <td>
                 <button type="button" class="btn btn" value="<?php echo $fila['id_usuarios'];?>" 
@@ -40,6 +42,7 @@
                 </button>
               </td>
           <!-- Fin de los botones -->
+
           </tr>
           </form>
       	  <?php

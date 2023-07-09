@@ -6,6 +6,7 @@
         <h4 class="modal-title" id="exampleModalLabel" style="">Modificar Datos del Usuario: <?php echo $fila['nombre_usuario']; ?></h4>
       </div>
       <div class="modal-body">
+
         <!--Inicio Formulario-->
           <form action="controller/php/controlUsuariosModificar.php" method="POST" >
             <div class="form-group">
@@ -28,7 +29,7 @@
               <input type="email" class="form-control" name="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo Electronico" value="<?php echo $fila['correo']; ?>">
             </div>
             <br>
-            <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña Generica</label>
+            <label for="exampleInputPassword1" class="form-label fw-bold">Contrasena Generica</label>
             <div class="form-group password-container">
               <input type="text" class="password-field form-control" name="password" id="password<?php echo $fila['id_usuarios'];?>" placeholder="Contraseña" >
               <button type="button" class="password-button btn btn-primary" value="<?php echo $fila['id_usuarios'];?>" onclick="generarPassEdi(event)">Generar</button>
@@ -46,6 +47,7 @@
             </div>
             <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
         <!--Fin Formulario-->
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>

@@ -1,6 +1,7 @@
 <?php
 	//echo'soy la lista de usuario';
 ?>
+
 <div class="contenido-do row">
   <br><br>
   <div class="container col-9 ">
@@ -35,6 +36,7 @@
               <td><?php echo $fila['rol_usuario']; ?></td>
               <!-- Fin de los Datos -->
               <!-- Inicio de los botones -->
+
               <td>
                 <button type="button" class="btn" data-bs-toggle="modal" 
                 data-bs-target="#ModalEliminar<?php echo $fila['id_usuarios']; ?>" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
@@ -45,11 +47,14 @@
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $fila['id_usuarios']; ?>" style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;">
               <img src="assets/image/edit.png" width="35" height="35">
             </button>
+
           </td>
           <!-- Fin de los botones -->
           </tr>
+
           </form>
       	  <?php
+          
       	  //modal Editar Datos
       	  include("modules/moduloUsuario/modalEditarU.php");
       	  //Abrir modal de Alerta para eliminar
