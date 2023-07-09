@@ -48,7 +48,7 @@ function Consulta($query) {
         //se alamacena todas las filas de la consulta
         $resultadosArray[] = $fila;
     }
-    
+
    //baseamos el $resultado ya que esta consulta 
    //se hace del lado del servidor y con esto liberamos memoria
     mysqli_free_result($resultado);
@@ -64,6 +64,7 @@ function Consulta($query) {
  * recibe como parametro el correo electronico
  * retorna un booleano
  */
+
 function Actualizar($query) {
     $conexion = obtenerConexion();
     $resultado = mysqli_query($conexion, $query);

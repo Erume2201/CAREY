@@ -1,10 +1,14 @@
+/**
+* Gestiona la funcionalidad relacionada con los datos de WhatsApp en una página web
+Selecciona todos los elementos HTML con la clase "nombrewhat" y los guarda en la variable `clientes`
+Luego, selecciona el elemento HTML con el id "ClienteWha" y lo guarda en la variable `seleccion`
+*/
+
 clientes = document.querySelectorAll('.nombrewhat');
 seleccion = document.querySelector("#ClienteWha");
 function DatosWhatsApp() {
     document.getElementById('datosWhatsApp').style.display = 'block';
     llenarCamposEnvio();
-
-
 }
 
 function CerrarWhatsApp() {
@@ -21,6 +25,7 @@ function llenarCamposEnvio() {
 
 seleccion.addEventListener('change', function () {
     var selectedValue = seleccion.value;
+    
     // Aquí puedes ejecutar acciones adicionales según la selección del usuario
     cel = document.querySelector("#cel" + selectedValue);
     Numero = document.querySelector("#NumeroCliente");

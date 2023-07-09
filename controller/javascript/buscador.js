@@ -1,3 +1,8 @@
+/**
+ * Este metodo permite al usuario buscar y filtrar el contenido de la tabla en tiempo real según el texto 
+ * ingresado en un campo de búsqueda. Esto se logra al ocultar las filas de la tabla
+ * que no coinciden con el criterio de búsqueda y mostrar solo las filas que sí coinciden. 
+ */
 (function(document) {
     'buscador';
 
