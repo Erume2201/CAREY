@@ -1,6 +1,7 @@
 <body>
   <div class="container col-10">
     <?php
+    // Obtener la fecha actual y mostrarla en la página
     date_default_timezone_set('America/Mexico_City');
     $dia = date('l Y-m-d');
     $mes = date('F');
@@ -18,33 +19,49 @@
         $mes = date('n');
         //Funcion para divider el mes en semanas, inicio de semana Lunes y fin de la semana Domingo.
         function obtenerFechasSemanasEnMes($Years, $mes) {
-            $fechasSemanas = array(); //arreglo que contendra las fechas.
-            $numeroSemana = 1; //asignacion de un número de semana a cada conjunto de fechas.
-            $fecha = new DateTime(); //se crea la instancia sin niguna Fecha.
-            $fecha->setDate($Years, $mes, 1); //se establece la fecha del primer dia de mes.
-            $primerDiaMes = $fecha->format('N'); // obtener el número del primer día del mes (1: lunes, 7: domingo).
+            //arreglo que contendra las fechas.
+            $fechasSemanas = array(); 
+            //asignacion de un número de semana a cada conjunto de fechas.
+            $numeroSemana = 1; 
+            //se crea la instancia sin niguna Fecha.
+            $fecha = new DateTime(); 
+            //se establece la fecha del primer dia de mes.
+            $fecha->setDate($Years, $mes, 1); 
+            // obtener el número del primer día del mes (1: lunes, 7: domingo).
+            $primerDiaMes = $fecha->format('N'); 
 
             // Obtener la fecha del primer día de la primera semana
-            $fechaInicio = $fecha->format('Y-m-d'); //obtiene la fecha formateada como 'Y-m-d'.
-			$fechaFin = $fecha->modify('next Sunday')->format('Y-m-d'); //modifica la fecha para que sea el próximo domingo y la asigna a $fechaFin.
-			$fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin]; //almacena las fechas de inicio y fin en el arreglo $fechasSemanas, utilizando $numeroSemana como índice.
-			$numeroSemana++; //incrementa el valor de $numeroSemana para la siguiente semana.
+            $fechaInicio = $fecha->format('Y-m-d');
+            //obtiene la fecha formateada como 'Y-m-d'.
+			$fechaFin = $fecha->modify('next Sunday')->format('Y-m-d');
+            //modifica la fecha para que sea el próximo domingo y la asigna a $fechaFin. 
+			$fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin];
+            //almacena las fechas de inicio y fin en el arreglo $fechasSemanas, utilizando $numeroSemana como índice.
+			$numeroSemana++;
+            //incrementa el valor de $numeroSemana para la siguiente semana. 
 
             // Avanzar al próximo lunes después del primer día del mes
             $fecha->modify('next Monday');
 
             // Obtener las fechas de las semanas restantes
 			while ($fecha->format('n') == $mes) {
-			    $fechaInicio = $fecha->format('Y-m-d'); //obtiene la fecha actual y la asigna a $fechaInicio.
-			    $fechaFin = $fecha->modify('next Sunday')->format('Y-m-d'); //modifica la fecha para que sea el próximo domingo y la asigna a $fechaFin.
-			    $fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin]; //almacena las fechas de inicio y fin en el arreglo $fechasSemanas, utilizando $numeroSemana como índice.
-			    $numeroSemana++; //incrementa el valor de $numeroSemana para la siguiente semana.
-			    $fecha->modify('next Monday'); //modifica la fecha para que sea el próximo lunes.
+                 //obtiene la fecha actual y la asigna a $fechaInicio.
+			    $fechaInicio = $fecha->format('Y-m-d');
+                //modifica la fecha para que sea el próximo domingo y la asigna a $fechaFin.
+			    $fechaFin = $fecha->modify('next Sunday')->format('Y-m-d');
+                //almacena las fechas de inicio y fin en el arreglo $fechasSemanas, utilizando $numeroSemana como índice. 
+			    $fechasSemanas[$numeroSemana] = [$fechaInicio, $fechaFin]; 
+                //incrementa el valor de $numeroSemana para la siguiente semana.
+			    $numeroSemana++; 
+                //modifica la fecha para que sea el próximo lunes.
+			    $fecha->modify('next Monday'); 
 			}
 
             return $fechasSemanas;
         }
 
+        //Este bloque obtiene las fechas de las semanas en el mes
+        
         $fechasSemanas = obtenerFechasSemanasEnMes($Years, $mes);
 
         foreach ($fechasSemanas as $numeroSemana => $fechas) {

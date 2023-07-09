@@ -1,3 +1,5 @@
+<!-- Agrega una sección de navegación en forma de pestañas -->
+<!-- Las pestañas incluyen enlaces a diferentes módulos: "Reporte Semanal" e "Informe General" -->
 <br><hr>
 <br>
 <ul class="nav nav-tabs">
