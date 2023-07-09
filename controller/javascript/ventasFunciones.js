@@ -130,6 +130,7 @@ function detalles() {
                    <div class="col-lg-4">
                       <button type="button" onclick="RealizarVenta()" class="btn btn-success">Siguiente</button>
                    </div>
+                   </div>
                    
                 `;
 
