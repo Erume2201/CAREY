@@ -120,22 +120,17 @@ function detalles() {
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                          <label style="font-weight: bold;">Descripción:</label>
-                          <p>${Detalleinformacion}</p>
+                        <label style="font-weight: bold;">Descripción:</label>
+                        <label class="text-break" style="word-wrap: break-word; overflow-wrap: break-word; max-width: 100%;">${Detalleinformacion}</label>
                         </div>
-                    </div>
-                   <div class="col-lg-4">
-                     <img class="bd-placeholder-img" src="assets/image/documentos.png" height="100" width="100" style="display: 
-                      block; margin-top: 30px; margin-left: 60px;">
-                    </div>
+                   </div>                  
                    <br>
                    <div class="row">
                    <br>
                    <div class="col-lg-4">
                       <button type="button" onclick="RealizarVenta()" class="btn btn-success">Siguiente</button>
                    </div>
-                   </div>
-                
+                   
                 `;
 
         detallesMostrar.innerHTML += htmlNuevo;
