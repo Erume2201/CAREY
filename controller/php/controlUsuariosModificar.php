@@ -1,6 +1,9 @@
 <?php
+// Configuración para mostrar errores
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+
+// Requerir el archivo CRUD.php
 error_reporting(E_ALL);
 require '../../controller/php/CRUD.php';
 

@@ -2,7 +2,9 @@
 
 if (isset($_POST['enviar'])) {
 	//Verificacion de los campos vacios
-    if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]) || empty($_POST["password"])|| empty($_POST["rol"]) || empty($_POST["usuario"])) {
+    if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]) ||
+	 empty($_POST["password"])|| empty($_POST["rol"]) || empty($_POST["usuario"])) 
+	{
     	?>
     		<div class="alert alert-danger" role="alert">
 			  Algunos campos estan vacios!

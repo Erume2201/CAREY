@@ -1,4 +1,7 @@
 <?php
+/**
+ *Aquí se dirigire al usuario a diferentes módulos de la aplicación según las opciones seleccionadas. 
+ */
 session_start();
 
 if (isset($_GET["module"])) {
@@ -160,12 +163,14 @@ if (isset($_GET["module"])) {
             $option = $_GET["module"];
             
             switch ($option) {
+                 // Incluye el archivo del menú y el módulo de Artículos
                 case 'articulo':
                     include_once("view/menu/menu.php"); 
                     include_once("modules/moduloArticulos/Articulos.php");        
                     break;
                 case 'usuario':
                     if ( $_SESSION['rol_usuario'] == 'usuario') {
+                        // Acceso denegado para los usuarios normales (no administradores)
                         ?>
                             <script>
                             Swal.fire({
@@ -204,6 +209,15 @@ if (isset($_GET["module"])) {
                             })
                         </script>   
                 <?php
+
+                /** EXPLICACION GENERAL DE LOS CASE
+                * Si se ha iniciado sesión correctamente, se verifica el módulo solicitado y se incluyen los archivos 
+                * correspondientes para mostrar el contenido del módulo seleccionado. Los módulos disponibles incluyen 
+                * "articulo", "usuario", "registraUsuario", "recuperarUserPass", "clientes", "nuevoCliente", "creditos",
+                * "reporteSemanal", "informeGeneral", "historialCreditos", "configuracion", "cerrarSesion", 
+                * "venderDocumento", "Realizar", "ventasDiarias", "ventaSemanal", "errorCambioPassword" 
+                * y "cambioPassword". Dependiendo del rol del usuario, algunos módulos pueden tener acceso limitado.
+                */
                 include_once("view/menu/menu.php"); 
                 include_once("modules/moduloClientes/subnavbarClientes.php");
                     }else{
