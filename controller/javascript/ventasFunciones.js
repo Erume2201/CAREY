@@ -126,10 +126,10 @@ function detalles() {
                    </div>                  
                    <br>
                    <div class="row">
-                   <br>
-                   <div class="col-lg-4">
-                      <button type="button" onclick="RealizarVenta()" class="btn btn-success">Siguiente</button>
-                   </div>
+                        <br>
+                        <div class="col-lg-4">
+                            <button type="button" onclick="RealizarVenta()" class="btn btn-success">Siguiente</button>
+                        </div>
                    </div>
                    
                 `;
