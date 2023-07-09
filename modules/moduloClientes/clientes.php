@@ -61,10 +61,9 @@
 <!--Mandamos a llamar nuestra función para buscar clientes-->
 <script src="controller/javascript/buscarCliente.js"></script>
   
-
 <!-- ALERTAS DE SWEETALERT2 -->
-
 <!-- Alerta de Usuario Eliminado -->
+
 <div>
   <?php
   if (isset($_GET['Delete'])) {

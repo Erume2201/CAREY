@@ -30,6 +30,7 @@
       <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel" style="">Ver/Modicar: <?php echo $fila['nombre_cliente']; ?></h4>
       </div>
+      
       <!--Inicio del formulario para modificar al cliente-->
       <form action="modules/moduloClientes/ctrlEditCliente.php" method="POST" >
         <div class="modal-body">

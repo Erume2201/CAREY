@@ -1,3 +1,6 @@
+<!-- Agrega una barra de navegación -->
+<!-- La barra de navegación incluye enlaces a diferentes módulos: "Clientes" y "Nuevo" -->
+
 <br><hr><br>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
