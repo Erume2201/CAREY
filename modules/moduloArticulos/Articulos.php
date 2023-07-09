@@ -87,7 +87,7 @@
           <form id="FormularioPrin" action="modules/moduloArticulos/InsertarDocumentos.php" method="POST">
             <div class="form-control">
               <label class="">Nombre:</label>
-              <input class="form-control" maxlength="30" type="text" id="nombre" name="nombre" required>
+              <input class="form-control" maxlength="25" type="text" id="nombre" name="nombre" required>
               <label class="form-label">Precio costo:</label>
               <input class="form-control" type="number" id="PrecioCosto" name="PrecioCosto" required>
               <label class="">Precio Venta:</label>

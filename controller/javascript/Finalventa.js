@@ -56,7 +56,7 @@ if (fila == null) {
     fila = ` <tr class="fila" id="${localStorage.getItem("idDocumen")}">
                         <td>${localStorage.getItem("nombreDocumen")}</td>
                         <td id="PrecioV" class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
-                        <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
+                        <td> <input class="form-control cantidadDoc" type="text" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa cantidad" required ></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
                         <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
@@ -73,7 +73,7 @@ if (fila == null) {
                         <td>${localStorage.getItem("nombreDocumen")}</td>
                         <td id="PrecioV${localStorage.getItem("idDocumen")}" 
                         class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
-                        <td> <input class="form-control cantidadDoc" type="number" id="Cantidad${localStorage.getItem("idDocumen")}"
+                        <td> <input class="form-control cantidadDoc" type="text" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa un valor" required ></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
                       <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
@@ -101,6 +101,12 @@ DocumentoCan.forEach(DatoP => {
         SubTotalDocumentio = document.querySelector("#subTotal" + idPrecio);
 
         input.addEventListener("keyup", () => {
+            let inputValue = input.value.replace(/\D/g, ''); // Remover todos los caracteres que no sean dígitos
+            input.value = inputValue; // Actualizar el valor del campo solo con los dígitos permitidos
+
+            if (inputValue === "") {
+                inputValue = "0"; // Si no hay ningún dígito válido, establecer el valor en cero
+            }
             Subtotal = precio * input.value;
             CantidaDocumento.value = input.value;
             SubTotalDocumentio.value = Subtotal;

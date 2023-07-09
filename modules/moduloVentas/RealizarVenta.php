@@ -35,7 +35,7 @@
 
                         </tbody>
                     </table>
-                    <h3 id="TotalPago">Pago total: $</h3>
+                    <h3 id="TotalPago">Pago total: $0</h3>
                     <input type="hidden" class="" id="TotalFinal" name="TotalFinal" value="">
                 </div>
             </div>
