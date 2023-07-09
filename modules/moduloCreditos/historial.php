@@ -35,20 +35,7 @@
   GROUP BY cli.id_cliente, cli.nombre_cliente, cli.telefono_cliente, cli.nombre_negocio;";
   $consultarDatosVencidos = Consulta($SQLVencidos);
 
-/*
-    $SQLVencidos = "SELECT cli.id_cliente, cli.nombre_cliente, cre.estatus, cli.telefono_cliente, 
-    cli.nombre_negocio, COUNT(cre.id_creditos) AS total_creditos, 
-    DATE(informes.fecha_inicio)  AS fecha_ini, DATE(informes.fecha_final) AS fecha_fin, SUM(cre.total) AS deuda
-    FROM cliente cli
-    JOIN creditos cre ON cli.id_cliente = cre.cliente_id
-    JOIN ventas ve ON ve.credito_id = cre.id_creditos
-    JOIN informacion_venta ON ve.id_ventas = informacion_venta.ventas_id
-    JOIN documentos ON documentos.id_articulo_documetos = informacion_venta.documentos_id
-    JOIN informes_detalles ON documentos.id_articulo_documetos = informes_detalles.documentos_id
-    JOIN informes ON informes.id_informes = informes_detalles.informe_id
-    WHERE cre.fecha NOT BETWEEN '$fechaInicio' AND '$fechaFin' AND cre.estatus='pendiente'
-    GROUP BY cli.id_cliente, cli.nombre_cliente, cre.estatus, cli.telefono_cliente, cli.nombre_negocio, DATE(informes.fecha_inicio), DATE(informes.fecha_final);";
-    $consultarDatosVencidos = Consulta($SQLVencidos);*/
+
 
  /**
   * Consultar datos pagados de cada cliente durante la semana
@@ -141,6 +128,7 @@
                         </table>
                     </div>
                 </div>
+
                 <!-- Termina Tabla 01 para documentos vendidos en la semana -->
             </div>
         </div>
@@ -160,12 +148,15 @@
                 <!--Buscador-->
                 <div class="row">
                     <div class="col-3">
+
                         <!-- Contenido de la primera columna -->
                     </div>
                     <div class="col-6">
+
                         <!-- Contenido de la segunda columna -->
                     </div>
                     <div class="col-3">
+
                         <!-- Contenido de la tercera columna -->
                         <center><label class="form-label fw-bold">Buscar cliente</label></center>
                         <input class="form-control me-2 light-table-filter" data-table="table_vencidos" type="text"
@@ -181,12 +172,7 @@
                     <div class="container col-8">
                         <table class="table table-hover table-sm table-bordered table_vencidos" id="table">
                             <thead class="table-dark text-center">
-                                <!-- creditos vencidos
-                                $SQLVencidos = "SELECT cli.id_cliente, cli.nombre_cliente,cre.estatus, 
-                                    cli.telefono_cliente, cli.nombre_negocio ,COUNT(cre.id_creditos) 
-                                    AS total_creditos, SUM(cre.total) AS total_ventas
-
-        -->
+                                
                                 <tr>
                                     <th>Id Cliente</th>
                                     <th>Nombre Cliente</th>

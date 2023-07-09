@@ -1,3 +1,5 @@
+<!-- Agrega una sección de navegación en forma de pestañas. 
+Las pestañas incluyen enlaces a diferentes módulos: "Fecha de consulta" y "Lista de pagos" -->
 <br><br><br><br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
