@@ -32,6 +32,7 @@
 		$fechasMes = obtenerFechasMes($Years, $mes);
 		$fechaInicio = $fechasMes['inicio'];
 		$fechaFin = $fechasMes['fin'];
+
 		#echo "Primera fecha del mes: $fechaInicio<br>";
 		#echo "Última fecha del mes: $fechaFin";
     ?>
@@ -49,6 +50,7 @@
 	        		<option value="Clientes">Gráfica de Clientes con más compras</option>
 	        		<option value="Documentos">Gráfica de Documentos Vendidos</option>
 	        		<option value="Usuarios">Gráfica de Ventas por Usuarios</option>
+
 	        		<!--option value="usuario">Empleado</option-->
 	      	</select>
 	      </div>
@@ -62,6 +64,7 @@
     	<h4 id="alerta" style="color: red"></h4> 
     </div>
     <?php
+	
     #echo "Primera fecha del mes: $fechaInicio<br>";
 	 #echo "Última fecha del mes: $fechaFin";
     ?>
