@@ -21,7 +21,7 @@
       <tbody>
         <?php
           include("modules/moduloVentas/fechaDiaria.php");
-          $SQL = "SELECT v.id_ventas, v.hora, v.fecha, v.total_venta, c.nombre_cliente, u.nombre_completo, iv.id_informacion_venta, iv.cantidad, iv.sub_total, d.nombre, d.precio_venta, d.tipo FROM VENTAS v JOIN CREDITOS cr ON v.credito_id = cr.id_creditos JOIN CLIENTE c ON cr.cliente_id = c.id_cliente JOIN USUARIOS u ON v.usuarios_id = u.id_usuarios JOIN INFORMACION_VENTA iv ON v.id_ventas = iv.ventas_id JOIN DOCUMENTOS d ON iv.documentos_id = d.id_articulo_documetos WHERE DATE(v.fecha) = '$fecha' ORDER BY v.fecha DESC";
+          $SQL = "SELECT v.id_ventas, v.hora, v.fecha, v.total_venta, c.nombre_cliente, u.nombre_completo, iv.id_informacion_venta, iv.cantidad, iv.sub_total, d.nombre, d.precio_venta, d.tipo FROM ventas v JOIN creditos cr ON v.credito_id = cr.id_creditos JOIN cliente c ON cr.cliente_id = c.id_cliente JOIN usuarios u ON v.usuarios_id = u.id_usuarios JOIN informacion_venta iv ON v.id_ventas = iv.ventas_id JOIN documentos d ON iv.documentos_id = d.id_articulo_documetos WHERE DATE(v.fecha) = '$fecha' ORDER BY v.fecha DESC";
           $resultado = Consulta($SQL);
           foreach ($resultado as $fila) {               
         ?>
