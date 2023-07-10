@@ -9,6 +9,7 @@ campoContrasena.addEventListener("input", function() {
 
 function validarContrasena(passw) {
   const contrasena = passw;
+  //bloquear contraseña
 
   // Verificar la longitud de la contraseña
   if (contrasena.length < 6 || contrasena.length > 8) {

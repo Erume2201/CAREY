@@ -18,7 +18,7 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon"
                         style="height: 2rem" />
                 </div>
-                <input class="form-control bg-light" type="text" placeholder="Usuario" name="user" id="user" required />
+                <input class="form-control bg-light" type="text" minlength="6" maxlength="16" placeholder="Usuario" name="user" id="user" required />
             </div>
 
             <!-- Input de contraseña con icono -->
@@ -26,7 +26,7 @@
                 <div class="input-group-text bg-info">
                     <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
                 </div>
-                <input class="form-control bg-light" type="password" placeholder="Contraseña" name="password"
+                <input class="form-control bg-light" type="password" maxlength="8" placeholder="Contraseña" name="password"
                     id="password" required />
 
                 <!-- Icono de mostrar contraseña -->

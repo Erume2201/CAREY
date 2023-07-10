@@ -20,7 +20,7 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" alt="username-icon"
                             style="height: 2rem" />
                     </div>
-                    <input class="form-control bg-light" type="text" placeholder="usuario" 
+                    <input class="form-control bg-light" type="text" minlength="6" maxlength="16" placeholder="usuario" 
                     name="user" id="user"
                         required />
                 </div>
