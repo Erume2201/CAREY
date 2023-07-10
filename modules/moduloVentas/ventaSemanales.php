@@ -33,7 +33,7 @@
                             <?php echo $cliente['nombre_cliente']; ?> Telefono: <?php echo $cliente['telefono_cliente']; ?>
                         </button>
                         <input type="hidden" class="nombrewhat" id="<?php echo $cliente['cliente_id']; ?>" value="<?php echo $cliente['nombre_cliente']; ?>">
-                        <input type="hidden" class="celWhat" id="<?php echo "cel". $cliente['cliente_id']; ?>" value="<?php echo $cliente['telefono_cliente']; ?>">
+                        <input type="hidden" class="celWhat" id="<?php echo "cel" . $cliente['cliente_id']; ?>" value="<?php echo $cliente['telefono_cliente']; ?>">
                     </h2>
                     <div id="<?php echo $cliente['cliente_id']; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
@@ -91,7 +91,7 @@
                                     JOIN ventas ON ventas.id_ventas=informacion_venta.ventas_id
                                     JOIN creditos ON creditos.id_creditos= ventas.credito_id
                                     WHERE creditos.cliente_id = '" . $cliente['cliente_id'] . "' AND 
-                                    ventas.fecha >= '" . $fechas[0]['desde'] . "' AND ventas.fecha <= '" .$fechas[0]['hasta']. "'";
+                                    ventas.fecha >= '" . $fechas[0]['desde'] . "' AND ventas.fecha <= '" . $fechas[0]['hasta'] . "'";
                                     $respuesta = Consulta($documentos);
                                     $respuesta[0]['cantidadDoc'];
                                     ?>
@@ -108,11 +108,11 @@
             <?php
             }
             ?>
-            
+
             <!--Nuevo datos-->
             <?php
-            $maximoTotal="SELECT SUM(ventas.total_venta)AS maximo FROM ventas
-            WHERE  ventas.fecha >= '".$fechas[0]['desde']."' AND ventas.fecha <= '".$fechas[0]['hasta']."';";
+            $maximoTotal = "SELECT SUM(ventas.total_venta)AS maximo FROM ventas
+            WHERE  ventas.fecha >= '" . $fechas[0]['desde'] . "' AND ventas.fecha <= '" . $fechas[0]['hasta'] . "';";
             $respuestaMaxima = Consulta($maximoTotal);
             ?>
             <form id="informesEnviar" action="modules/informes/informes.php" method="POST">
@@ -123,8 +123,8 @@
                             Informacion de documentos
                         </button>
                     </h2>
-                    <input type="hidden" class="" id="FechaInicio" name="FechaInicio" value="<?php echo $fechas[0]['desde']." "."00:00:00"?>">
-                    <input type="hidden" class="" id="FechaFin" name="FechaFin" value="<?php echo $fechas[0]['hasta']." "."00:00:00"?>">
+                    <input type="hidden" class="" id="FechaInicio" name="FechaInicio" value="<?php echo $fechas[0]['desde'] . " " . "00:00:00" ?>">
+                    <input type="hidden" class="" id="FechaFin" name="FechaFin" value="<?php echo $fechas[0]['hasta'] . " " . "00:00:00" ?>">
 
                     <div id="Documentos" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
@@ -140,32 +140,28 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $SQLdocumentos="SELECT documentos.id_articulo_documetos, documentos.nombre, documentos.precio_costo, documentos.precio_venta,
+                                        $SQLdocumentos = "SELECT documentos.id_articulo_documetos, documentos.nombre, documentos.precio_costo, documentos.precio_venta,
                                         SUM(informacion_venta.cantidad)AS cantidades, SUM(informacion_venta.sub_total)AS Total FROM informacion_venta
                                         JOIN documentos ON documentos.id_articulo_documetos=informacion_venta.documentos_id
                                         JOIN ventas ON ventas.id_ventas=informacion_venta.ventas_id
-                                        WHERE ventas.fecha >= '".$fechas[0]['desde']."' AND ventas.fecha <= '".$fechas[0]['hasta']."'
+                                        WHERE ventas.fecha >= '" . $fechas[0]['desde'] . "' AND ventas.fecha <= '" . $fechas[0]['hasta'] . "'
                                         GROUP BY documentos.id_articulo_documetos;";
                                         $resultadoDoc = Consulta($SQLdocumentos);
                                         foreach ($resultadoDoc as $documento) {
                                         ?>
-                                        <tr>
-                                            <td><?php echo $documento['nombre']; ?></td>
-                                            <input type="hidden" class="idInformeDocumento" id="" name="idInformeDocumento[]" 
-                                            value="<?php echo $documento['id_articulo_documetos']; ?>">
+                                            <tr>
+                                                <td><?php echo $documento['nombre']; ?></td>
+                                                <input type="hidden" class="idInformeDocumento" id="" name="idInformeDocumento[]" value="<?php echo $documento['id_articulo_documetos']; ?>">
 
-                                            <td><?php echo $documento['cantidades']; ?></td>
-                                            <input type="hidden" class="cantidadDocumento" id="cantidadDocumento" name="cantidadDocumento[]" 
-                                            value="<?php echo $documento['cantidades']; ?>">
+                                                <td><?php echo $documento['cantidades']; ?></td>
+                                                <input type="hidden" class="cantidadDocumento" id="cantidadDocumento" name="cantidadDocumento[]" value="<?php echo $documento['cantidades']; ?>">
 
-                                            <td><?php echo $documento['Total']; ?></td>
-                                            <input type="hidden" class="" id="TotalDocumento" name="TotalDocumento[]" 
-                                            value="<?php echo $documento['Total']; ?>">
+                                                <td><?php echo $documento['Total']; ?></td>
+                                                <input type="hidden" class="" id="TotalDocumento" name="TotalDocumento[]" value="<?php echo $documento['Total']; ?>">
 
-                                            <td><?php echo $documento['precio_costo']; ?></td>
-                                            <input type="hidden" class="precioCostoDoc" id="precioCostoDoc" 
-                                            value="<?php echo $documento['precio_costo']; ?>">
-                                        </tr>
+                                                <td><?php echo $documento['precio_costo']; ?></td>
+                                                <input type="hidden" class="precioCostoDoc" id="precioCostoDoc" value="<?php echo $documento['precio_costo']; ?>">
+                                            </tr>
                                         <?php
                                         }
                                         ?>
@@ -180,9 +176,18 @@
             </form>
         </div>
     </div>
+    <style>
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .clickable-image {
+            cursor: pointer;
+        }
+    </style>
     <div class="col-2" style="position: fixed; right: 0; margin-top: 50px;">
         <div class="">
-            <button class="btn btn-success mb-5" onclick="DatosWhatsApp()" type="button">Enviar por WhatsApp</button>
+            <img src="assets/image/btnEnviarWhats.png" class="clickable-image mb-5" alt="" width="180px" height="45px" onclick="DatosWhatsApp()">
             <button class="btn btn-primary mb-5" onclick="EnviarInforme()" type="button">Guardar corte</button>
         </div>
         <div class="row">

@@ -56,14 +56,18 @@
             img:hover {
                 transform: scale(1.1);
             }
+
+            .clickable-image {
+                cursor: pointer;
+            }
         </style>
         <div class="row">
             <div class="col-3">
-                <img src="assets/image/botonPagar.png" alt="" width="130px" height="45px" onclick="vender(event)">
+                <img src="assets/image/botonPagar.png" class="clickable-image" alt="" width="130px" height="45px" onclick="vender(event)">
             </div>
 
             <div class="col-3">
-                <button type="button" onclick="cancelarVenta()" class="btn btn-danger bt">Cancelar</button>
+                <img src="assets/image/btnCancelar.png" class="clickable-image" alt="" width="130px" height="45px" onclick="cancelarVenta()">
             </div>
         </div>
     </form>
