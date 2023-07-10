@@ -39,9 +39,9 @@
                   <img class="bd-placeholder-img " src="assets/image/documentos.png" height="100" width="100" style="display: block; margin: 0 auto;">
                   <br>
                   <h4 class="NombreModifica" style="margin-left: 20px;"> <?php echo $fila['nombre']; ?></h4>
-                  
+
                   <!--datos que se deben mostrar cuando se haga click al ver-->
-                  
+
                   <input type="hidden" class="PrecioModifica" value="<?php echo $fila['precio_costo']; ?>">
                   <input type="hidden" class="descripcionModifi" value="<?php echo $fila['descripcion']; ?>">
                   <input type="hidden" class="TipoModifica" value="<?php echo $fila['tipo']; ?>">
@@ -80,7 +80,7 @@
 
         <!-- Contenido del modal aquí -->
         <!--class="form-inline"-->
-        
+
         <?php
         $SQL = "SELECT * FROM cliente";
         $resultado = Consulta($SQL);
@@ -118,8 +118,17 @@
             </tbody>
           </table>
         </div>
+        <style>
+          img:hover {
+            transform: scale(1.1);
+          }
+
+          .clickable-image {
+            cursor: pointer;
+          }
+        </style>
         <br>
-        <button type="button" onclick="CerrarEmergente()" class="btn btn-success">Siguiente</button>
+        <img src="assets/image/btnSiguiente.png" class="clickable-image mb-5" alt="" width="180px" height="45px" onclick="CerrarEmergente()">
       </div>
     </div>
   </div>

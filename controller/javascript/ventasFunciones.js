@@ -121,14 +121,14 @@ function detalles() {
                     <div class="row">
                         <div class="col-md-12">
                         <label style="font-weight: bold;">Descripción:</label>
-                        <label class="text-break" style="word-wrap: break-word; overflow-wrap: break-word; max-width: 100%;">${Detalleinformacion}</label>
+                        <label class="text-break mb-5" style="word-wrap: break-word; overflow-wrap: break-word; max-width: 100%;">${Detalleinformacion}</label>
                         </div>
                    </div>                  
                    <br>
                    <div class="row">
                         <br>
                         <div class="col-lg-4">
-                            <button type="button" onclick="RealizarVenta()" class="btn btn-success">Siguiente</button>
+                            <img src="assets/image/btnSiguiente.png" class="clickable-image" alt="" width="180px" height="45px" onclick="RealizarVenta()">
                         </div>
                    </div>
                    
