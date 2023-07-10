@@ -13,7 +13,7 @@ $token="";
 $url = 'https://graph.facebook.com/v17.0/102187289605465/messages';
 
 
-/**
+/** NOTA UNITARIA: EL CODIGO ES IMPORTANTE PARA NO ELIMINARLO
  * $contenido_mensaje = 'Hola, este es un mensaje de texto sin formato.'; // Reemplaza este contenido con el mensaje que deseas enviar
  *  Construir el cuerpo de la solicitud
  *    $mensaje = json_encode([

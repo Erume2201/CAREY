@@ -49,6 +49,7 @@
             </button>
 
           </td>
+          
           <!-- Fin de los botones -->
           </tr>
 
@@ -57,6 +58,7 @@
           
       	  //modal Editar Datos
       	  include("modules/moduloUsuario/modalEditarU.php");
+
       	  //Abrir modal de Alerta para eliminar
       	  include("modules/moduloUsuario/modalEliminarUsuario.php");
         }
