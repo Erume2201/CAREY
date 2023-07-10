@@ -59,13 +59,13 @@
             <div class="form-group">
             <label for="hasta">Hasta:</label>
                 <select name="hasta" id="hasta" required>
+                    <option value="Sunday">Domingo</option>
                     <option value="Monday">Lunes</option>
                     <option value="Tuesday">Martes</option>
                     <option value="Wednesday">Miércoles</option>
                     <option value="Thursday">Jueves</option>
                     <option value="Friday">Viernes</option>
                     <option value="Saturday">Sábado</option>
-                    <option value="Sunday">Domingo</option>
                 </select>
             </div>
             <br>
