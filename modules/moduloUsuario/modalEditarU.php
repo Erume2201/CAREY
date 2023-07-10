@@ -45,6 +45,18 @@
               <option value="usuario">Empleado</option>
             </select>
             </div>
+
+            <!-- <div class="form-group">
+              <br>
+              <label style="color: black;" class="form-label fw-bold">Estatus usuario:</label>
+              <br>
+              <select class="form-select" aria-label="Default select example" name="estatusU" id="estatusU">
+              <option disabled selected hidden>Elige una opción del menú</option>
+              <option value="activo">Activo</option>
+              <option value="despedido">Despedido</option>
+            </select>
+            </div>
+-->
             <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
         <!--Fin Formulario-->
 
