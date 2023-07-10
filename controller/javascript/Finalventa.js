@@ -29,16 +29,6 @@ segundos = segundos < 10 ? "0" + segundos : segundos;
 var horaActual = fechaFormateada + " " + horas + ":" + minutos + ":" + segundos;
 Hora.value = horaActual;
 
-/**
- * // Obtener todas las claves almacenadas en localStorage
-var claves = Object.keys(localStorage);
-
-// Recorrer todas las claves y obtener los valores asociados
-claves.forEach(function (clave) {
-    var valor = localStorage.getItem(clave);
-    console.log(clave + " " + valor);
-});
- */
 
 
 
