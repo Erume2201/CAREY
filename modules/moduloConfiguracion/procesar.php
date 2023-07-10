@@ -5,14 +5,14 @@
     // Nuestro IF principal verifica si se ha enviado el formulario y se ha hecho clic en "enviar".
     if (isset($_POST['enviarCorte'])) {
         // Colocaremos otro if para que en caso de que algún campo está vacío se envíe una alerta.
-        if (empty($_POST["desde"]) || empty($_POST["hasta"])) {
+        if (empty($_POST["desde"])) {
             ?>
                 <div class="alert alert-danger" role="alert">Oops, algunos campos no fueron seleccionados.</div>
             <?php
         } else {
             /* Asignamos los valores de los campos del formulario (accediendo a través del arreglo '$_POST') a variables específicas. */
             $desdeDia = $_POST["desde"];
-            $hastaDia = $_POST["hasta"];
+            //$hastaDia = $_POST["hasta"];
 
             // Cambiamos la zona por default y obtemos el día de la fecha actual
             date_default_timezone_set('America/Mexico_City');
@@ -24,9 +24,9 @@
             if ($desdeDia == $diaActual) {
                 $fecha_inicio = $fechaActual; 
             } else {
-                $fecha_inicio = date('Y-m-d', strtotime("last $desdeDia", strtotime($fechaActual)));
+                $fecha_inicio = date('Y-m-d', strtotime("next $desdeDia", strtotime($fechaActual)));
             }
-            $fecha_fin = date('Y-m-d', strtotime("next $hastaDia", strtotime($fechaActual)));
+            $fecha_fin = date('Y-m-d', strtotime("+6 days", strtotime($fecha_inicio)));
 
             // Hacemos una para verificar la superposición de fechas
             $SQL2 = "SELECT *

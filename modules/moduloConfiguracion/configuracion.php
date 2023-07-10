@@ -11,7 +11,7 @@
         <h1>Asignación de días</h1>
         <hr>
         <h4>Seleccione los días en los que se hará el corte.</h4>
-        <h6><strong>Aviso.</strong> La fecha DESDE no puede ser posterior a la fecha actual.</h6>
+        <h6><strong>Aviso.</strong> La fecha DESDE no puede ser anterior a la fecha actual.</h6>
         <?php 
         
         // Consulta para obtener las últimas fechas de corte registradas
@@ -25,18 +25,26 @@
 
         // Verificar si se encontraron resultados
         if (count($resultado3) > 0) {
-            echo '<div class="alert alert-success" role="alert">';
-            echo '<p>Última fecha de corte registrada:</p>';
-            echo '<ul>';
+            date_default_timezone_set('America/Mexico_City');
+            $fechaActual = date('Y-m-d');
             foreach ($resultado3 as $fila) {
                 $desde = $fila['desde'];
                 $hasta = $fila['hasta'];
-                echo "<li>Desde: $desde - Hasta: $hasta</li>";
+
+                // Verificar si la fecha actual es mayor que la fecha "Desde"
+                if (strtotime($fechaActual) > strtotime($desde)) {
+                    echo '<div class="alert alert-danger" role="alert">La fecha de corte ha caducado.</div>';
+                } else {
+                    echo '<div class="alert alert-success" role="alert">';
+                    echo '<p>Fecha de corte activa:</p>';
+                    echo '<ul>';
+                    echo "<li>Desde: $desde - Hasta: $hasta</li>";
+                    echo '</ul>';
+                    echo '</div>';
+                }
             }
-            echo '</ul>';
-            echo '</div>';
         } else {
-            echo '<div class="alert alert-danger" role="alert">No hay fechas de corte activas.</div>';
+            echo '<div class="alert alert-danger" role="alert">No hay fecha de corte activa.</div>';
         } 
         ?>
 
@@ -45,7 +53,7 @@
             <?php include("modules/moduloConfiguracion/procesar.php"); ?>
             <div class="form-group">
                 <label for="desde">Desde:</label>
-                <select name="desde" id="desde" required>
+                <select name="desde" id="desde" required onchange="actualizarHasta()">
                     <option value="Monday">Lunes</option>
                     <option value="Tuesday">Martes</option>
                     <option value="Wednesday">Miércoles</option>
@@ -58,7 +66,7 @@
             <br>
             <div class="form-group">
             <label for="hasta">Hasta:</label>
-                <select name="hasta" id="hasta" required>
+                <select name="hasta" id="hasta">
                     <option value="Sunday">Domingo</option>
                     <option value="Monday">Lunes</option>
                     <option value="Tuesday">Martes</option>
@@ -73,8 +81,10 @@
                 <input type="submit" name="enviarCorte" value="Guardar cambios">
             </div>
         </form>
+        <script src="controller/javascript/configuracion.js"></script>
         <hr>
     </div>
 </body>
 </html>
+
 
