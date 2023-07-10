@@ -95,7 +95,7 @@
               <input class="form-control" type="number" id="PrecioVenta" name="PrecioVenta" required>
               <label class="form-label">Tipo:</label>
               <input class="form-control" maxlength="15" type="text" id="Tipo" name="Tipo" required>
-              <label class="form-label">descripcion:</label>
+              <label class="form-label">Descripción:</label>
               <br>
               <textarea class="form-control" maxlength="100" id="mensaje" name="mensaje" rows="4" required></textarea>
               <small id="charCount" class="form-text text-muted">0 / 100 caracteres</small>
