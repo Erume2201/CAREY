@@ -13,6 +13,7 @@
         <h4>Seleccione los días en los que se hará el corte.</h4>
         <h6><strong>Aviso.</strong> La fecha DESDE no puede ser posterior a la fecha actual.</h6>
         <?php 
+        
         // Consulta para obtener las últimas fechas de corte registradas
         $SQL3 = "SELECT desde, hasta
          FROM corte
