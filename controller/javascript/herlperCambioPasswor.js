@@ -12,8 +12,8 @@ function validarContrasena(passw) {
   //bloquear contraseña
 
   // Verificar la longitud de la contraseña
-  if (contrasena.length < 6 || contrasena.length > 8) {
-    mensajeErrorPass.textContent = "La contraseña debe tener entre 6 y 8 caracteres.";
+  if (contrasena.length < 6 || contrasena.length > 10) {
+    mensajeErrorPass.textContent = "La contraseña debe tener entre 6 y 10 caracteres.";
     mensajeErrorPass.classList.remove("text-success"); // Remover clase de éxito
     mensajeErrorPass.classList.add("text-danger"); // Agregar clase de error
     botonIniciarSesion.disabled = true; // Deshabilitar el botón
@@ -21,7 +21,7 @@ function validarContrasena(passw) {
     // Verificar si contiene al menos 1 mayúscula, 1 minúscula, 1 carácter especial y 1 número
     const tieneMayuscula = /[A-Z]/.test(contrasena);
     const tieneMinuscula = /[a-z]/.test(contrasena);
-    const tieneEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(contrasena);
+    const tieneEspecial = /[!@#$%^&*(),.?":{}|<>+-]/.test(contrasena);
     const tieneNumero = /\d/.test(contrasena);
 
     if (!tieneMayuscula || !tieneMinuscula || !tieneEspecial || !tieneNumero) {

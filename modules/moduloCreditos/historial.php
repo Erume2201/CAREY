@@ -58,7 +58,7 @@
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Creditos de la semana actual
+                Créditos de la semana actual
             </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -84,7 +84,7 @@
 
                 <!-- Buscador-->
                 <!-- Tabla -->
-                <h3>Lista de creditos de los clientes que compraron documentos en la semana actual</h3>
+                <h3>Lista de créditos de los clientes que compraron documentos en la semana actual</h3>
                 <div class="container-do row">
                     <div class="container col-8">
                         <table class="table table-hover table-sm table-bordered table_id" id="table">
@@ -138,7 +138,7 @@
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Creditos vencidos
+                Créditos vencidos
             </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -167,7 +167,7 @@
 
                 <!-- Buscador-->
                 <!-- Tabla -->
-                <h3>Lista de creditos vencidos</h3>
+                <h3>Lista de créditos vencidos</h3>
                 <div class="container-do row">
                     <div class="container col-8">
                         <table class="table table-hover table-sm table-bordered table_vencidos" id="table">
@@ -224,7 +224,7 @@
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Creditos pagados en la semana actual
+                Créditos pagados en la semana actual
             </button>
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -250,7 +250,7 @@
 
                 <!-- Buscador-->
                 <!-- Tabla -->
-                <h3>Lista de creditos pagados</h3>
+                <h3>Lista de créditos pagados</h3>
                 <div class="container-do row">
                     <div class="container col-8">
                         <table class="table table-hover table-sm table-bordered table_creditosPagados" id="table">

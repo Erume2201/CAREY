@@ -92,9 +92,13 @@
             </li>
             </ul>
             <!-- boton de cierre de sesion -->
-            
-            <button class="btn btn-warning fw-bold" type="submit" 
-            onclick="window.location.href = 'index.php?module=cerrarSesion'">Cerrar Sesión</button>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <button class="btn" type="submit" 
+            onclick="window.location.href = 'index.php?module=cerrarSesion'">
+            <img src="assets/image/btnCerrarSesion.png" width="250px" height="50px">
+            </button>
            
 
         </div>
