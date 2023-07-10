@@ -52,6 +52,7 @@ function Consulta($query) {
    //baseamos el $resultado ya que esta consulta 
    //se hace del lado del servidor y con esto liberamos memoria
     mysqli_free_result($resultado);
+    
    //cerramos la conexion
     mysqli_close($conexion);
     
@@ -132,9 +133,9 @@ function insertarDatosDoble($query1) {
     } else {
         echo "Error al insertar el dato: " . $conexion->error;
     }
+
     // Cerrar la conexión con la base de datos
     $conexion->close();
     return null; //
 }
-
 ?>
