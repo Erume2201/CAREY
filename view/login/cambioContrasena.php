@@ -24,7 +24,7 @@ pide 3 parametros contraseña generica, nueva contrasena confirmar contrasena
                 <div class="input-group-text bg-info">
                     <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
                 </div>
-                <input class="form-control bg-light" type="password" minlength="6" maxlength="8" placeholder="Contraseña Actual" name="passActual"
+                <input class="form-control bg-light" type="password" minlength="6" maxlength="10" placeholder="Contraseña Actual" name="passActual"
                     id="passActual" required />
                     
                 <!-- Icono de mostrar contrasena -->
@@ -40,7 +40,7 @@ pide 3 parametros contraseña generica, nueva contrasena confirmar contrasena
                 <div class="input-group-text bg-info">
                     <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
                 </div>
-                <input class="form-control bg-light" type="password" minlength="6" maxlength="8" placeholder="Nueva Contraseña" name="newPass"
+                <input class="form-control bg-light" type="password" minlength="6" maxlength="10" placeholder="Nueva Contraseña" name="newPass"
                     id="newPass" required />
                 <!-- Icono de mostrar contrasena -->
                 <div class="input-group-text">
@@ -55,7 +55,7 @@ pide 3 parametros contraseña generica, nueva contrasena confirmar contrasena
                 <div class="input-group-text bg-info">
                     <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
                 </div>
-                <input class="form-control bg-light" type="password" minlength="6" maxlength="8" placeholder="Confirmar Contraseña"
+                <input class="form-control bg-light" type="password" minlength="6" maxlength="10" placeholder="Confirmar Contraseña"
                     name="confirPassword" id="confirPassword" required />
 
                 <!-- Icono de mostrar contrasena -->
