@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 // Obtener los valores enviados por el formulario
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -31,10 +32,8 @@ if ($tipoVenta == 'Decontado') {
        echo "<script>window.location = '../../index.php?module=venderDocumento&cliente=Nocliente&venta=NoRealizada'</script>";
     }else{
         $idDocument = $_POST['ValorIdDocumen'];
-
-        $CantidadDocumento= $_POST['ValorCantidad'];
-        
-        $SubtotalDocumento= $_POST['subTotal'];
+        $CantidadDocumento = $_POST['ValorCantidad'];
+        $SubtotalDocumento = $_POST['subTotal'];
         for ($i = 0; $i < count($idDocument); $i++) {
              $id = $idDocument[$i];
              $cantidaD = $CantidadDocumento[$i];
