@@ -12,21 +12,23 @@
         <hr>
         <h4>Seleccione los días en los que se hará el corte.</h4>
         <h6><strong>Aviso.</strong> La fecha DESDE no puede ser anterior a la fecha actual.</h6>
-        <?php 
+        <?php
+
+        date_default_timezone_set('America/Mexico_City');
+        $fechaActual = date('Y-m-d');
+
+        // Update para actualizar a inactivo todas las fechas de corte anteriores a la fecha actual
+        $SQL4 = "UPDATE corte SET estatus_corte = 'inactivo' WHERE hasta < '$fechaActual'";
+        $resultado4 = Actualizar($SQL4);
         
         // Consulta para obtener las últimas fechas de corte registradas
-        $SQL3 = "SELECT desde, hasta
-         FROM corte
-         ORDER BY desde DESC
-         LIMIT 1";
+        $SQL3 = "SELECT desde, hasta FROM corte WHERE estatus_corte = 'activo'";
 
         // Ejecutamos la consulta
         $resultado3 = Consulta($SQL3);
 
         // Verificar si se encontraron resultados
         if (count($resultado3) > 0) {
-            date_default_timezone_set('America/Mexico_City');
-            $fechaActual = date('Y-m-d');
             foreach ($resultado3 as $fila) {
                 $desde = $fila['desde'];
                 $hasta = $fila['hasta'];

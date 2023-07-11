@@ -13,6 +13,7 @@
             /* Asignamos los valores de los campos del formulario (accediendo a través del arreglo '$_POST') a variables específicas. */
             $desdeDia = $_POST["desde"];
             //$hastaDia = $_POST["hasta"];
+            $idUsuario = $_SESSION['id_user']; // Obtenemos el ID del usuario que da clic en aceptar
 
             // Cambiamos la zona por default y obtemos el día de la fecha actual
             date_default_timezone_set('America/Mexico_City');
@@ -55,7 +56,7 @@
                     $desde = $fecha_inicio;
                     $hasta = $fecha_fin;
                     // Ahora insertaremos los datos en la BD.
-                    $SQL = "INSERT INTO corte (desde, hasta, usuarios_id) VALUES ('$desde', '$hasta', 1)";
+                    $SQL = "INSERT INTO corte (desde, hasta, usuarios_id, estatus_corte) VALUES ('$desde', '$hasta', '$idUsuario', 'activo')";
                     $resultado = InsertarDato($SQL);
                     if ($resultado) {
                         echo '<div class="alert alert-success" role="alert">Las fechas de corte DESDE (' . $fecha_inicio . ') y HASTA (' . $fecha_fin . ') se guardaron correctamente.</div>';
