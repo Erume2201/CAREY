@@ -6,40 +6,6 @@ Carga la biblioteca de visualización de Google Charts y especifica el paquete "
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() { 
-
-    /**Graficas de Clientes Generales
-    var dataClientes = google.visualization.arrayToDataTable([
-      ['Clientes', 'Total Compras'],
-      <?php
-
-      #$fechaInicio = "2023-07-01"; // Inicializar las variables con una fecha estatica
-      #$fechaFin = '2023-07-02';
-      $SQL = "SELECT c.nombre_cliente, COUNT(cr.id_creditos) AS cantidad_creditos 
-              FROM creditos cr
-              JOIN cliente c ON cr.cliente_id = c.id_cliente
-              WHERE cr.fecha BETWEEN '$fechaInicioM' AND '$fechaFinM'
-              GROUP BY cr.cliente_id";
-      $resultado = Consulta($SQL);
-      foreach ($resultado as $fila) {
-              echo "['".$fila['nombre_cliente']."',".$fila['cantidad_creditos']."],";
-          }
-      ?>
-      ]);
-
-     //Muestra clientes que han realizado mas compras dentro del mes
-    var optionsClientes = {
-    title: 'Clientes que han realizado más compras dentro del mes de <?php echo $mesNombre; ?>',
-    width: 1000,
-    height: 600
-    };
-
-    //Actualiza la grafica
-    var chartClientes = new google.visualization.PieChart(document.getElementById('graficaClientes'));
-
-    //Muestra la grafica
-    chartClientes.draw(dataClientes, optionsClientes); **/
-
-
     //Grafica de Documentos Generales
     var dataDocumentos = google.visualization.arrayToDataTable([
       ['Documentos', 'Total vendidos'],

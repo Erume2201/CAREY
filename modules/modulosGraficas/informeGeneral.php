@@ -133,7 +133,6 @@
 	    </div>
     </div>
     <hr>
-
     <!--Pruebas de fechas-->
     <div class="container text-center col-10">
     	<h4 id="alerta" style="color: red"></h4> 

@@ -34,8 +34,9 @@
 
             var options<?php echo $numeroSemana; ?>_1 = {
                 title: 'Clientes que han realizado más compras dentro de la semana <?php echo $numeroSemana; ?>',
-                width: 1000,
-                height: 600
+                width: 900,
+                height: 500
+                
             };
 
             var chart<?php echo $numeroSemana; ?>_1 = new google.visualization.PieChart(document.getElementById('piechart<?php echo $numeroSemana; ?>_1'));
@@ -62,8 +63,8 @@
 
             var options<?php echo $numeroSemana; ?>_2 = {
                 title: ' Documentos más vendidos en la semana <?php echo $numeroSemana; ?>',
-                width: 1000,
-                height: 600
+                width: 900,
+                height: 500
             };
 
             var chart<?php echo $numeroSemana; ?>_2 = new google.visualization.PieChart(document.getElementById('piechart<?php echo $numeroSemana; ?>_2'));

@@ -1,5 +1,5 @@
 <body>
-  <div class="container col-10">
+  <div class="">
     <?php
     //Traductor
    $meses = array(
@@ -25,6 +25,7 @@
     06 => 'Sábado',
     07 => 'Domingo',
    );
+
     // Obtener la fecha actual y mostrarla en la página
     date_default_timezone_set('America/Mexico_City');
     $dia = date('Y-m-d');
@@ -110,10 +111,20 @@
                 <?php
                 $fechaInicio = $fechas[0];
                 $fechaFin = $fechas[1];
-                echo "<h3>Rango: desde $fechaInicio hasta $fechaFin </h3>";
+                #echo "<h3 class=\"text-center\>Rango: desde $fechaInicio hasta $fechaFin </h3>";
                 ?>
-                <div id="piechart<?php echo $numeroSemana; ?>_2" style="width: 1000px; height: 600px;"></div>
-                <div id="piechart<?php echo $numeroSemana; ?>_1" style="width: 1000px; height: 600px;"></div>
+                <h3 class="text-center">Rango: desde <?php echo $fechaInicio; ?> hasta <?php echo $fechaFin; ?></h3>
+
+                <div class="">
+                  <div class="row">
+                    <div class="container col-6">
+                        <div id="piechart<?php echo $numeroSemana; ?>_2" style="width: 900px; height: 500px;"></div>
+                    </div>
+                    <div class="container col-6">
+                        <div id="piechart<?php echo $numeroSemana; ?>_1" style="width: 900px; height: 500px;"></div>
+                    </div>
+                  </div>
+                </div>
                 <?php include("modules/modulosGraficas/graficas.php"); ?>
             </div>
         <?php } ?>
