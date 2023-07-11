@@ -13,7 +13,11 @@
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
-            $queryFecha = "SELECT desde, hasta FROM corte ORDER BY id_corte DESC LIMIT 1;";
+            $queryFecha = "SELECT desde, hasta, estatus_corte
+            FROM corte
+            WHERE estatus_corte='activo'
+            ORDER BY hasta DESC
+            LIMIT 1;";
             $fechas = Consulta($queryFecha);
 
             $SQL = "SELECT creditos.cliente_id, cliente.nombre_cliente, ventas.credito_id,
