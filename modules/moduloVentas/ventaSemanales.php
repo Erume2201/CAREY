@@ -163,7 +163,7 @@
                                                 <td><?php echo $documento['Total']; ?></td>
                                                 <input type="hidden" class="" id="TotalDocumento" name="TotalDocumento[]" value="<?php echo $documento['Total']; ?>">
 
-                                                <td><?php echo $documento['precio_costo']; ?></td>
+                                                <td><?php echo $documento['precio_costo']*$documento['cantidades']; ?></td>
                                                 <input type="hidden" class="precioCostoDoc" id="precioCostoDoc" value="<?php echo $documento['precio_costo']; ?>">
                                             </tr>
                                         <?php

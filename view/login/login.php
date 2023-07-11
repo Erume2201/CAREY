@@ -26,7 +26,7 @@
                 <div class="input-group-text bg-info">
                     <img src="./assets/image/icon-contrasena.png" alt="password-icon" style="height: 2rem" />
                 </div>
-                <input class="form-control bg-light" type="password" maxlength="8" placeholder="Contraseña" name="password"
+                <input class="form-control bg-light" type="password" maxlength="10" placeholder="Contraseña" name="password"
                     id="password" required />
 
                 <!-- Icono de mostrar contraseña -->
