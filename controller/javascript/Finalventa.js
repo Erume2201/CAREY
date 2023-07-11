@@ -39,16 +39,16 @@ clientetitulo.innerHTML = `<h3>Cliente: ${localStorage.getItem("NombreCliente")}
 
 
 tabla = document.querySelector("#TablaCuerpo");
-let fila = localStorage.getItem("FilaHTML");
+let fila = localStorage.getItem("FilasHTML");
 
 if (fila == null) {
-    localStorage.setItem("FilaHTML", "");
     fila = ` <tr class="fila" id="${localStorage.getItem("idDocumen")}">
                         <td>${localStorage.getItem("nombreDocumen")}</td>
                         <td id="PrecioV" class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
                         <td> <input class="form-control cantidadDoc" type="text" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa cantidad" required ></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
+                        <td id="Borrar${localStorage.getItem("idDocumen")}"><button onclick="" id="${localStorage.getItem("idDocumen")}" type="button" class="btn btn-danger BTNBORRAR">x</button></td>
                         <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
                         value="${localStorage.getItem("idDocumen")}">
                         <input type="hidden" class="" id="ValorCantidad${localStorage.getItem("idDocumen")}" name="ValorCantidad[]" value="">
@@ -56,24 +56,25 @@ if (fila == null) {
                     </tr>`;
 
     tabla.innerHTML = fila;
-    localStorage.setItem("FilaHTML", fila);
 } else {
-
-    fila += ` <tr class="fila" id="${localStorage.getItem("idDocumen")}">
+    tablaHTMLRecuperada = localStorage.getItem("FilasHTML");
+    fila = ` <tr class="fila" id="${localStorage.getItem("idDocumen")}">
                         <td>${localStorage.getItem("nombreDocumen")}</td>
                         <td id="PrecioV${localStorage.getItem("idDocumen")}" 
                         class="PrecioV">${localStorage.getItem("PrecioVentaDocument")}</td>
                         <td> <input class="form-control cantidadDoc" type="text" id="Cantidad${localStorage.getItem("idDocumen")}"
                          placeholder="Ingresa un valor" required ></td>
                         <td id="TotalValor${localStorage.getItem("idDocumen")}">0</td>
-                      <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
+                        <td id="Borrar${localStorage.getItem("idDocumen")}"><button onclick="" id="${localStorage.getItem("idDocumen")}" type="button" class="btn btn-danger BTNBORRAR">x</button></td>
+                        <input type="hidden" class="" id="ValorIdDocumen${localStorage.getItem("idDocumen")}" name="ValorIdDocumen[]" 
                         value="${localStorage.getItem("idDocumen")}">
                         <input type="hidden" class="" id="ValorCantidad${localStorage.getItem("idDocumen")}" name="ValorCantidad[]" value="">
                         <input type="hidden" class="SubValor" id="subTotal${localStorage.getItem("idDocumen")}" name="subTotal[]" value="0">
                     </tr>`;
 
-    tabla.innerHTML = fila;
-    localStorage.setItem("FilaHTML", fila);
+    tabla.innerHTML = tablaHTMLRecuperada;
+    tablaHTMLRecuperada += fila;
+    tabla.innerHTML = tablaHTMLRecuperada;
 }
 
 DocumentoCan = document.querySelectorAll(".fila");
@@ -90,12 +91,12 @@ DocumentoCan.forEach(DatoP => {
         CantidaDocumento = document.querySelector("#ValorCantidad" + idPrecio);
         SubTotalDocumentio = document.querySelector("#subTotal" + idPrecio);
 
-        input.addEventListener("keyup", () => {
-            let inputValue = input.value.replace(/\D/g, ''); // Remover todos los caracteres que no sean dígitos
-            input.value = inputValue; // Actualizar el valor del campo solo con los dígitos permitidos
-
+        keyupHandler = () => {
+            let inputValue = input.value.replace(/\D/g, '');
+            input.value = inputValue;
+          
             if (inputValue === "") {
-                inputValue = "0"; // Si no hay ningún dígito válido, establecer el valor en cero
+              inputValue = "0";
             }
             Subtotal = precio * input.value;
             CantidaDocumento.value = input.value;
@@ -104,13 +105,18 @@ DocumentoCan.forEach(DatoP => {
             TextTotal.textContent = Subtotal;
             SumaTotal();
             validar();
-        })
+        };
+        // Comprobar si input y keyupHandler existen antes de agregar el evento
+        if (input && keyupHandler) {
+            input.addEventListener("keyup", keyupHandler);
+        }
+        SumaTotal();
     });
 });
-pagos = document.querySelectorAll('.SubValor');
 ColocarValor = document.querySelector("#TotalFinal");
 ColocarPago = document.querySelector("#TotalPago");
 function SumaTotal() {
+    pagos = document.querySelectorAll('.SubValor');
     let Total = 0;
     pagos.forEach(function (pago) {
         valor = parseFloat(pago.value);
@@ -131,8 +137,36 @@ function validar() {
         }
     });
 }
+botonesEliminar = document.querySelectorAll('.BTNBORRAR');
+botonesEliminar.forEach(function (boton) {
+    boton.addEventListener("click", function (event) {
+        var botonClicado = event.target;
+        idBotonClicado = botonClicado.id;
+        var filaParaEliminar = document.getElementById(idBotonClicado);
+        filaParaEliminar.remove();
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            console.log("Clave: " + key + ", Valor: " + value);
+            
+          }
+        let bt = "bt"+idBotonClicado;
+        localStorage.removeItem(bt);
+        console.log(bt);
+          
+    });
+});
+
 
 function AgregarMas() {
+    localStorage.removeItem("FilasHTML");
+    tabla = document.querySelector("#TablaCuerpo");
+    filas = tabla.querySelectorAll("tr");
+    filasHTML = "";
+    filas.forEach(function (fila) {
+        filasHTML += fila.outerHTML;
+    });
+    localStorage.setItem("FilasHTML", filasHTML);
     window.location.href = "index.php?module=venderDocumento&cliente=cliente";
 }
 
