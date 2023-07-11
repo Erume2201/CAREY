@@ -253,7 +253,7 @@
                 Swal.fire({
                     icon: 'error',
                     title: 'No se pudo enviar el mensaje',
-                    text: 'Asista a soporte tecnico!'
+                    text: 'Asista a soporte técnico!'
                 })
             </script>
     <?php
