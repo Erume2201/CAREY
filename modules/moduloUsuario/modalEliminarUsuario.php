@@ -11,6 +11,8 @@ Incluye un formulario para enviar la confirmación de eliminación -->
       <form action="controller/php/controlVerUsuarios.php" method="POST" >
       <div class="modal-body">
         <h5>Desea eliminar el usuario: <strong><?php echo $fila['nombre_completo']; ?></strong></h5>
+        <br>
+        <p>¡Atención! Al eliminar este usuario, se eliminarán permanentemente todos los registros asociados a él.</p>
         <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
       </div>
       <div class="modal-footer">
