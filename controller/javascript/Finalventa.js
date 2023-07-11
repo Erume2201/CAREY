@@ -141,10 +141,10 @@ botonesEliminar = document.querySelectorAll('.BTNBORRAR');
 botonesEliminar.forEach(function (boton) {
     boton.addEventListener("click", function (event) {
         var botonClicado = event.target;
-        idBotonClicado = botonClicado.id;
+        var idBotonClicado = botonClicado.id;
         var filaParaEliminar = document.getElementById(idBotonClicado);
         filaParaEliminar.remove();
-        localStorage.removeItem("bt"+idBotonClicado);
+        localStorage.removeItem("bt" + idBotonClicado);
     });
 });
 
@@ -170,9 +170,17 @@ localStorage.removeItem("PrecioVentaDocument");
 FormularioVender = document.querySelector("#FormularioVenta");
 function vender() {
     event.preventDefault();
+    Datos = tabla.querySelectorAll("tr");
+    console.log(Datos);
     localStorage.clear();
-    if (enviar) {
+    if (enviar && Datos.length != 0) {
         FormularioVender.submit();
+    } else {
+        Swal.fire({
+            icon: 'question',
+            title: 'Tiene datos por llenar',
+            text: 'Compruebe su venta!'
+        })
     }
 
 }
