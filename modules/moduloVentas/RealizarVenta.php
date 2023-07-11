@@ -44,8 +44,8 @@
                 <br>
                 <label class="form-label">Tipo de Venta:</label>
                 <select class="form-control" id="TipoVenta" name="TipoVenta">
-                    <option value="Decontado">Decontado</option>
                     <option value="Credito">Credito</option>
+                    <option value="Decontado">Decontado</option>
                 </select>
             </div>
             <div class="col-1">
