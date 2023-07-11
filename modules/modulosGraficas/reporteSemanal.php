@@ -1,15 +1,41 @@
 <body>
   <div class="container col-10">
     <?php
+    //Traductor
+   $meses = array(
+        1 => 'Enero',
+        2 => 'Febrero',
+        3 => 'Marzo',
+        4 => 'Abril',
+        5 => 'Mayo',
+        6 => 'Junio',
+        7 => 'Julio',
+        8 => 'Agosto',
+        9 => 'Septiembre',
+        10 => 'Octubre',
+        11 => 'Noviembre',
+        12 => 'Diciembre'
+    );
+   $dias = array(
+    01 => 'Lunes',
+    02 => 'Martes',
+    03 => 'Miércoles',
+    04 => 'Jueves',
+    05 => 'Viernes',
+    06 => 'Sábado',
+    07 => 'Domingo',
+   );
     // Obtener la fecha actual y mostrarla en la página
     date_default_timezone_set('America/Mexico_City');
-    $dia = date('l Y-m-d');
+    $dia = date('Y-m-d');
+    $diaNombre = $dias[date('N')];
     $mes = date('F');
+    $mesNombre = $meses[date('n')];
     $fechaBd = date('Y-m-d');
     ?>
-    <h2 class="text-center"><?php echo ("Mes: ".$mes); ?></h2>
+    <h2 class="text-center"><?php echo ("Mes: ".$mesNombre); ?></h2>
     <hr>
-    <h4 class="text-center"><?php echo ("Fecha del día de hoy: ".$dia); ?></h4>
+    <h4 class="text-center"><?php echo ("Fecha del día de hoy: $diaNombre ".$dia); ?></h4>
     <hr>
 
     <?php
@@ -84,7 +110,7 @@
                 <?php
                 $fechaInicio = $fechas[0];
                 $fechaFin = $fechas[1];
-                echo "<h3>Fecha de la semana: de $fechaInicio hasta $fechaFin </h3>";
+                echo "<h3>Rango: desde $fechaInicio hasta $fechaFin </h3>";
                 ?>
                 <div id="piechart<?php echo $numeroSemana; ?>_2" style="width: 1000px; height: 600px;"></div>
                 <div id="piechart<?php echo $numeroSemana; ?>_1" style="width: 1000px; height: 600px;"></div>
