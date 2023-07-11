@@ -53,7 +53,7 @@
                     <label class="card-text PrecioVModificar" style="margin-left: 0px;"><?php echo $fila['precio_venta']; ?> </label>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button onclick="detalles()" type="button" class="btn btn-primary btn-detalle" id="<?php echo "bt" . $fila['id_articulo_documetos']; ?> ">Seleccionar</button>
+                        <button onclick="detalles()" type="button" class="btn btn-primary btn-detalle" id="<?php echo "bt".$fila['id_articulo_documetos']; ?>">Seleccionar</button>
                       </div>
                     </div>
                   </div>
