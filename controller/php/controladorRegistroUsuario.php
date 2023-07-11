@@ -82,14 +82,11 @@ if (isset($_POST['enviar'])) {
     			//cifrado de contraseña
 				$encryptedPassword = md5($password);
 				//enviamos los datos a la bd
-				$SQL = "insert into usuarios(nombre_completo, nombre_usuario, telefono_usuario, correo, contrasena, rol_usuario, estatus_usuarios) 
-		    		value('$nombre','$usuario','$numero','$correo','$encryptedPassword','$rol','generica')";
+				$SQL = "insert into usuarios(nombre_completo, nombre_usuario, telefono_usuario, correo, contrasena, rol_usuario, estatus_usuarios, estado_usuario) 
+		    		value('$nombre','$usuario','$numero','$correo','$encryptedPassword','$rol','generica','activo')";
 		            
 		        $resultadoInsert = Actualizar($SQL);
-
-				 	/*$sql=$conexion->query("insert into usuarios(nombre,numero,correo,contrasena,rol_usuario) 
-		    		value('$nombre','$numero','$correo','$encryptedPassword','$rol')"); **/
-
+		        
 			    //verificamos la respuesta de la bd
 			    if($resultadoInsert){
 			    	?>

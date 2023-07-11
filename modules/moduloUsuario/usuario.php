@@ -15,22 +15,22 @@
     <div class="form-group">
       <br>
       <label for="exampleInputEmail1" class="form-label fw-bold">Nombre Completo</label>
-      <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre del usuario">
+      <input type="text" pattern=".{6,16}" title="Debe tener entre 6 y 16 caracteres" class="form-control" name="nombre" placeholder="Ingresa el nombre del usuario" maxlength="16"autocomplete="off" required>
     </div>
     <div class="form-group">
       <br>
       <label for="exampleInputEmail1" class="form-label fw-bold">Nombre de Usuario</label>
-      <input type="text" class="form-control" name="usuario" maxlength="10" placeholder="Ingresa el nombre de usuario">
+      <input type="text" pattern=".{5,10}" title="Debe tener entre 5 y 10 caracteres" class="form-control" name="usuario" maxlength="10" placeholder="Ingresa el nombre de usuario" autocomplete="off">
     </div>
     <div class="form-group">
       <br>
       <label for="exampleInputEmail1" class="form-label fw-bold">Numero de telefono</label>
-      <input type="text" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10" oninput="validarNumeros(this)">
+      <input type="text" pattern=".{10}" title="Debe tener 10 digitos" class="form-control" name="numero" id="numero" placeholder="Ingresa el número de teléfono" maxlength="10" oninput="validarNumeros(this)" autocomplete="off">
     </div>
     <div class="form-group">
       <br>
       <label for="exampleInputEmail1" class="form-label fw-bold">Correo Electronico</label>
-      <input type="email" class="form-control" name="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo Electrónico">
+      <input type="email" class="form-control" name="correo" aria-describedby="emailHelp" placeholder="Ingresa el correo Electrónico" autocomplete="off">
     </div>
     <br>
     <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña Genérica</label>
