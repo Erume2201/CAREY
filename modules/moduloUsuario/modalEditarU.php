@@ -48,9 +48,9 @@
 
             <div class="form-group">
               <br>
-              <label style="color: black;" class="form-label fw-bold">Estatus usuario:</label>
+              <label style="color: black;" class="form-label fw-bold">Selecciona estado de usuario:</label>
               <br>
-              <select class="form-select" aria-label="Default select example" name="estatusU" id="estatusU">
+              <select class="form-select" aria-label="Default select example" name="estado" id="estado">
               <option disabled selected hidden>Elige una opción del menú</option>
               <option value="activo">Activo</option>
               <option value="despedido">Despedido</option>

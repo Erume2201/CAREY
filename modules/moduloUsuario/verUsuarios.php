@@ -16,6 +16,7 @@
           <th scope="col">Correo Electrónico</th>
           <th scope="col">Contraseña</th>
           <th scope="col">Rol de Usuario</th>
+          <th scope="col">Estado de Usuario</th>
           <th scope="col">Borrar</th>
           <th scope="col">Editar</th>
         </tr>
@@ -34,6 +35,7 @@
               <td><?php echo $fila['correo']; ?></td>
               <td><?php echo $fila['contrasena']; ?></td>
               <td><?php echo $fila['rol_usuario']; ?></td>
+              <td><?php echo $fila['estado_usuario']; ?></td>
               <!-- Fin de los Datos -->
               <!-- Inicio de los botones -->
 

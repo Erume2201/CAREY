@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 require '../../controller/php/CRUD.php';
 
 //Verificacion de los campos vacios
-if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]) || empty($_POST["password"])|| empty($_POST["rol"]) || empty($_POST["usuario"])) {
+if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]) || empty($_POST["password"])|| empty($_POST["rol"]) || empty($_POST["estado"]) || empty($_POST["usuario"])) {
 
     echo "<script>window.location = '../../index.php?module=usuario&Update=NoActualizado'</script>";
 
@@ -20,13 +20,14 @@ if (empty($_POST["nombre"]) || empty($_POST["numero"]) || empty($_POST["correo"]
      $correo = $_POST["correo"];
      $password = $_POST["password"];
      $rol = $_POST["rol"];
+     $estado = $_POST["estado"];
      $id = $_POST['dato'];
      //Encriptamos la contraseña
      $encryptedPassword = md5($password);
 
      $SQL = "UPDATE usuarios SET  nombre_completo ='$nombre', nombre_usuario = '$usuario',
         telefono_usuario = '$numero', correo = '$correo', contrasena = '$encryptedPassword', 
-        rol_usuario = '$rol', estatus_usuarios = 'generica' WHERE id_usuarios = $id;";
+        rol_usuario = '$rol', estado_usuario = '$estado', estatus_usuarios = 'generica' WHERE id_usuarios = $id;";
 
      $resultado = Actualizar($SQL);
      //verificamos la respuesta a de la bd
