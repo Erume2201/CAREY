@@ -46,7 +46,7 @@
             </select>
             </div>
 
-            <!-- <div class="form-group">
+            <div class="form-group">
               <br>
               <label style="color: black;" class="form-label fw-bold">Estatus usuario:</label>
               <br>
@@ -56,7 +56,7 @@
               <option value="despedido">Despedido</option>
             </select>
             </div>
--->
+
             <input type="hidden" class="bt-5" id="dato" name="dato" value="<?php echo $fila['id_usuarios']; ?>" autocomplete="off">
         <!--Fin Formulario-->
 
