@@ -171,9 +171,8 @@ FormularioVender = document.querySelector("#FormularioVenta");
 function vender() {
     event.preventDefault();
     Datos = tabla.querySelectorAll("tr");
-    console.log(Datos);
-    localStorage.clear();
     if (enviar && Datos.length != 0) {
+        localStorage.clear();
         FormularioVender.submit();
     } else {
         Swal.fire({
