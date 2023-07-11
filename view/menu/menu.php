@@ -1,6 +1,7 @@
 <?php
 
 ?>
+
 <!--data-bs-theme="dark"  -->
 <nav class="navbar navbar-expand-lg bg-primary navbar-static fixed-top" >
     <div class="container-fluid">
@@ -94,7 +95,6 @@
             <!-- boton de cierre de sesion -->
             <ul></ul>
             <ul></ul>
-            <ul></ul>
             <button class="btn" type="submit" 
             onclick="window.location.href = 'index.php?module=cerrarSesion'">
             <img src="assets/image/btnCerrarSesion.png" width="250px" height="50px">
@@ -104,6 +104,15 @@
         </div>
     </div>
 </nav>
+<style>
+          img:hover {
+            transform: scale(1.1);
+          }
+
+          .clickable-image {
+            cursor: pointer;
+          }
+        </style>
 
 
 <script src="controller/javascript/helperVerContrasena.js"></script>

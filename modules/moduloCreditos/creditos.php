@@ -11,11 +11,24 @@
 			<input type="date" name="fecha_credito" required>
 		</div>
 		<br>
-		<input class="btn btn-warning" type="submit" value="Consultar Créditos">
+		<button class="btn" type="submit" value="Consultar Créditos">
+            <img src="assets/image/btnConsultarCre.png" class="clickable-image" width="200px" height="80px">
+        </button>
+	<!--	<input class="btn btn-warning" type="submit" value="Consultar Créditos">-->
     </form>
 </div>
 
 <?php
 	include_once("controller/php/controlCreditos/controllerViewCreditos.php");
 	?>
+
+<style>
+          img:hover {
+            transform: scale(1.1);
+          }
+
+          .clickable-image {
+            cursor: pointer;
+          }
+        </style>
 

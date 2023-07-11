@@ -55,11 +55,7 @@ if (isset($_GET["module"])) {
 <?php
                         exit();
                     }else{
-                      #  $idusuarionuevo = $_SESSION['id_user'];
-                     #   $rolusuarionuevo = $_SESSION['rol_usuario'];
-                     #   echo "<script>alert('hola " . $idusuarionuevo . $rolusuarionuevo . "');</script>";
-                        
-
+                    
                      echo "<script>window.location = 'index.php?module=configuracion'</script>";
                      
                     } //termina la validacion de la contraseña generica

@@ -1,7 +1,8 @@
 <?php 
     #consultar fecha actual
-    $SQLFechaActual = "SELECT desde, hasta
+    $SQLFechaActual = "SELECT desde, hasta, estatus_corte
     FROM corte
+    WHERE estatus_corte='activo'
     ORDER BY hasta DESC
     LIMIT 1;";
  #Consulta de creditos de la semana actual y asignar

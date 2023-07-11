@@ -30,16 +30,16 @@ Swal.fire({
 <div>
     <div class="container">
         <div style="text-align: right;">
-        <h3>
-        Fecha consultada: <?php echo $fecha_seleccionada; ?>
-    </h3>
+            <h3>
+                Fecha consultada: <?php echo $fecha_seleccionada; ?>
+            </h3>
             <h3 style="text-align: center;">Ingresa el nombre del cliente:</h3>
             <br>
-            <div class="container-fluid col-12" >
-              <!--  <form class="d-flex">-->
-                    <input class="form-control me-2 light-table-filter" data-table="table_id" type="text"
-                        placeholder="Ingresa el nombre del cliente" style="text-align: center" id="buscadorBloque">
-             <!--   </form>-->
+            <div class="container-fluid col-12">
+                <!--  <form class="d-flex">-->
+                <input class="form-control me-2 light-table-filter" data-table="table_id" type="text"
+                    placeholder="Ingresa el nombre del cliente" style="text-align: center" id="buscadorBloque">
+                <!--   </form>-->
             </div>
         </div>
     </div>
@@ -54,9 +54,9 @@ Swal.fire({
                         <th>Telefono</th>
                         <th>Empresa</th>
                         <th>Fecha</th>
-                        <th>N° Documentos</th>
+                        <th>N° Créditos</th>
                         <th>Venta total</th>
-                        <th>Documentos</th>
+                        <th>Créditos</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,11 +74,17 @@ Swal.fire({
                                 <div>
                                     <input class="form-control" type="hidden" name="fecha_credito"
                                         value="<?php echo $fecha_seleccionada; ?>">
-                                        <input class="form-control" type="hidden" name="fechaDiaBusqueda"
+                                    <input class="form-control" type="hidden" name="fechaDiaBusqueda"
                                         value="<?php echo $fecha_seleccionada; ?>">
                                     <input class="form-control" type="hidden" name="id_cliente"
                                         value="<?php echo $fila['id_cliente']; ?>">
-                                    <center><input class="btn btn-warning" type="submit" value="Ver"  style="height: 4rem; width: 6rem;"></center>
+                                    <center>
+                                        
+                                        <button class="btn" type="submit" value="Consultar Créditos">
+                                        <img src="assets/image/view.png" class="clickable-image" width="35"
+                                            height="35">
+                                        </button>
+                                    </center>
                                 </div>
                                 <br>
                             </form>
@@ -94,5 +100,5 @@ Swal.fire({
     }
 }
 ?>
-   
-<script src="controller/javascript/buscador.js"></script>
+
+    <script src="controller/javascript/buscador.js"></script>
