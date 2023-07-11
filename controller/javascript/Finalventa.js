@@ -94,9 +94,9 @@ DocumentoCan.forEach(DatoP => {
         keyupHandler = () => {
             let inputValue = input.value.replace(/\D/g, '');
             input.value = inputValue;
-          
+
             if (inputValue === "") {
-              inputValue = "0";
+                inputValue = "0";
             }
             Subtotal = precio * input.value;
             CantidaDocumento.value = input.value;
@@ -144,16 +144,7 @@ botonesEliminar.forEach(function (boton) {
         idBotonClicado = botonClicado.id;
         var filaParaEliminar = document.getElementById(idBotonClicado);
         filaParaEliminar.remove();
-        for (var i = 0; i < localStorage.length; i++) {
-            var key = localStorage.key(i);
-            var value = localStorage.getItem(key);
-            console.log("Clave: " + key + ", Valor: " + value);
-            
-          }
-        let bt = "bt"+idBotonClicado;
-        localStorage.removeItem(bt);
-        console.log(bt);
-          
+        localStorage.removeItem("bt"+idBotonClicado);
     });
 });
 
