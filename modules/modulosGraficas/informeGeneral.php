@@ -127,7 +127,8 @@
 	      	</select>
 	      </div>
 	      <div class="password-button">
-	        <button type="button" class="btn btn-success" onclick="verGrafica()">Generar Gráfica</button>
+	        <button type="button" class="btn" onclick="verGrafica()" >
+	        <img src="assets/image/btnGenerarGrafic.png" width="180" height="50"></button>
 	      </div>
 	    </div>
     </div>
